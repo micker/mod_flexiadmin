@@ -1,0 +1,9 @@
+button.itemlist {
+  margin: 4px;
+  max-width: 116px;
+  min-height: 66px;
+}
+.adminlink{
+  color:#000;
+  font-weight:bold;
+}
