@@ -32,5 +32,5 @@ Think to publish it in **`cpanel position`** after installation.
   - user item in progress
 
 v0.2
-+adding external CSS
--cleaning identation
+ + adding external CSS
+ - cleaning identation
