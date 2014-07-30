@@ -35,7 +35,16 @@
 				<option	value="10">10</option>						
 				<option	value="15">15</option>						
 				<option	value="20">20</option>				
-			</field>								
+			</field>	
+			<field 					
+				name="column" type="list"					
+				default="4" label="FLEXI_ADMIN_COLUM"					
+				description="FLEXI_ADMIN_ADMIN_COLUM">						
+				<option	value="12">1</option>
+				<option	value="6">2</option>				
+				<option	value="4">3</option>						
+									
+			</field>			
 			<field name="hiddepending" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_PENDING" description="FLEXI_ADMIN_DISPLAYBLOCK_PENDING_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>

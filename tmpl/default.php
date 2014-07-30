@@ -11,6 +11,7 @@ $hiddeinprogress = $params->get('hiddeinprogress', '1' );
 $hiddedraft = $params->get('hiddedraft', '1' );
 $hiddeyouritem = $params->get('hiddeyouritem', '1' );
 $hiddetrashed = $params->get('hiddetrashed', '1' );
+$column = $params->get('column', '4' );
 ?>
 
 <div class="row-fluid">
@@ -94,8 +95,9 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 </div>
 	
 <div class="row-fluid">
+<div class="row-fluid">
 <?php if ($hiddepending) : ?>
-    <div class="pending well well-small span4 ">
+    <div class="pending well well-small span<?php echo $column; ?> ">
 	<h2 class="module-title nav-header"><i class="icon-large icon-thumbs-down"></i> <?php echo JText::_( 'FLEXI_ADMIN_PENDING' ); ?></h2>
 
 	<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=PE'; ?>
@@ -119,7 +121,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $itemPending->created_by; ?>"><?php echo $itemPending->created_by;?> </small>
 							</span>				
 						</div>				
-						<div class="span4">
+						<div class="span<?php echo $column; ?>">
 							<span class="small">
 							<i class="icon-calendar"></i> <?php echo JHtml::date($itemPending->created, 'n M Y'); ?>
 							</span>
@@ -133,7 +135,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 	
 	<?php if ($hidderevised) : ?>
 
-	<div class="revised well well-small span4 ">
+	<div class="revised well well-small span<?php echo $column; ?> ">
 		<h2 class="module-title nav-header"><i class="icon-large icon-thumbs-up"></i> <?php echo JText::_( 'FLEXI_ADMIN_REVISED' ); ?></h2>	
 		<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=RV'; ?>
 		<div style='text-align:right;'>
@@ -155,7 +157,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $itemRevised->created_by; ?>">&nbsp;<i class="icon-user"></i></small>											
 							</span>				
 						</div>				
-						<div class="span4">
+						<div class="span<?php echo $column; ?>">
 							<span class="small"> 
 							<i class="icon-calendar"></i> <?php echo JHtml::date($itemRevised->created, 'n M Y'); ?>
 							</span>
@@ -167,7 +169,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 	</div>	
 <?php endif; ?>
 <?php if ($hiddeinprogress) : ?>
-	<div class="inprogress well well-small span4 ">	
+	<div class="inprogress well well-small span<?php echo $column; ?> ">	
 		<h2 class="module-title nav-header"><i class="icon-large icon-checkin"></i> <?php echo JText::_( 'FLEXI_ADMIN_INPROGRESS' ); ?></h2>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=IP'; ?>
 		<div style='text-align:right;'>
@@ -190,7 +192,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $itemInprogress->created_by; ?>"><?php echo $itemInprogress->created_by;?> </small>
 							</span>				
 						</div>				
-						<div class="span4">
+						<div class="span<?php echo $column; ?>">
 							<span class="small"> <i class="icon-calendar"></i> <?php echo JHtml::date($itemInprogress->created, 'n M Y'); ?></span>
 						</div>
 					</div>			
@@ -198,11 +200,11 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 			<?php endforeach; ?>		
 			</div>	
 	</div>	
-</div>	
 <?php endif; ?>
+</div>
 <div class="row-fluid">
 <?php if ($hiddedraft) : ?>
-	<div class="draft well well-small span4">
+	<div class="draft well well-small span<?php echo $column; ?>">
 	<h2 class="module-title nav-header"><i class="icon-large icon-file"></i> <?php echo JText::_( 'FLEXI_ADMIN_DRAFT' ); ?></h2>
 	<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
 		<div style='text-align:right;'>
@@ -224,7 +226,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 					<i class="icon-user"></i><small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $itemDraft->created_by; ?>"><?php echo $itemDraft->created_by;?> </small> 			
 					</span>			
 				</div>			
-				<div class="span4">
+				<div class="span<?php echo $column; ?>">
 					<span class="small">
 					<i class="icon-calendar"></i> <?php echo JHtml::date($itemDraft->created, 'n M Y'); ?>
 					</span>
@@ -236,7 +238,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 </div>
 <?php endif; ?>
 <?php if ($hiddeyouritem) : ?>
-	<div class="youritems well well-small span4">	
+	<div class="youritems well well-small span<?php echo $column; ?>">	
 		<?php $user = JFactory::getUser();		?>
 		<h2 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
@@ -262,7 +264,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $itemUseritem->created_by; ?>"><?php echo $itemUseritem->created_by;?> </small> 	
 						</span>			
 					</div>			
-					<div class="span4">
+					<div class="span<?php echo $column; ?>">
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($$itemUseritem->created, 'n M Y'); ?>
 					</span>
@@ -273,7 +275,7 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 	</div>	
 </div>
 <?php endif; ?><?php if ($hiddetrashed) : ?>
-	<div class="trashed well well-small span4">	
+	<div class="trashed well well-small span<?php echo $column; ?>">	
 	<h2 class="module-title nav-header"><i class="icon-large icon-trash"></i> 
 	<?php echo JText::_( 'FLEXI_ADMIN_TRASHED' ); ?></h2>	
 	<?php //TODO filtrage trashed	
@@ -284,6 +286,8 @@ $hiddetrashed = $params->get('hiddetrashed', '1' );
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
 	</div>	
-    </div>
 <?php endif; ?>
 </div>
+</div>
+
+
