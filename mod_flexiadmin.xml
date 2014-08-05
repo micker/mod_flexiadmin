@@ -38,8 +38,8 @@
 			</field>	
 			<field 					
 				name="column" type="list"					
-				default="4" label="FLEXI_ADMIN_COLUM"					
-				description="FLEXI_ADMIN_ADMIN_COLUM">						
+				default="4" label="FLEXI_ADMIN_COLUMN"					
+				description="FLEXI_ADMIN_COLUMN_DESC">						
 				<option	value="12">1</option>
 				<option	value="6">2</option>				
 				<option	value="4">3</option>						
