@@ -3,6 +3,7 @@
 defined('_JEXEC') or die('Accés interdit');
 
 JHtml::_('bootstrap.tooltip');
+JHTML::_('behavior.modal');
 $document = JFactory::getDocument();
 $document->addStyleSheet("./modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
 $hiddepending = $params->get('hiddepending', '1' );
@@ -22,11 +23,25 @@ $column = $params->get('column', '4' );
 			<?php echo JText::_( 'FLEXI_ADMIN_ITEMLIST' ); ?>
 		</button>
 	</a>
+	<a href="index.php?option=com_flexicontent&view=types&format=raw" 
+			class="modal" 
+			rel="{size: {x: 700, y: 300}, closable: true}">
+		<button type="button" class="btn btn-default btn-lg itemlist">
+			<i class="icon-large icon-file-plus"></i><br/> 
+		<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
+		</button>
+	</a>
 	
 	<a href="index.php?option=com_flexicontent&view=categories">
 		<button type="button" class="btn btn-default btn-lg itemlist">  
 			<i class="icon-large icon-list"></i><br/> 
 			<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
+		</button>
+	</a>
+	<a href="index.php?option=com_flexicontent&view=category">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-list"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDCAT' ); ?>
 		</button>
 	</a>
 	
@@ -36,17 +51,41 @@ $column = $params->get('column', '4' );
 			<?php echo JText::_( 'FLEXI_ADMIN_TYPELIST' ); ?>
 		</button>
 	</a>
+	<a href="index.php?option=com_flexicontent&view=type">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-book"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDTYPE' ); ?>
+		</button>
+	</a>
 	
+	<a href="index.php?option=com_flexicontent&view=type">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-book"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDTYPE' ); ?>
+		</button>
+	</a>
 	<a href="index.php?option=com_flexicontent&view=tags">
 		<button type="button" class="btn btn-default btn-lg itemlist">  
 			<i class="icon-large icon-tag"></i><br/> 
 			<?php echo JText::_( 'FLEXI_ADMIN_TAGLIST' ); ?>
 		</button>
 	</a>
+	<a href="index.php?option=com_flexicontent&view=tag">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-tag"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDTAG' ); ?>
+		</button>
+	</a>
 	<a href="index.php?option=com_flexicontent&view=fields">
 		<button type="button" class="btn btn-default btn-lg itemlist">  
 			<i class="icon-large icon-stack"></i><br/> 
 			<?php echo JText::_( 'FLEXI_ADMIN_FIELDLIST' ); ?>
+		</button>
+	</a>
+	<a href="index.php?option=com_flexicontent&view=field">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-stack"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDFIELD' ); ?>
 		</button>
 	</a>
 	
@@ -56,11 +95,23 @@ $column = $params->get('column', '4' );
 			<?php echo JText::_( 'FLEXI_ADMIN_AUTHORLIST' ); ?>
 		</button>
 	</a>
+		<a href="index.php?option=com_flexicontent&task=users.add">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-user"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDAUTHOR' ); ?>
+		</button>
+	</a>
 	
 	<a href="index.php?option=com_flexicontent&view=groups">
 		<button type="button" class="btn btn-default btn-lg itemlist">  
 			<i class="icon-large icon-users"></i><br/> 
 			<?php echo JText::_( 'FLEXI_ADMIN_GROUPSLIST' ); ?>
+		</button>
+	</a>
+	<a href="index.php?option=com_flexicontent&view=groups.add">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-users"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_ADDGROUPS' ); ?>
 		</button>
 	</a>
 	
