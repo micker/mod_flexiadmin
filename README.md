@@ -22,7 +22,7 @@ Think to publish it in **`cpanel position`** after installation.
   - author list done
   - group list done
   - index view done
-  - custom link generation in progess
+  - custom link generation done
 - **Block list of content** :
   - pending done
   - revised done
@@ -30,6 +30,13 @@ Think to publish it in **`cpanel position`** after installation.
   - in progress done
   - trashed in progress
   - user item in progress
+
+v0.3
+ + adding tabs (custom,create, manage, admin)
+ + adding "type button" (you can add 10 button with specific type and specific category)
+ + adding "categorie button" (you can add 10 button to list items with specific category filter)
+ + adding "edit item button (you can add 10 button to edit item directly)
+ + adding option for display tabs, button, translation ....
 
 v0.2
  + adding external CSS
