@@ -18,13 +18,15 @@
 		<folder>tmpl</folder>
 		<folder>language</folder>
 		<folder>assets</folder>
+		<folder>elements</folder>
 		<filename>helper.php</filename>
 		<filename>index.html</filename>
 	<filename>mod_flexiadmin.xml</filename>
 	</files>
 	<config>
-		<fields name="params">
-			<fieldset name="basic">				
+		<fields name="params" addfieldpath="/modules/mod_flexicontent/elements">
+			<fieldset name="basic">		
+			<field name="" type="separator" default="FLEXI_ADMIN_NB_ITEM_DISPLAY" level="level1" />				
 			<field 					
 				name="count" type="list"					
 				default="5" label="FLEXI_ADMIN_NBITEM"					
@@ -44,7 +46,26 @@
 				<option	value="6">2</option>				
 				<option	value="4">3</option>						
 									
-			</field>			
+			</field>	
+			<field name="" type="separator" default="FLEXI_ADMIN_TABS" level="level1" />			
+			<field name="displaycustomtab" type="radio" default="1" label="FLEXI_ADMIN_TABS_CUSTOM" description="FLEXI_ADMIN_TABS_CUSTOM_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>				
+			<field name="displaycreattab" type="radio" default="1" label="FLEXI_ADMIN_TABS_CREATE" description="FLEXI_ADMIN_DISPLAYBLOCK_REVISED_DESC" class="btn-group btn-group-yesno">					
+				<option value="0">FLEXI_NO</option>					
+				<option value="1">FLEXI_YES</option>				
+			</field>				
+			<field name="displaymanagetab" type="radio" default="1" label="FLEXI_ADMIN_TABS_MANAGE" description="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS_DESC" class="btn-group btn-group-yesno">					
+				<option value="0">FLEXI_NO</option>					
+				<option value="1">FLEXI_YES</option>				
+			</field>				
+			<field name="displayadmintab" type="radio" default="1" label="FLEXI_ADMIN_TABS_ADMIN" description="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT_DESC" class="btn-group btn-group-yesno">					
+				<option value="0">FLEXI_NO</option>					
+				<option value="1">FLEXI_YES</option>				
+			</field>				
+			
+		<field name="" type="separator" default="FLEXI_ADMIN_BLOCK_DISPLAY" level="level1" />			
 			<field name="hiddepending" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_PENDING" description="FLEXI_ADMIN_DISPLAYBLOCK_PENDING_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
@@ -69,7 +90,124 @@
 				<option value="0">FLEXI_NO</option>					
 				<option value="1">FLEXI_YES</option>				
 			</field>
-			</fieldset>			
+			</fieldset>	
+			<fieldset name="custom_tab" label="FLEXI_ADMIN_CUSTOM_TAB" description="FLEXI_ADMIN_CUSTOM_TAB_DESC">
+				<field name="nametab" type="text"  label="FLEXI_ADMIN_NAME_TAB" description="FLEXI_ADMIN_NAME_TAB_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD" level="level1" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD1" level="level2" />
+						<field name="namebutton1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types1" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD2" level="level2" />
+						<field name="namebutton2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types2" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD3" level="level2" />
+						<field name="namebutton3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types3" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD4" level="level2" />
+						<field name="namebutton4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types4" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD5" level="level2" />
+						<field name="namebutton5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types5" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD6" level="level2" />
+						<field name="namebutton6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types6" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD7" level="level2" />
+						<field name="namebutton7" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types7" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD8" level="level2" />
+						<field name="namebutton8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types8" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD9" level="level2" />
+						<field name="namebutton9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types9" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD10" level="level2" />
+						<field name="namebutton10" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="types10" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" />
+						<field name="catids10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING" level="level1" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING1" level="level2" />
+						<field name="namecatfilter1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING2" level="level2" />
+						<field name="namecatfilter2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING3" level="level2" />
+						<field name="namecatfilter3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING4" level="level2" />
+						<field name="namecatfilter4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING5" level="level2" />
+						<field name="namecatfilter5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING6" level="level2" />
+						<field name="namecatfilter6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING7" level="level2" />
+						<field name="namecatfilter7" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING8" level="level2" />
+						<field name="namecatfilter8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING9" level="level2" />
+						<field name="namecatfilter9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING10" level="level2" />
+						<field name="namecatfilter10" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="filtercatids10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT" level="level1" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT1" level="level2" />
+						<field name="nameitemedit1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid1" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT2" level="level2" />
+						<field name="nameitemedit2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid2" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT3" level="level2" />
+						<field name="nameitemedit3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid3" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT4" level="level2" />
+						<field name="nameitemedit4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid4" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT5" level="level2" />
+						<field name="nameitemedit5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid5" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT6" level="level2" />
+						<field name="nameitemedit6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid6" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT7" level="level2" />
+						<field name="nameitemedit7" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid7" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT8" level="level2" />
+						<field name="nameitemedit8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid8" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT9" level="level2" />
+						<field name="nameitemedit9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid9" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT10" level="level2" />
+						<field name="nameitemedit10" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
+						<field name="itemid10" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" />
+					
+
+			</fieldset>	
+			<fieldset name="creation_tab" label="FLEXI_ADMIN_CREATION_TAB" description="FLEXI_ADMIN_CREATION_TAB_DESC">			
+			
+			</fieldset>
+			<fieldset name="gestion_tab" label="FLEXI_ADMIN_GESTION_TAB" description="FLEXI_ADMIN_GESTION_TAB_DESC">			
+			
+			</fieldset>
+			<fieldset name="administration_tab" label="FLEXI_ADMIN_ADMIN_TAB" description="FLEXI_ADMIN_ADMIN_TAB_DESC">			
+			
+			</fieldset>
 			<fieldset name="advanced">
 				<field
 					name="layout" type="modulelayout"
