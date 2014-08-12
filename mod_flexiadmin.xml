@@ -23,7 +23,7 @@
 		<filename>index.html</filename>
 	<filename>mod_flexiadmin.xml</filename>
 	</files>
-	<languages>
+	<languages folder="language">
 		<language tag="en-GB">en-GB.mod_flexiadmin.ini</language>
 		<language tag="fr-FR">fr-FR.mod_flexiadmin.ini</language>
 </languages>
