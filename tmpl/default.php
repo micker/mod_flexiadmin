@@ -22,7 +22,7 @@ $displayadmintab= $params->get('displayadmintab', '1' );
 
 
 //customtab
-$nametab = $params->get('nametab', '' );
+$nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME' );
 
 //bouton add
 $namebutton1 = $params->get('namebutton1', '' );
@@ -106,7 +106,7 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 <div class="row-fluid">
     <div class="action well well-small span13">
 	<ul class="nav nav-tabs" role="tablist">
-	<?php if ($displaycustomtab) : ?><li class="active"><a href="#0" data-toggle="tab"><?php echo $nametab; ?></a></li> <?php endif; ?>
+	<?php if ($displaycustomtab) : ?><li class="active"><a href="#0" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#1" data-toggle="tab">Creation</a></li>  <?php endif; ?>
 	<?php if ($displaymanagetab) : ?><li class=""><a href="#2" data-toggle="tab">Gestion</a></li>  <?php endif; ?>
 	<?php if ($displayadmintab) : ?><li class=""><a href="#3" data-toggle="tab">Administration</a></li>  <?php endif; ?>

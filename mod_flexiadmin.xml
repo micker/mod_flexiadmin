@@ -96,7 +96,7 @@
 			</field>
 			</fieldset>	
 			<fieldset name="custom_tab" label="FLEXI_ADMIN_CUSTOM_TAB" description="FLEXI_ADMIN_CUSTOM_TAB_DESC">
-				<field name="nametab" type="text"  label="FLEXI_ADMIN_NAME_TAB" description="FLEXI_ADMIN_NAME_TAB_DESC" />
+				<field name="nametab" type="text"  default="FLEXI_ADMIN_CUSTOM_TAB_NAME" label="FLEXI_ADMIN_NAME_TAB" description="FLEXI_ADMIN_NAME_TAB_DESC" />
 				<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD" level="level1" />
 					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD1" level="level2" />
 						<field name="namebutton1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
