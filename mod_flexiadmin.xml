@@ -94,6 +94,37 @@
 				<option value="0">FLEXI_NO</option>					
 				<option value="1">FLEXI_YES</option>				
 			</field>
+			<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM_DESC" level="level1" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM1" level="level2" />
+					<field name="nameblockcustom1" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM1" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM2" level="level2" />
+					<field name="nameblockcustom2" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM2" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM3" level="level2" />
+					<field name="nameblockcustom3" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM3" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM4" level="level2" />
+					<field name="nameblockcustom4" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM4" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM5" level="level2" />
+					<field name="nameblockcustom5" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM5" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM6" level="level2" />
+					<field name="nameblockcustom6" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM6" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM7" level="level2" />
+					<field name="nameblockcustom7" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM7" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM8" level="level2" />
+					<field name="nameblockcustom8" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM8" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM9" level="level2" />
+					<field name="nameblockcustom9" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM9" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
+				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM10" level="level2" />
+					<field name="nameblockcustom10" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM10" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" />
+					<field name="catidlist10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" />
 			</fieldset>	
 			<fieldset name="custom_tab" label="FLEXI_ADMIN_CUSTOM_TAB" description="FLEXI_ADMIN_CUSTOM_TAB_DESC">
 				<field name="nametab" type="text"  default="FLEXI_ADMIN_CUSTOM_TAB_NAME" label="FLEXI_ADMIN_NAME_TAB" description="FLEXI_ADMIN_NAME_TAB_DESC" />
