@@ -50,9 +50,9 @@ $nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME' );
 $namebutton1 = $params->get('namebutton1', '' );
 $type1 = $params->get('types1', '' );
 $maincat1 = $params->get('catids1', '' );
-$namebutton3 = $params->get('namebutton3', '' );
-$type3 = $params->get('types3', '' );
-$maincat3 = $params->get('catids3', '' );
+$namebutton2 = $params->get('namebutton2', '' );
+$type2 = $params->get('types2', '' );
+$maincat2 = $params->get('catids2', '' );
 $namebutton3 = $params->get('namebutton3', '' );
 $type3 = $params->get('types3', '' );
 $maincat3 = $params->get('catids3', '' );
@@ -147,11 +147,11 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 						</button>
 				</a>
 			<?php endif; ?>
-			<?php if ($namebutton3) : ?>
-				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type3;?>&maincat=<?php echo $maincat3; ?>" >
+			<?php if ($namebutton2) : ?>
+				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type3;?>&maincat=<?php echo $maincat2; ?>" >
 						<button type="button" class="btn btn-default btn-lg itemlist">
 							<i class="icon-large icon-file-plus"></i><br/> 
-						<?php echo $namebutton3; ?>
+						<?php echo $namebutton2; ?>
 						</button>
 				</a>
 			<?php endif; ?>
