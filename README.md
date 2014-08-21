@@ -29,7 +29,11 @@ Think to publish it in **`cpanel position`** after installation.
   - draft done
   - in progress done
   - trashed in progress
-  - user item in progress
+  - user item done
+
+v0.4
+ + adding custom block (you can create your block with X last article with specific categorie)
+ + adding customer block (block with user items)
 
 v0.3
  + adding tabs (custom,create, manage, admin)
