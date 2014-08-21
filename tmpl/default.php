@@ -126,7 +126,7 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 ?>
 
 <div class="row-fluid">
-<?php if ($displaycustomtab AND $displaycreattab AND $displaymanagetab AND $displayadmintab) : ?>
+<?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab) : ?>
     <div class="action well well-small span13">
 	
 	<ul class="nav nav-tabs" role="tablist">
