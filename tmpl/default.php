@@ -130,8 +130,7 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
     <div class="action well well-small span13">
 	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;">
 						<button type="button" class="btn btn-default">
-							<i class="icon-small icon-options"></i><br/> 
-						<?php echo $namebutton1; ?>
+							<i class="icon-small icon-options"></i>
 						</button>
 				</a>
 	<ul class="nav nav-tabs" role="tablist">
