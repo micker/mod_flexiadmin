@@ -128,7 +128,12 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 <div class="row-fluid">
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab) : ?>
     <div class="action well well-small span13">
-	
+	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;">
+						<button type="button" class="btn btn-default">
+							<i class="icon-small icon-options"></i><br/> 
+						<?php echo $namebutton1; ?>
+						</button>
+				</a>
 	<ul class="nav nav-tabs" role="tablist">
 	<?php if ($displaycustomtab) : ?><li class="active"><a href="#0" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#1" data-toggle="tab">Creation</a></li>  <?php endif; ?>
