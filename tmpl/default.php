@@ -135,9 +135,9 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 				</a>
 	<ul class="nav nav-tabs" role="tablist">
 	<?php if ($displaycustomtab) : ?><li class="active"><a href="#0" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
-	<?php if ($displaycreattab) : ?><li class=""><a href="#1" data-toggle="tab">Creation</a></li>  <?php endif; ?>
-	<?php if ($displaymanagetab) : ?><li class=""><a href="#2" data-toggle="tab">Gestion</a></li>  <?php endif; ?>
-	<?php if ($displayadmintab) : ?><li class=""><a href="#3" data-toggle="tab">Administration</a></li>  <?php endif; ?>
+	<?php if ($displaycreattab) : ?><li class=""><a href="#1" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_CREATE_D); ?></a></li>  <?php endif; ?>
+	<?php if ($displaymanagetab) : ?><li class=""><a href="#2" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_MANAGE_D); ?></a></li>  <?php endif; ?>
+	<?php if ($displayadmintab) : ?><li class=""><a href="#3" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_ADMIN_D); ?></a></li>  <?php endif; ?>
 	</ul>  
 	
 		<div class="tab-content">  
