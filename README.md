@@ -6,7 +6,7 @@ Admin module for FLEXIcontent 2.x
 ## Module FLEXIadmin features
 
 
-FLEXIcontent module admin for cpanel position.
+FLEXIcontent **module admin** for cpanel position.
  Compatibilty : joomla 3 and isis template
 
 Think to publish it in **`cpanel position`** after installation.
@@ -30,6 +30,8 @@ Think to publish it in **`cpanel position`** after installation.
   - in progress done
   - trashed in progress
   - user item done
+
+## Change Log
 
 v0.4
  + adding custom block (you can create your block with X last article with specific categorie)

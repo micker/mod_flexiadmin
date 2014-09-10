@@ -8,38 +8,38 @@ $document = JFactory::getDocument();
 $document->addStyleSheet("./modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
 
 //module config
-$hiddepending = $params->get('hiddepending', '1' );
-$hidderevised = $params->get('hidderevised', '1' );
-$hiddeinprogess = $params->get('hiddeinprogess', '1' );
-$hiddedraft = $params->get('hiddedraft', '1' );
-$hiddeyouritem = $params->get('hiddeyouritem', '1' );
-$hiddetrashed = $params->get('hiddetrashed', '1' );
-$column = $params->get('column', '4' );
+$hiddepending    = $params->get('hiddepending', '1' );
+$hidderevised    = $params->get('hidderevised', '1' );
+$hiddeinprogess  = $params->get('hiddeinprogess', '1' );
+$hiddedraft      = $params->get('hiddedraft', '1' );
+$hiddeyouritem   = $params->get('hiddeyouritem', '1' );
+$hiddetrashed    = $params->get('hiddetrashed', '1' );
+$column          = $params->get('column', '4' );
 $displaycustomtab= $params->get('displaycustomtab', '1' );
-$displaycreattab= $params->get('displaycreattab', '1' );
+$displaycreattab = $params->get('displaycreattab', '1' );
 $displaymanagetab= $params->get('displaymanagetab', '1' );
-$displayadmintab= $params->get('displayadmintab', '1' );
+$displayadmintab = $params->get('displayadmintab', '1' );
 
 //id catlist
-$catidlist1= $params->get('catidlist1', '1' );
-$nameblockcustom1= $params->get('nameblockcustom1', '' );
-$catidlist2= $params->get('catidlist2', '1' );
-$nameblockcustom2= $params->get('nameblockcustom2', '' );
-$catidlist3= $params->get('catidlist3', '1' );
-$nameblockcustom3= $params->get('nameblockcustom3', '' );
-$catidlist4= $params->get('catidlist4', '1' );
-$nameblockcustom4= $params->get('nameblockcustom4', '' );
-$catidlist5= $params->get('catidlist5', '1' );
-$nameblockcustom5= $params->get('nameblockcustom5', '' );
-$catidlist6= $params->get('catidlist6', '1' );
-$nameblockcustom6= $params->get('nameblockcustom6', '' );
-$catidlist7= $params->get('catidlist7', '1' );
-$nameblockcustom7= $params->get('nameblockcustom7', '' );
-$catidlist8= $params->get('catidlist8', '1' );
-$nameblockcustom8= $params->get('nameblockcustom8', '' );
-$catidlist9= $params->get('catidlist9', '1' );
-$nameblockcustom9= $params->get('nameblockcustom9', '' );
-$catidlist10= $params->get('catidlist10', '1' );
+$catidlist1       = $params->get('catidlist1', '1' );
+$nameblockcustom1 = $params->get('nameblockcustom1', '' );
+$catidlist2       = $params->get('catidlist2', '1' );
+$nameblockcustom2 = $params->get('nameblockcustom2', '' );
+$catidlist3       = $params->get('catidlist3', '1' );
+$nameblockcustom3 = $params->get('nameblockcustom3', '' );
+$catidlist4       = $params->get('catidlist4', '1' );
+$nameblockcustom4 = $params->get('nameblockcustom4', '' );
+$catidlist5       = $params->get('catidlist5', '1' );
+$nameblockcustom5 = $params->get('nameblockcustom5', '' );
+$catidlist6       = $params->get('catidlist6', '1' );
+$nameblockcustom6 = $params->get('nameblockcustom6', '' );
+$catidlist7       = $params->get('catidlist7', '1' );
+$nameblockcustom7 = $params->get('nameblockcustom7', '' );
+$catidlist8       = $params->get('catidlist8', '1' );
+$nameblockcustom8 = $params->get('nameblockcustom8', '' );
+$catidlist9       = $params->get('catidlist9', '1' );
+$nameblockcustom9 = $params->get('nameblockcustom9', '' );
+$catidlist10      = $params->get('catidlist10', '1' );
 $nameblockcustom10= $params->get('nameblockcustom10', '' );
 
 
@@ -47,81 +47,81 @@ $nameblockcustom10= $params->get('nameblockcustom10', '' );
 $nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME' );
 
 //bouton add
-$namebutton1 = $params->get('namebutton1', '' );
-$type1 = $params->get('types1', '' );
-$maincat1 = $params->get('catids1', '' );
-$namebutton2 = $params->get('namebutton2', '' );
-$type2 = $params->get('types2', '' );
-$maincat2 = $params->get('catids2', '' );
-$namebutton3 = $params->get('namebutton3', '' );
-$type3 = $params->get('types3', '' );
-$maincat3 = $params->get('catids3', '' );
-$namebutton4 = $params->get('namebutton4', '' );
-$type4 = $params->get('types4', '' );
-$maincat4 = $params->get('catids4', '' );
-$namebutton5 = $params->get('namebutton5', '' );
-$type5 = $params->get('types5', '' );
-$maincat5 = $params->get('catids5', '' );
-$namebutton6 = $params->get('namebutton6', '' );
-$type6 = $params->get('types6', '' );
-$maincat6 = $params->get('catids6', '' );
-$namebutton7 = $params->get('namebutton7', '' );
-$type7 = $params->get('types7', '' );
-$maincat7 = $params->get('catids7', '' );
-$namebutton8 = $params->get('namebutton8', '' );
-$type8 = $params->get('types8', '' );
-$maincat8 = $params->get('catids8', '' );
-$namebutton9 = $params->get('namebutton9', '' );
-$type9 = $params->get('types9', '' );
-$maincat9 = $params->get('catids9', '' );
+$namebutton1  = $params->get('namebutton1', '' );
+$type1        = $params->get('types1', '' );
+$maincat1     = $params->get('catids1', '' );
+$namebutton2  = $params->get('namebutton2', '' );
+$type2        = $params->get('types2', '' );
+$maincat2     = $params->get('catids2', '' );
+$namebutton3  = $params->get('namebutton3', '' );
+$type3        = $params->get('types3', '' );
+$maincat3     = $params->get('catids3', '' );
+$namebutton4  = $params->get('namebutton4', '' );
+$type4        = $params->get('types4', '' );
+$maincat4     = $params->get('catids4', '' );
+$namebutton5  = $params->get('namebutton5', '' );
+$type5        = $params->get('types5', '' );
+$maincat5     = $params->get('catids5', '' );
+$namebutton6  = $params->get('namebutton6', '' );
+$type6        = $params->get('types6', '' );
+$maincat6     = $params->get('catids6', '' );
+$namebutton7  = $params->get('namebutton7', '' );
+$type7        = $params->get('types7', '' );
+$maincat7     = $params->get('catids7', '' );
+$namebutton8  = $params->get('namebutton8', '' );
+$type8        = $params->get('types8', '' );
+$maincat8     = $params->get('catids8', '' );
+$namebutton9  = $params->get('namebutton9', '' );
+$type9        = $params->get('types9', '' );
+$maincat9     = $params->get('catids9', '' );
 $namebutton10 = $params->get('namebutton10', '' );
-$type10 = $params->get('types10', '' );
-$maincat10 = $params->get('catids10', '' );
+$type10       = $params->get('types10', '' );
+$maincat10    = $params->get('catids10', '' );
 
 
 //category filter
-$filtercat1= $params->get('filtercatids1', '' );
-$namecatfilter1= $params->get('namecatfilter1', '' );
-$filtercat2= $params->get('filtercatids2', '' );
-$namecatfilter2= $params->get('namecatfilter2', '' );
-$filtercat3= $params->get('filtercatids3', '' );
-$namecatfilter3= $params->get('namecatfilter3', '' );
-$filtercat4= $params->get('filtercatids4', '' );
-$namecatfilter4= $params->get('namecatfilter4', '' );
-$filtercat5= $params->get('filtercatids5', '' );
-$namecatfilter5= $params->get('namecatfilter5', '' );
-$filtercat6= $params->get('filtercatids6', '' );
-$namecatfilter6= $params->get('namecatfilter6', '' );
-$filtercat7= $params->get('filtercatids7', '' );
-$namecatfilter7= $params->get('namecatfilter7', '' );
-$filtercat8= $params->get('filtercatids8', '' );
-$namecatfilter8= $params->get('namecatfilter8', '' );
-$filtercat9= $params->get('filtercatids9', '' );
-$namecatfilter9= $params->get('namecatfilter9', '' );
-$filtercat10= $params->get('filtercatids10', '' );
+$filtercat1     = $params->get('filtercatids1', '' );
+$namecatfilter1 = $params->get('namecatfilter1', '' );
+$filtercat2     = $params->get('filtercatids2', '' );
+$namecatfilter2 = $params->get('namecatfilter2', '' );
+$filtercat3     = $params->get('filtercatids3', '' );
+$namecatfilter3 = $params->get('namecatfilter3', '' );
+$filtercat4     = $params->get('filtercatids4', '' );
+$namecatfilter4 = $params->get('namecatfilter4', '' );
+$filtercat5     = $params->get('filtercatids5', '' );
+$namecatfilter5 = $params->get('namecatfilter5', '' );
+$filtercat6     = $params->get('filtercatids6', '' );
+$namecatfilter6 = $params->get('namecatfilter6', '' );
+$filtercat7     = $params->get('filtercatids7', '' );
+$namecatfilter7 = $params->get('namecatfilter7', '' );
+$filtercat8     = $params->get('filtercatids8', '' );
+$namecatfilter8 = $params->get('namecatfilter8', '' );
+$filtercat9     = $params->get('filtercatids9', '' );
+$namecatfilter9 = $params->get('namecatfilter9', '' );
+$filtercat10    = $params->get('filtercatids10', '' );
 $namecatfilter10= $params->get('namecatfilter10', '' );
 
 
 //edit special item
-$itemedit1= $params->get('itemid1', '' );
-$nameitemedit1= $params->get('nameitemedit1', '' );
-$itemedit2= $params->get('itemid2', '' );
-$nameitemedit2= $params->get('nameitemedit2', '' );
-$itemedit3= $params->get('itemid3', '' );
-$nameitemedit3= $params->get('nameitemedit3', '' );
-$itemedit4= $params->get('itemid4', '' );
-$nameitemedit4= $params->get('nameitemedit4', '' );
-$itemedit5= $params->get('itemid5', '' );
-$nameitemedit5= $params->get('nameitemedit5', '' );
-$itemedit6= $params->get('itemid6', '' );
-$nameitemedit6= $params->get('nameitemedit6', '' );
-$itemedit7= $params->get('itemid7', '' );
-$nameitemedit7= $params->get('nameitemedit7', '' );
-$itemedit8= $params->get('itemid8', '' );
-$nameitemedit8= $params->get('nameitemedit8', '' );
-$itemedit9= $params->get('itemid9', '' );
-$nameitemedit9= $params->get('nameitemedit9', '' );
-$itemedit10= $params->get('itemid10', '' );
+$itemedit1     = $params->get('itemid1', '' );
+$nameitemedit1 = $params->get('nameitemedit1', '' );
+$itemedit2     = $params->get('itemid2', '' );
+$nameitemedit2 = $params->get('nameitemedit2', '' );
+$itemedit3     = $params->get('itemid3', '' );
+$nameitemedit3 = $params->get('nameitemedit3', '' );
+$itemedit4     = $params->get('itemid4', '' );
+$nameitemedit4 = $params->get('nameitemedit4', '' );
+$itemedit5     = $params->get('itemid5', '' );
+$nameitemedit5 = $params->get('nameitemedit5', '' );
+$itemedit6     = $params->get('itemid6', '' );
+$nameitemedit6 = $params->get('nameitemedit6', '' );
+$itemedit7     = $params->get('itemid7', '' );
+$nameitemedit7 = $params->get('nameitemedit7', '' );
+$itemedit8     = $params->get('itemid8', '' );
+$nameitemedit8 = $params->get('nameitemedit8', '' );
+$itemedit9     = $params->get('itemid9', '' );
+$nameitemedit9 = $params->get('nameitemedit9', '' );
+$itemedit10    = $params->get('itemid10', '' );
 $nameitemedit10= $params->get('nameitemedit10', '' );
 ?>
 
@@ -129,10 +129,10 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab) : ?>
     <div class="action well well-small span13">
 	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;">
-						<button type="button" class="btn btn-default">
-							<i class="icon-small icon-options"></i>
-						</button>
-				</a>
+		<button type="button" class="btn btn-default">
+			<i class="icon-small icon-options"></i>
+		</button>
+	</a>
 	<ul class="nav nav-tabs" role="tablist">
 	<?php if ($displaycustomtab) : ?><li class="active"><a href="#0" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#1" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_CREATE_D); ?></a></li>  <?php endif; ?>
