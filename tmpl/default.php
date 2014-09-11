@@ -441,7 +441,7 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 			<div class="tab-pane" id="2">  
 				<a href="index.php?option=com_flexicontent&view=items">
 					<button type="button" class="btn btn-default btn-lg itemlist">
-					<i class="icon-large icon-file-3"></i><br/> 
+					<i class="icon-large icon-stack"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ITEMLIST' ); ?>
 					</button>
 				</a>
