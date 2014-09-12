@@ -31,6 +31,14 @@ Think to publish it in **`cpanel position`** after installation.
   - trashed in progress
   - user item done
 
+## Crédits
+  - Yannick Berges
+  - Com3elles
+  - Ggppdk for flexicontent
+  - Emmanuel Danan for flexicontent and daily help ;-)
+  - Igcorreia
+
+
 ## Change Log
 
 v0.4
@@ -48,9 +56,3 @@ v0.2
  + adding external CSS
  - cleaning identation
 
-## Crédits
-  - Yannick Berges
-  - Com3elles
-  - Ggppdk for flexicontent
-  - Emmanuel Danan for flexicontent and daily help ;-)
-  - Igcorreia
