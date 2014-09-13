@@ -23,9 +23,10 @@
 		<filename>index.html</filename>
 	<filename>mod_flexiadmin.xml</filename>
 	</files>
-	<languages>
-		<language tag="en-GB">en-GB.mod_flexiadmin.ini</language>
-		<language tag="fr-FR">fr-FR.mod_flexiadmin.ini</language>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_flexiadmin.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_flexiadmin.ini</language>
+		<language tag="pt-PT">pt-PT/fr-FR.mod_flexiadmin.ini</language>
 	</languages>
 	<config>
 		<fields name="params" addfieldpath="/modules/mod_flexicontent/elements">
