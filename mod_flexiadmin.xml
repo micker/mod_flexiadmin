@@ -4,7 +4,7 @@
 	version="3.0" 
 	client="administrator" 
 	method="upgrade">
-	<name>mod_flexiadmin</name>
+	<name>FlexiContent Admin Dashboard</name>
 	<author>Berges Yannick</author>
 	<creationDate>juin 2014</creationDate>
 	<authorEmail>yannick@com3elles.com</authorEmail>
@@ -26,7 +26,7 @@
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.mod_flexiadmin.ini</language>
 		<language tag="fr-FR">fr-FR/fr-FR.mod_flexiadmin.ini</language>
-		<language tag="pt-PT">pt-PT/fr-FR.mod_flexiadmin.ini</language>
+		<language tag="pt-PT">pt-PT/pt-PT.mod_flexiadmin.ini</language>
 	</languages>
 	<config>
 		<fields name="params" addfieldpath="/modules/mod_flexicontent/elements">
@@ -239,10 +239,50 @@
 			
 			</fieldset>
 			<fieldset name="gestion_tab" label="FLEXI_ADMIN_GESTION_TAB" description="FLEXI_ADMIN_GESTION_TAB_DESC">			
-			
+				<field name="hiddebuttonmanageitems" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_MANAGEITEMS"              description="FLEXI_ADMIN_DISPLAYBUTTON_MANAGEITEMS_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+				<field name="hiddebuttonmanagecategories" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBUTTON_BUTTONMANAGECATEGORIES"   description="FLEXI_ADMIN_DISPLAYBUTTON_BUTTONMANAGECATEGORIES_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+
+				<field name="hiddebuttonmanagetags" type="radio" default="1"       label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETAGS"    description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETAGS_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+
+				<field name="hiddebuttonmanageauthors" type="radio" default="1"    label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEAUTHORS" description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEAUTHORS_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+				<field name="hiddebuttonmanagegroups" type="radio" default="1"     label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEGROUPS"  description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEGROUPS_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
 			</fieldset>
 			<fieldset name="administration_tab" label="FLEXI_ADMIN_ADMIN_TAB" description="FLEXI_ADMIN_ADMIN_TAB_DESC">			
-			
+				<field name="hiddebuttonimportcontent" type="radio" default="1"    label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT" description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+				<field name="hiddebuttonstats" type="radio" default="1"            label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS"         description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+				<field name="hiddebuttonindex" type="radio" default="1"            label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX"         description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+							<field name="hiddebuttonmanagefields" type="radio" default="1"     label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS"  description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
+				<field name="hiddebuttonmanagetypes" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES"   description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+				</field>	
 			</fieldset>
 			<fieldset name="advanced">
 				<field

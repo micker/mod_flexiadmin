@@ -138,6 +138,21 @@ $itemedit9     = $params->get('itemid9', '' );
 $nameitemedit9 = $params->get('nameitemedit9', '' );
 $itemedit10    = $params->get('itemid10', '' );
 $nameitemedit10= $params->get('nameitemedit10', '' );
+
+
+//Get Buttom Sections
+$hiddebuttonmanageitems      = $params->get('hiddebuttonmanageitems'     , '1');
+$hiddebuttonmanagecategories = $params->get('hiddebuttonmanagecategories', '1');
+$hiddebuttonmanagetypes      = $params->get('hiddebuttonmanagetypes'     , '1');
+$hiddebuttonmanagetags       = $params->get('hiddebuttonmanagetags'      , '1');
+$hiddebuttonmanagefields     = $params->get('hiddebuttonmanagefields'    , '1');
+$hiddebuttonmanageauthors    = $params->get('hiddebuttonmanageauthors'   , '1');
+$hiddebuttonmanagegroups     = $params->get('hiddebuttonmanagegroups'    , '1');
+$hiddebuttonmanagefiles      = $params->get('hiddebuttonmanagefiles'     , '1');
+$hiddebuttonimportcontent    = $params->get('hiddebuttonimportcontent'   , '1');
+$hiddebuttonstats            = $params->get('hiddebuttonstats'           , '1');
+$hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
+
 ?>
 
 <div class="row-fluid">
@@ -410,12 +425,14 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 						<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
 						</button>
 				</a>
-				<a href="index.php?option=com_flexicontent&view=category">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-list"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_ADDCAT' ); ?>
-					</button>
-				</a>
+					<?php if($hiddebuttonmanagecategories): ?>
+					<a href="index.php?option=com_flexicontent&view=categories">
+						<button type="button" class="btn btn-default btn-lg itemlist">  
+							<i class="icon-large icon-list"></i><br/> 
+							<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
+						</button>
+					</a>
+					<?php endif; ?>
 				<a href="index.php?option=com_flexicontent&view=tag">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-tag"></i><br/> 
@@ -439,82 +456,113 @@ $nameitemedit10= $params->get('nameitemedit10', '' );
 			<?php endif; ?>
 			<?php if ($displaymanagetab) : ?>
 			<div class="tab-pane" id="2">  
-				<a href="index.php?option=com_flexicontent&view=items">
-					<button type="button" class="btn btn-default btn-lg itemlist">
-					<i class="icon-large icon-stack"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_ITEMLIST' ); ?>
-					</button>
-				</a>
+				<?php if($hiddebuttonmanageitems): ?>
+					<a href="index.php?option=com_flexicontent&view=items">
+						<button type="button" class="btn btn-default btn-lg itemlist">
+							<i class="icon-large icon-file-2"></i><br/> 
+							<?php echo JText::_( 'FLEXI_ADMIN_ITEMLIST' ); ?>
+						</button>
+					</a>
+				<?php endif;?>
 				<a href="index.php?option=com_flexicontent&view=categories">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-list"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
 					</button>
 				</a>
-				<a href="index.php?option=com_flexicontent&view=tags">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-tag"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_TAGLIST' ); ?>
-					</button>
-				</a>
-				<a href="index.php?option=com_flexicontent&view=users">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-user"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_AUTHORLIST' ); ?>
-					</button>
-				</a>
-				<a href="index.php?option=com_flexicontent&view=groups">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-users"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_GROUPSLIST' ); ?>
-					</button>
-				</a>
+				<?php if($hiddebuttonmanagetags): ?>
+	<a href="index.php?option=com_flexicontent&view=tags">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-tag"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_TAGLIST' ); ?>
+		</button>
+	</a>
+	<?php endif; ?>
+	<?php if($hiddebuttonmanageauthors): ?>
+	<a href="index.php?option=com_flexicontent&view=users">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-user"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_AUTHORLIST' ); ?>
+		</button>
+	</a>
+	<?php endif; ?>
+	
+	<?php if($hiddebuttonmanagegroups): ?>
+	<a href="index.php?option=com_flexicontent&view=groups">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-users"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_GROUPSLIST' ); ?>
+		</button>
+	</a>
+	<?php endif; ?>
+		
+	<?php if($hiddebuttonmanagefiles): ?>
+	<a href="index.php?option=com_flexicontent&view=filemanager">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-upload"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_FILEMANAGER' ); ?>
+		</button>
+	</a>
+	<?php endif; ?>
+	
 			</div>  
 			<?php endif; ?>
 			<?php if ($displayadmintab) : ?>
 			<div class="tab-pane" id="3"> 
-				<a href="index.php?option=com_flexicontent&view=types">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-book"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_TYPELIST' ); ?>
-					</button>
-				</a>
+					<?php if($hiddebuttonmanagetypes): ?>
+					<a href="index.php?option=com_flexicontent&view=types">
+						<button type="button" class="btn btn-default btn-lg itemlist">  
+							<i class="icon-large icon-book"></i><br/> 
+							<?php echo JText::_( 'FLEXI_ADMIN_TYPELIST' ); ?>
+						</button>
+					</a>
+					<?php endif; ?>
 				<a href="index.php?option=com_flexicontent&view=type">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-book"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDTYPE' ); ?>
 					</button>
 				</a>			
+
+				<?php if($hiddebuttonmanagefields): ?>
 				<a href="index.php?option=com_flexicontent&view=fields">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-stack"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_FIELDLIST' ); ?>
+						<i class="icon-large icon-stack"></i><br/> 
+						<?php echo JText::_( 'FLEXI_ADMIN_FIELDLIST' ); ?>
 					</button>
 				</a>
+				<?php endif; ?>
+				
 				<a href="index.php?option=com_flexicontent&view=field">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-stack"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDFIELD' ); ?>
 					</button>
 				</a>
-				<a href="index.php?option=com_flexicontent&view=import">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-loop"></i> <br/>
-					<?php echo JText::_( 'FLEXI_ADMIN_IMPORT' ); ?>
-					</button>
-				</a>	
-				<a href="index.php?option=com_flexicontent&view=stats">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-pie"></i> <br/>
-					<?php echo JText::_( 'FLEXI_ADMIN_STATS' ); ?>
-					</button>
-				</a>
-				<a href="index.php?option=com_flexicontent&view=search">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-						<i class="icon-large icon-search"></i><br/> 
-						<?php echo JText::_( 'FLEXI_ADMIN_SEARCH' ); ?>
-					</button>
-				</a>
+	<?php if($hiddebuttonimportcontent): ?>
+	<a href="index.php?option=com_flexicontent&view=import">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-loop"></i> <br/>
+			<?php echo JText::_( 'FLEXI_ADMIN_IMPORT' ); ?>
+		</button>
+	</a>
+	<?php endif; ?>
+	<?php if($hiddebuttonstats): ?>
+	<a href="index.php?option=com_flexicontent&view=stats">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-pie"></i> <br/>
+			<?php echo JText::_( 'FLEXI_ADMIN_STATS' ); ?>
+		</button>
+	</a>
+	<?php endif; ?>
+	<?php if($hiddebuttonindex): ?>
+	<a href="index.php?option=com_flexicontent&view=search">
+		<button type="button" class="btn btn-default btn-lg itemlist">  
+			<i class="icon-large icon-search"></i><br/> 
+			<?php echo JText::_( 'FLEXI_ADMIN_SEARCH' ); ?>
+		</button>
+	</a>
+    <?php endif; ?>
 				<a href="index.php?option=com_flexicontent">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 						<i class="icon-large icon-options"></i><br/> 
