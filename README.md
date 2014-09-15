@@ -34,8 +34,8 @@ Think to publish it in **`cpanel position`** after installation.
 ## Crédits
   - Yannick Berges
   - Com3elles
-  - Ggppdk for flexicontent
-  - Emmanuel Danan for flexicontent and daily help ;-)
+  - Ggppdk for flexicontent and daily help ;-)
+  - Emmanuel Danan for flexicontent 
   - Igcorreia
 
 
