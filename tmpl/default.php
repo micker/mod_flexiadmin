@@ -34,6 +34,7 @@ $displaycustomtab= $params->get('displaycustomtab', '1' );
 $displaycreattab = $params->get('displaycreattab', '1' );
 $displaymanagetab= $params->get('displaymanagetab', '1' );
 $displayadmintab = $params->get('displayadmintab', '1' );
+$displayconfigmodule= $params->get('displayconfigmodule', '1' );
 
 //id catlist
 $catidlist1       = $params->get('catidlist1', '1' );
@@ -152,17 +153,26 @@ $hiddebuttonmanagefiles      = $params->get('hiddebuttonmanagefiles'     , '1');
 $hiddebuttonimportcontent    = $params->get('hiddebuttonimportcontent'   , '1');
 $hiddebuttonstats            = $params->get('hiddebuttonstats'           , '1');
 $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
-
+$hiddebuttonaddtypes         = $params->get('hiddebuttonaddtypes'        , '1');
+$hiddebuttonaddfields        = $params->get('hiddebuttonaddfields'       , '1');
+$hiddebuttonadmin            = $params->get('hiddebuttonadmin'           , '1');
+$hiddebuttonadditem          = $params->get('hiddebuttonadditem'         , '1');
+$hiddebuttonaddcategory      = $params->get('hiddebuttonaddcategory'     , '1');
+$hiddebuttonaddtag           = $params->get('hiddebuttonaddtag'          , '1');
+$hiddebuttonadduser          = $params->get('hiddebuttonadduser'         , '1');
+$hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1');
 ?>
 
 <div class="row-fluid">
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab) : ?>
     <div class="action well well-small span13">
+	<?php if ($displayconfigmodule) : ?>
 	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;">
 		<button type="button" class="btn btn-default">
 			<i class="icon-small icon-options"></i>
 		</button>
 	</a>
+	<?php endif; ?>
 	<ul class="nav nav-tabs" role="tablist">
 	<?php if ($displaycustomtab) : ?><li class="active"><a href="#0" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#1" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_CREATE_D); ?></a></li>  <?php endif; ?>
@@ -417,6 +427,7 @@ $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
 			<?php endif; ?>
 			<?php if ($displaycreattab) : ?>
 			<div class="tab-pane" id="1">  
+			<?php if($hiddebuttonadditem): ?>
 				<a href="index.php?option=com_flexicontent&view=types&format=raw" 
 							class="modal" 
 							rel="{size: {x: 700, y: 300}, closable: true}">
@@ -425,32 +436,39 @@ $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
 						<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
 						</button>
 				</a>
-					<?php if($hiddebuttonmanagecategories): ?>
-					<a href="index.php?option=com_flexicontent&view=categories">
-						<button type="button" class="btn btn-default btn-lg itemlist">  
-							<i class="icon-large icon-list"></i><br/> 
-							<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
-						</button>
-					</a>
-					<?php endif; ?>
+				<?php endif; ?>
+				<?php if($hiddebuttonaddcategory): ?>
+				<a href="index.php?option=com_flexicontent&view=category">
+					<button type="button" class="btn btn-default btn-lg itemlist">  
+					<i class="icon-large icon-list"></i><br/> 
+					<?php echo JText::_( 'FLEXI_ADMIN_ADDCATEGORY' ); ?>
+					</button>
+				</a>
+				<?php endif; ?>
+				<?php if($hiddebuttonaddtag): ?>
 				<a href="index.php?option=com_flexicontent&view=tag">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-tag"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDTAG' ); ?>
 					</button>
 				</a>
+				<?php endif; ?>
+				<?php if($hiddebuttonadduser): ?>
 				<a href="index.php?option=com_flexicontent&task=users.add">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-user"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDAUTHOR' ); ?>
 					</button>
 				</a>
+				<?php endif; ?>
+				<?php if($hiddebuttonaddgroup): ?>
 				<a href="index.php?option=com_flexicontent&view=groups.add">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-users"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDGROUPS' ); ?>
 					</button>
 				</a>
+				<?php endif; ?>
 				
 			</div>  
 			<?php endif; ?>
@@ -464,12 +482,14 @@ $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
 						</button>
 					</a>
 				<?php endif;?>
-				<a href="index.php?option=com_flexicontent&view=categories">
-					<button type="button" class="btn btn-default btn-lg itemlist">  
-					<i class="icon-large icon-list"></i><br/> 
-					<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
-					</button>
-				</a>
+				<?php if($hiddebuttonmanagecategories): ?>
+					<a href="index.php?option=com_flexicontent&view=categories">
+						<button type="button" class="btn btn-default btn-lg itemlist">  
+							<i class="icon-large icon-list"></i><br/> 
+							<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
+						</button>
+					</a>
+					<?php endif; ?>
 				<?php if($hiddebuttonmanagetags): ?>
 	<a href="index.php?option=com_flexicontent&view=tags">
 		<button type="button" class="btn btn-default btn-lg itemlist">  
@@ -517,13 +537,14 @@ $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
 						</button>
 					</a>
 					<?php endif; ?>
+				<?php if($hiddebuttonaddtypes): ?>
 				<a href="index.php?option=com_flexicontent&view=type">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-book"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDTYPE' ); ?>
 					</button>
 				</a>			
-
+				<?php endif; ?>
 				<?php if($hiddebuttonmanagefields): ?>
 				<a href="index.php?option=com_flexicontent&view=fields">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
@@ -532,13 +553,14 @@ $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
 					</button>
 				</a>
 				<?php endif; ?>
-				
+				<?php if($hiddebuttonaddfields): ?>
 				<a href="index.php?option=com_flexicontent&view=field">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 					<i class="icon-large icon-stack"></i><br/> 
 					<?php echo JText::_( 'FLEXI_ADMIN_ADDFIELD' ); ?>
 					</button>
 				</a>
+				<?php endif; ?>
 	<?php if($hiddebuttonimportcontent): ?>
 	<a href="index.php?option=com_flexicontent&view=import">
 		<button type="button" class="btn btn-default btn-lg itemlist">  
@@ -563,12 +585,14 @@ $hiddebuttonindex            = $params->get('hiddebuttonindex'           , '1');
 		</button>
 	</a>
     <?php endif; ?>
+	<?php if($hiddebuttonadmin): ?>
 				<a href="index.php?option=com_flexicontent">
 					<button type="button" class="btn btn-default btn-lg itemlist">  
 						<i class="icon-large icon-options"></i><br/> 
 						<?php echo JText::_( 'FLEXI_ADMIN_GEN' ); ?>
 					</button>
 				</a>
+				<?php endif; ?>
 			</div> 
 			<?php endif; ?>			
 		</div>    

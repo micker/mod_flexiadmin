@@ -7,3 +7,18 @@ button.itemlist {
   color:#000;
   font-weight:bold;
 }
+.revised.well.well-small.span12 {
+  margin-left: 0;
+}
+.youritems.well.well-small.span12 {
+  margin-left: 0;
+}
+.trashed.well.well-small.span12 {
+  margin-left: 0;
+}
+.inprogress.well.well-small.span12 {
+  margin-left: 0px;
+}
+.inprogress.well.well-small.span6 {
+  margin-left: 0;
+}
