@@ -41,6 +41,11 @@ Think to publish it in **`cpanel position`** after installation.
 
 ## Change Log
 
+v0.4.3
+ + adding config for all button
+ + adding button to disable config button in module
+ + adding more language string
+
 v0.4
  + adding custom block (you can create your block with X last article with specific categorie)
  + adding customer block (block with user items)
