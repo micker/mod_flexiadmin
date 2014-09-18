@@ -123,7 +123,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist2 );
 		$itemsCustomlist2 = $db->loadObjectList();
 		foreach ($itemsCustomlist2 as &$itemCustomlist2) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist2->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist2->id);
 		}
 		return $itemsCustomlist2;
 	}
@@ -135,7 +135,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist3 );
 		$itemsCustomlist3 = $db->loadObjectList();
 		foreach ($itemsCustomlist3 as &$itemCustomlist3) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist3->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist3->id);
 		}
 		return $itemsCustomlist3;
 	}
@@ -147,7 +147,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist4 );
 		$itemsCustomlist4 = $db->loadObjectList();
 		foreach ($itemsCustomlist4 as &$itemCustomlist4) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist4->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist4->id);
 		}
 		return $itemsCustomlist4;
 	}
@@ -159,7 +159,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist5 );
 		$itemsCustomlist5 = $db->loadObjectList();
 		foreach ($itemsCustomlist5 as &$itemCustomlist5) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist5->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist5->id);
 		}
 		return $itemsCustomlist5;
 	}
@@ -171,7 +171,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist6 );
 		$itemsCustomlist6 = $db->loadObjectList();
 		foreach ($itemsCustomlist6 as &$itemCustomlist6) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist6->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist6->id);
 		}
 		return $itemsCustomlist6;
 	}
@@ -183,7 +183,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist7 );
 		$itemsCustomlist7 = $db->loadObjectList();
 		foreach ($itemsCustomlist7 as &$itemCustomlist7) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist7->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist7->id);
 		}
 		return $itemsCustomlist7;
 	}
@@ -195,7 +195,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist8 );
 		$itemsCustomlist8 = $db->loadObjectList();
 		foreach ($itemsCustomlist8 as &$itemCustomlist8) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist8->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist8->id);
 		}
 		return $itemsCustomlist8;
 	}
@@ -207,7 +207,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist9 );
 		$itemsCustomlist9 = $db->loadObjectList();
 		foreach ($itemsCustomlist9 as &$itemCustomlist9) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist9->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist9->id);
 		}
 		return $itemsCustomlist9;
 	}
@@ -219,7 +219,7 @@ abstract class modFlexiadminHelper
 		$db->setQuery( $queryCustomlist10 );
 		$itemsCustomlist10 = $db->loadObjectList();
 		foreach ($itemsCustomlist10 as &$itemCustomlist10) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			$itemCustomlist10->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist10->id);
 		}
 		return $itemsCustomlist10;
 	}
