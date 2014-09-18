@@ -192,7 +192,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 				</a>
 			<?php endif; ?>
 			<?php if ($namebutton2) : ?>
-				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type3;?>&maincat=<?php echo $maincat2; ?>" >
+				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type2;?>&maincat=<?php echo $maincat2; ?>" >
 						<button type="button" class="btn btn-default btn-lg itemlist">
 							<i class="icon-large icon-file-plus"></i><br/> 
 						<?php echo $namebutton2; ?>
