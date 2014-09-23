@@ -37,6 +37,7 @@ abstract class modFlexiadminHelper
 		$queryRevised = 'SELECT c.id, c.version, c.title,catid, c.created, c.created_by, c.modified, c.modified_by,cr.name, MAX(fv.version_id) FROM #__flexicontent_items_tmp as c LEFT JOIN #__flexicontent_versions AS fv ON c.id=fv.item_id LEFT JOIN #__users AS cr ON cr.id = c.created_by LEFT JOIN #__users AS mr ON mr.id = c.modified_by WHERE c.state = -5 OR c.state = 1 GROUP BY fv.item_id HAVING c.version<>MAX(fv.version_id) ORDER BY c.modified DESC LIMIT '. (int) $params->get('count');		$db->setQuery( $queryRevised );
 		$db->setQuery( $queryRevised );
 		$itemsRevised = $db->loadObjectList();
+		//print_r ($itemsRevised) ;
 		foreach ($itemsRevised as &$itemRevised) {
 			$itemRevised->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemRevised->id);
 		}

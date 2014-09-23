@@ -630,7 +630,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						</div>				
 						<div class="span3">
 							<span class="small">
-							<i class="icon-calendar"></i> <?php echo JHtml::date($itemPending->modified, 'n M Y'); ?>
+							<i class="icon-calendar"></i> <?php echo JHtml::date($itemPending->modified, 'd M Y'); ?>
 							</span>
 						</div>				
 					</div>			
@@ -665,7 +665,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						</div>				
 						<div class="span3">
 							<span class="small"> 
-							<i class="icon-calendar"></i> <?php echo JHtml::date($itemRevised->modified, 'n M Y'); ?>
+							<i class="icon-calendar"></i> <?php echo JHtml::date($itemRevised->modified, 'd M Y'); ?>
 							</span>
 						</div>				
 					</div>			
@@ -699,7 +699,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 							</span>				
 						</div>				
 						<div class="span3">
-							<span class="small"> <i class="icon-calendar"></i> <?php echo JHtml::date($itemInprogress->modified, 'n M Y'); ?></span>
+							<span class="small"> <i class="icon-calendar"></i> <?php echo JHtml::date($itemInprogress->modified, 'd M Y'); ?></span>
 						</div>
 					</div>			
 				</div>		
@@ -734,7 +734,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 				</div>			
 				<div class="span3">
 					<span class="small">
-					<i class="icon-calendar"></i> <?php echo JHtml::date($itemDraft->modified, 'n M Y'); ?>
+					<i class="icon-calendar"></i> <?php echo JHtml::date($itemDraft->modified, 'd M Y'); ?>
 					</span>
 				</div>		
 			</div>	
@@ -773,7 +773,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					<div class="span3">
 					<?php echo $itemUseritem->state;?>
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemUseritem->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemUseritem->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -824,7 +824,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist1->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist1->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -862,7 +862,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist2->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist2->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -900,7 +900,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist3->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist3->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -938,7 +938,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist4->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist4->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -976,7 +976,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist5->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist5->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -1014,7 +1014,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist6->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist6->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -1052,7 +1052,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist7->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist7->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -1090,7 +1090,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist8->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist8->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -1128,7 +1128,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist9->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist9->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
@@ -1166,7 +1166,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 					</div>			
 					<div class="span3">
 					<span class="small"> 
-						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist10->modified, 'n M Y'); ?>
+						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist10->modified, 'd M Y'); ?>
 					</span>
 					</div>		
 				</div>		
