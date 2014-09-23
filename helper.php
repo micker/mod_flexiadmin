@@ -22,7 +22,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryPending = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE state = -3 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryPending = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE state = -3 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryPending );
 		$itemsPending = $db->loadObjectList();
 		foreach ($itemsPending as &$itemPending) {
@@ -34,7 +34,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryRevised = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE state = -5 OR state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryRevised = 'SELECT c.id, c.version, c.title,catid, c.created, c.created_by, c.modified, c.modified_by,cr.name, MAX(fv.version_id) FROM #__flexicontent_items_tmp as c LEFT JOIN #__flexicontent_versions AS fv ON c.id=fv.item_id LEFT JOIN #__users AS cr ON cr.id = c.created_by LEFT JOIN #__users AS mr ON mr.id = c.modified_by WHERE c.state = -5 OR c.state = 1 GROUP BY fv.item_id HAVING c.version<>MAX(fv.version_id) ORDER BY c.modified DESC LIMIT '. (int) $params->get('count');		$db->setQuery( $queryRevised );
 		$db->setQuery( $queryRevised );
 		$itemsRevised = $db->loadObjectList();
 		foreach ($itemsRevised as &$itemRevised) {
@@ -46,7 +46,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryInprogress = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE state = -5 ORDER BY modified DESC LIMIT '. (int) $params->get('count'); 
+		$queryInprogress = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE state = -5 ORDER BY modified DESC LIMIT '. (int) $params->get('count'); 
 		$db->setQuery( $queryInprogress );
 		$itemsInprogress = $db->loadObjectList();
 		foreach ($itemsInprogress as &$itemInprogress) {
@@ -58,7 +58,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryDraft = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE state = -4 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryDraft = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE state = -4 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryDraft );
 		$itemsDraft = $db->loadObjectList();
 		foreach ($itemsDraft as &$itemDraft) {
@@ -72,7 +72,7 @@ abstract class modFlexiadminHelper
 		$userid = $user->id;
 		//recupére la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryUseritem = 'SELECT id, title, catid, modified, modified_by, modified, modified_by, state FROM #__content WHERE modified_by = '.$user->id.' ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryUseritem = 'SELECT id, title, catid, created, created_by, modified, modified_by, state FROM #__content WHERE modified_by = '.$user->id.' ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryUseritem );
 		$itemsUseritem = $db->loadObjectList();		
 		foreach ($itemsUseritem as &$itemUseritem) {
@@ -107,9 +107,10 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist1').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist1').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist );
 		$itemsCustomlist = $db->loadObjectList();
+		//print_r ($itemsCustomlist) ;
 		foreach ($itemsCustomlist as &$itemCustomlist) {
 			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
 		}
@@ -119,7 +120,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist2 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist2').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist2 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist2').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist2 );
 		$itemsCustomlist2 = $db->loadObjectList();
 		foreach ($itemsCustomlist2 as &$itemCustomlist2) {
@@ -131,7 +132,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist3 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist3').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist3 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist3').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist3 );
 		$itemsCustomlist3 = $db->loadObjectList();
 		foreach ($itemsCustomlist3 as &$itemCustomlist3) {
@@ -143,7 +144,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist4 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist4').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist4 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist4').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist4 );
 		$itemsCustomlist4 = $db->loadObjectList();
 		foreach ($itemsCustomlist4 as &$itemCustomlist4) {
@@ -155,7 +156,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist5 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist5').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist5 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist5').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist5 );
 		$itemsCustomlist5 = $db->loadObjectList();
 		foreach ($itemsCustomlist5 as &$itemCustomlist5) {
@@ -167,7 +168,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist6 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist6').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist6 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist6').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist6 );
 		$itemsCustomlist6 = $db->loadObjectList();
 		foreach ($itemsCustomlist6 as &$itemCustomlist6) {
@@ -179,7 +180,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist7 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist7').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist7 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist7').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist7 );
 		$itemsCustomlist7 = $db->loadObjectList();
 		foreach ($itemsCustomlist7 as &$itemCustomlist7) {
@@ -191,7 +192,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist8 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist8').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist8 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist8').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist8 );
 		$itemsCustomlist8 = $db->loadObjectList();
 		foreach ($itemsCustomlist8 as &$itemCustomlist8) {
@@ -203,7 +204,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist9 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist9').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist9 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist9').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist9 );
 		$itemsCustomlist9 = $db->loadObjectList();
 		foreach ($itemsCustomlist9 as &$itemCustomlist9) {
@@ -215,7 +216,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist10 = 'SELECT id, title, catid, modified, modified_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist10').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist10 = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE catid='.(int) $params->get('catidlist10').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist10 );
 		$itemsCustomlist10 = $db->loadObjectList();
 		foreach ($itemsCustomlist10 as &$itemCustomlist10) {

@@ -625,7 +625,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 							<span class="small">	
 							<i class="icon-user"></i> 
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemPending->modified_by; ?>"><?php echo $itemPending->modified_by;?> </small>
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemPending->modified_by; ?>"><?php echo $itemPending->modified_by;?> </small>
 							</span>				
 						</div>				
 						<div class="span3">
@@ -659,9 +659,8 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 							<i class="icon-large icon-edit"></i></a>					
 						</div>					
 						<div class="span3" style="margin-left: 0 !important;">					
-							<span class="small">
-<?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemRevised->modified_by; ?>">&nbsp;<i class="icon-user"></i></small>											
+							<span class="small">			
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemRevised->name; ?>"><i class="icon-user"></i> <?php echo $itemRevised->name; ?></small>											
 							</span>				
 						</div>				
 						<div class="span3">
@@ -696,7 +695,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 							<span class="small">					 
 							<i class="icon-user"></i> 
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemInprogress->modified_by; ?>"><?php echo $itemInprogress->modified_by;?> </small>
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemInprogress->name; ?>"><?php echo $itemInprogress->name;?> </small>
 							</span>				
 						</div>				
 						<div class="span3">
@@ -730,7 +729,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 				<div class="span3" style="margin-left: 0 !important;">		
 					<span class="small">
 <?php //TODO display user name in tooltip ?>
-					<i class="icon-user"></i><small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemDraft->modified_by; ?>"><?php echo $itemDraft->modified_by;?> </small> 			
+					<i class="icon-user"></i><small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemDraft->name; ?>"><?php echo $itemDraft->name;?> </small> 			
 					</span>			
 				</div>			
 				<div class="span3">
@@ -768,7 +767,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemUseritem->modified_by; ?>"><?php echo $itemUseritem->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $user->name; ?>"><?php echo $user->name; ?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -820,7 +819,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist1->modified_by; ?>"><?php echo $itemCustomlist1->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist1->name; ?>"><?php echo $itemCustomlist1->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -858,7 +857,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist2->modified_by; ?>"><?php echo $itemCustomlist2->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist2->name; ?>"><?php echo $itemCustomlist2->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -896,7 +895,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist3->modified_by; ?>"><?php echo $itemCustomlist3->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist3->name; ?>"><?php echo $itemCustomlist3->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -934,7 +933,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist4->modified_by; ?>"><?php echo $itemCustomlist4->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist4->name; ?>"><?php echo $itemCustomlist4->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -972,7 +971,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist5->modified_by; ?>"><?php echo $itemCustomlist5->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist5->name; ?>"><?php echo $itemCustomlist5->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -1010,7 +1009,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist6->modified_by; ?>"><?php echo $itemCustomlist6->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist6->name; ?>"><?php echo $itemCustomlist6->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -1048,7 +1047,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist7->modified_by; ?>"><?php echo $itemCustomlist7->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist7->name; ?>"><?php echo $itemCustomlist7->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -1086,7 +1085,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist8->modified_by; ?>"><?php echo $itemCustomlist8->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist8->name; ?>"><?php echo $itemCustomlist8->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -1124,7 +1123,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist9->modified_by; ?>"><?php echo $itemCustomlist9->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist9->name; ?>"><?php echo $itemCustomlist9->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
@@ -1162,7 +1161,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_modified_BY')." ". $itemCustomlist10->modified_by; ?>"><?php echo $itemCustomlist10->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist10->modified_by; ?>"><?php echo $itemCustomlist10->modified_by;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">
