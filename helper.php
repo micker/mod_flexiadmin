@@ -73,7 +73,7 @@ abstract class modFlexiadminHelper
 		$userid = $user->id;
 		//recupére la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryUseritem = 'SELECT id, title, catid, created, created_by, modified, modified_by, state FROM #__content WHERE modified_by = '.$user->id.' ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryUseritem = 'SELECT id, title, catid, created, created_by, modified, modified_by, state FROM #__content WHERE created_by = '.$user->id.' ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryUseritem );
 		$itemsUseritem = $db->loadObjectList();		
 		foreach ($itemsUseritem as &$itemUseritem) {
