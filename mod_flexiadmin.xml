@@ -12,7 +12,7 @@
 	<version>0.4.0</version>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description><![CDATA[FLEXI ADMIN MODULE need to be publish in cpanel position Don't forget to <a href="index.php?option=com_modules&filter_client_id=1&filter_module=mod_flexiadmin">do it!</a>]]> </description>
+	<description><![CDATA[FLEXI ADMIN MODULE need to be publish in cpanel position§If you want to display in sidebar, choose sidebar template and choose icon position in Isis Don't forget to <button class="btn btn-primary"><a href="index.php?option=com_modules&filter_client_id=1&filter_module=mod_flexiadmin">do it!</a></button>]]> </description>
 	<files>
 		<filename module="mod_flexiadmin">mod_flexiadmin.php</filename>
 		<folder>tmpl</folder>
