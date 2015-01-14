@@ -12,7 +12,7 @@
 	<version>0.4.0</version>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description><![CDATA[FLEXI ADMIN MODULE need to be publish in cpanel position§If you want to display in sidebar, choose sidebar template and choose icon position in Isis Don't forget to <button class="btn btn-primary"><a href="index.php?option=com_modules&filter_client_id=1&filter_module=mod_flexiadmin">do it!</a></button>]]> </description>
+	<description>FLEXI_ADMIN_INTRO</description>
 	<files>
 		<filename module="mod_flexiadmin">mod_flexiadmin.php</filename>
 		<folder>tmpl</folder>
@@ -55,7 +55,12 @@
 				<option	value="6">2</option>				
 				<option	value="4">3</option>						
 									
-			</field>	
+			</field>
+			<field name="" type="separator" default="FLEXI_ADMIN_SIDEBAR_OPTIONS" level="level1" />			
+			<field name="tabmodsidebar" type="radio" default="1" label="FLEXI_ADMIN_SIDEBAR_TABS_MOD" description="FLEXI_ADMIN_SIDEBAR_TABS_MOD_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>				
 			<field name="" type="separator" default="FLEXI_ADMIN_TABS" level="level1" />			
 			<field name="displaycustomtab" type="radio" default="1" label="FLEXI_ADMIN_TABS_CUSTOM" description="FLEXI_ADMIN_TABS_CUSTOM_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
@@ -331,13 +336,16 @@
 			</fieldset>
 			<fieldset name="advanced">
 				<field
-					name="layout" type="modulelayout"
-					label="Type de mise en page"
-					description="Utiliser la mise en page souhaitée" />
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
 				<field
-					name="moduleclass_sfx" type="text"
-					label="Suffixe de classe CSS"
-					description="Suffixe à ajouter à la classe CSS du module pour le personnaliser" />
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 			</fieldset>
 		</fields>
 	</config>
