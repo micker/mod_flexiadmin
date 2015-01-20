@@ -42,8 +42,7 @@ Think to publish it in **`cpanel position`** after installation.
 ## Change Log
 
 v0.4.5
-
- +adding template sidebar for icon position
+ + adding template sidebar for icon position
 
 
 v0.4.3
