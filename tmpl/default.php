@@ -175,9 +175,9 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 	<?php endif; ?>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	<?php if ($displaycustomtab) : ?><li class=""><a href="#custom<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
-	<?php if ($displaycreattab) : ?><li class=""><a href="#create<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_CREATE_D); ?></a></li>  <?php endif; ?>
-	<?php if ($displaymanagetab) : ?><li class=""><a href="#manage<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_MANAGE_D); ?></a></li>  <?php endif; ?>
-	<?php if ($displayadmintab) : ?><li class=""><a href="#admin<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_(FLEXI_ADMIN_TAB_ADMIN_D); ?></a></li>  <?php endif; ?>
+	<?php if ($displaycreattab) : ?><li class=""><a href="#create<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_CREATE_D'); ?></a></li>  <?php endif; ?>
+	<?php if ($displaymanagetab) : ?><li class=""><a href="#manage<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_MANAGE_D'); ?></a></li>  <?php endif; ?>
+	<?php if ($displayadmintab) : ?><li class=""><a href="#admin<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_ADMIN_D'); ?></a></li>  <?php endif; ?>
 	</ul>  
 	
 		<div class="tab-content">  
