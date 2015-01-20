@@ -41,6 +41,10 @@ Think to publish it in **`cpanel position`** after installation.
 
 ## Change Log
 
+v0.4.5
+ +adding template sidebar for icon position
+
+
 v0.4.3
  + adding config for all button
  + adding button to disable config button in module
