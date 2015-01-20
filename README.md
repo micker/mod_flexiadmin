@@ -43,6 +43,7 @@ Think to publish it in **`cpanel position`** after installation.
 
 v0.4.5
  + adding template sidebar for icon position
+ + multi module in same page (ex use cpanel for item list display and icon position for link creation)
 
 
 v0.4.3
