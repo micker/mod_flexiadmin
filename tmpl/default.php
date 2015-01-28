@@ -601,10 +601,9 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 </div>
 	
-<div class="row-fluid">
-<div class="row-fluid">
+
 <?php if ($hiddepending) : ?>
-    <div class="pending well well-small span<?php echo $column; ?> ">
+    <div class="block pending well well-small span<?php echo $column; ?> ">
 	<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-down"></i> <?php echo JText::_( 'FLEXI_ADMIN_PENDING' ); ?></h3>
 
 	<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=PE'; ?>
@@ -642,7 +641,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 	
 	<?php if ($hidderevised) : ?>
 
-	<div class="revised well well-small span<?php echo $column; ?> ">
+	<div class="block revised well well-small span<?php echo $column; ?> ">
 		<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-up"></i> <?php echo JText::_( 'FLEXI_ADMIN_REVISED' ); ?></h3>	
 		<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=RV'; ?>
 		<div style='text-align:right;'>
@@ -675,7 +674,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 	</div>	
 <?php endif; ?>
 <?php if ($hiddeinprogess) : ?>
-	<div class="inprogress well well-small span<?php echo $column; ?> ">	
+	<div class="block inprogress well well-small span<?php echo $column; ?> ">	
 		<h3 class="module-title nav-header"><i class="icon-large icon-checkin"></i> <?php echo JText::_( 'FLEXI_ADMIN_INPROGRESS' ); ?></h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=IP'; ?>
 		<div style='text-align:right;'>
@@ -707,10 +706,8 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 			</div>	
 	</div>	
 <?php endif; ?>
-</div>
-<div class="row-fluid">
 <?php if ($hiddedraft) : ?>
-	<div class="draft well well-small span<?php echo $column; ?>">
+	<div class="block draft well well-small span<?php echo $column; ?>">
 	<h3 class="module-title nav-header"><i class="icon-large icon-file"></i> <?php echo JText::_( 'FLEXI_ADMIN_DRAFT' ); ?></h3>
 	<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
 		<div style='text-align:right;'>
@@ -744,7 +741,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($hiddeyouritem) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<?php $user = JFactory::getUser();		?>
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
@@ -783,7 +780,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($hiddetrashed) : ?>
-	<div class="trashed well well-small span<?php echo $column; ?>">	
+	<div class="block trashed well well-small span<?php echo $column; ?>">	
 	<h3 class="module-title nav-header"><i class="icon-large icon-trash"></i> 
 	<?php echo JText::_( 'FLEXI_ADMIN_TRASHED' ); ?></h3>	
 	<?php //TODO filtrage trashed	
@@ -796,7 +793,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 	</div>	
 <?php endif; ?>
 <?php if ($nameblockcustom1) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom1); ?> : </h3>	
@@ -834,7 +831,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom2) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom2); ?> : </h3>	
@@ -872,7 +869,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom3) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom3); ?> : </h3>	
@@ -910,7 +907,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom4) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom4); ?> : </h3>	
@@ -948,7 +945,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom5) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom5); ?> : </h3>	
@@ -986,7 +983,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom6) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom6); ?> : </h3>	
@@ -1024,7 +1021,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom7) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom7); ?> : </h3>	
@@ -1100,7 +1097,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom9) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom9); ?> : </h3>	
@@ -1138,7 +1135,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 <?php endif; ?>
 <?php if ($nameblockcustom10) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom10); ?> : </h3>	

@@ -3,6 +3,11 @@ button.itemlist {
   max-width: 116px;
   min-height: 66px;
 }
+.block {
+min-height:155px !important;
+margin-left: -1px !important;
+    margin-right: 15px !important;
+}
 .adminlink{
   color:#000;
   font-weight:bold;
