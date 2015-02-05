@@ -1156,7 +1156,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						<span class="small">			
 							<i class="icon-user"></i> 	
 <?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist10->modified_by; ?>"><?php echo $itemCustomlist10->modified_by;?> </small> 	
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist10->name; ?>"><?php echo $itemCustomlist10->name;?> </small> 	
 						</span>			
 					</div>			
 					<div class="span3">

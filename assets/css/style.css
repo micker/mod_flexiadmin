@@ -12,6 +12,9 @@ margin-left: -1px !important;
   color:#000;
   font-weight:bold;
 }
+.pending.well.well-small.span12 {
+  margin-left: 0;
+}
 .revised.well.well-small.span12 {
   margin-left: 0;
 }
@@ -22,7 +25,7 @@ margin-left: -1px !important;
   margin-left: 0;
 }
 .inprogress.well.well-small.span12 {
-  margin-left: 0px;
+  margin-left: 0;
 }
 .inprogress.well.well-small.span6 {
   margin-left: 0;
