@@ -95,7 +95,7 @@ abstract class modFlexiadminHelper
 					$itemUseritem->state=JText::_('FLEXI_PENDING');
 				break;
 				case -4:
-					$itemUseritem->state=JText::_('FLEXI_TO_WRITE');
+					$itemUseritem->state=JText::_('FLEXI_DRAFT');
 				break;
 				case -5:
 					$itemUseritem->state=JText::_('FLEXI_IN_PROGRESS');
@@ -217,7 +217,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryCustomlist10 = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.idt WHERE catid='.(int) $params->get('catidlist10').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryCustomlist10 = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE catid='.(int) $params->get('catidlist10').' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryCustomlist10 );
 		$itemsCustomlist10 = $db->loadObjectList();
 		foreach ($itemsCustomlist10 as &$itemCustomlist10) {
