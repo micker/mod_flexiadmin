@@ -622,9 +622,8 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						</div>					
 						<div class="span3" style="margin-left: 0 !important;">
 							<span class="small">	
-							<i class="icon-user"></i> 
-<?php //TODO display user name in tooltip ?>							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemPending->modified_by; ?>"><?php echo $itemPending->modified_by;?> </small>
+							<i class="icon-user"></i> 						
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemPending->name; ?>"><?php echo $itemPending->name;?> </small>
 							</span>				
 						</div>				
 						<div class="span3">
@@ -692,8 +691,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 						</div>					
 						<div class="span3" style="margin-left: 0 !important;">					
 							<span class="small">					 
-							<i class="icon-user"></i> 
-<?php //TODO display user name in tooltip ?>							
+							<i class="icon-user"></i> 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemInprogress->name; ?>"><?php echo $itemInprogress->name;?> </small>
 							</span>				
 						</div>				
@@ -1177,11 +1175,11 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 </div>
 
 
-<script>
-   $(function () {
-      $('#myTab li:eq(0) a').tab('show');
-   });
-</script>s
+<script  type="text/javascript">
+jQuery(document).ready(function($){
+$('#myTab a:first').tab('show');
+});
+</script>
 
 
 

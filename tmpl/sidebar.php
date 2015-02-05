@@ -175,7 +175,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 	<?php endif; ?>
 	
 	<?php if ($tabmodsidebar) : ?>
-	<ul class="nav nav-tabs" role="tablist">
+	<ul class="nav nav-tabs" role="tablist" id="myTab2">
 	<?php if ($displaycustomtab) : ?><li class="active"><a href="#custom<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#create<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_CREATE_D'); ?></a></li>  <?php endif; ?>
 	<?php if ($displaymanagetab) : ?><li class=""><a href="#manage<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_MANAGE_D'); ?></a></li>  <?php endif; ?>
@@ -712,6 +712,13 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 
 	<?php endif; ?>
 </div>
+
+<script  type="text/javascript">
+jQuery(document).ready(function($){
+$('#myTab2 a:first').tab('show');
+});
+</script>
+
 
 
 

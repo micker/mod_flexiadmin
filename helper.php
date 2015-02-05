@@ -22,7 +22,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryPending = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE state = -3 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryPending = 'SELECT a.id, a.title, b.name , a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content  AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE state = -3 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryPending );
 		$itemsPending = $db->loadObjectList();
 		foreach ($itemsPending as &$itemPending) {
@@ -47,7 +47,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryInprogress = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE state = -5 ORDER BY modified DESC LIMIT '. (int) $params->get('count'); 
+		$queryInprogress = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE state = -5 ORDER BY modified DESC LIMIT '. (int) $params->get('count'); 
 		$db->setQuery( $queryInprogress );
 		$itemsInprogress = $db->loadObjectList();
 		foreach ($itemsInprogress as &$itemInprogress) {
@@ -59,7 +59,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryDraft = 'SELECT id, title, catid, created, created_by, modified, modified_by FROM #__content WHERE state = -4 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$queryDraft = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE state = -4 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryDraft );
 		$itemsDraft = $db->loadObjectList();
 		foreach ($itemsDraft as &$itemDraft) {
