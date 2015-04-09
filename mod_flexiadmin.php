@@ -16,6 +16,12 @@
 
 //blocage des accés directs sur ce script
 defined('_JEXEC') or die('Accés interdit');
+jimport( 'joomla.application.component.controller' );
+// Check if component is installed
+if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
+   echo 'This modules requires component FLEXIcontent!';
+   return;
+}
 // Inclut les méthodes du script de soutien
 require_once dirname(__FILE__).'/helper.php';
 $listPending      = modFlexiadminHelper::getPending($params);
