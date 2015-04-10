@@ -1,4 +1,19 @@
 <?php
+/**
+ * @version 0.6.0 stable $Id: default.php yannick berges
+ * @package Joomla
+ * @subpackage FLEXIcontent
+ * @copyright (C) 2015 Berges Yannick - www.com3elles.com
+ * @license GNU/GPL v2
+
+ * special thanks to ggppdk and emmanuel dannan for flexicontent
+ * special thanks to my master Marc Studer
+
+ * FLEXIadmin module is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ **/
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
  
