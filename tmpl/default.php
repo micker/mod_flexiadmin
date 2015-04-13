@@ -37,6 +37,7 @@ $displaymanagetab= $params->get('displaymanagetab', '1' );
 $displayadmintab = $params->get('displayadmintab', '1' );
 $displayfreetab  = $params->get('displayfreetab', '1' );
 $displayconfigmodule= $params->get('displayconfigmodule', '1' );
+$forceheightblock= $params->get('forceheightblock', '' );
 
 //id catlist
 $catidlist1       = $params->get('catidlist1', '1' );
@@ -802,7 +803,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-			<div class="row-striped">		
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 				<?php foreach ($listPending as $itemPending) : ?>			
 				<div class="row-fluid">				
 					<div class="span13">					
@@ -838,7 +839,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-			<div class="row-striped">		
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 				<?php foreach ($listRevised as $itemRevised) : ?>			
 				<div class="row-fluid">
 					<div class="span13">					
@@ -871,7 +872,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-			<div class="row-striped">				
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">				
 				<?php foreach ($listInprogress as $itemInprogress) : ?>			
 				<div class="row-fluid">				
 					<div class="span13">					
@@ -903,7 +904,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-	<div class="row-striped">		
+	<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 		<?php foreach ($listDraft as $itemDraft) : ?>
 		<div class="row-fluid">		
 			<div class="span13">	
@@ -940,7 +941,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">		
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 			<?php foreach ($listUseritem as $itemUseritem) : ?>		
 			<div class="row-fluid">		
 				<div class="span13">			
@@ -991,7 +992,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist1 as $itemCustomlist1) : ?>		
 			<div class="row-fluid">		
@@ -1029,7 +1030,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist2 as $itemCustomlist2) : ?>		
 			<div class="row-fluid">		
@@ -1067,7 +1068,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist3 as $itemCustomlist3) : ?>		
 			<div class="row-fluid">		
@@ -1105,7 +1106,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist4 as $itemCustomlist4) : ?>		
 			<div class="row-fluid">		
@@ -1143,7 +1144,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist5 as $itemCustomlist5) : ?>		
 			<div class="row-fluid">		
@@ -1181,7 +1182,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist6 as $itemCustomlist6) : ?>		
 			<div class="row-fluid">		
@@ -1219,7 +1220,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist7 as $itemCustomlist7) : ?>		
 			<div class="row-fluid">		
@@ -1257,7 +1258,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist8 as $itemCustomlist8) : ?>		
 			<div class="row-fluid">		
@@ -1295,7 +1296,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist9 as $itemCustomlist9) : ?>		
 			<div class="row-fluid">		
@@ -1333,7 +1334,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );		
 		echo "</a></div>";	?>		
-		<div class="row-striped">	
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
 			<?php foreach ($listCustomlist10 as $itemCustomlist10) : ?>		
 			<div class="row-fluid">		

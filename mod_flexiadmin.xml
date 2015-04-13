@@ -9,8 +9,8 @@
 	<creationDate>juin 2014</creationDate>
 	<authorEmail>yannick@com3elles.com</authorEmail>
 	<authorUrl>www.com3elles.com</authorUrl>
-	<version>0.4.0</version>
-	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
+	<version>0.6.0</version>
+	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<description>FLEXI_ADMIN_INTRO</description>
 	<files>
@@ -108,6 +108,8 @@
 				<option value="0">FLEXI_NO</option>					
 				<option value="1">FLEXI_YES</option>				
 			</field>
+			<field name="forceheightblock" type="text" default="" size="50" label="FLEXI_ADMIN_BLOCKHEIGHT" description="FLEXI_ADMIN_BLOCKHEIGHT_DESC"/>
+			
 			<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM_DESC" level="level1" />
 			<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON1" level="level2"/>
 					<field name="displblock1" label="" type="radio" default="0" class="btn-group btn-group-yesno">
