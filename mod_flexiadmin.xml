@@ -516,6 +516,8 @@
 			</fieldset>
 			<fieldset name="free_tab" label="FLEXI_ADMIN_FREE_TAB" description="FLEXI_ADMIN_FREE_TAB_DESC" level="level1">
 			<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_1" level="level2" />
+			
+			<field name="freenametab" type="text"  default="FLEXI_ADMIN_FREE_TAB_NAME" label="FLEXI_ADMIN_FREE_TAB_NAME_2" description="FLEXI_ADMIN_FREE_TAB_NAME_2_DESC" />
 			<field name="dispf1" label="" type="radio" default="0" class="btn-group btn-group-yesno">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
