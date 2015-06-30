@@ -23,6 +23,57 @@ JHTML::_('behavior.modal');
 $document = JFactory::getDocument();
 $document->addStyleSheet("./modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
 
+//extrafield
+require_once (JPATH_ADMINISTRATOR.DS.'components/com_flexicontent/defineconstants.php');
+JTable::addIncludePath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_flexicontent'.DS.'tables');
+require_once("../components/com_flexicontent/classes/flexicontent.fields.php");
+require_once("../components/com_flexicontent/classes/flexicontent.helper.php");
+require_once("../components/com_flexicontent/helpers/permission.php");
+require_once("../components/com_flexicontent/models/".FLEXI_ITEMVIEW.".php");
+
+$itemmodel_name = FLEXI_J16GE ? 'FlexicontentModelItem' : 'FlexicontentModelItems';
+$itemmodel = new $itemmodel_name();
+
+$extrafieldlist1    = $params->get('extrafieldlist1', '' );
+$extrafieldlist1 = explode( ',', $extrafieldlist1 );
+$extraFieldlist1= $extrafieldlist1;
+
+$extrafieldlist2    = $params->get('extrafieldlist2', '' );
+$extrafieldlist2 = explode( ',', $extrafieldlist2 );
+$extraFieldlist2= $extrafieldlist2;
+
+$extrafieldlist3    = $params->get('extrafieldlist3', '' );
+$extrafieldlist3 = explode( ',', $extrafieldlist3 );
+$extraFieldlist3= $extrafieldlist3;
+
+$extrafieldlist4    = $params->get('extrafieldlist4', '' );
+$extrafieldlist4 = explode( ',', $extrafieldlist4 );
+$extraFieldlist4= $extrafieldlist4;
+
+$extrafieldlist5    = $params->get('extrafieldlist5', '' );
+$extrafieldlist5 = explode( ',', $extrafieldlist5 );
+$extraFieldlist5= $extrafieldlist5;
+
+$extrafieldlist6    = $params->get('extrafieldlist6', '' );
+$extrafieldlist6 = explode( ',', $extrafieldlist6 );
+$extraFieldlist6= $extrafieldlist6;
+ 
+$extrafieldlist7    = $params->get('extrafieldlist7', '' );
+$extrafieldlist7 = explode( ',', $extrafieldlist7 );
+$extraFieldlist7= $extrafieldlist7;
+
+$extrafieldlist8    = $params->get('extrafieldlist8', '' );
+$extrafieldlist8 = explode( ',', $extrafieldlist8 );
+$extraFieldlist8= $extrafieldlist8;
+
+$extrafieldlist9    = $params->get('extrafieldlist9', '' );
+$extrafieldlist9 = explode( ',', $extrafieldlist9 );
+$extraFieldlist9= $extrafieldlist9;
+
+$extrafieldlist10    = $params->get('extrafieldlist10', '' );
+$extrafieldlist10 = explode( ',', $extrafieldlist10 );
+$extraFieldlist10= $extrafieldlist10;
+
 //module config
 $hiddepending    = $params->get('hiddepending', '1' );
 $hidderevised    = $params->get('hidderevised', '1' );
@@ -43,33 +94,62 @@ $forceheightblock= $params->get('forceheightblock', '' );
 $catidlist1       = $params->get('catidlist1', '1' );
 $nameblockcustom1 = $params->get('nameblockcustom1', '' );
 $displblock1	  = $params->get('displblock1', '' );
+$displdateblock1  = $params->get('displdateblock1', '1' );
+$displautblock1   = $params->get('displautblock1', '' );
+
 $catidlist2       = $params->get('catidlist2', '1' );
 $nameblockcustom2 = $params->get('nameblockcustom2', '' );
 $displblock2 	  = $params->get('displblock2', '' );
+$displdateblock2  = $params->get('displdateblock2', '1' );
+$displautblock2   = $params->get('displautblock2', '1' );
+
 $catidlist3       = $params->get('catidlist3', '1' );
 $nameblockcustom3 = $params->get('nameblockcustom3', '' );
 $displblock3 	  = $params->get('displblock3', '' );
+$displdateblock3  = $params->get('displdateblock3', '1' );
+$displautblock3   = $params->get('displautblock3', '1' );
+
 $catidlist4       = $params->get('catidlist4', '1' );
 $nameblockcustom4 = $params->get('nameblockcustom4', '' );
 $displblock4      = $params->get('displblock4', '' );
+$displdateblock4  = $params->get('displdateblock4', '1' );
+$displautblock4   = $params->get('displautblock4', '1' );
+
 $catidlist5       = $params->get('catidlist5', '1' );
 $nameblockcustom5 = $params->get('nameblockcustom5', '' );
 $displblock5      = $params->get('displblock5', '' );
+$displdateblock5  = $params->get('displdateblock5', '1' );
+$displautblock5   = $params->get('displautblock5', '1' );
+
 $catidlist6       = $params->get('catidlist6', '1' );
 $nameblockcustom6 = $params->get('nameblockcustom6', '' );
 $displblock6 	  = $params->get('displblock6', '' );
+$displdateblock6  = $params->get('displdateblock6', '1' );
+$displautblock6   = $params->get('displautblock6', '1' );
+
 $catidlist7       = $params->get('catidlist7', '1' );
 $nameblockcustom7 = $params->get('nameblockcustom7', '' );
 $displblock7      = $params->get('displblock7', '' );
+$displdateblock7  = $params->get('displdateblock7', '1' );
+$displautblock7   = $params->get('displautblock7', '1' );
+
 $catidlist8       = $params->get('catidlist8', '1' );
 $nameblockcustom8 = $params->get('nameblockcustom8', '' );
 $displblock8      = $params->get('displblock8', '' );
+$displdateblock8  = $params->get('displdateblock8', '1' );
+$displautblock8   = $params->get('displautblock8', '1' );
+
 $catidlist9       = $params->get('catidlist9', '1' );
 $nameblockcustom9 = $params->get('nameblockcustom9', '' );
 $displblock9      = $params->get('displblock9', '' );
+$displdateblock9  = $params->get('displdateblock9', '1' );
+$displautblock9   = $params->get('displautblock9', '1' );
+
 $catidlist10      = $params->get('catidlist10', '1' );
 $nameblockcustom10= $params->get('nameblockcustom10', '' );
 $displblock10 	  = $params->get('displblock10', '' );
+$displdateblock10 = $params->get('displdateblock10', '1' );
+$displautblock10  = $params->get('displautblock10', '1' );
 
 
 //customtab
@@ -994,28 +1074,71 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist1 as $itemCustomlist1) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+				
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist1= $listCustomlist1[0];
+						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist1 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist1 as $itemCustomlist1) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist1->link; ?>"><?php echo $itemCustomlist1->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock1) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist1->name; ?>"><?php echo $itemCustomlist1->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist1 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock1) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist1->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1032,28 +1155,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist2 as $itemCustomlist2) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist2= $listCustomlist2[0];
+						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist2 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist2 as $itemCustomlist2) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist2->link; ?>"><?php echo $itemCustomlist2->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock2) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist2->name; ?>"><?php echo $itemCustomlist2->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist2 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock2) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist2->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1070,28 +1235,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist3 as $itemCustomlist3) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock3) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist3= $listCustomlist3[0];
+						$item = $itemmodel->getItem($itemCustomlist3->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist3 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock3) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist3 as $itemCustomlist3) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist3->link; ?>"><?php echo $itemCustomlist3->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock3) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist3->name; ?>"><?php echo $itemCustomlist3->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist3->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist3 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock3) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist3->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1108,29 +1315,71 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist4 as $itemCustomlist4) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+					<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock4) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist4= $listCustomlist4[0];
+						$item = $itemmodel->getItem($itemCustomlist4->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist4 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock4) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist4 as $itemCustomlist3) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist4->link; ?>"><?php echo $itemCustomlist4->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock4) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist4->name; ?>"><?php echo $itemCustomlist4->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist4->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist4 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock4) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist4->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
-	</div>	
+							</tbody>
+			</table>
+            </div>	
 </div>
 <?php endif; ?>
 <?php if ($displblock5) : ?>
@@ -1146,28 +1395,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist5 as $itemCustomlist5) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+					<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock5) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist5= $listCustomlist5[0];
+						$item = $itemmodel->getItem($itemCustomlist5->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist5 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock5) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist5 as $itemCustomlist5) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist5->link; ?>"><?php echo $itemCustomlist5->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock5) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist5->name; ?>"><?php echo $itemCustomlist5->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist5->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist5 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock5) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist5->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1184,28 +1475,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist6 as $itemCustomlist6) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+					<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock6) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist6= $listCustomlist6[0];
+						$item = $itemmodel->getItem($itemCustomlist6->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist6 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock6) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist6 as $itemCustomlist6) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist6->link; ?>"><?php echo $itemCustomlist6->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock6) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist6->name; ?>"><?php echo $itemCustomlist6->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist6->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist6 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock6) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist6->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1222,28 +1555,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist7 as $itemCustomlist7) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+					<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock7) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist7= $listCustomlist7[0];
+						$item = $itemmodel->getItem($itemCustomlist7->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist7 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock7) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist7 as $itemCustomlist7) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist7->link; ?>"><?php echo $itemCustomlist7->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock7) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist7->name; ?>"><?php echo $itemCustomlist7->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist7->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist7 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock7) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist7->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1260,28 +1635,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist8 as $itemCustomlist8) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
-						<a href="<?php echo $itemCustomlist8->link; ?>"><?php echo $itemCustomlist8->title; ?>	
+					<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock8) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist8= $listCustomlist8[0];
+						$item = $itemmodel->getItem($itemCustomlist8->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist8 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock8) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist8 as $itemCustomlist8) : ?>	
+					<tr>
+					<td>					
+						<a href="<?php echo $itemCustomlist3->link; ?>"><?php echo $itemCustomlist3->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock8) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist8->name; ?>"><?php echo $itemCustomlist8->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist8->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist8 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock8) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist8->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1298,28 +1715,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist9 as $itemCustomlist9) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+					<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock9) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist9= $listCustomlist9[0];
+						$item = $itemmodel->getItem($itemCustomlist9->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist9 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock9) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist9 as $itemCustomlist9) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist9->link; ?>"><?php echo $itemCustomlist9->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock9) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist9->name; ?>"><?php echo $itemCustomlist9->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist9->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist9 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock9) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist9->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
@@ -1336,28 +1795,70 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		echo "</a></div>";	?>		
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
 	
-			<?php foreach ($listCustomlist10 as $itemCustomlist10) : ?>		
-			<div class="row-fluid">		
-				<div class="span13">			
-					<div class="span6">					
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+					<?php if ($displautblock10) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+					<?php 
+                         $itemCustomlist10= $listCustomlist10[0];
+						$item = $itemmodel->getItem($itemCustomlist10->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+						FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist10 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$label= $item->fields[$extrafield]->label;
+							echo '<th>';
+							echo $label;
+							echo '</th>';
+						}
+					?>
+					<?php if ($displdateblock10) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+					</tr>
+				</thead>
+				
+				<tbody>	
+				<?php foreach ($listCustomlist10 as $itemCustomlist10) : ?>	
+					<tr>
+					<td>					
 						<a href="<?php echo $itemCustomlist10->link; ?>"><?php echo $itemCustomlist10->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
+					</td>				
+					<?php if ($displautblock10) : ?><td>		
 						<span class="small">			
 							<i class="icon-user"></i> 	
 							
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist10->name; ?>"><?php echo $itemCustomlist10->name;?> </small> 	
 						</span>			
-					</div>			
-					<div class="span3">
+					</td>	
+					<?php endif; ?>		
+					
+					<?php 	
+						$item = $itemmodel->getItem($itemCustomlist10->id, $check_view_access=false);
+						$items = array(&$item);
+						  // Get fields values from the DB, 
+                        //print_r ($extraFieldlist1);
+						//FlexicontentFields::getFields($items);
+						foreach ($extraFieldlist10 as $extrafield){
+							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							$value= $item->fields[$extrafield]->display;
+							echo '<td>';
+							echo $value;
+							echo '</td>';
+						}
+					?>
+					<?php if ($displdateblock3) : ?>
+					<td>
 					<span class="small"> 
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist10->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</td>	
+					<?php endif; ?>		
+				</tr>				
 			<?php endforeach; ?>
+							</tbody>
+			</table>
 	</div>	
 </div>
 <?php endif; ?>
