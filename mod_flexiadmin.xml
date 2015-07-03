@@ -9,7 +9,7 @@
 	<creationDate>juin 2014</creationDate>
 	<authorEmail>yannick@com3elles.com</authorEmail>
 	<authorUrl>www.com3elles.com</authorUrl>
-	<version>0.6.0</version>
+	<version>0.7.0</version>
 	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<description>FLEXI_ADMIN_INTRO</description>
@@ -712,4 +712,8 @@
 			</fieldset>
 		</fields>
 	</config>
+	
+	<updateservers>
+        <server type="extension" priority="1" name="FLEXI admin update">http://com3elles.com/mod_flexiadmin/mod_flexiadmin_update.xml</server>
+    </updateservers>
 </extension>
