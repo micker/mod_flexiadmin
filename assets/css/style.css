@@ -34,3 +34,6 @@ margin-left: -1px !important;
 .inprogress.well.well-small.span6 {
   margin-left: 0;
 }
+h2.nav-header {
+    border-bottom: 1px solid #E3E3E3;
+}

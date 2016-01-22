@@ -9,7 +9,7 @@
 	<creationDate>juin 2014</creationDate>
 	<authorEmail>yannick@com3elles.com</authorEmail>
 	<authorUrl>www.com3elles.com</authorUrl>
-	<version>0.7.1</version>
+	<version>0.8.0</version>
 	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<description>FLEXI_ADMIN_INTRO</description>
@@ -34,7 +34,12 @@
 				<field name="displayconfigmodule" type="radio" default="1" label="FLEXI_ADMIN_DISPLAY_CONFIG_MODULE" description="FLEXI_ADMIN_DISPLAY_CONFIG_MODULE_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
-			</field>			
+			</field>
+                <field name="displaycustomtext" type="radio" default="0" label="FLEXI_ADMIN_DISPLAY_CUSTOMTEXT" description="FLEXI_ADMIN_DISPLAY_CUSTOMTEXT_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+                <field name="customtext" label ="FLEXI_ADMIN_CUSTOMTEXT" description="FLEXI_ADMIN_CUSTOMTEXT_DESC" type="editor" width="200px" height="100px"  buttons="false" filter="safehtml" showon="displaycustomtext:1"/>
 			<field name="" type="separator" default="FLEXI_ADMIN_NB_ITEM_DISPLAY" level="level1" />				
 			<field 					
 				name="count" type="list"					

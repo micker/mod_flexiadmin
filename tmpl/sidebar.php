@@ -1,6 +1,6 @@
 <?php
 /**
-* @version 0.6.0 stable $Id: default.php yannick berges
+* @version 0.8.0 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
 * @copyright (C) 2015 Berges Yannick - www.com3elles.com
@@ -804,7 +804,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<?php if ($displayfreetab) : ?>
 			<div class="tab-pane " id="free<?php echo $module->id;?>"> 
 			
-			<ul class="j-links-group nav nav-list">
+			<ul class="j-links-group nav nav-list" style="margin-top:20px;">
 			<?php if ($tabmodsidebar == 0) : ?>
 			<li><h2 class="nav-header"><?php echo JText::_($freenametab); ?></h2></li>
 			<?php endif; ?>
@@ -828,7 +828,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<li>
 						<a href="<?php echo $linkbutton3; ?>" >
 									<i class="icon-large <?php echo $iconbutton3; ?>"></i>
-								</button>
+								<?php echo $freebutton3; ?>
 						</a>
 						</li>
 			<?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 /**
-* @version 0.6.0 stable $Id: default.php yannick berges
+* @version 0.8.0 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
 * @copyright (C) 2015 Berges Yannick - www.com3elles.com
@@ -89,6 +89,8 @@ $displayadmintab = $params->get('displayadmintab', '1' );
 $displayfreetab  = $params->get('displayfreetab', '1' );
 $displayconfigmodule= $params->get('displayconfigmodule', '1' );
 $forceheightblock= $params->get('forceheightblock', '' );
+$displaycustomtext = $params->get('displaycustomtext','');
+$customtext=$params->get('customtext','');
 
 //id catlist
 $catidlist1       = $params->get('catidlist1', '1' );
@@ -342,15 +344,22 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 
 
 <div class="row-fluid">
-<?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
-    <div class="action well well-small span13">
-	<?php if ($displayconfigmodule) : ?>
-	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;">
+    <?php if ($displayconfigmodule) : ?>
+	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;margin-top: -30px;">
 		<button type="button" class="btn btn-default">
 			<i class="icon-small icon-options"></i>
 		</button>
 	</a>
 	<?php endif; ?>
+            <?php if ($displaycustomtext) : ?>
+                <div class="modulemessage span12">
+                    <?php echo $customtext; ?>
+                </div>
+    <?php endif; ?>
+
+<?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
+    <div class="action well well-small span12">
+        
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	<?php if ($displaycustomtab) : ?><li class=""><a href="#custom<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#create<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_CREATE_D'); ?></a></li>  <?php endif; ?>
@@ -886,7 +895,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 				<?php foreach ($listPending as $itemPending) : ?>			
 				<div class="row-fluid">				
-					<div class="span13">					
+					<div class="span12">					
 						<div class="span6">					
 							<a href="<?php echo $itemPending->link; ?>"><?php echo $itemPending->title; ?>	
 							<i class="icon-large icon-edit"></i></a>					
@@ -922,7 +931,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 				<?php foreach ($listRevised as $itemRevised) : ?>			
 				<div class="row-fluid">
-					<div class="span13">					
+					<div class="span12">					
 						<div class="span6">							
 							<a href="<?php echo $itemRevised->link; ?>"><?php echo $itemRevised->title; ?>					
 							<i class="icon-large icon-edit"></i></a>					
@@ -955,7 +964,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">				
 				<?php foreach ($listInprogress as $itemInprogress) : ?>			
 				<div class="row-fluid">				
-					<div class="span13">					
+					<div class="span12">					
 						<div class="span6">							
 							<a href="<?php echo $itemInprogress->link; ?>"><?php echo $itemInprogress->title; ?>					
 							<i class="icon-large icon-edit"></i></a>					
@@ -987,7 +996,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 		<?php foreach ($listDraft as $itemDraft) : ?>
 		<div class="row-fluid">		
-			<div class="span13">	
+			<div class="span12">	
 				<div class="span6">		
 					<a href="<?php echo $itemDraft->link; ?>"><?php echo $itemDraft->title; ?>	
 					<i class="icon-large icon-edit"></i></a>		
@@ -1024,7 +1033,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
 			<?php foreach ($listUseritem as $itemUseritem) : ?>		
 			<div class="row-fluid">		
-				<div class="span13">			
+				<div class="span12">			
 					<div class="span6">					
 						<a href="<?php echo $itemUseritem->link; ?>"><?php echo $itemUseritem->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
@@ -1623,7 +1632,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 </div>
 <?php endif; ?>
 <?php if ($displblock8) : ?>
-	<div class="youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">	
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i> 
 		<?php echo JText::_($nameblockcustom8); ?> : </h3>	
@@ -1662,7 +1671,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<?php foreach ($listCustomlist8 as $itemCustomlist8) : ?>	
 					<tr>
 					<td>					
-						<a href="<?php echo $itemCustomlist3->link; ?>"><?php echo $itemCustomlist3->title; ?>	
+						<a href="<?php echo $itemCustomlist8->link; ?>"><?php echo $itemCustomlist8->title; ?>	
 						<i class="icon-large icon-edit"></i></a>		
 					</td>				
 					<?php if ($displautblock8) : ?><td>		
