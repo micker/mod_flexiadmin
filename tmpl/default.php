@@ -21,7 +21,7 @@ defined('_JEXEC') or die('Accés interdit');
 JHtml::_('bootstrap.tooltip');
 JHTML::_('behavior.modal');
 $document = JFactory::getDocument();
-$document->addStyleSheet("./modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
+$document->addStyleSheet("/modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
 
 //extrafield
 require_once (JPATH_ADMINISTRATOR.DS.'components/com_flexicontent/defineconstants.php');
@@ -343,7 +343,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 ?>
 
 
-<div class="row-fluid">
+<div class="row-fluid flexiad">
     <?php if ($displayconfigmodule) : ?>
 	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;margin-top: -30px;">
 		<button type="button" class="btn btn-default">
@@ -1095,12 +1095,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
 							echo '</th>';
+						}
 						}
 					?>
 					<?php if ($displdateblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
@@ -1129,12 +1131,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock1) : ?>
@@ -1174,7 +1178,9 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
+						  
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist2 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
@@ -1182,6 +1188,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 							echo $label;
 							echo '</th>';
 						}
+						  }
 					?>
 					<?php if ($displdateblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
@@ -1209,12 +1216,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist2 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock2) : ?>
@@ -1255,12 +1264,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist3 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
 							echo '</th>';
+						}
 						}
 					?>
 					<?php if ($displdateblock3) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
@@ -1289,12 +1300,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist3 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock3) : ?>
@@ -1334,7 +1347,9 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$item = $itemmodel->getItem($itemCustomlist4->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
+						  
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist4 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
@@ -1342,6 +1357,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 							echo $label;
 							echo '</th>';
 						}
+						  }
 					?>
 					<?php if ($displdateblock4) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
@@ -1369,12 +1385,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist4 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock4) : ?>
@@ -1414,7 +1432,9 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$item = $itemmodel->getItem($itemCustomlist5->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
+						  
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist5 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
@@ -1422,6 +1442,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 							echo $label;
 							echo '</th>';
 						}
+						  }
 					?>
 					<?php if ($displdateblock5) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
@@ -1449,12 +1470,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist5 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock5) : ?>
@@ -1494,7 +1517,9 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$item = $itemmodel->getItem($itemCustomlist6->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
+						  
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist6 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
@@ -1502,6 +1527,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 							echo $label;
 							echo '</th>';
 						}
+						  }
 					?>
 					<?php if ($displdateblock6) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
@@ -1529,12 +1555,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist6 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock6) : ?>
@@ -1575,12 +1603,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist7 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
 							echo '</th>';
+						}
 						}
 					?>
 					<?php if ($displdateblock7) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
@@ -1609,12 +1639,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist7 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock7) : ?>
@@ -1654,13 +1686,16 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$item = $itemmodel->getItem($itemCustomlist8->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
+						  
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist8 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
 							echo '</th>';
+						}
 						}
 					?>
 					<?php if ($displdateblock8) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
@@ -1689,12 +1724,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist8 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock8) : ?>
@@ -1735,12 +1772,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist9 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
 							echo '</th>';
+						}
 						}
 					?>
 					<?php if ($displdateblock9) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
@@ -1769,12 +1808,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						if(isset($extrafield)) { 
 						foreach ($extraFieldlist9 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock9) : ?>
@@ -1815,12 +1856,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
+						 if(isset($extrafield)) { 
 						foreach ($extraFieldlist10 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
 							echo '</th>';
+						}
 						}
 					?>
 					<?php if ($displdateblock10) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
@@ -1849,12 +1892,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
+						 if(isset($extrafield)) { 
 						foreach ($extraFieldlist10 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+						}
 						}
 					?>
 					<?php if ($displdateblock3) : ?>
