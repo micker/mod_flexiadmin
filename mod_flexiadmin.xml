@@ -140,8 +140,7 @@
 
 					<field name="nameblockcustom2" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM2" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock2:1"/>
 					<field name="catidlist2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock2:1"/>
-					<field name="extrafieldlist2" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock2:1"/>
-                <!--<field name="extrafieldlist2" type="filters" multiple="false" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock2:1" /> -->
+                <field name="extrafieldlist2" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock2:1" />
 					<field name="displautblock2" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock2:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -157,7 +156,7 @@
 					</field>
 					<field name="nameblockcustom3" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM3" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock3:1"/>
 					<field name="catidlist3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock3:1" />
-					<field name="extrafieldlist3" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock3:1"/>
+					<field name="extrafieldlist3" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock3:1" />
 					<field name="displautblock3" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock3:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -174,7 +173,7 @@
 				
 					<field name="nameblockcustom4" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM4" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock4:1"/>
 					<field name="catidlist4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock4:1"/>
-					<field name="extrafieldlist4" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock4:1"/>
+					<field name="extrafieldlist4" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock4:1" />
 					<field name="displautblock4" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock4:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -191,7 +190,7 @@
 				
 					<field name="nameblockcustom5" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM5" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock5:1"/>
 					<field name="catidlist5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock5:1" />
-					<field name="extrafieldlist5" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock5:1"/>
+					<field name="extrafieldlist5" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock5:1" />
 					<field name="displautblock5" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock5:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -208,7 +207,7 @@
 
 					<field name="nameblockcustom6" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM6" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock6:1"/>
 					<field name="catidlist6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock6:1"/>
-					<field name="extrafieldlist6" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock6:1"/>
+					<field name="extrafieldlist6" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock6:1" />
                                 <field name="displautblock6" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock6:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -225,7 +224,7 @@
 
 					<field name="nameblockcustom7" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM7" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock7:1"/>
 					<field name="catidlist7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock7:1"/>
-					<field name="extrafieldlist7" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock7:1"/>
+					<field name="extrafieldlist7" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock7:1" />
                                 <field name="displautblock7" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock7:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -242,7 +241,7 @@
 
 					<field name="nameblockcustom8" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM8" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock8:1"/>
 					<field name="catidlist8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock8:1"/>
-					<field name="extrafieldlist8" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock8:1"/>
+					<field name="extrafieldlist8" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock8:1" />
                                 <field name="displautblock8" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock8:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -259,7 +258,7 @@
 
 					<field name="nameblockcustom9" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM9" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock9:1"/>
 					<field name="catidlist9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock9:1"/>
-					<field name="extrafieldlist9" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock9:1"/>
+					<field name="extrafieldlist9" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock9:1" />
                                 <field name="displautblock9" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock9:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
@@ -276,7 +275,7 @@
 				
 					<field name="nameblockcustom10" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM10" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock10:1"/>
 					<field name="catidlist10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock10:1"/>
-					<field name="extrafieldlist10" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock10:1"/>
+<field name="extrafieldlist10" type="filters" multiple="false" fieldnameasvalue="1" default="" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock10:1" />
 					<field name="displautblock10" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock10:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>

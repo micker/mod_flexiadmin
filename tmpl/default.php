@@ -1171,12 +1171,13 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displautblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
 					<?php 
                          $itemCustomlist2= $listCustomlist2[0];
+                        //echo $listCustomlist2[0];
 						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
 						foreach ($extraFieldlist2 as $extrafield){
-							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							//FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo $label;
@@ -1204,10 +1205,10 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php endif; ?>		
 					
 					<?php 	
-						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
+						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
-                        //print_r ($extraFieldlist1);
+                        //print_r ($extraFieldlist2);
 						//FlexicontentFields::getFields($items);
 						foreach ($extraFieldlist2 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
