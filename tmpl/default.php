@@ -1,9 +1,9 @@
 <?php
 /**
-* @version 0.8.0 stable $Id: default.php yannick berges
+* @version 0.9.0 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
-* @copyright (C) 2015 Berges Yannick - www.com3elles.com
+* @copyright (C) 2016 Berges Yannick - www.com3elles.com
 * @license GNU/GPL v2
 
 * special thanks to ggppdk and emmanuel dannan for flexicontent
