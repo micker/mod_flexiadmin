@@ -37,3 +37,7 @@ margin-left: -1px !important;
 h2.nav-header {
     border-bottom: 1px solid #E3E3E3;
 }
+/** max size for image **/
+.youritems img.fc_field_image {
+    max-height: 80px !important;
+}
