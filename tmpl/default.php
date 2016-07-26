@@ -358,7 +358,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
     <?php endif; ?>
 
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
-    <div class="action well well-small span12">
+    <div class="action span12">
         
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	<?php if ($displaycustomtab) : ?><li class=""><a href="#custom<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
