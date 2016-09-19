@@ -123,7 +123,7 @@
 					</field>
 					<field name="nameblockcustom1" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM1" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock1:1"/>
 					<field name="catidlist1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock1:1"/>
-					<field name="extrafieldlist1" type="text" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock1:1"/>
+					<field name="extrafieldlist1" type="filters" multiple="false" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock1:1"/>
 					<field name="displautblock1" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock1:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>

@@ -36,43 +36,43 @@ $itemmodel = new $itemmodel_name();
 
 $extrafieldlist1    = $params->get('extrafieldlist1', '' );
 $extrafieldlist1 = explode( ',', $extrafieldlist1 );
-$extraFieldlist1= $extrafieldlist1;
+$extrafieldlist1 = $extrafieldlist1;
 
 $extrafieldlist2    = $params->get('extrafieldlist2', '' );
 $extrafieldlist2 = explode( ',', $extrafieldlist2 );
-$extraFieldlist2= $extrafieldlist2;
+$extrafieldlist2 = $extrafieldlist2;
 
 $extrafieldlist3    = $params->get('extrafieldlist3', '' );
 $extrafieldlist3 = explode( ',', $extrafieldlist3 );
-$extraFieldlist3= $extrafieldlist3;
+$extrafieldlist3 = $extrafieldlist3;
 
 $extrafieldlist4    = $params->get('extrafieldlist4', '' );
 $extrafieldlist4 = explode( ',', $extrafieldlist4 );
-$extraFieldlist4= $extrafieldlist4;
+$extraFieldlist4 = $extrafieldlist4;
 
 $extrafieldlist5    = $params->get('extrafieldlist5', '' );
 $extrafieldlist5 = explode( ',', $extrafieldlist5 );
-$extraFieldlist5= $extrafieldlist5;
+$extrafieldlist5 = $extrafieldlist5;
 
 $extrafieldlist6    = $params->get('extrafieldlist6', '' );
 $extrafieldlist6 = explode( ',', $extrafieldlist6 );
-$extraFieldlist6= $extrafieldlist6;
+$extrafieldlist6 = $extrafieldlist6;
  
 $extrafieldlist7    = $params->get('extrafieldlist7', '' );
 $extrafieldlist7 = explode( ',', $extrafieldlist7 );
-$extraFieldlist7= $extrafieldlist7;
+$extrafieldlist7 = $extrafieldlist7;
 
 $extrafieldlist8    = $params->get('extrafieldlist8', '' );
 $extrafieldlist8 = explode( ',', $extrafieldlist8 );
-$extraFieldlist8= $extrafieldlist8;
+$extrafieldlist8 = $extrafieldlist8;
 
 $extrafieldlist9    = $params->get('extrafieldlist9', '' );
 $extrafieldlist9 = explode( ',', $extrafieldlist9 );
-$extraFieldlist9= $extrafieldlist9;
+$extrafieldlist9 = $extrafieldlist9;
 
 $extrafieldlist10    = $params->get('extrafieldlist10', '' );
 $extrafieldlist10 = explode( ',', $extrafieldlist10 );
-$extraFieldlist10= $extrafieldlist10;
+$extrafieldlist10 = $extrafieldlist10;
 
 //module config
 $hiddepending    = $params->get('hiddepending', '1' );
@@ -1096,8 +1096,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
 						
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist1 as $extrafield){
+						if(isset($extrafieldlist1)) { 
+						foreach ($extrafieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1125,15 +1125,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						</span>			
 					</td>	
 					<?php endif; ?>		
-					
 					<?php 	
 						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist1 as $extrafield){
+						if(isset($extrafieldlist1)) { 
+						foreach ($extrafieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1181,8 +1180,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist2 as $extrafield){
+						if(isset($extrafieldlist2)) { 
+						foreach ($extrafieldlist2 as $extrafield){
 							//FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1217,8 +1216,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist2);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist2 as $extrafield){
+						if(isset($extrafieldlist2)) { 
+						foreach ($extrafieldlist2 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1265,8 +1264,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist3 as $extrafield){
+						if(isset($extrafieldlist3)) { 
+						foreach ($extrafieldlist3 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1301,8 +1300,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist3 as $extrafield){
+						if(isset($extrafieldlist3)) { 
+						foreach ($extrafieldlist3 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1349,8 +1348,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist4 as $extrafield){
+						if(isset($extrafieldlist4)) { 
+						foreach ($extrafieldlist4 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1385,8 +1384,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist4 as $extrafield){
+						if(isset($extrafieldlist4)) { 
+						foreach ($extrafieldlist4 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1433,8 +1432,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist5 as $extrafield){
+						if(isset($extrafieldlist5)) { 
+						foreach ($extrafieldlist5 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1469,8 +1468,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist5 as $extrafield){
+						if(isset($extrafieldlist5)) { 
+						foreach ($extrafieldlist5 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1517,8 +1516,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist6 as $extrafield){
+						if(isset($extrafieldlist6)) { 
+						foreach ($extrafieldlist6 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1553,8 +1552,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist6 as $extrafield){
+						if(isset($extrafieldlist6)) { 
+						foreach ($extrafieldlist6 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1601,8 +1600,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist7 as $extrafield){
+						if(isset($extrafieldlist7)) { 
+						foreach ($extrafieldlist7 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1637,8 +1636,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist7 as $extrafield){
+						if(isset($extrafieldlist7)) { 
+						foreach ($extrafieldlist7 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1685,8 +1684,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist8 as $extrafield){
+						if(isset($extrafieldlist8)) { 
+						foreach ($extrafieldlist8 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1721,8 +1720,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist8 as $extrafield){
+						if(isset($extrafieldlist8)) { 
+						foreach ($extrafieldlist8 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1769,8 +1768,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist9 as $extrafield){
+						if(isset($extrafieldlist9)) { 
+						foreach ($extrafieldlist9 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1805,8 +1804,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist9 as $extrafield){
+						if(isset($extrafieldlist9)) { 
+						foreach ($extrafieldlist9 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
@@ -1853,8 +1852,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						$items = array(&$item);
 						  // Get fields values from the DB, 
 						FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist10 as $extrafield){
+						if(isset($extrafieldlist10)) { 
+						foreach ($extrafieldlist10 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
@@ -1889,8 +1888,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						  // Get fields values from the DB, 
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafield)) { 
-						foreach ($extraFieldlist10 as $extrafield){
+						if(isset($extrafieldlist10)) { 
+						foreach ($extrafieldlist10 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
