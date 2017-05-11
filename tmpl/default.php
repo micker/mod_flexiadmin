@@ -345,7 +345,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 
 <div class="row-fluid">
     <?php if ($displayconfigmodule) : ?>
-	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;margin-top: -30px;">
+	<a href="index.php?option=com_modules&task=module.edit&id=<?php echo $module->id;?>" style="float:right;margin-top: -30px;">
 		<button type="button" class="btn btn-default">
 			<i class="icon-small icon-options"></i>
 		</button>
