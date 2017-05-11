@@ -263,7 +263,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
     <div class="sidebar-nav quick-icons">
 	<?php if ($displayconfigmodule) : ?>
-	<a href="index.php?option=com_modules&view=module&layout=edit&id=<?php echo $module->id;?>" style="float:right;">
+	<a href="index.php?option=com_modules&task=module.edit&id=<?php echo $module->id;?>" style="float:right;">
 			<i class="icon-small icon-options"></i>
 		
 	</a>
