@@ -1,7 +1,9 @@
 .action{
     width:98% !important;
 }
-
+.action.span12, .modulemessage.span12 {
+    margin-left: 0 !important;
+}
 button.itemlist {
   margin: 4px;
   max-width: 116px;
