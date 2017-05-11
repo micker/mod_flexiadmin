@@ -372,7 +372,7 @@
 				
 				<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING" level="level1" />
 				<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING1" level="level2"/>
-				<field name="dispc1" label="" type="radio" default="0" class="btn-group btn-group-yesno">
+				<field name="dispc1" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" class="btn-group btn-group-yesno">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
@@ -380,7 +380,7 @@
 						<field name="namecatfilter1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC"  showon="dispc1:1" />
 						<field name="filtercatids1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC"  showon="dispc1:1" />
 										<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING2" level="level2" showon="dispc1:1"/>
-					<field name="dispc2" label="2" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc1:1">
+					<field name="dispc2" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc1:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
@@ -388,35 +388,35 @@
 						<field name="namecatfilter2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc2:1"/>
 						<field name="filtercatids2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc2:1"/>
 											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING3" level="level2" showon="dispc2:1"/>
-					<field name="dispc3" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc2:1">
+					<field name="dispc3" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc2:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
 						<field name="namecatfilter3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc3:1" />
 						<field name="filtercatids3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc3:1"/>
 											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING4" level="level2" showon="dispc3:1"/>
-					<field name="dispc4" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc3:1">
+					<field name="dispc4" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc3:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
 						<field name="namecatfilter4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc4:1" />
 						<field name="filtercatids4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc4:1" />
 											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING5" level="level2" showon="dispc4:1" />
-					<field name="dispc5" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc4:1">
+					<field name="dispc5" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc4:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
 						<field name="namecatfilter5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc5:1" />
 						<field name="filtercatids5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc5:1" />
 											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING6" level="level2" showon="dispc5:1"/>
-						<field name="dispc6" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc5:1">
+						<field name="dispc6" label="FLEXI_ADMIN_CATBUTTON1" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc5:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
 						<field name="namecatfilter6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc6:1" />
 						<field name="filtercatids6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc6:1" />
 											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING7" level="level2" showon="dispc6:1" />
-					<field name="dispc7" label="" type="radio" default="0" class="btn-group btn-group-yesno"  showon="dispc6:1" >
+					<field name="dispc7" label="FLEXI_ADMIN_CATBUTTON1" type="radio" default="0" class="btn-group btn-group-yesno"  showon="dispc6:1" >
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
@@ -430,14 +430,14 @@
 						<field name="namecatfilter8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc8:1" />
 						<field name="filtercatids8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc8:1"/>
 							<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING9" level="level2" showon="dispc8:1" />
-					<field name="dispc9" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc8:1">
+					<field name="dispc9" label="FLEXI_ADMIN_CATBUTTON1" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc8:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
 						<field name="namecatfilter9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc9:1" />
 						<field name="filtercatids9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc9:1" />
 											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING10" level="level2" showon="dispc9:1" />
-					<field name="dispc10" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc9:1">
+					<field name="dispc10" label="FLEXI_ADMIN_CATBUTTON1" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispc9:1">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
