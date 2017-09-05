@@ -1,6 +1,6 @@
 <?php
 /**
-* @version 0.9.0 stable $Id: default.php yannick berges
+* @version 0.9.1 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
 * @copyright (C) 2016 Berges Yannick - www.com3elles.com
@@ -12,7 +12,7 @@
 * FLEXIadmin module is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details. 
+* GNU General Public License for more details.
 **/
 
 //blocage des accés directs sur ce script
@@ -57,7 +57,7 @@ $extrafieldlist5 = $extrafieldlist5;
 $extrafieldlist6    = $params->get('extrafieldlist6', '' );
 $extrafieldlist6 = explode( ',', $extrafieldlist6 );
 $extrafieldlist6 = $extrafieldlist6;
- 
+
 $extrafieldlist7    = $params->get('extrafieldlist7', '' );
 $extrafieldlist7 = explode( ',', $extrafieldlist7 );
 $extrafieldlist7 = $extrafieldlist7;
@@ -359,158 +359,158 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
     <div class="action span12">
-        
+
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	<?php if ($displaycustomtab) : ?><li class=""><a href="#custom<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($nametab); ?></a></li> <?php endif; ?>
 	<?php if ($displaycreattab) : ?><li class=""><a href="#create<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_CREATE_D'); ?></a></li>  <?php endif; ?>
 	<?php if ($displaymanagetab) : ?><li class=""><a href="#manage<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_MANAGE_D'); ?></a></li>  <?php endif; ?>
 	<?php if ($displayadmintab) : ?><li class=""><a href="#admin<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_ADMIN_D'); ?></a></li>  <?php endif; ?>
 	<?php if ($displayfreetab) : ?><li class=""><a href="#free<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($freenametab); ?></a></li> <?php endif; ?>
-	</ul>  
-	
-		<div class="tab-content">  
+	</ul>
+
+		<div class="tab-content">
 				<?php if ($displaycustomtab) : ?>
 					<div class="tab-pane fade in active" id="custom<?php echo $module->id;?>">
 					<?php if ($dispb1) : ?>
 					<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type1;?>&maincat=<?php echo $maincat1; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton1; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton1); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb2) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type2;?>&maincat=<?php echo $maincat2; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton2; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton2); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb3) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type3;?>&maincat=<?php echo $maincat3; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton3; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton3); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb4) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type4;?>&maincat=<?php echo $maincat4; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton4; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton4); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb5) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type5;?>&maincat=<?php echo $maincat5; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton5; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton5); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb6) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type6;?>&maincat=<?php echo $maincat6; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton6; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton6); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb7) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type7;?>&maincat=<?php echo $maincat7; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton7; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton7); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb8) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type8;?>&maincat=<?php echo $maincat8; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton8; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton8); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb9) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type9;?>&maincat=<?php echo $maincat9; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton9; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton9); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispb10) : ?>
 						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type10;?>&maincat=<?php echo $maincat10; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $namebutton10; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($namebutton10); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc1) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat1; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter1; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter1); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc2) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat2; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter2; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter2); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc3) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat3; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter3; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter3); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc4) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat4; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter4; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter4); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc5) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat5; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter5; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter5); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc6) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat6; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter6; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter6); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc7) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat7; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter7; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter7); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc8) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat8; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
+									<i class="icon-large icon-list"></i><br/>
 								<?php echo $namecatfilter8; ?>
 								</button>
 						</a>
@@ -518,241 +518,241 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($dispc9) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat9; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter9; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter9); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispc10) : ?>
 						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat10; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/> 
-								<?php echo $namecatfilter10; ?>
+									<i class="icon-large icon-list"></i><br/>
+								<?php echo JText::_($namecatfilter10); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi1) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit1; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit1; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit1); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($nameitemedit2) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit2; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit2; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit2); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi3) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit3; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit3; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit3); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi4) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit4; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit4; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit4); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi5) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit5; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit5; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit5); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi6) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit6; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit6; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit6); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi7) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit7; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit7; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit7); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi8) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit8; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit8; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit8); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi9) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit9; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit9; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit9); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					<?php if ($dispi10) : ?>
 						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit10; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/> 
-								<?php echo $nameitemedit10; ?>
+									<i class="icon-large icon-file-plus"></i><br/>
+								<?php echo JText::_($nameitemedit10); ?>
 								</button>
 						</a>
 					<?php endif; ?>
 					</div>
 					<?php endif; ?>
 										<?php if ($displaycreattab) : ?>
-										<div class="tab-pane fade" id="create<?php echo $module->id;?>">  
+										<div class="tab-pane fade" id="create<?php echo $module->id;?>">
 										<?php if($hiddebuttonadditem): ?>
-											<a href="index.php?option=com_flexicontent&view=types&format=raw" 
-														class="modal" 
+											<a href="index.php?option=com_flexicontent&view=types&format=raw"
+														class="modal"
 														rel="{size: {x: 700, y: 300}, closable: true}">
 													<button type="button" class="btn btn-default btn-lg itemlist">
-														<i class="icon-large icon-file-plus"></i><br/> 
+														<i class="icon-large icon-file-plus"></i><br/>
 													<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
 													</button>
 											</a>
 											<?php endif; ?>
 											<?php if($hiddebuttonaddcategory): ?>
 											<a href="index.php?option=com_flexicontent&view=category">
-												<button type="button" class="btn btn-default btn-lg itemlist">  
-												<i class="icon-large icon-list"></i><br/> 
+												<button type="button" class="btn btn-default btn-lg itemlist">
+												<i class="icon-large icon-list"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDCATEGORY' ); ?>
 												</button>
 											</a>
 											<?php endif; ?>
 											<?php if($hiddebuttonaddtag): ?>
 											<a href="index.php?option=com_flexicontent&view=tag">
-												<button type="button" class="btn btn-default btn-lg itemlist">  
-												<i class="icon-large icon-tag"></i><br/> 
+												<button type="button" class="btn btn-default btn-lg itemlist">
+												<i class="icon-large icon-tag"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDTAG' ); ?>
 												</button>
 											</a>
 											<?php endif; ?>
 											<?php if($hiddebuttonadduser): ?>
 											<a href="index.php?option=com_flexicontent&task=users.add">
-												<button type="button" class="btn btn-default btn-lg itemlist">  
-												<i class="icon-large icon-user"></i><br/> 
+												<button type="button" class="btn btn-default btn-lg itemlist">
+												<i class="icon-large icon-user"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDAUTHOR' ); ?>
 												</button>
 											</a>
 											<?php endif; ?>
 											<?php if($hiddebuttonaddgroup): ?>
 											<a href="index.php?option=com_flexicontent&view=groups.add">
-												<button type="button" class="btn btn-default btn-lg itemlist">  
-												<i class="icon-large icon-users"></i><br/> 
+												<button type="button" class="btn btn-default btn-lg itemlist">
+												<i class="icon-large icon-users"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDGROUPS' ); ?>
 												</button>
 											</a>
 											<?php endif; ?>
-											
-										</div>  
+
+										</div>
 										<?php endif; ?>
 										<?php if ($displaymanagetab) : ?>
-										<div class="tab-pane fade" id="manage<?php echo $module->id;?>">  
+										<div class="tab-pane fade" id="manage<?php echo $module->id;?>">
 											<?php if($hiddebuttonmanageitems): ?>
 												<a href="index.php?option=com_flexicontent&view=items">
 													<button type="button" class="btn btn-default btn-lg itemlist">
-														<i class="icon-large icon-file-2"></i><br/> 
+														<i class="icon-large icon-file-2"></i><br/>
 														<?php echo JText::_( 'FLEXI_ADMIN_ITEMLIST' ); ?>
 													</button>
 												</a>
 											<?php endif;?>
 											<?php if($hiddebuttonmanagecategories): ?>
 												<a href="index.php?option=com_flexicontent&view=categories">
-													<button type="button" class="btn btn-default btn-lg itemlist">  
-														<i class="icon-large icon-list"></i><br/> 
+													<button type="button" class="btn btn-default btn-lg itemlist">
+														<i class="icon-large icon-list"></i><br/>
 														<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
 													</button>
 												</a>
 												<?php endif; ?>
 											<?php if($hiddebuttonmanagetags): ?>
 								<a href="index.php?option=com_flexicontent&view=tags">
-									<button type="button" class="btn btn-default btn-lg itemlist">  
-										<i class="icon-large icon-tag"></i><br/> 
+									<button type="button" class="btn btn-default btn-lg itemlist">
+										<i class="icon-large icon-tag"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_TAGLIST' ); ?>
 									</button>
 								</a>
 								<?php endif; ?>
 								<?php if($hiddebuttonmanageauthors): ?>
 								<a href="index.php?option=com_flexicontent&view=users">
-									<button type="button" class="btn btn-default btn-lg itemlist">  
-										<i class="icon-large icon-user"></i><br/> 
+									<button type="button" class="btn btn-default btn-lg itemlist">
+										<i class="icon-large icon-user"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_AUTHORLIST' ); ?>
 									</button>
 								</a>
 								<?php endif; ?>
-								
+
 								<?php if($hiddebuttonmanagegroups): ?>
 								<a href="index.php?option=com_flexicontent&view=groups">
-									<button type="button" class="btn btn-default btn-lg itemlist">  
-										<i class="icon-large icon-users"></i><br/> 
+									<button type="button" class="btn btn-default btn-lg itemlist">
+										<i class="icon-large icon-users"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_GROUPSLIST' ); ?>
 									</button>
 								</a>
 								<?php endif; ?>
-									
+
 								<?php if($hiddebuttonmanagefiles): ?>
 								<a href="index.php?option=com_flexicontent&view=filemanager">
-									<button type="button" class="btn btn-default btn-lg itemlist">  
-										<i class="icon-large icon-upload"></i><br/> 
+									<button type="button" class="btn btn-default btn-lg itemlist">
+										<i class="icon-large icon-upload"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_FILEMANAGER' ); ?>
 									</button>
 								</a>
 								<?php endif; ?>
-								
-										</div>  
+
+										</div>
 										<?php endif; ?>
 								<?php if ($displayadmintab) : ?>
-			<!-- start admin tabs-->					
-			<div class="tab-pane fade" id="admin<?php echo $module->id;?>"> 
+			<!-- start admin tabs-->
+			<div class="tab-pane fade" id="admin<?php echo $module->id;?>">
 										<?php if($hiddebuttonmanagetypes): ?>
 										<a href="index.php?option=com_flexicontent&view=types">
-											<button type="button" class="btn btn-default btn-lg itemlist">  
-												<i class="icon-large icon-book"></i><br/> 
+											<button type="button" class="btn btn-default btn-lg itemlist">
+												<i class="icon-large icon-book"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_TYPELIST' ); ?>
 											</button>
 										</a>
 										<?php endif; ?>
 									<?php if($hiddebuttonaddtypes): ?>
 									<a href="index.php?option=com_flexicontent&view=type">
-										<button type="button" class="btn btn-default btn-lg itemlist">  
-										<i class="icon-large icon-book"></i><br/> 
+										<button type="button" class="btn btn-default btn-lg itemlist">
+										<i class="icon-large icon-book"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_ADDTYPE' ); ?>
 										</button>
-									</a>			
+									</a>
 									<?php endif; ?>
 									<?php if($hiddebuttonmanagefields): ?>
 									<a href="index.php?option=com_flexicontent&view=fields">
-										<button type="button" class="btn btn-default btn-lg itemlist">  
-											<i class="icon-large icon-stack"></i><br/> 
+										<button type="button" class="btn btn-default btn-lg itemlist">
+											<i class="icon-large icon-stack"></i><br/>
 											<?php echo JText::_( 'FLEXI_ADMIN_FIELDLIST' ); ?>
 										</button>
 									</a>
 									<?php endif; ?>
 									<?php if($hiddebuttonaddfields): ?>
 									<a href="index.php?option=com_flexicontent&view=field">
-										<button type="button" class="btn btn-default btn-lg itemlist">  
-										<i class="icon-large icon-stack"></i><br/> 
+										<button type="button" class="btn btn-default btn-lg itemlist">
+										<i class="icon-large icon-stack"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_ADDFIELD' ); ?>
 										</button>
 									</a>
 									<?php endif; ?>
 						<?php if($hiddebuttonimportcontent): ?>
 						<a href="index.php?option=com_flexicontent&view=import">
-							<button type="button" class="btn btn-default btn-lg itemlist">  
+							<button type="button" class="btn btn-default btn-lg itemlist">
 								<i class="icon-large icon-loop"></i> <br/>
 								<?php echo JText::_( 'FLEXI_ADMIN_IMPORT' ); ?>
 							</button>
@@ -760,7 +760,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<?php endif; ?>
 						<?php if($hiddebuttonstats): ?>
 						<a href="index.php?option=com_flexicontent&view=stats">
-							<button type="button" class="btn btn-default btn-lg itemlist">  
+							<button type="button" class="btn btn-default btn-lg itemlist">
 								<i class="icon-large icon-pie"></i> <br/>
 								<?php echo JText::_( 'FLEXI_ADMIN_STATS' ); ?>
 							</button>
@@ -768,119 +768,119 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<?php endif; ?>
 				<?php if($hiddebuttonindex): ?>
 					<a href="index.php?option=com_flexicontent&view=search">
-						<button type="button" class="btn btn-default btn-lg itemlist">  
-							<i class="icon-large icon-search"></i><br/> 
+						<button type="button" class="btn btn-default btn-lg itemlist">
+							<i class="icon-large icon-search"></i><br/>
 						<?php echo JText::_( 'FLEXI_ADMIN_SEARCH' ); ?>
 						</button>
 					</a>
 				<?php endif; ?>
 						<?php if($hiddebuttonadmin): ?>
 					<a href="index.php?option=com_flexicontent">
-						<button type="button" class="btn btn-default btn-lg itemlist">  
-							<i class="icon-large icon-options"></i><br/> 
+						<button type="button" class="btn btn-default btn-lg itemlist">
+							<i class="icon-large icon-options"></i><br/>
 						<?php echo JText::_( 'FLEXI_ADMIN_GEN' ); ?>
 						</button>
 					</a>
 				<?php endif; ?>
-			</div> 
-			<?php endif; ?>	
+			</div>
+			<?php endif; ?>
 			<!-- end of admin tabs-->
 			<?php if ($displayfreetab) : ?>
-			<div class="tab-pane fade" id="free<?php echo $module->id;?>">		
+			<div class="tab-pane fade" id="free<?php echo $module->id;?>">
 			<?php if ($dispfreebutton1) : ?>
 						<a href="<?php echo $linkbutton1; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton1; ?>"></i><br/> 
-								<?php echo $freebutton1; ?>
+									<i class="icon-large <?php echo $iconbutton1; ?>"></i><br/>
+								<?php echo JText::_($freebutton1); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 			<?php if ($dispfreebutton2) : ?>
 						<a href="<?php echo $linkbutton2; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton2; ?>"></i><br/> 
-								<?php echo $freebutton2; ?>
+									<i class="icon-large <?php echo $iconbutton2; ?>"></i><br/>
+								<?php echo JText::_($freebutton2); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 			<?php if ($dispfreebutton3) : ?>
 						<a href="<?php echo $linkbutton3; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton3; ?>"></i><br/> 
-								<?php echo $freebutton3; ?>
+									<i class="icon-large <?php echo $iconbutton3; ?>"></i><br/>
+								<?php echo JText::_($freebutton3); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 			<?php if ($dispfreebutton4) : ?>
 						<a href="<?php echo $linkbutton4; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton4; ?>"></i><br/> 
-								<?php echo $freebutton4; ?>
+									<i class="icon-large <?php echo $iconbutton4; ?>"></i><br/>
+								<?php echo JText::_($freebutton4); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 						<?php if ($dispfreebutton5) : ?>
 						<a href="<?php echo $linkbutton5; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton5; ?>"></i><br/> 
-								<?php echo $freebutton5; ?>
+									<i class="icon-large <?php echo $iconbutton5; ?>"></i><br/>
+								<?php echo JText::_($freebutton5); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 						<?php if ($dispfreebutton6) : ?>
 						<a href="<?php echo $linkbutton6; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton6; ?>"></i><br/> 
-								<?php echo $freebutton6; ?>
+									<i class="icon-large <?php echo $iconbutton6; ?>"></i><br/>
+								<?php echo JText::_($freebutton6); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 						<?php if ($dispfreebutton7) : ?>
 						<a href="<?php echo $linkbutton7; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton7; ?>"></i><br/> 
-								<?php echo $freebutton7; ?>
+									<i class="icon-large <?php echo $iconbutton7; ?>"></i><br/>
+								<?php echo JText::_($freebutton7); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 						<?php if ($dispfreebutton8) : ?>
 						<a href="<?php echo $linkbutton8; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton8; ?>"></i><br/> 
-								<?php echo $freebutton8; ?>
+									<i class="icon-large <?php echo $iconbutton8; ?>"></i><br/>
+								<?php echo JText::_($freebutton8); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 						<?php if ($dispfreebutton9) : ?>
 						<a href="<?php echo $linkbutton9; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton9; ?>"></i><br/> 
-								<?php echo $freebutton9; ?>
+									<i class="icon-large <?php echo $iconbutton9; ?>"></i><br/>
+								<?php echo JText::_($freebutton9); ?>
 								</button>
 						</a>
 			<?php endif; ?>
 						<?php if ($dispfreebutton10) : ?>
 						<a href="<?php echo $linkbutton10; ?>" >
 								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton10; ?>"></i><br/> 
-								<?php echo $freebutton10; ?>
+									<i class="icon-large <?php echo $iconbutton10; ?>"></i><br/>
+								<?php echo JText::_($freebutton10); ?>
 								</button>
 						</a>
 			<?php endif; ?>
-			</div> 
+			</div>
 			<?php endif; ?>
-		
-		</div> 
+
+		</div>
 		<?php endif; ?>
 		<!-- end tabs -->
-						
+
 
 	</div>
 	<!-- end tabs zone -->
 </div>
 
 </div>
-	
+
 <!--start pending block -->
 <?php if ($hiddepending) : ?>
     <div class="block pending well well-small span<?php echo $column; ?> ">
@@ -890,99 +890,99 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
-				<?php foreach ($listPending as $itemPending) : ?>			
-				<div class="row-fluid">				
-					<div class="span12">					
-						<div class="span6">					
-							<a href="<?php echo $itemPending->link; ?>"><?php echo $itemPending->title; ?>	
-							<i class="icon-large icon-edit"></i></a>					
-						</div>					
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+				<?php foreach ($listPending as $itemPending) : ?>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="span6">
+							<a href="<?php echo $itemPending->link; ?>"><?php echo $itemPending->title; ?>
+							<i class="icon-large icon-edit"></i></a>
+						</div>
 						<div class="span3" style="margin-left: 0 !important;">
-							<span class="small">	
-							<i class="icon-user"></i> 						
+							<span class="small">
+							<i class="icon-user"></i>
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemPending->name; ?>"><?php echo $itemPending->name;?> </small>
-							</span>				
-						</div>				
+							</span>
+						</div>
 						<div class="span3">
 							<span class="small">
 							<i class="icon-calendar"></i> <?php echo JHtml::date($itemPending->modified, 'd M Y'); ?>
 							</span>
-						</div>				
-					</div>			
-				</div>	
-				<?php endforeach; ?>		
-			</div>	
-	</div>	
+						</div>
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</div>
+	</div>
 	<?php endif; ?>
-	
+
 	<?php if ($hidderevised) : ?>
 
 	<div class="block revised well well-small span<?php echo $column; ?> ">
-		<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-up"></i> <?php echo JText::_( 'FLEXI_ADMIN_REVISED' ); ?></h3>	
+		<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-up"></i> <?php echo JText::_( 'FLEXI_ADMIN_REVISED' ); ?></h3>
 		<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=RV'; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
-				<?php foreach ($listRevised as $itemRevised) : ?>			
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+				<?php foreach ($listRevised as $itemRevised) : ?>
 				<div class="row-fluid">
-					<div class="span12">					
-						<div class="span6">							
-							<a href="<?php echo $itemRevised->link; ?>"><?php echo $itemRevised->title; ?>					
-							<i class="icon-large icon-edit"></i></a>					
-						</div>					
-						<div class="span3" style="margin-left: 0 !important;">					
-							<span class="small">			
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemRevised->name; ?>"><i class="icon-user"></i> <?php echo $itemRevised->name; ?></small>											
-							</span>				
-						</div>				
+					<div class="span12">
+						<div class="span6">
+							<a href="<?php echo $itemRevised->link; ?>"><?php echo $itemRevised->title; ?>
+							<i class="icon-large icon-edit"></i></a>
+						</div>
+						<div class="span3" style="margin-left: 0 !important;">
+							<span class="small">
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemRevised->name; ?>"><i class="icon-user"></i> <?php echo $itemRevised->name; ?></small>
+							</span>
+						</div>
 						<div class="span3">
-							<span class="small"> 
+							<span class="small">
 							<i class="icon-calendar"></i> <?php echo JHtml::date($itemRevised->modified, 'd M Y'); ?>
 							</span>
-						</div>				
-					</div>			
-				</div>		
-				<?php endforeach; ?>		
-			</div>	
-	</div>	
+						</div>
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</div>
+	</div>
 <?php endif; ?>
 <?php if ($hiddeinprogess) : ?>
-	<div class="block inprogress well well-small span<?php echo $column; ?> ">	
+	<div class="block inprogress well well-small span<?php echo $column; ?> ">
 		<h3 class="module-title nav-header"><i class="icon-large icon-checkin"></i> <?php echo JText::_( 'FLEXI_ADMIN_INPROGRESS' ); ?></h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=IP'; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">				
-				<?php foreach ($listInprogress as $itemInprogress) : ?>			
-				<div class="row-fluid">				
-					<div class="span12">					
-						<div class="span6">							
-							<a href="<?php echo $itemInprogress->link; ?>"><?php echo $itemInprogress->title; ?>					
-							<i class="icon-large icon-edit"></i></a>					
-						</div>					
-						<div class="span3" style="margin-left: 0 !important;">					
-							<span class="small">					 
-							<i class="icon-user"></i> 							
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+				<?php foreach ($listInprogress as $itemInprogress) : ?>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="span6">
+							<a href="<?php echo $itemInprogress->link; ?>"><?php echo $itemInprogress->title; ?>
+							<i class="icon-large icon-edit"></i></a>
+						</div>
+						<div class="span3" style="margin-left: 0 !important;">
+							<span class="small">
+							<i class="icon-user"></i>
 							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemInprogress->name; ?>"><?php echo $itemInprogress->name;?> </small>
-							</span>				
-						</div>				
+							</span>
+						</div>
 						<div class="span3">
 							<span class="small"> <i class="icon-calendar"></i> <?php echo JHtml::date($itemInprogress->modified, 'd M Y'); ?></span>
 						</div>
-					</div>			
-				</div>		
-			<?php endforeach; ?>		
-			</div>	
-	</div>	
+					</div>
+				</div>
+			<?php endforeach; ?>
+			</div>
+	</div>
 <?php endif; ?>
 <?php if ($hiddedraft) : ?>
 	<div class="block draft well well-small span<?php echo $column; ?>">
@@ -991,117 +991,117 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-	<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+	<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
 		<?php foreach ($listDraft as $itemDraft) : ?>
-		<div class="row-fluid">		
-			<div class="span12">	
-				<div class="span6">		
-					<a href="<?php echo $itemDraft->link; ?>"><?php echo $itemDraft->title; ?>	
-					<i class="icon-large icon-edit"></i></a>		
-				</div>				
-				<div class="span3" style="margin-left: 0 !important;">		
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="span6">
+					<a href="<?php echo $itemDraft->link; ?>"><?php echo $itemDraft->title; ?>
+					<i class="icon-large icon-edit"></i></a>
+				</div>
+				<div class="span3" style="margin-left: 0 !important;">
 					<span class="small">
 
-					<i class="icon-user"></i><small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemDraft->name; ?>"><?php echo $itemDraft->name;?> </small> 			
-					</span>			
-				</div>			
+					<i class="icon-user"></i><small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemDraft->name; ?>"><?php echo $itemDraft->name;?> </small>
+					</span>
+				</div>
 				<div class="span3">
 					<span class="small">
 					<i class="icon-calendar"></i> <?php echo JHtml::date($itemDraft->modified, 'd M Y'); ?>
 					</span>
-				</div>		
-			</div>	
-		</div>	
-		<?php endforeach; ?>	
-	</div>	
+				</div>
+			</div>
+		</div>
+		<?php endforeach; ?>
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($hiddeyouritem) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<?php $user = JFactory::getUser();		?>
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_( 'FLEXI_YOUR_ITEM' ); ?> : <?php echo $user->name; ?></h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_( 'FLEXI_YOUR_ITEM' ); ?> : <?php echo $user->name; ?></h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">		
-			<?php foreach ($listUseritem as $itemUseritem) : ?>		
-			<div class="row-fluid">		
-				<div class="span12">			
-					<div class="span6">					
-						<a href="<?php echo $itemUseritem->link; ?>"><?php echo $itemUseritem->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</div>				
-					<div class="span3" style="margin-left: 0 !important;">		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $user->name; ?>"><?php echo $user->name; ?> </small> 	
-						</span>			
-					</div>			
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+			<?php foreach ($listUseritem as $itemUseritem) : ?>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="span6">
+						<a href="<?php echo $itemUseritem->link; ?>"><?php echo $itemUseritem->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</div>
+					<div class="span3" style="margin-left: 0 !important;">
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $user->name; ?>"><?php echo $user->name; ?> </small>
+						</span>
+					</div>
 					<div class="span3">
 					<?php echo $itemUseritem->state;?>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemUseritem->modified, 'd M Y'); ?>
 					</span>
-					</div>		
-				</div>		
-			</div>	
+					</div>
+				</div>
+			</div>
 			<?php endforeach; ?>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($hiddetrashed) : ?>
-	<div class="block trashed well well-small span<?php echo $column; ?>">	
-	<h3 class="module-title nav-header"><i class="icon-large icon-trash"></i> 
-	<?php echo JText::_( 'FLEXI_ADMIN_TRASHED' ); ?></h3>	
-	<?php //TODO filtrage trashed	
+	<div class="block trashed well well-small span<?php echo $column; ?>">
+	<h3 class="module-title nav-header"><i class="icon-large icon-trash"></i>
+	<?php echo JText::_( 'FLEXI_ADMIN_TRASHED' ); ?></h3>
+	<?php //TODO filtrage trashed
 	$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-	</div>	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+	</div>
 <?php endif; ?>
 <?php if ($displblock1) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom1); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom1); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist1; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
-				
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
+
 			<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist1= $listCustomlist1[0];
 						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						
-						if(isset($extrafieldlist1)) { 
+
+						if(isset($extrafieldlist1)) {
 						foreach ($extrafieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1109,29 +1109,29 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist1 as $itemCustomlist1) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist1 as $itemCustomlist1) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist1->link; ?>"><?php echo $itemCustomlist1->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock1) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist1->name; ?>"><?php echo $itemCustomlist1->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist1->link; ?>"><?php echo $itemCustomlist1->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock1) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist1->name; ?>"><?php echo $itemCustomlist1->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist1)) { 
+						if(isset($extrafieldlist1)) {
 						foreach ($extrafieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1143,49 +1143,49 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock1) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist1->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock2) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom2); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom2); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist2; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 <table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist2= $listCustomlist2[0];
                         //echo $listCustomlist2[0];
 						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist2)) { 
+						if(isset($extrafieldlist2)) {
 						foreach ($extrafieldlist2 as $extrafield){
 							//FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1193,30 +1193,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist2 as $itemCustomlist2) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist2 as $itemCustomlist2) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist2->link; ?>"><?php echo $itemCustomlist2->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock2) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist2->name; ?>"><?php echo $itemCustomlist2->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist2->link; ?>"><?php echo $itemCustomlist2->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock2) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist2->name; ?>"><?php echo $itemCustomlist2->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist2);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist2)) { 
+						if(isset($extrafieldlist2)) {
 						foreach ($extrafieldlist2 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1228,48 +1228,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock2) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist2->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock3) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom3); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom3); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist3; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 			<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock3) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist3= $listCustomlist3[0];
 						$item = $itemmodel->getItem($itemCustomlist3->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist3)) { 
+						if(isset($extrafieldlist3)) {
 						foreach ($extrafieldlist3 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1277,30 +1277,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock3) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist3 as $itemCustomlist3) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist3 as $itemCustomlist3) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist3->link; ?>"><?php echo $itemCustomlist3->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock3) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist3->name; ?>"><?php echo $itemCustomlist3->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist3->link; ?>"><?php echo $itemCustomlist3->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock3) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist3->name; ?>"><?php echo $itemCustomlist3->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist3->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist3)) { 
+						if(isset($extrafieldlist3)) {
 						foreach ($extrafieldlist3 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1312,48 +1312,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock3) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist3->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock4) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom4); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom4); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist4; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 					<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock4) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist4= $listCustomlist4[0];
 						$item = $itemmodel->getItem($itemCustomlist4->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist4)) { 
+						if(isset($extrafieldlist4)) {
 						foreach ($extrafieldlist4 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1361,30 +1361,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock4) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist4 as $itemCustomlist3) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist4 as $itemCustomlist3) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist4->link; ?>"><?php echo $itemCustomlist4->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock4) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist4->name; ?>"><?php echo $itemCustomlist4->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist4->link; ?>"><?php echo $itemCustomlist4->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock4) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist4->name; ?>"><?php echo $itemCustomlist4->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist4->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist4)) { 
+						if(isset($extrafieldlist4)) {
 						foreach ($extrafieldlist4 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1396,48 +1396,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock4) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist4->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-            </div>	
+            </div>
 </div>
 <?php endif; ?>
 <?php if ($displblock5) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom5); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom5); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist5; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 					<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock5) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist5= $listCustomlist5[0];
 						$item = $itemmodel->getItem($itemCustomlist5->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist5)) { 
+						if(isset($extrafieldlist5)) {
 						foreach ($extrafieldlist5 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1445,30 +1445,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock5) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist5 as $itemCustomlist5) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist5 as $itemCustomlist5) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist5->link; ?>"><?php echo $itemCustomlist5->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock5) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist5->name; ?>"><?php echo $itemCustomlist5->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist5->link; ?>"><?php echo $itemCustomlist5->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock5) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist5->name; ?>"><?php echo $itemCustomlist5->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist5->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist5)) { 
+						if(isset($extrafieldlist5)) {
 						foreach ($extrafieldlist5 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1480,48 +1480,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock5) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist5->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock6) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom6); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom6); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist6; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 					<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock6) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist6= $listCustomlist6[0];
 						$item = $itemmodel->getItem($itemCustomlist6->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist6)) { 
+						if(isset($extrafieldlist6)) {
 						foreach ($extrafieldlist6 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1529,30 +1529,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock6) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist6 as $itemCustomlist6) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist6 as $itemCustomlist6) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist6->link; ?>"><?php echo $itemCustomlist6->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock6) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist6->name; ?>"><?php echo $itemCustomlist6->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist6->link; ?>"><?php echo $itemCustomlist6->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock6) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist6->name; ?>"><?php echo $itemCustomlist6->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist6->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist6)) { 
+						if(isset($extrafieldlist6)) {
 						foreach ($extrafieldlist6 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1564,48 +1564,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock6) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist6->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock7) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom7); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom7); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist7; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 					<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock7) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist7= $listCustomlist7[0];
 						$item = $itemmodel->getItem($itemCustomlist7->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist7)) { 
+						if(isset($extrafieldlist7)) {
 						foreach ($extrafieldlist7 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1613,30 +1613,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock7) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist7 as $itemCustomlist7) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist7 as $itemCustomlist7) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist7->link; ?>"><?php echo $itemCustomlist7->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock7) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist7->name; ?>"><?php echo $itemCustomlist7->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist7->link; ?>"><?php echo $itemCustomlist7->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock7) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist7->name; ?>"><?php echo $itemCustomlist7->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist7->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist7)) { 
+						if(isset($extrafieldlist7)) {
 						foreach ($extrafieldlist7 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1648,48 +1648,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock7) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist7->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock8) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom8); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom8); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist8; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 					<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock8) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist8= $listCustomlist8[0];
 						$item = $itemmodel->getItem($itemCustomlist8->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist8)) { 
+						if(isset($extrafieldlist8)) {
 						foreach ($extrafieldlist8 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1697,30 +1697,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock8) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist8 as $itemCustomlist8) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist8 as $itemCustomlist8) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist8->link; ?>"><?php echo $itemCustomlist8->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock8) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist8->name; ?>"><?php echo $itemCustomlist8->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist8->link; ?>"><?php echo $itemCustomlist8->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock8) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist8->name; ?>"><?php echo $itemCustomlist8->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist8->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist8)) { 
+						if(isset($extrafieldlist8)) {
 						foreach ($extrafieldlist8 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1732,48 +1732,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock8) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist8->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock9) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom9); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom9); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist9; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 					<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock9) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist9= $listCustomlist9[0];
 						$item = $itemmodel->getItem($itemCustomlist9->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist9)) { 
+						if(isset($extrafieldlist9)) {
 						foreach ($extrafieldlist9 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1781,30 +1781,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock9) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist9 as $itemCustomlist9) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist9 as $itemCustomlist9) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist9->link; ?>"><?php echo $itemCustomlist9->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock9) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist9->name; ?>"><?php echo $itemCustomlist9->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist9->link; ?>"><?php echo $itemCustomlist9->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock9) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist9->name; ?>"><?php echo $itemCustomlist9->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist9->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist9)) { 
+						if(isset($extrafieldlist9)) {
 						foreach ($extrafieldlist9 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1816,48 +1816,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock9) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist9->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 <?php if ($displblock10) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">	
+	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
-		<i class="icon-large icon-user"></i> 
-		<?php echo JText::_($nameblockcustom10); ?> : </h3>	
+		<i class="icon-large icon-user"></i>
+		<?php echo JText::_($nameblockcustom10); ?> : </h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$catidlist10; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
-		echo JText::_( 'FLEXI_ADMIN_ALL' );		
-		echo "</a></div>";	?>		
-		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">	
-	
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+		<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+
 			<table class="table table-hover">
 				<thead>
 					<tr>
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock10) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
-					<?php 
+					<?php
                          $itemCustomlist10= $listCustomlist10[0];
 						$item = $itemmodel->getItem($itemCustomlist10->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist10)) { 
+						if(isset($extrafieldlist10)) {
 						foreach ($extrafieldlist10 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
-							echo $label;
+							echo JText::_($label);
 							echo '</th>';
 						}
 						}
@@ -1865,30 +1865,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<?php if ($displdateblock10) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
 				</thead>
-				
-				<tbody>	
-				<?php foreach ($listCustomlist10 as $itemCustomlist10) : ?>	
+
+				<tbody>
+				<?php foreach ($listCustomlist10 as $itemCustomlist10) : ?>
 					<tr>
-					<td>					
-						<a href="<?php echo $itemCustomlist10->link; ?>"><?php echo $itemCustomlist10->title; ?>	
-						<i class="icon-large icon-edit"></i></a>		
-					</td>				
-					<?php if ($displautblock10) : ?><td>		
-						<span class="small">			
-							<i class="icon-user"></i> 	
-							
-							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist10->name; ?>"><?php echo $itemCustomlist10->name;?> </small> 	
-						</span>			
-					</td>	
-					<?php endif; ?>		
-					
-					<?php 	
+					<td>
+						<a href="<?php echo $itemCustomlist10->link; ?>"><?php echo $itemCustomlist10->title; ?>
+						<i class="icon-large icon-edit"></i></a>
+					</td>
+					<?php if ($displautblock10) : ?><td>
+						<span class="small">
+							<i class="icon-user"></i>
+
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist10->name; ?>"><?php echo $itemCustomlist10->name;?> </small>
+						</span>
+					</td>
+					<?php endif; ?>
+
+					<?php
 						$item = $itemmodel->getItem($itemCustomlist10->id, $check_view_access=false);
 						$items = array(&$item);
-						  // Get fields values from the DB, 
+						  // Get fields values from the DB,
                         //print_r ($extraFieldlist1);
 						//FlexicontentFields::getFields($items);
-						if(isset($extrafieldlist10)) { 
+						if(isset($extrafieldlist10)) {
 						foreach ($extrafieldlist10 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
@@ -1900,16 +1900,16 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					?>
 					<?php if ($displdateblock3) : ?>
 					<td>
-					<span class="small"> 
+					<span class="small">
 						<i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist10->modified, 'd M Y'); ?>
 					</span>
-					</td>	
-					<?php endif; ?>		
-				</tr>				
+					</td>
+					<?php endif; ?>
+				</tr>
 			<?php endforeach; ?>
 							</tbody>
 			</table>
-	</div>	
+	</div>
 </div>
 <?php endif; ?>
 </div>
@@ -1922,6 +1922,3 @@ jQuery(document).ready(function($){
 $('#myTab a:first').tab('show');
 });
 </script>
-
-
-
