@@ -292,7 +292,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type1;?>&maincat=<?php echo $maincat1; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton1; ?>
+						<?php echo JText::_($namebutton1); ?>
 						
 				</a>
 			</li>
@@ -302,7 +302,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type2;?>&maincat=<?php echo $maincat2; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton2; ?>
+						<?php echo JText::_($namebutton2); ?>
 						
 				</a>
 			</li>
@@ -312,7 +312,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type3;?>&maincat=<?php echo $maincat3; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton3; ?>
+						<?php echo JText::_($namebutton3); ?>
 						
 				</a>
 			</li>
@@ -322,7 +322,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type4;?>&maincat=<?php echo $maincat4; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton4; ?>
+						<?php echo JText::_($namebutton4); ?>
 						
 				</a>
 			</li>
@@ -332,7 +332,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type5;?>&maincat=<?php echo $maincat5; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton5; ?>
+						<?php echo JText::_($namebutton5); ?>
 						
 				</a>
 			</li>
@@ -342,7 +342,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type6;?>&maincat=<?php echo $maincat6; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton6; ?>
+						<?php echo JText::_($namebutton6); ?>
 						
 				</a>
 			</li>
@@ -352,7 +352,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type7;?>&maincat=<?php echo $maincat7; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton7; ?>
+						<?php echo JText::_($namebutton7); ?>
 						
 				</a>
 			</li>
@@ -362,7 +362,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type8;?>&maincat=<?php echo $maincat8; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton8; ?>
+						<?php echo JText::_($namebutton8); ?>
 						
 				</a>
 			</li>
@@ -372,7 +372,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type9;?>&maincat=<?php echo $maincat9; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton9; ?>
+						<?php echo JText::_($namebutton9); ?>
 						
 				</a>
 			</li>
@@ -382,7 +382,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type10;?>&maincat=<?php echo $maincat10; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $namebutton10; ?>
+						<?php echo JText::_($namebutton10); ?>
 						
 				</a>
 			</li>
@@ -392,7 +392,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat1; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter1; ?>
+						<?php echo JText::_($namecatfilter1); ?>
 						
 				</a>
 			</li>
@@ -402,7 +402,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat2; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter2; ?>
+						<?php echo JText::_($namecatfilter2); ?>
 						
 				</a>
 			</li>
@@ -412,7 +412,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat3; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter3; ?>
+						<?php echo JText::_($namecatfilter3); ?>
 						
 				</a>
 			</li>
@@ -422,7 +422,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat4; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter4; ?>
+						<?php echo JText::_($namecatfilter4); ?>
 						
 				</a>
 			</li>
@@ -432,7 +432,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat5; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter5; ?>
+						<?php echo JText::_($namecatfilter5); ?>
 						
 				</a>
 			</li>
@@ -442,7 +442,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat6; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter6; ?>
+						<?php echo JText::_($namecatfilter6); ?>
 						
 				</a>
 			</li>
@@ -452,7 +452,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat7; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter7; ?>
+						<?php echo JText::_($namecatfilter7); ?>
 						
 				</a>
 			</li>	
@@ -462,7 +462,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat8; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter8; ?>
+						<?php echo JText::_($namecatfilter8); ?>
 						
 				</a>
 			</li>
@@ -472,7 +472,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat9; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter9; ?>
+						<?php echo JText::_($namecatfilter9); ?>
 						
 				</a>
 			</li>
@@ -482,7 +482,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat10; ?>" >
 						
 							<i class="icon-large icon-list"></i> 
-						<?php echo $namecatfilter10; ?>
+						<?php echo JText::_($namecatfilter10); ?>
 						
 				</a>
 			</li>	
@@ -492,7 +492,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit1; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit1; ?>
+						<?php echo JText::_($nameitemedit1); ?>
 						
 				</a>
 			</li>
@@ -502,7 +502,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit2; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit2; ?>
+						<?php echo JText::_($nameitemedit2); ?>
 						
 				</a>
 			</li>	
@@ -512,7 +512,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit3; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit3; ?>
+						<?php echo JText::_($nameitemedit3); ?>
 						
 				</a>
 			</li>
@@ -522,7 +522,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit4; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit4; ?>
+						<?php echo JText::_($nameitemedit4); ?>
 						
 				</a>
 			</li>
@@ -532,7 +532,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit5; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit5; ?>
+						<?php echo JText::_($nameitemedit5); ?>
 						
 				</a>
 			</li>
@@ -542,7 +542,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit6; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit6; ?>
+						<?php echo JText::_($nameitemedit6); ?>
 						
 				</a>
 			</li>
@@ -552,7 +552,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit7; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit7; ?>
+						<?php echo JText::_($nameitemedit7); ?>
 						
 				</a>
 			</li>
@@ -562,7 +562,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit8; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit8; ?>
+						<?php echo JText::_($nameitemedit8); ?>
 						
 				</a>
 			</li>
@@ -572,7 +572,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit9; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit9; ?>
+						<?php echo JText::_($nameitemedit9); ?>
 						
 				</a>
 			</li>	
@@ -582,7 +582,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit10; ?>" >
 						
 							<i class="icon-large icon-file-plus"></i> 
-						<?php echo $nameitemedit10; ?>
+						<?php echo JText::_($nameitemedit10); ?>
 						
 				</a>
 			</li>	
@@ -812,7 +812,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 <li>
 						<a href="<?php echo $linkbutton1; ?>" >
 									<i class="icon-large <?php echo $iconbutton1; ?>"></i> 
-								<?php echo $freebutton1; ?>
+								<?php echo JText::_($freebutton1); ?>
 						</a>
 						</li>
 			<?php endif; ?>
@@ -820,7 +820,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<li>
 						<a href="<?php echo $linkbutton2; ?>" >
 									<i class="icon-large <?php echo $iconbutton2; ?>"></i>
-								<?php echo $freebutton2; ?>
+								<?php echo JText::_($freebutton2); ?>
 						</a>
 						</li>
 			<?php endif; ?>
@@ -828,7 +828,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<li>
 						<a href="<?php echo $linkbutton3; ?>" >
 									<i class="icon-large <?php echo $iconbutton3; ?>"></i>
-								<?php echo $freebutton3; ?>
+								<?php echo JText::_($freebutton3); ?>
 						</a>
 						</li>
 			<?php endif; ?>
@@ -836,7 +836,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<li>
 						<a href="<?php echo $linkbutton4; ?>" >
 									<i class="icon-large <?php echo $iconbutton4; ?>"></i> 
-								<?php echo $freebutton4; ?>
+								<?php echo JText::_($freebutton4); ?>
 						</a>
 						</li>
 			<?php endif; ?>
@@ -844,7 +844,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<li>
 						<a href="<?php echo $linkbutton5; ?>" >
 									<i class="icon-large <?php echo $iconbutton5; ?>"></i> 
-								<?php echo $freebutton5; ?>
+								<?php echo JText::_($freebutton5); ?>
 						</a>
 						</li>
 			<?php endif; ?>
@@ -852,7 +852,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<li>
 						<a href="<?php echo $linkbutton6; ?>" >
 									<i class="icon-large <?php echo $iconbutton6; ?>"></i>
-								<?php echo $freebutton6; ?>
+								<?php echo JText::_($freebutton6); ?>
 						
 						</a>
 						</li>
@@ -861,7 +861,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<li>
 						<a href="<?php echo $linkbutton7; ?>" >
 									<i class="icon-large <?php echo $iconbutton7; ?>"></i>
-								<?php echo $freebutton7; ?>
+								<?php echo JText::_($freebutton7); ?>
 								
 						</a>
 						</li>
@@ -871,7 +871,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<a href="<?php echo $linkbutton8; ?>" >
 								
 									<i class="icon-large <?php echo $iconbutton8; ?>"></i>
-								<?php echo $freebutton8; ?>
+								<?php echo JText::_($freebutton8); ?>
 								
 						</a></li>
 			<?php endif; ?>
@@ -880,7 +880,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<a href="<?php echo $linkbutton9; ?>" >
 								
 									<i class="icon-large <?php echo $iconbutton9; ?>"></i>
-								<?php echo $freebutton9; ?>
+								<?php echo JText::_($freebutton9); ?>
 								
 						</a>
 						</li>
@@ -890,7 +890,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<a href="<?php echo $linkbutton10; ?>" >
 								
 									<i class="icon-large <?php echo $iconbutton10; ?>"></i> 
-								<?php echo $freebutton10; ?>
+								<?php echo JText::_($freebutton10); ?>
 								
 						</a>
 						</li>
