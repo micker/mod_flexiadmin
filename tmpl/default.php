@@ -24,12 +24,13 @@ $document = JFactory::getDocument();
 $document->addStyleSheet("./modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
 
 //extrafield
-require_once (JPATH_ADMINISTRATOR.DS.'components/com_flexicontent/defineconstants.php');
+require_once (JPATH_ADMINISTRATOR.DS.'components'.DS.'com_flexicontent'.DS.'defineconstants.php');
+require_once (JPATH_SITE.DS.'components'.DS.'com_flexicontent'.DS.'helpers'.DS.'route.php');
+require_once (JPATH_SITE.DS.'components'.DS.'com_flexicontent'.DS.'classes'.DS.'flexicontent.helper.php');
+require_once (JPATH_SITE.DS.'components'.DS.'com_flexicontent'.DS.'classes'.DS.'flexicontent.fields.php');
+require_once (JPATH_SITE.DS.'components'.DS.'com_flexicontent'.DS.'classes'.DS.'flexicontent.categories.php');
 JTable::addIncludePath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_flexicontent'.DS.'tables');
-require_once("../components/com_flexicontent/classes/flexicontent.fields.php");
-require_once("../components/com_flexicontent/classes/flexicontent.helper.php");
-require_once("../components/com_flexicontent/helpers/permission.php");
-require_once("../components/com_flexicontent/models/".FLEXI_ITEMVIEW.".php");
+require_once (JPATH_SITE.DS.'components'.DS.'com_flexicontent'.DS.'models'.DS.'item.php');
 
 $itemmodel_name = FLEXI_J16GE ? 'FlexicontentModelItem' : 'FlexicontentModelItems';
 $itemmodel = new $itemmodel_name();
