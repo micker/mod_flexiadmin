@@ -12,7 +12,7 @@
 * FLEXIadmin module is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details. 
+* GNU General Public License for more details.
 **/
 
 //blocage des accés directs sur ce script
@@ -29,6 +29,7 @@ $listPending      = modFlexiadminHelper::getPending($params);
 $listRevised      = modFlexiadminHelper::getRevised($params);
 $listInprogress   = modFlexiadminHelper::getInprogress($params);
 $listDraft        = modFlexiadminHelper::getDraft($params);
+$listTrashed      = modFlexiadminHelper::getTrashed($params);
 $listUseritem     = modFlexiadminHelper::getUseritem($params);
 $listCustomlist1  = modFlexiadminHelper::getCustomlist1($params);
 $listCustomlist2  = modFlexiadminHelper::getCustomlist2($params);

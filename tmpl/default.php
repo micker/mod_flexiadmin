@@ -1025,7 +1025,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i>
 		<?php echo JText::_( 'FLEXI_YOUR_ITEM' ); ?> : <?php echo $user->name; ?></h3>
-		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
+		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items'; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
@@ -1063,12 +1063,37 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	<h3 class="module-title nav-header"><i class="icon-large icon-trash"></i>
 	<?php echo JText::_( 'FLEXI_ADMIN_TRASHED' ); ?></h3>
 	<?php //TODO filtrage trashed
-	$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
+	$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=T'; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
 		echo JText::_( 'FLEXI_ADMIN_ALL' );
 		echo "</a></div>";	?>
+      <div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+         <?php foreach ($listTrashed as $itemTrashed) : ?>
+         <div class="row-fluid">
+            <div class="span12">
+               <div class="span6">
+                  <a href="<?php echo $itemTrashed->link; ?>"><?php echo $itemTrashed->title; ?>
+                  <i class="icon-large icon-edit"></i></a>
+               </div>
+               <div class="span3" style="margin-left: 0 !important;">
+                  <span class="small">
+                     <i class="icon-user"></i>
+
+                     <small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY')." ". $user->name; ?>"><?php echo $user->name; ?> </small>
+                  </span>
+               </div>
+               <div class="span3">
+               <?php //echo $itemTrashed->state;?>
+               <span class="small">
+                  <i class="icon-calendar"></i> <?php echo JHtml::date($itemTrashed->modified, 'd M Y'); ?>
+               </span>
+               </div>
+            </div>
+         </div>
+         <?php endforeach; ?>
+   </div>
 	</div>
 <?php endif; ?>
 <?php if ($displblock1) : ?>

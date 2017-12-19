@@ -12,7 +12,7 @@
 * FLEXIadmin module is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details. 
+* GNU General Public License for more details.
 **/
 
 //blocage des accés directs sur ce script
@@ -48,7 +48,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryInprogress = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE state = -5 ORDER BY modified DESC LIMIT '. (int) $params->get('count'); 
+		$queryInprogress = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE state = -5 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryInprogress );
 		$itemsInprogress = $db->loadObjectList();
 		foreach ($itemsInprogress as &$itemInprogress) {
@@ -68,15 +68,27 @@ abstract class modFlexiadminHelper
 		}
 		return $itemsDraft;
 	}
+	public static function getTrashed(&$params)
+	{
+		// recupere la connexion à la BD
+		$db = JFactory::getDbo();
+		$queryTrashed = 'SELECT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE state = -2 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+		$db->setQuery( $queryTrashed );
+		$itemsTrashed = $db->loadObjectList();
+		foreach ($itemsTrashed as &$itemTrashed) {
+			$itemTrashed->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemTrashed->id);
+		}
+		return $itemsTrashed;
+	}
 	public static function getUseritem(&$params)
 	{
-		$user = JFactory::getUser();		
+		$user = JFactory::getUser();
 		$userid = $user->id;
 		//recupére la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryUseritem = 'SELECT id, title, catid, created, created_by, modified, modified_by, state FROM #__content WHERE created_by = '.$user->id.' ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryUseritem );
-		$itemsUseritem = $db->loadObjectList();		
+		$itemsUseritem = $db->loadObjectList();
 		foreach ($itemsUseritem as &$itemUseritem) {
 			$itemUseritem->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemUseritem->id);
 			switch ($itemUseritem->state){
@@ -113,7 +125,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist = 'SELECT DISTINCT  a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -133,7 +145,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist2 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -152,7 +164,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist3 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -171,7 +183,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist4 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -190,7 +202,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist5 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -209,7 +221,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist6 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -228,7 +240,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist7 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -247,7 +259,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist8 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -266,7 +278,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist9 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -285,7 +297,7 @@ abstract class modFlexiadminHelper
 
         $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
         $catids_where = ' rel.catid IN ('.$catlist.') ';
-        
+
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryCustomlist10 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
