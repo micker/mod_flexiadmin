@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension 
-	type="module" 
-	version="3.0" 
-	client="administrator" 
+<extension
+	type="module"
+	version="3.0"
+	client="administrator"
 	method="upgrade">
 	<name>FlexiContent Admin Dashboard</name>
 	<author>Berges Yannick</author>
@@ -30,7 +30,7 @@
 	</languages>
 	<config>
 		<fields name="params">
-			<fieldset name="basic" addfieldpath="administrator/modules/mod_flexiadmin/elements/">	
+			<fieldset name="basic" addfieldpath="administrator/modules/mod_flexiadmin/elements/">
 				<field name="displayconfigmodule" type="radio" default="1" label="FLEXI_ADMIN_DISPLAY_CONFIG_MODULE" description="FLEXI_ADMIN_DISPLAY_CONFIG_MODULE_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
@@ -40,486 +40,160 @@
 				<option value="1">FLEXI_YES</option>
 			</field>
                 <field name="customtext" label ="FLEXI_ADMIN_CUSTOMTEXT" description="FLEXI_ADMIN_CUSTOMTEXT_DESC" type="editor" width="200px" height="100px"  buttons="false" filter="safehtml" showon="displaycustomtext:1"/>
-			<field name="" type="separator" default="FLEXI_ADMIN_NB_ITEM_DISPLAY" level="level1" />				
-			<field 					
-				name="count" type="list"					
-				default="5" label="FLEXI_ADMIN_NBITEM"					
-				description="FLEXI_ADMIN_NBITEM">						
-				<option	value="1">1</option>						
-				<option	value="3">3</option>						
-				<option	value="5">5</option>						
-				<option	value="10">10</option>						
-				<option	value="15">15</option>						
-				<option	value="20">20</option>				
-			</field>	
-			<field 					
-				name="column" type="list"					
-				default="4" label="FLEXI_ADMIN_COLUMN"					
-				description="FLEXI_ADMIN_COLUMN_DESC">						
-				<option	value="12">1</option>
-				<option	value="6">2</option>				
-				<option	value="4">3</option>						
-									
+			<field name="" type="separator" default="FLEXI_ADMIN_NB_ITEM_DISPLAY" level="level1" />
+			<field
+				name="count" type="list"
+				default="5" label="FLEXI_ADMIN_NBITEM"
+				description="FLEXI_ADMIN_NBITEM">
+				<option	value="1">1</option>
+				<option	value="3">3</option>
+				<option	value="5">5</option>
+				<option	value="10">10</option>
+				<option	value="15">15</option>
+				<option	value="20">20</option>
 			</field>
-			<field name="" type="separator" default="FLEXI_ADMIN_SIDEBAR_OPTIONS" level="level1" />			
+			<field
+				name="column" type="list"
+				default="4" label="FLEXI_ADMIN_COLUMN"
+				description="FLEXI_ADMIN_COLUMN_DESC">
+				<option	value="12">1</option>
+				<option	value="6">2</option>
+				<option	value="4">3</option>
+
+			</field>
+			<field name="" type="separator" default="FLEXI_ADMIN_SIDEBAR_OPTIONS" level="level1" />
 			<field name="tabmodsidebar" type="radio" default="1" label="FLEXI_ADMIN_SIDEBAR_TABS_MOD" description="FLEXI_ADMIN_SIDEBAR_TABS_MOD_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
-			</field>				
-			<field name="" type="separator" default="FLEXI_ADMIN_TABS" level="level1" />			
+			</field>
+			<field name="" type="separator" default="FLEXI_ADMIN_TABS" level="level1" />
 			<field name="displaycustomtab" type="radio" default="1" label="FLEXI_ADMIN_TABS_CUSTOM" description="FLEXI_ADMIN_TABS_CUSTOM_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
-			</field>				
-			<field name="displaycreattab" type="radio" default="1" label="FLEXI_ADMIN_TABS_CREATE" description="FLEXI_ADMIN_TABS_CREATE_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>				
-			<field name="displaymanagetab" type="radio" default="1" label="FLEXI_ADMIN_TABS_MANAGE" description="FLEXI_ADMIN_TABS_MANAGE_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>				
-			<field name="displayadmintab" type="radio" default="1" label="FLEXI_ADMIN_TABS_ADMIN" description="FLEXI_ADMIN_TABS_ADMIN_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
 			</field>
-			<field name="displayfreetab" type="radio" default="1" label="FLEXI_FREE_TABS_ADMIN" description="FLEXI_FREE_TABS_ADMIN_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>			
-			
-		<field name="" type="separator" default="FLEXI_ADMIN_BLOCK_DISPLAY" level="level1" />			
+			<field name="displaycreattab" type="radio" default="1" label="FLEXI_ADMIN_TABS_CREATE" description="FLEXI_ADMIN_TABS_CREATE_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="displaymanagetab" type="radio" default="1" label="FLEXI_ADMIN_TABS_MANAGE" description="FLEXI_ADMIN_TABS_MANAGE_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="displayadmintab" type="radio" default="1" label="FLEXI_ADMIN_TABS_ADMIN" description="FLEXI_ADMIN_TABS_ADMIN_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="displayfreetab" type="radio" default="1" label="FLEXI_FREE_TABS_ADMIN" description="FLEXI_FREE_TABS_ADMIN_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+
+		<field name="" type="separator" default="FLEXI_ADMIN_BLOCK_DISPLAY" level="level1" />
 			<field name="hiddepending" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_PENDING" description="FLEXI_ADMIN_DISPLAYBLOCK_PENDING_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
-			</field>				
-			<field name="hidderevised" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_REVISED" description="FLEXI_ADMIN_DISPLAYBLOCK_REVISED_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>				
-			<field name="hiddeinprogess" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS" description="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>				
-			<field name="hiddedraft" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT" description="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>				
-			<field name="hiddeyouritem" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_YOURITEM" description="FLEXI_ADMIN_DISPLAYBLOCK_YOURITEM_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
-			</field>				
-			<field name="hiddetrashed" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_TRASHED" description="FLEXI_ADMIN_DISPLAYBLOCK_TRASHED_DESC" class="btn-group btn-group-yesno">					
-				<option value="0">FLEXI_NO</option>					
-				<option value="1">FLEXI_YES</option>				
+			</field>
+			<field name="hidderevised" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_REVISED" description="FLEXI_ADMIN_DISPLAYBLOCK_REVISED_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="hiddeinprogess" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS" description="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="hiddedraft" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT" description="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="hiddeyouritem" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_YOURITEM" description="FLEXI_ADMIN_DISPLAYBLOCK_YOURITEM_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
+			<field name="hiddetrashed" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_TRASHED" description="FLEXI_ADMIN_DISPLAYBLOCK_TRASHED_DESC" class="btn-group btn-group-yesno">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
 			</field>
 			<field name="forceheightblock" type="text" default="" size="50" label="FLEXI_ADMIN_BLOCKHEIGHT" description="FLEXI_ADMIN_BLOCKHEIGHT_DESC"/>
-			
+
 			<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM_DESC" level="level1" />
-			<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON1" level="level2"/>
-					<field name="displblock1" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON" class="btn-group btn-group-yesno">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="nameblockcustom1" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM1" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock1:1"/>
-					<field name="catidlist1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock1:1"/>
-					<field name="extrafieldlist1" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" default="" size="50"  showon="displblock1:1"/>
-					<field name="displautblock1" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock1" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON2" level="level2" showon="displblock1:1"/>
-					<field name="displblock2" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="displblock1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
 
-					<field name="nameblockcustom2" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM2" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock2:1"/>
-					<field name="catidlist2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock2:1"/>
-                <field name="extrafieldlist2" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock2:1" />
-					<field name="displautblock2" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock2" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON3" level="level2" showon="displblock2:1"/>
-					<field name="displblock3" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="displblock2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="nameblockcustom3" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM3" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock3:1"/>
-					<field name="catidlist3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock3:1" />
-					<field name="extrafieldlist3" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock3:1" />
-					<field name="displautblock3" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock3" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON4" level="level2" showon="displblock3:1"/>
-					<field name="displblock4" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DEC" class="btn-group btn-group-yesno" showon="displblock3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-				
-					<field name="nameblockcustom4" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM4" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock4:1"/>
-					<field name="catidlist4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock4:1"/>
-					<field name="extrafieldlist4" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock4:1" />
-					<field name="displautblock4" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock4" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON5" level="level2" showon="displblock4:1"/>
-					<field name="displblock5" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="displblock4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-				
-					<field name="nameblockcustom5" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM5" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock5:1"/>
-					<field name="catidlist5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock5:1" />
-					<field name="extrafieldlist5" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock5:1" />
-					<field name="displautblock5" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock5" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON6" level="level2" showon="displblock5:1"/>
-					<field name="displblock6" label="FLEXI_ADMIN_CATBUTTON" type="radio" description="FLEXI_ADMIN_CATBUTTON_DESC" default="0" class="btn-group btn-group-yesno" showon="displblock5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-
-					<field name="nameblockcustom6" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM6" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock6:1"/>
-					<field name="catidlist6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock6:1"/>
-					<field name="extrafieldlist6" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock6:1" />
-                                <field name="displautblock6" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock6:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock6" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock6:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-									<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON7" level="level2" showon="displblock6:1"/>
-					<field name="displblock7" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="displblock6:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-
-					<field name="nameblockcustom7" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM7" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock7:1"/>
-					<field name="catidlist7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock7:1"/>
-					<field name="extrafieldlist7" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock7:1" />
-                                <field name="displautblock7" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock7:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock7" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock7:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-									<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON8" level="level2" showon="displblock7:1"/>
-					<field name="displblock8" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="displblock7:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-
-					<field name="nameblockcustom8" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM8" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock8:1"/>
-					<field name="catidlist8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock8:1"/>
-					<field name="extrafieldlist8" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock8:1" />
-                                <field name="displautblock8" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock8" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-									<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON9" level="level2" showon="displblock8:1"/>
-					<field name="displblock9" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="displblock8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-
-					<field name="nameblockcustom9" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM9" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock9:1"/>
-					<field name="catidlist9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock9:1"/>
-					<field name="extrafieldlist9" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock9:1" />
-                                <field name="displautblock9" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock9" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-									<field name="" type="separator" default="FLEXI_ADMIN_DBUTTON10" level="level2" showon="displblock9:1"/>
-					<field name="displblock10" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="displblock9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-				
-					<field name="nameblockcustom10" type="text" label="FLEXI_ADMIN_BLOCKCUSTOM10" description="FLEXI_ADMIN_BLOCKCUSTOM_DESC" showon="displblock10:1"/>
-					<field name="catidlist10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="displblock10:1"/>
-<field name="extrafieldlist10" type="fields" multiple="false" groupables="0" issortable="1" fieldnameasvalue="1" label="FLEXI_ADMIN_EXTRAFIELD" description="FLEXI_ADMIN_EXTRAFIELD_DESC" showon="displblock10:1" />
-					<field name="displautblock10" label="FLEXI_ADMIN_DISPLAY_AUTHOR" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock10:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-					<field name="displdateblock10" label="FLEXI_ADMIN_DISPLAY_DATE" type="radio" default="1" class="btn-group btn-group-yesno" showon="displblock10:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-			</fieldset>	
+				<field name= "add_customblock"
+				 description= ""
+				 type= "subform"
+				 label= ""
+				 min= "1"
+				 max= "1000"
+				 required= "false"
+				 formsource= "administrator/modules/mod_flexiadmin/models/forms/addcustomblock.xml"
+				 multiple= "true"
+				 buttons= "add,remove,move"
+			layout="joomla.form.field.subform.repeatable-table"
+				 groupByFieldset="false"/>
+				 
+			</fieldset>
 
 			<fieldset name="custom_tab" label="FLEXI_ADMIN_CUSTOM_TAB" description="FLEXI_ADMIN_CUSTOM_TAB_DESC" >
 				<field name="nametab" type="text"  default="FLEXI_ADMIN_CUSTOM_TAB_NAME" label="FLEXI_ADMIN_NAME_TAB" description="FLEXI_ADMIN_NAME_TAB_DESC" />
-				<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD1" level="level2" />
-				<field name="dispb1" label="" type="radio" default="0" class="btn-group btn-group-yesno">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb1:1"/>
-						<field name="types1" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb1:1" />
-						<field name="catids1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC"  showon="dispb1:1"/>
-					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD2" level="level2" showon="dispb1:1"/>
-					<field name="dispb2" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb2:1"/>
-						<field name="types2" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb2:1" />
-						<field name="catids2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb2:1" />
-					<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD3" level="level2" showon="dispb2:1" />
-					<field name="dispb3" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb3:1" />
-						<field name="types3" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb3:1" />
-						<field name="catids3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb3:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD4" level="level2" showon="dispb3:1" />
-					<field name="dispb4" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb4:1" />
-						<field name="types4" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb4:1" />
-						<field name="catids4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb4:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD5" level="level2" showon="dispb4:1" />
-						<field name="dispb5" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb5:1" />
-						<field name="types5" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb5:1" />
-						<field name="catids5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb5:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD6" level="level2" showon="dispb5:1" />
-						<field name="dispb6" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb6:1" />
-						<field name="types6" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb6:1" />
-						<field name="catids6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb6:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD7" level="level2" showon="dispb6:1" />
-					<field name="dispb7" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb6:1" >
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton7" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb7:1" />
-						<field name="types7" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb7:1" />
-						<field name="catids7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb7:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD8" level="level2" showon="dispb7:1" />
-					<field name="dispb8" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb7:1" >
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb8:1" />
-						<field name="types8" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb8:1" />
-						<field name="catids8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb8:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD9" level="level2"  showon="dispb8:1"/>
-					<field name="dispb9" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC"  showon="dispb9:1"/>
-						<field name="types9" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC"  showon="dispb9:1"/>
-						<field name="catids9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC"  showon="dispb9:1" />
-						<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD10" level="level2" showon="dispb9:1" />
-					<field name="dispb10" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispb9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namebutton10" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispb10:1" />
-						<field name="types10" type="types" multiple="false" size="5" label="FLEXI_ADMIN_TYPES" description="FLEXI_ADMIN_TYPES_DESC" showon="dispb10:1" />
-						<field name="catids10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispb10:1" />
-				
-				
+			<field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD" level="level1" />
+				<field name= "add_button"
+				 description= ""
+				 type= "subform"
+				 label= ""
+				 min= "1"
+				 max= "1000"
+				 required= "false"
+				 formsource= "administrator/modules/mod_flexiadmin/models/forms/addbutton.xml"
+				 multiple= "true"
+				 buttons= "add,remove,move"
+	layout="joomla.form.field.subform.repeatable-table"
+				 groupByFieldset="false"/>
+
+				 <field name="displayline1" label="FLEXI_ADMIN_DISPLAY_LINE" description="FLEXI_ADMIN_DISPLAY_LINE_DESC" type="radio" default="0" class="btn-group btn-group-yesno">
+					 <option value="1">JYES</option>
+					 <option value="0">JNO</option>
+				 </field>
+
 				<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING" level="level1" />
-				<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING1" level="level2"/>
-				<field name="dispc1" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno">
+
+					<field name= "add_cat_button"
+					 description= ""
+					 type= "subform"
+					 label= ""
+					 min= "1"
+					 max= "1000"
+					 required= "false"
+					 formsource= "administrator/modules/mod_flexiadmin/models/forms/addcatbutton.xml"
+					 multiple= "true"
+					 buttons= "add,remove,move"
+				layout="joomla.form.field.subform.repeatable-table"
+					 groupByFieldset="false"/>
+
+					 <field name="displayline2" label="FLEXI_ADMIN_DISPLAY_LINE"  description="FLEXI_ADMIN_DISPLAY_LINE_DESC" type="radio" default="0" class="btn-group btn-group-yesno">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
 
-						<field name="namecatfilter1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC"  showon="dispc1:1" />
-						<field name="filtercatids1" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC"  showon="dispc1:1" />
-										<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING2" level="level2" showon="dispc1:1"/>
-					<field name="dispc2" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-
-						<field name="namecatfilter2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc2:1"/>
-						<field name="filtercatids2" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc2:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING3" level="level2" showon="dispc2:1"/>
-					<field name="dispc3" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc3:1" />
-						<field name="filtercatids3" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc3:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING4" level="level2" showon="dispc3:1"/>
-					<field name="dispc4" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc4:1" />
-						<field name="filtercatids4" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc4:1" />
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING5" level="level2" showon="dispc4:1" />
-					<field name="dispc5" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc5:1" />
-						<field name="filtercatids5" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc5:1" />
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING6" level="level2" showon="dispc5:1"/>
-						<field name="dispc6" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc6:1" />
-						<field name="filtercatids6" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc6:1" />
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING7" level="level2" showon="dispc6:1" />
-					<field name="dispc7" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno"  showon="dispc6:1" >
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter7" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc7:1" />
-						<field name="filtercatids7" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc7:1" />
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING8" level="level2" showon="dispc7:1"/>
-					<field name="dispc8" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc7:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc8:1" />
-						<field name="filtercatids8" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc8:1"/>
-							<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING9" level="level2" showon="dispc8:1" />
-					<field name="dispc9" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc9:1" />
-						<field name="filtercatids9" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc9:1" />
-											<field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING10" level="level2" showon="dispc9:1" />
-					<field name="dispc10" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispc9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="namecatfilter10" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispc10:1" />
-						<field name="filtercatids10" type="flexicategories" multiple="false" label="FLEXI_ADMIN_CAT" description="FLEXI_ADMIN_CAT_DESC" showon="dispc10:1" />
-				
 				<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT" level="level1" />
-								<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT1" level="level2" />
-				<field name="dispi1" label="" type="radio" default="0" class="btn-group btn-group-yesno">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
 
-						<field name="nameitemedit1" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi1:1"/>
-						<field name="itemid1" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi1:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT2" level="level2" showon="dispi1:1"/>
-					<field name="dispi2" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit2" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi2:1"/>
-						<field name="itemid2" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi2:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT3" level="level2" showon="dispi2:1"/>
-					<field name="dispi3" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit3" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi3:1"/>
-						<field name="itemid3" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi3:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT4" level="level2" showon="dispi3:1" />
-					<field name="dispi4" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit4" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi4:1" />
-						<field name="itemid4" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi4:1" />
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT5" level="level2" showon="dispi4:1"/>
-					<field name="dispi5" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit5" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi5:1"/>
-						<field name="itemid5" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi5:1"/>
-						<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT6" level="level2" showon="dispi5:1"/>
-					<field name="dispi6" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit6" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi6:1"/>
-						<field name="itemid6" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi6:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT7" level="level2" showon="dispi6:1"/>
-					<field name="dispi7" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi6:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit7" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi7:1"/>
-						<field name="itemid7" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi7:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT8" level="level2" showon="dispi7:1"/>
-					<field name="dispi8" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi7:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit8" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi8:1"/>
-						<field name="itemid8" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi8:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT9" level="level2" showon="dispi8:1"/>
-					<field name="dispi9" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit9" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi9:1"/>
-						<field name="itemid9" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi9:1"/>
-											<field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT10" level="level2" showon="dispi9:1"/>
-					<field name="dispi10" label="" type="radio" default="0" class="btn-group btn-group-yesno" showon="dispi9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="nameitemedit10" type="text" label="FLEXI_ADMIN_NAME_BUTTON" description="FLEXI_ADMIN_NAME_BUTTON_DESC" showon="dispi10:1"/>
-						<field name="itemid10" type="text" size="5" label="FLEXI_ADMIN_ITEM" description="FLEXI_ADMIN_ITEM_DESC" showon="dispi10:1"/>
-					
+					<field name= "edit_item_button"
+					 description= ""
+					 type= "subform"
+					 label= ""
+					 min= "1"
+					 max= "1000"
+					 required= "false"
+					 formsource= "administrator/modules/mod_flexiadmin/models/forms/edititembutton.xml"
+					 multiple= "true"
+					 buttons= "add,remove,move"
+				layout="joomla.form.field.subform.repeatable-table"
+					 groupByFieldset="false"/>
 
-			</fieldset>	
-			<fieldset name="creation_tab" label="FLEXI_ADMIN_CREATION_TAB" description="FLEXI_ADMIN_CREATION_TAB_DESC">		
+
+
+
+
+			</fieldset>
+			<fieldset name="creation_tab" label="FLEXI_ADMIN_CREATION_TAB" description="FLEXI_ADMIN_CREATION_TAB_DESC">
 				<field name="hiddebuttonadditem" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_ADDITEM"              description="FLEXI_ADMIN_DISPLAYBUTTON_ADDITEM_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
@@ -540,28 +214,28 @@
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				
-			
+
+
 			</fieldset>
-			<fieldset name="gestion_tab" label="FLEXI_ADMIN_GESTION_TAB" description="FLEXI_ADMIN_GESTION_TAB_DESC">			
+			<fieldset name="gestion_tab" label="FLEXI_ADMIN_GESTION_TAB" description="FLEXI_ADMIN_GESTION_TAB_DESC">
 				<field name="hiddebuttonmanageitems" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_MANAGEITEMS"              description="FLEXI_ADMIN_DISPLAYBUTTON_MANAGEITEMS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonmanagecategories" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBUTTON_BUTTONMANAGECATEGORIES"   description="FLEXI_ADMIN_DISPLAYBUTTON_BUTTONMANAGECATEGORIES_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 
 				<field name="hiddebuttonmanagetags" type="radio" default="1"       label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETAGS"    description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETAGS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 
 				<field name="hiddebuttonmanageauthors" type="radio" default="1"    label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEAUTHORS" description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEAUTHORS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonmanagegroups" type="radio" default="1"     label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEGROUPS"  description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEGROUPS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
@@ -569,24 +243,24 @@
 				<field name="hiddebuttonmanagefiles" type="radio" default="1"     label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFILES"  description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFILES_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>				
-				
-				
-				
+				</field>
+
+
+
 			</fieldset>
-			<fieldset name="administration_tab" label="FLEXI_ADMIN_ADMIN_TAB" description="FLEXI_ADMIN_ADMIN_TAB_DESC">			
+			<fieldset name="administration_tab" label="FLEXI_ADMIN_ADMIN_TAB" description="FLEXI_ADMIN_ADMIN_TAB_DESC">
 				<field name="hiddebuttonimportcontent" type="radio" default="1"    label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT" description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonstats" type="radio" default="1"            label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS"         description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonindex" type="radio" default="1"            label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX"         description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonaddfields" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDFIELDS"   description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDFIELDS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
@@ -594,7 +268,7 @@
 				<field name="hiddebuttonmanagefields" type="radio" default="1"     label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS"  description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonmanagetypes" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES"   description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
@@ -602,105 +276,31 @@
 				<field name="hiddebuttonaddtypes" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDTYPES"   description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDTYPES_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>	
+				</field>
 				<field name="hiddebuttonadmin" type="radio" default="1"      label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADMIN"   description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADMIN_DESC" class="btn-group btn-group-yesno">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
-				</field>				
-				
+				</field>
+
 			</fieldset>
 			<fieldset name="free_tab" label="FLEXI_ADMIN_FREE_TAB" description="FLEXI_ADMIN_FREE_TAB_DESC" level="level1">
 			<field name="freenametab" type="text"  default="FLEXI_ADMIN_FREE_TAB_NAME" label="FLEXI_ADMIN_FREE_TAB_NAME_2" description="FLEXI_ADMIN_FREE_TAB_NAME_2_DESC" />
-			<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_1" level="level2" />
-			<field name="dispf1" label="FLEXI_ADMIN_CATBUTTON" type="radio" description="FLEXI_ADMIN_CATBUTTON_DESC" default="0" class="btn-group btn-group-yesno">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
-						<field name="freebutton1" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf1:1"/>
-						<field name="linkbutton1" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf1:1"/>
-						<field name="iconbutton1" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf1:1" />	
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_2" level="level2" showon="dispf1:1"/>
-			<field name="dispf2" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf1:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-						<field name="freebutton2" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf2:1"/>
-						<field name="linkbutton2" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf2:1"/>
-						<field name="iconbutton2" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf2:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_3" level="level2" showon="dispf2:1"/>
-			<field name="dispf3" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf2:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
 
-						<field name="freebutton3" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf3:1"/>
-						<field name="linkbutton3" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf3:1"/>
-						<field name="iconbutton3" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf3:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_4" level="level2" showon="dispf3:1"/>
-			<field name="dispf4" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf3:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
+			<field name="free_button"
+			 description= ""
+			 type= "subform"
+			 label= ""
+			 min= "1"
+			 max= "1000"
+			 required= "false"
+			 formsource= "administrator/modules/mod_flexiadmin/models/forms/freebutton.xml"
+			 multiple= "true"
+			 buttons= "add,remove,move"
+			layout="joomla.form.field.subform.repeatable-table"
+			 groupByFieldset="false"/>
 
-						<field name="freebutton4" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf4:1"/>
-						<field name="linkbutton4" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf4:1"/>
-						<field name="iconbutton4" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf4:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_5" level="level2" showon="dispf4:1"/>
-			<field name="dispf5" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf4:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-
-						<field name="freebutton5" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf5:1"/>
-						<field name="linkbutton5" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf5:1"/>
-						<field name="iconbutton5" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf5:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_6" level="level2" showon="dispf5:1"/>
-			<field name="dispf6" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf5:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-
-						<field name="freebutton6" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf6:1"/>
-						<field name="linkbutton6" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf6:1"/>
-						<field name="iconbutton6" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf6:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_7" level="level2" showon="dispf6:1"/>
-			<field name="dispf7" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf6:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-
-						<field name="freebutton7" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf7:1"/>
-						<field name="linkbutton7" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf7:1"/>
-						<field name="iconbutton7" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf7:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_8" level="level2" showon="dispf7:1"/>
-			<field name="dispf8" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf7:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-
-						<field name="freebutton8" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf8:1"/>
-						<field name="linkbutton8" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf8:1"/>
-						<field name="iconbutton8" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf8:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_9" level="level2" showon="dispf8:1"/>
-			<field name="dispf9" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON-DESC" class="btn-group btn-group-yesno" showon="dispf8:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-
-						<field name="freebutton9" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf9:1"/>
-						<field name="linkbutton9" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf9:1"/>
-						<field name="iconbutton9" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf9:1" />
-									<field name="" type="separator" default="FLEXI_ADMIN_FREE_BUTTON_ITEM_10" level="level2" showon="dispf9:1"/>
-			<field name="dispf10" label="FLEXI_ADMIN_CATBUTTON" type="radio" default="0" description="FLEXI_ADMIN_CATBUTTON_DESC" class="btn-group btn-group-yesno" showon="dispf9:1">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>		
-
-						<field name="freebutton10" type="text" label="FLEXI_ADMIN_FREE_NAME_BUTTON" description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC" showon="dispf10:1"/>
-						<field name="linkbutton10" type="text" label="FLEXI_ADMIN_FREE_LINK" description="FLEXI_ADMIN_FREE_LINK_DESC" showon="dispf10:1"/>
-						<field name="iconbutton10" type="iconlist" label="FLEXI_ADMIN_ICON" description="JFIELD_TITLE_DESC" showon="dispf10:1" />
 			</fieldset>
-			
+
 			<fieldset name="advanced">
 				<field
 					name="layout"
@@ -716,7 +316,7 @@
 			</fieldset>
 		</fields>
 	</config>
-	
+
 	<updateservers>
         <server type="extension" priority="1" name="FLEXI admin update">https://update.com3elles.com/mod_flexiadmin/mod_flexiadmin_update.xml</server>
     </updateservers>

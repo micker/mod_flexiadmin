@@ -16,20 +16,20 @@
  **/
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
- 
+
 jimport('joomla.form.formfield');
- 
+
 class JFormFieldIconlist extends JFormField {
- 
+
 	protected $type = 'iconlist';
- 
+
 	// getLabel() left out
- 
+
 	public function getInput() {
 		$icons = array(
 		'' => '',
 			'icon-joomla' => 'icon joomla',
-			'icon-chevron-up'=>'icon chevron-up', 
+			'icon-chevron-up'=>'icon chevron-up',
 			'icon-uparrow' => 'icon uparrow',
 			'icon-arrow-up'=>'icon arrow-up',
 			'icon-chevron-right'=>'icon chevron-right',
@@ -166,15 +166,15 @@ class JFormFieldIconlist extends JFormField {
 
 		## Initialize array to store dropdown options ##
 	$options = array();
-	
+
 	foreach($icons as $key=>$value) :
 		## Create $value ##
 		$options[] = JHTML::_('select.option', $key, $value);
 	endforeach;
-	
+
 	## Create <select name="icons" class="inputbox"></select> ##
 	$dropdown = JHTML::_('select.genericlist', $options, $this->name, 'class="inputbox"', 'value', 'text', $this->value, $this->id);
-	
+
 	## Output created <select> list ##
 	return $dropdown;
 	}

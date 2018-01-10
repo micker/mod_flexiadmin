@@ -158,114 +158,6 @@ $displautblock10  = $params->get('displautblock10', '1' );
 //customtab
 $nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME' );
 
-//bouton add
-$namebutton1  = $params->get('namebutton1', '' );
-$type1        = $params->get('types1', '' );
-$maincat1     = $params->get('catids1', '' );
-$dispb1 	  = $params->get('dispb1', '' );
-$namebutton2  = $params->get('namebutton2', '' );
-$type2        = $params->get('types2', '' );
-$maincat2     = $params->get('catids2', '' );
-$dispb2       = $params->get('dispb2', '' );
-$namebutton3  = $params->get('namebutton3', '' );
-$type3        = $params->get('types3', '' );
-$maincat3     = $params->get('catids3', '' );
-$dispb3       = $params->get('dispb3', '' );
-$namebutton4  = $params->get('namebutton4', '' );
-$type4        = $params->get('types4', '' );
-$maincat4     = $params->get('catids4', '' );
-$dispb4       = $params->get('dispb4', '' );
-$namebutton5  = $params->get('namebutton5', '' );
-$type5        = $params->get('types5', '' );
-$maincat5     = $params->get('catids5', '' );
-$dispb5       = $params->get('dispb5', '' );
-$namebutton6  = $params->get('namebutton6', '' );
-$type6        = $params->get('types6', '' );
-$maincat6     = $params->get('catids6', '' );
-$dispb6       = $params->get('dispb6', '' );
-$namebutton7  = $params->get('namebutton7', '' );
-$type7        = $params->get('types7', '' );
-$maincat7     = $params->get('catids7', '' );
-$dispb7       = $params->get('dispb7', '' );
-$namebutton8  = $params->get('namebutton8', '' );
-$type8        = $params->get('types8', '' );
-$maincat8     = $params->get('catids8', '' );
-$dispb8       = $params->get('dispb8', '' );
-$namebutton9  = $params->get('namebutton9', '' );
-$type9        = $params->get('types9', '' );
-$maincat9     = $params->get('catids9', '' );
-$dispb9       = $params->get('dispb9', '' );
-$namebutton10 = $params->get('namebutton10', '' );
-$type10       = $params->get('types10', '' );
-$maincat10    = $params->get('catids10', '' );
-$dispb10      = $params->get('dispb10', '' );
-
-
-//category filter
-$filtercat1     = $params->get('filtercatids1', '' );
-$namecatfilter1 = $params->get('namecatfilter1', '' );
-$dispc1 		= $params->get('dispc1', '' );
-$filtercat2     = $params->get('filtercatids2', '' );
-$namecatfilter2 = $params->get('namecatfilter2', '' );
-$dispc2 		= $params->get('dispc2', '' );
-$filtercat3     = $params->get('filtercatids3', '' );
-$namecatfilter3 = $params->get('namecatfilter3', '' );
-$dispc3 		= $params->get('dispc3', '' );
-$filtercat4     = $params->get('filtercatids4', '' );
-$namecatfilter4 = $params->get('namecatfilter4', '' );
-$dispc4 		= $params->get('dispc4', '' );
-$filtercat5     = $params->get('filtercatids5', '' );
-$namecatfilter5 = $params->get('namecatfilter5', '' );
-$dispc5 		= $params->get('dispc5', '' );
-$filtercat6     = $params->get('filtercatids6', '' );
-$namecatfilter6 = $params->get('namecatfilter6', '' );
-$dispc6 		= $params->get('dispc6', '' );
-$filtercat7     = $params->get('filtercatids7', '' );
-$namecatfilter7 = $params->get('namecatfilter7', '' );
-$dispc7 		= $params->get('dispc7', '' );
-$filtercat8     = $params->get('filtercatids8', '' );
-$namecatfilter8 = $params->get('namecatfilter8', '' );
-$dispc8 		= $params->get('dispc8', '' );
-$filtercat9     = $params->get('filtercatids9', '' );
-$namecatfilter9 = $params->get('namecatfilter9', '' );
-$dispc9 		= $params->get('dispc9', '' );
-$filtercat10    = $params->get('filtercatids10', '' );
-$namecatfilter10= $params->get('namecatfilter10', '' );
-$dispc10 		= $params->get('dispc10', '' );
-
-
-//edit special item
-$itemedit1     = $params->get('itemid1', '' );
-$nameitemedit1 = $params->get('nameitemedit1', '' );
-$dispi1        = $params->get('dispi1', '' );
-$itemedit2     = $params->get('itemid2', '' );
-$nameitemedit2 = $params->get('nameitemedit2', '' );
-$dispi2        = $params->get('dispi2', '' );
-$itemedit3     = $params->get('itemid3', '' );
-$nameitemedit3 = $params->get('nameitemedit3', '' );
-$dispi3        = $params->get('dispi3', '' );
-$itemedit4     = $params->get('itemid4', '' );
-$nameitemedit4 = $params->get('nameitemedit4', '' );
-$dispi4        = $params->get('dispi4', '' );
-$itemedit5     = $params->get('itemid5', '' );
-$nameitemedit5 = $params->get('nameitemedit5', '' );
-$dispi5        = $params->get('dispi5', '' );
-$itemedit6     = $params->get('itemid6', '' );
-$nameitemedit6 = $params->get('nameitemedit6', '' );
-$dispi6        = $params->get('dispi6', '' );
-$itemedit7     = $params->get('itemid7', '' );
-$nameitemedit7 = $params->get('nameitemedit7', '' );
-$dispi7        = $params->get('dispi7', '' );
-$itemedit8     = $params->get('itemid8', '' );
-$nameitemedit8 = $params->get('nameitemedit8', '' );
-$dispi8        = $params->get('dispi8', '' );
-$itemedit9     = $params->get('itemid9', '' );
-$nameitemedit9 = $params->get('nameitemedit9', '' );
-$dispi9        = $params->get('dispi9', '' );
-$itemedit10    = $params->get('itemid10', '' );
-$nameitemedit10= $params->get('nameitemedit10', '' );
-$dispi10        = $params->get('dispi10', '' );
-
 
 //Get Buttom Sections
 $hiddebuttonmanageitems      = $params->get('hiddebuttonmanageitems'     , '1');
@@ -358,6 +250,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
                 </div>
     <?php endif; ?>
 
+
+
 <?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
     <div class="action span12">
 
@@ -372,246 +266,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<div class="tab-content">
 				<?php if ($displaycustomtab) : ?>
 					<div class="tab-pane fade in active" id="custom<?php echo $module->id;?>">
-					<?php if ($dispb1) : ?>
-					<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type1;?>&maincat=<?php echo $maincat1; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton1); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb2) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type2;?>&maincat=<?php echo $maincat2; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton2); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb3) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type3;?>&maincat=<?php echo $maincat3; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton3); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb4) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type4;?>&maincat=<?php echo $maincat4; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton4); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb5) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type5;?>&maincat=<?php echo $maincat5; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton5); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb6) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type6;?>&maincat=<?php echo $maincat6; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton6); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb7) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type7;?>&maincat=<?php echo $maincat7; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton7); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb8) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type8;?>&maincat=<?php echo $maincat8; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton8); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb9) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type9;?>&maincat=<?php echo $maincat9; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton9); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispb10) : ?>
-						<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $type10;?>&maincat=<?php echo $maincat10; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($namebutton10); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc1) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat1; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter1); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc2) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat2; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter2); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc3) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat3; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter3); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc4) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat4; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter4); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc5) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat5; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter5); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc6) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat6; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter6); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc7) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat7; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter7); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc8) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat8; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo $namecatfilter8; ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc9) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat9; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter9); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispc10) : ?>
-						<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $filtercat10; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-list"></i><br/>
-								<?php echo JText::_($namecatfilter10); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi1) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit1; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit1); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($nameitemedit2) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit2; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit2); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi3) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit3; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit3); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi4) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit4; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit4); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi5) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit5; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit5); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi6) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit6; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit6); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi7) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit7; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit7); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi8) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit8; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit8); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi9) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit9; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit9); ?>
-								</button>
-						</a>
-					<?php endif; ?>
-					<?php if ($dispi10) : ?>
-						<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $itemedit10; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large icon-file-plus"></i><br/>
-								<?php echo JText::_($nameitemedit10); ?>
-								</button>
-						</a>
-					<?php endif; ?>
+                  <?php $list_buttons = $params->get('add_button');
+               //print_r ($list_buttons);
+              // loop your result
+              foreach( $list_buttons as $list_buttons_idx => $add_button ) :?>
+
+                 <a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $add_button->button_type;?>&maincat=<?php echo $add_button->button_type; ?>&filter_lang=<?php echo $add_button->button_lang; ?>" >
+                          <button type="button" class="btn btn-default btn-lg itemlist">
+                             <i class="icon-large icon-plus"></i><br/>
+                          <?php echo JText::_($add_button->button_name); ?>
+                          </button>
+                    </a>
+
+              <?php endforeach; ?>
+              <?php if ($params->get('displayline1')) : ?><hr /><?php endif; ?>
+              <?php $list_catbuttons = $params->get('add_cat_button');
+              //print_r ($list_catbuttons);
+              // loop your result
+              foreach( $list_catbuttons as $list_catbuttons_idx => $cat_button ) :?>
+
+              <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?>" >
+                    <button type="button" class="btn btn-default btn-lg itemlist">
+                       <i class="icon-large icon-list"></i><br/>
+                    <?php echo JText::_($cat_button->namecatfilter); ?>
+                    </button>
+              </a>
+
+              <?php endforeach; ?>
+
+             <?php if ($params->get('displayline2')) : ?> <hr /><?php endif; ?>
+              <?php $list_edititembuttons = $params->get('edit_item_button');
+              //print_r ($list_edititembuttons);
+              // loop your result
+              foreach( $list_edititembuttons as $list_edititembuttons_idx => $edit_item_button ) :?>
+
+              <a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $edit_item_button->itemid; ?>" >
+                    <button type="button" class="btn btn-default btn-lg itemlist">
+                       <i class="icon-large icon-pencil"></i><br/>
+                    <?php echo JText::_($edit_item_button->nameitemedit); ?>
+                    </button>
+              </a>
+
+              <?php endforeach; ?>
 					</div>
 					<?php endif; ?>
 										<?php if ($displaycreattab) : ?>
@@ -788,86 +484,20 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			<!-- end of admin tabs-->
 			<?php if ($displayfreetab) : ?>
 			<div class="tab-pane fade" id="free<?php echo $module->id;?>">
-			<?php if ($dispfreebutton1) : ?>
-						<a href="<?php echo $linkbutton1; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton1; ?>"></i><br/>
-								<?php echo JText::_($freebutton1); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-			<?php if ($dispfreebutton2) : ?>
-						<a href="<?php echo $linkbutton2; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton2; ?>"></i><br/>
-								<?php echo JText::_($freebutton2); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-			<?php if ($dispfreebutton3) : ?>
-						<a href="<?php echo $linkbutton3; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton3; ?>"></i><br/>
-								<?php echo JText::_($freebutton3); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-			<?php if ($dispfreebutton4) : ?>
-						<a href="<?php echo $linkbutton4; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton4; ?>"></i><br/>
-								<?php echo JText::_($freebutton4); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-						<?php if ($dispfreebutton5) : ?>
-						<a href="<?php echo $linkbutton5; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton5; ?>"></i><br/>
-								<?php echo JText::_($freebutton5); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-						<?php if ($dispfreebutton6) : ?>
-						<a href="<?php echo $linkbutton6; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton6; ?>"></i><br/>
-								<?php echo JText::_($freebutton6); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-						<?php if ($dispfreebutton7) : ?>
-						<a href="<?php echo $linkbutton7; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton7; ?>"></i><br/>
-								<?php echo JText::_($freebutton7); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-						<?php if ($dispfreebutton8) : ?>
-						<a href="<?php echo $linkbutton8; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton8; ?>"></i><br/>
-								<?php echo JText::_($freebutton8); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-						<?php if ($dispfreebutton9) : ?>
-						<a href="<?php echo $linkbutton9; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton9; ?>"></i><br/>
-								<?php echo JText::_($freebutton9); ?>
-								</button>
-						</a>
-			<?php endif; ?>
-						<?php if ($dispfreebutton10) : ?>
-						<a href="<?php echo $linkbutton10; ?>" >
-								<button type="button" class="btn btn-default btn-lg itemlist">
-									<i class="icon-large <?php echo $iconbutton10; ?>"></i><br/>
-								<?php echo JText::_($freebutton10); ?>
-								</button>
-						</a>
-			<?php endif; ?>
+
+            <?php $list_freebuttons = $params->get('free_button');
+            //print_r ($list_edititembuttons);
+            // loop your result
+            foreach( $list_freebuttons as $list_freebuttons_idx => $free_button ) :?>
+
+            <a href="<?php echo $free_button->linkbutton; ?>" >
+                  <button type="button" class="btn btn-default btn-lg itemlist">
+                     <i class="icon-large <?php echo $free_button->iconbutton; ?>"></i><br/>
+                  <?php echo JText::_($free_button->freebutton); ?>
+                  </button>
+            </a>
+
+         <?php endforeach; ?>
 			</div>
 			<?php endif; ?>
 
@@ -1096,6 +726,97 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
    </div>
 	</div>
 <?php endif; ?>
+New custom block
+<?php $list_customblocks = $params->get('add_customblock');
+print_r ($list_customblocks);
+// loop your result
+foreach( $list_customblocks as $list_customblocks_idx => $customblock ) :?>
+
+<div class="block youritems well well-small span<?php echo $column; ?>">
+   <h3 class="module-title nav-header">
+   <i class="icon-large icon-user"></i>
+   <?php echo JText::_($customblock->nameblockcustom); ?> : </h3>
+   <?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats='.$customblock->catidlist; ?>
+   <div style='text-align:right;'>
+   <a href='<?php echo $show_all_link ?>' class='adminlink'>
+   <?php
+   echo JText::_( 'FLEXI_ADMIN_ALL' );
+   echo "</a></div>";	?>
+   <div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+      <table class="table table-hover">
+         <thead>
+            <tr>
+            <th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
+            <?php if ($customblock->displautblock) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
+            <?php
+                      $customblock->itemCustomlist= $customblock->listCustomlist[0];
+               $item = $itemmodel->getItem($customblock->itemCustomlist->id, $check_view_access=false);
+               $items = array(&$item);
+                 // Get fields values from the DB,
+               FlexicontentFields::getFields($items);
+
+               if(isset($customblock->extrafieldlist)) {
+               foreach ($customblock->extrafieldlist as $extrafield){
+                  FlexicontentFields::getFieldDisplay($item, $extrafield);
+                  $label= $item->fields[$extrafield]->label;
+                  echo '<th>';
+                  echo JText::_($label);
+                  echo '</th>';
+               }
+               }
+            ?>
+            <?php if ($customblock->displdateblock) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
+            </tr>
+         </thead>
+
+         <tbody>
+         <?php foreach ($listCustomlist1 as $itemCustomlist1) : ?>
+            <tr>
+            <td>
+               <a href="<?php echo $itemCustomlist1->link; ?>"><?php echo $itemCustomlist1->title; ?>
+               <i class="icon-large icon-edit"></i></a>
+            </td>
+            <?php if ($customblock->displautblock) : ?><td>
+               <span class="small">
+                  <i class="icon-user"></i>
+
+                  <small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemCustomlist1->name; ?>"><?php echo $itemCustomlist1->name;?> </small>
+               </span>
+            </td>
+            <?php endif; ?>
+            <?php
+               $item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
+               $items = array(&$item);
+                 // Get fields values from the DB,
+                     //print_r ($extraFieldlist1);
+               //FlexicontentFields::getFields($items);
+               if(isset($extrafieldlist1)) {
+               foreach ($extrafieldlist1 as $extrafield){
+                  FlexicontentFields::getFieldDisplay($item, $extrafield);
+                  $value= $item->fields[$extrafield]->display;
+                  echo '<td>';
+                  echo $value;
+                  echo '</td>';
+               }
+               }
+            ?>
+            <?php if ($customblock->displdateblock) : ?>
+            <td>
+            <span class="small">
+               <i class="icon-calendar"></i> <?php echo JHtml::date($itemCustomlist1->modified, 'd M Y'); ?>
+            </span>
+            </td>
+            <?php endif; ?>
+         </tr>
+      <?php endforeach; ?>
+                  </tbody>
+      </table>
+</div>
+</div>
+
+<?php endforeach; ?>
+
+
 <?php if ($displblock1) : ?>
 	<div class="block youritems well well-small span<?php echo $column; ?>">
 		<h3 class="module-title nav-header">
