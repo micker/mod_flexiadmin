@@ -17,6 +17,11 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
 
+$document = JFactory::getDocument();
+$document->addScript('modules/mod_flexiadmin/assets/js/bootstrap-iconpicker.min.js');
+$document->addScript('modules/mod_flexiadmin/assets/js/bootstrap-iconpicker-iconset-all.min.js');
+$document->addStyleSheet('modules/mod_flexiadmin/assets/css/bootstrap-iconpicker.min.css');
+
 jimport('joomla.form.formfield');
 
 class JFormFieldIconlist extends JFormField {
@@ -173,8 +178,8 @@ class JFormFieldIconlist extends JFormField {
 	endforeach;
 
 	## Create <select name="icons" class="inputbox"></select> ##
-	$dropdown = JHTML::_('select.genericlist', $options, $this->name, 'class="inputbox"', 'value', 'text', $this->value, $this->id);
-
+	##$dropdown = JHTML::_('select.genericlist', $options, $this->name, 'class="inputbox"', 'value', 'text', $this->value, $this->id);
+$dropdown="<button class='btn btn-default' role='iconpicker' name='icon'></button>";
 	## Output created <select> list ##
 	return $dropdown;
 	}
