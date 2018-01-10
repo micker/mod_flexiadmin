@@ -76,6 +76,7 @@ $extrafieldlist10 = explode( ',', $extrafieldlist10 );
 $extrafieldlist10 = $extrafieldlist10;
 
 //module config
+$hiddefeatured   = $params->get('hiddefeatured', '1' );
 $hiddepending    = $params->get('hiddepending', '1' );
 $hidderevised    = $params->get('hidderevised', '1' );
 $hiddeinprogess  = $params->get('hiddeinprogess', '1' );
@@ -184,48 +185,7 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1')
 $freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME' );
 
 
-//free bouton
-$dispfreebutton1  = $params->get('dispf1', '' );
-$freebutton1  = $params->get('freebutton1', '' );
-$linkbutton1  = $params->get('linkbutton1', '' );
-$iconbutton1  = $params->get('iconbutton1', '' );
-$dispfreebutton2  = $params->get('dispf2', '' );
-$freebutton2  = $params->get('freebutton2', '' );
-$linkbutton2  = $params->get('linkbutton2', '' );
-$iconbutton2  = $params->get('iconbutton2', '' );
-$dispfreebutton2  = $params->get('dispf2', '' );
-$freebutton3  = $params->get('freebutton3', '' );
-$linkbutton3  = $params->get('linkbutton3', '' );
-$iconbutton3  = $params->get('iconbutton3', '' );
-$dispfreebutton3  = $params->get('dispf3', '' );
-$freebutton4  = $params->get('freebutton4', '' );
-$linkbutton4  = $params->get('linkbutton4', '' );
-$iconbutton4  = $params->get('iconbutton4', '' );
-$dispfreebutton4  = $params->get('dispf4', '' );
-$freebutton5  = $params->get('freebutton5', '' );
-$linkbutton5  = $params->get('linkbutton5', '' );
-$iconbutton5  = $params->get('iconbutton5', '' );
-$dispfreebutton5  = $params->get('dispf5', '' );
-$freebutton6  = $params->get('freebutton6', '' );
-$linkbutton6  = $params->get('linkbutton6', '' );
-$iconbutton6  = $params->get('iconbutton6', '' );
-$dispfreebutton6  = $params->get('dispf6', '' );
-$freebutton7  = $params->get('freebutton7', '' );
-$linkbutton7  = $params->get('linkbutton7', '' );
-$iconbutton7  = $params->get('iconbutton7', '' );
-$dispfreebutton7  = $params->get('dispf7', '' );
-$freebutton8  = $params->get('freebutton8', '' );
-$linkbutton8  = $params->get('linkbutton8', '' );
-$iconbutton8  = $params->get('iconbutton8', '' );
-$dispfreebutton8  = $params->get('dispf8', '' );
-$freebutton9  = $params->get('freebutton9', '' );
-$linkbutton9  = $params->get('linkbutton9', '' );
-$iconbutton9  = $params->get('iconbutton9', '' );
-$dispfreebutton9  = $params->get('dispf9', '' );
-$freebutton10  = $params->get('freebutton10', '' );
-$linkbutton10  = $params->get('linkbutton10', '' );
-$iconbutton10  = $params->get('iconbutton10', '' );
-$dispfreebutton10  = $params->get('dispf10', '' );
+
 
 jimport( 'joomla.application.component.controller' );
 // Check if component is installed
@@ -513,6 +473,43 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 </div>
 
 <!--start pending block -->
+
+
+<?php if ($hiddefeatured) : ?>
+    <div class="block featured well well-small span<?php echo $column; ?> ">
+	<h3 class="module-title nav-header"><i class="icon-large icon-featured"></i> <?php echo JText::_( 'FLEXI_ADMIN_FEATURED' ); ?></h3>
+
+	<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_featured=1'; ?>
+	<div style='text-align:right;'>
+		<a href='<?php echo $show_all_link ?>' class='adminlink'>
+		<?php
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+				<?php foreach ($listFeatured as $itemFeatured) : ?>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="span6">
+							<a href="<?php echo $itemFeatured->link; ?>"><?php echo $itemFeatured->title; ?>
+							<i class="icon-large icon-edit"></i></a>
+						</div>
+						<div class="span3" style="margin-left: 0 !important;">
+							<span class="small">
+							<i class="icon-user"></i>
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemFeatured->name; ?>"><?php echo $itemFeatured->name;?> </small>
+							</span>
+						</div>
+						<div class="span3">
+							<span class="small">
+							<i class="icon-calendar"></i> <?php echo JHtml::date($itemFeatured->modified, 'd M Y'); ?>
+							</span>
+						</div>
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</div>
+	</div>
+	<?php endif; ?>
 <?php if ($hiddepending) : ?>
     <div class="block pending well well-small span<?php echo $column; ?> ">
 	<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-down"></i> <?php echo JText::_( 'FLEXI_ADMIN_PENDING' ); ?></h3>

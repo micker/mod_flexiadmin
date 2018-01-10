@@ -19,6 +19,19 @@
 defined('_JEXEC') or die('Accés interdit');
 abstract class modFlexiadminHelper
 {
+	public static function getFeatured(&$params)
+	{
+		// recupere la connexion à la BD
+		$db = JFactory::getDbo();
+		$queryFeatured = 'SELECT a.id, a.title, b.name , a.catid, a.created, a.created_by, a.modified, a.modified_by, a.featured FROM #__content  AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE featured = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');		
+		$db->setQuery( $queryFeatured );
+		$itemsFeatured = $db->loadObjectList();
+		//print_r ($itemsRevised) ;
+		foreach ($itemsFeatured as &$itemFeatured) {
+			$itemFeatured->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemFeatured->id);
+		}
+		return $itemsFeatured;
+	}
 	public static function getPending(&$params)
 	{
 		// recupere la connexion à la BD
@@ -35,8 +48,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryRevised = 'SELECT c.id, c.version, c.title,catid, c.created, c.created_by, c.modified, c.modified_by,cr.name, MAX(fv.version_id) FROM #__flexicontent_items_tmp as c LEFT JOIN #__flexicontent_versions AS fv ON c.id=fv.item_id LEFT JOIN #__users AS cr ON cr.id = c.created_by LEFT JOIN #__users AS mr ON mr.id = c.modified_by WHERE c.state = -5 OR c.state = 1 GROUP BY fv.item_id HAVING c.version<>MAX(fv.version_id) ORDER BY c.modified DESC LIMIT '. (int) $params->get('count');		$db->setQuery( $queryRevised );
-		$db->setQuery( $queryRevised );
+		$queryRevised = 'SELECT c.id, c.version, c.title, c.catid, c.created, c.created_by, c.modified, c.modified_by,cr.name, MAX(fv.version_id) FROM #__flexicontent_items_tmp as c LEFT JOIN #__flexicontent_versions AS fv ON c.id=fv.item_id LEFT JOIN #__users AS cr ON cr.id = c.created_by LEFT JOIN #__users AS mr ON mr.id = c.modified_by WHERE c.state = -5 OR c.state = 1 GROUP BY fv.item_id HAVING c.version<>MAX(fv.version_id) ORDER BY c.modified DESC LIMIT '. (int) $params->get('count');		$db->setQuery( $queryRevised );
 		$itemsRevised = $db->loadObjectList();
 		//print_r ($itemsRevised) ;
 		foreach ($itemsRevised as &$itemRevised) {
