@@ -408,7 +408,41 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 </div>
 
 </div>
+<?php if ($hiddefeatured) : ?>
+    <div class="block featured well well-small span<?php echo $column; ?> ">
+	<h3 class="module-title nav-header"><i class="icon-large icon-featured"></i> <?php echo JText::_( 'FLEXI_ADMIN_FEATURED' ); ?></h3>
 
+	<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_featured=1'; ?>
+	<div style='text-align:right;'>
+		<a href='<?php echo $show_all_link ?>' class='adminlink'>
+		<?php
+		echo JText::_( 'FLEXI_ADMIN_ALL' );
+		echo "</a></div>";	?>
+			<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
+				<?php foreach ($listFeatured as $itemFeatured) : ?>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="span6">
+							<a href="<?php echo $itemFeatured->link; ?>"><?php echo $itemFeatured->title; ?>
+							<i class="icon-large icon-edit"></i></a>
+						</div>
+						<div class="span3" style="margin-left: 0 !important;">
+							<span class="small">
+							<i class="icon-user"></i>
+							<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemFeatured->name; ?>"><?php echo $itemFeatured->name;?> </small>
+							</span>
+						</div>
+						<div class="span3">
+							<span class="small">
+							<i class="icon-calendar"></i> <?php echo JHtml::date($itemFeatured->modified, 'd M Y'); ?>
+							</span>
+						</div>
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</div>
+	</div>
+	<?php endif; ?>
 <!--start pending block -->
 <?php if ($hiddepending) : ?>
     <div class="block pending well well-small span<?php echo $column; ?> ">
