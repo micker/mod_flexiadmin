@@ -138,6 +138,6 @@ abstract class modFlexiadminHelper
 			}
 			$customblock->listitems = $itemCustomlist;
 		}
-		return $itemsCustomlist;
+		return $list_customblocks;
 	}
 }
