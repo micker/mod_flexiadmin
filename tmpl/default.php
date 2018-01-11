@@ -727,10 +727,9 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	</div>
 <?php endif; ?>
 New custom block
-<?php $list_customblocks = $params->get('add_customblock');
-print_r ($list_customblocks);
+<?php 
 // loop your result
-foreach( $list_customblocks as $list_customblocks_idx => $customblock ) :?>
+foreach( $listCustomlist as $listCustomlist_idx => $customblock ) :?>
 
 <div class="block youritems well well-small span<?php echo $column; ?>">
    <h3 class="module-title nav-header">
