@@ -19,6 +19,19 @@
 defined('_JEXEC') or die('Accés interdit');
 abstract class modFlexiadminHelper
 {
+	public static function getFeatured(&$params)
+	{
+		// recupere la connexion à la BD
+		$db = JFactory::getDbo();
+		$queryFeatured = 'SELECT a.id, a.title, b.name , a.catid, a.created, a.created_by, a.modified, a.modified_by, a.featured FROM #__content  AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE featured = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');		
+		$db->setQuery( $queryFeatured );
+		$itemsFeatured = $db->loadObjectList();
+		//print_r ($itemsRevised) ;
+		foreach ($itemsFeatured as &$itemFeatured) {
+			$itemFeatured->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemFeatured->id);
+		}
+		return $itemsFeatured;
+	}
 	public static function getPending(&$params)
 	{
 		// recupere la connexion à la BD
