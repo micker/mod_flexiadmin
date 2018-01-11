@@ -32,7 +32,7 @@ $listDraft        = modFlexiadminHelper::getDraft($params);
 $listTrashed      = modFlexiadminHelper::getTrashed($params);
 $listUseritem     = modFlexiadminHelper::getUseritem($params);
 $listCustomlist  = modFlexiadminHelper::getCustomlist($params);
-print_r ($listCustomlist);
+echo "<pre>";print_r ($listCustomlist);echo "</pre>";
 /*$listCustomlist2  = modFlexiadminHelper::getCustomlist2($params);
 $listCustomlist3  = modFlexiadminHelper::getCustomlist3($params);
 $listCustomlist4  = modFlexiadminHelper::getCustomlist4($params);
