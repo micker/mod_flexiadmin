@@ -25,6 +25,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 }
 // Inclut les méthodes du script de soutien
 require_once dirname(__FILE__).'/helper.php';
+$listFeatured      = modFlexiadminHelper::getFeatured($params);
 $listPending      = modFlexiadminHelper::getPending($params);
 $listRevised      = modFlexiadminHelper::getRevised($params);
 $listInprogress   = modFlexiadminHelper::getInprogress($params);
