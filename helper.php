@@ -117,195 +117,27 @@ abstract class modFlexiadminHelper
 		}
 		return $itemsUseritem;
 	}
-	public static function getCustomlist1(&$params)
+	public static function getCustomlist(&$params)
 	{
-        global $globalcats;
-        $_catid = (int) $params->get('catidlist1');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
+		$list_customblocks = $params->get('add_customblock');
+		print_r ($list_customblocks);
 		$db = JFactory::getDbo();
-		$queryCustomlist = 'SELECT DISTINCT  a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist );
-		$itemsCustomlist = $db->loadObjectList();
-		//print_r ($itemsCustomlist) ;
-		foreach ($itemsCustomlist as &$itemCustomlist) {
-			$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+		global $globalcats;
+		// loop your result
+		foreach( $list_customblocks as $list_customblocks_idx => $customblock ){
+        		$_catid = $customblock->catidlist;
+        		$catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
+        		$catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
+       			$catids_where = ' rel.catid IN ('.$catlist.') ';
+			$queryCustomlist = 'SELECT DISTINCT  a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
+			$db->setQuery( $queryCustomlist );
+			$itemsCustomlist = $db->loadObjectList();
+			//print_r ($itemsCustomlist) ;
+			foreach ($itemsCustomlist as &$itemCustomlist) {
+				$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
+			}
+			$customblock->listitems = $itemCustomlist;
 		}
 		return $itemsCustomlist;
-	}
-	public static function getCustomlist2(&$params)
-	{
-        global $globalcats;
-        $_catid = (int) $params->get('catidlist2');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist2 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist2 );
-		$itemsCustomlist2 = $db->loadObjectList();
-		foreach ($itemsCustomlist2 as &$itemCustomlist2) {
-			$itemCustomlist2->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist2->id);
-		}
-		return $itemsCustomlist2;
-	}
-	public static function getCustomlist3(&$params)
-	{
-        global $globalcats;
-        $_catid = (int) $params->get('catidlist3');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist3 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist3 );
-		$itemsCustomlist3 = $db->loadObjectList();
-		foreach ($itemsCustomlist3 as &$itemCustomlist3) {
-			$itemCustomlist3->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist3->id);
-		}
-		return $itemsCustomlist3;
-	}
-	public static function getCustomlist4(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist4');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist4 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist4 );
-		$itemsCustomlist4 = $db->loadObjectList();
-		foreach ($itemsCustomlist4 as &$itemCustomlist4) {
-			$itemCustomlist4->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist4->id);
-		}
-		return $itemsCustomlist4;
-	}
-	public static function getCustomlist5(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist5');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist5 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist5 );
-		$itemsCustomlist5 = $db->loadObjectList();
-		foreach ($itemsCustomlist5 as &$itemCustomlist5) {
-			$itemCustomlist5->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist5->id);
-		}
-		return $itemsCustomlist5;
-	}
-	public static function getCustomlist6(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist6');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist6 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist6 );
-		$itemsCustomlist6 = $db->loadObjectList();
-		foreach ($itemsCustomlist6 as &$itemCustomlist6) {
-			$itemCustomlist6->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist6->id);
-		}
-		return $itemsCustomlist6;
-	}
-	public static function getCustomlist7(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist7');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist7 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist7 );
-		$itemsCustomlist7 = $db->loadObjectList();
-		foreach ($itemsCustomlist7 as &$itemCustomlist7) {
-			$itemCustomlist7->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist7->id);
-		}
-		return $itemsCustomlist7;
-	}
-	public static function getCustomlist8(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist8');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist8 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist8 );
-		$itemsCustomlist8 = $db->loadObjectList();
-		foreach ($itemsCustomlist8 as &$itemCustomlist8) {
-			$itemCustomlist8->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist8->id);
-		}
-		return $itemsCustomlist8;
-	}
-	public static function getCustomlist9(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist9');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist9 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist9 );
-		$itemsCustomlist9 = $db->loadObjectList();
-		foreach ($itemsCustomlist9 as &$itemCustomlist9) {
-			$itemCustomlist9->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist9->id);
-		}
-		return $itemsCustomlist9;
-	}
-	public static function getCustomlist10(&$params)
-	{
-		 global $globalcats;
-        $_catid = (int) $params->get('catidlist10');
-        $catlist = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-
-        $catids_join = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-        $catids_where = ' rel.catid IN ('.$catlist.') ';
-
-		// recupere la connexion à la BD
-		$db = JFactory::getDbo();
-		$queryCustomlist10 = 'SELECT DISTINCT a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id '.$catids_join.'WHERE '.  $catids_where.' AND state = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
-		$db->setQuery( $queryCustomlist10 );
-		$itemsCustomlist10 = $db->loadObjectList();
-		foreach ($itemsCustomlist10 as &$itemCustomlist10) {
-			$itemCustomlist10->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist10->id);
-		}
-		return $itemsCustomlist10;
 	}
 }
