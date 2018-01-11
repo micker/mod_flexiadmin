@@ -120,7 +120,7 @@ abstract class modFlexiadminHelper
 	public static function getCustomlist(&$params)
 	{
 		$list_customblocks = $params->get('add_customblock');
-		print_r ($list_customblocks);
+		//print_r ($list_customblocks);
 		$db = JFactory::getDbo();
 		global $globalcats;
 		// loop your result
