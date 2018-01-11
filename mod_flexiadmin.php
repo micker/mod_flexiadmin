@@ -31,8 +31,8 @@ $listInprogress   = modFlexiadminHelper::getInprogress($params);
 $listDraft        = modFlexiadminHelper::getDraft($params);
 $listTrashed      = modFlexiadminHelper::getTrashed($params);
 $listUseritem     = modFlexiadminHelper::getUseritem($params);
-$listCustomlist1  = modFlexiadminHelper::getCustomlist1($params);
-$listCustomlist2  = modFlexiadminHelper::getCustomlist2($params);
+$listCustomlist  = modFlexiadminHelper::getCustomlist($params);
+/*$listCustomlist2  = modFlexiadminHelper::getCustomlist2($params);
 $listCustomlist3  = modFlexiadminHelper::getCustomlist3($params);
 $listCustomlist4  = modFlexiadminHelper::getCustomlist4($params);
 $listCustomlist5  = modFlexiadminHelper::getCustomlist5($params);
@@ -40,7 +40,7 @@ $listCustomlist6  = modFlexiadminHelper::getCustomlist6($params);
 $listCustomlist7  = modFlexiadminHelper::getCustomlist7($params);
 $listCustomlist8  = modFlexiadminHelper::getCustomlist8($params);
 $listCustomlist9  = modFlexiadminHelper::getCustomlist9($params);
-$listCustomlist10 = modFlexiadminHelper::getCustomlist10($params);
+$listCustomlist10 = modFlexiadminHelper::getCustomlist10($params);*/
 $moduleclass_sfx  = htmlspecialchars($params->get('moduleclass_sfx'));
 
 // Get Joomla Layout
