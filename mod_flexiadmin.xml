@@ -89,6 +89,10 @@
 			</field>
 
 		<field name="" type="separator" default="FLEXI_ADMIN_BLOCK_DISPLAY" level="level1" />
+			<field name="hiddefeatured" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_FEATURED" description="FLEXI_ADMIN_DISPLAYBLOCK_FEATURED_DESC" class="btn-group btn-group-yesno">
+					<option value="0">FLEXI_NO</option>
+					<option value="1">FLEXI_YES</option>
+			</field>
 			<field name="hiddepending" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_PENDING" description="FLEXI_ADMIN_DISPLAYBLOCK_PENDING_DESC" class="btn-group btn-group-yesno">
 				<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
