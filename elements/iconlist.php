@@ -35,7 +35,7 @@ class JFormFieldIconlist extends JFormField {
 		JHtml::_('script', 'administrator/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker-iconset-all.min.js');
 		JHtml::_('script', 'administrator/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker.min.js');
 
-		$return = ' <div><button id="'. $this->id .'-wrapper" class="btn btn-info" role="iconpicker" name="'. $this->id .'"/></div>';
+		$return = '<div><button id="'. $this->id .'-wrapper" class="btn btn-default" role="iconpicker"></button></div>';
 		$return .= "<script>
 			(function ($) {
 				$('#". $this->id ."-wrapper').iconpicker({
