@@ -21,7 +21,7 @@ jimport('joomla.form.formfield');
 
 class JFormFieldIconlist extends JFormField {
 
-	protected $type = 'iconlist';
+	protected $type = 'Iconlist';
 
 	// getLabel() left out
 
@@ -30,14 +30,14 @@ class JFormFieldIconlist extends JFormField {
 		JHtml::_('jquery.framework');
 		JHtml::_('bootstrap.framework');
 
-		JHtml::_('stylesheet', '/modules/mod_flexiadmin/assets/css/bootstrap-iconpicker.min.css');
+		JHtml::_('stylesheet', 'administrator/modules/mod_flexiadmin/assets/css/bootstrap-iconpicker.min.css');
 		JHtml::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-		JHtml::_('script', '/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker-iconset-all.min.js');
-		JHtml::_('script', '/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker.min.js');
+		JHtml::_('script', 'administrator/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker-iconset-all.min.js');
+		JHtml::_('script', 'administrator/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker.min.js');
 
-		$return = ' <button id="'. $this->id .'-wrapper" class="btn btn-default" role="iconpicker" /></div>';
+		$return = ' <div><button id="'. $this->id .'-wrapper" class="btn btn-info" role="iconpicker" name="'. $this->id .'"/></div>';
 		$return .= "<script>
-			$(document).ready(function() {
+			(function ($) {
 				$('#". $this->id ."-wrapper').iconpicker({
              	align: 'left',
     			arrowClass: 'btn-success',
