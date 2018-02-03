@@ -1116,21 +1116,25 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
 					<?php
+						if(!empty ($listCustomlist1)) {
                          $itemCustomlist1= $listCustomlist1[0];
 						$item = $itemmodel->getItem($itemCustomlist1->id, $check_view_access=false);
 						$items = array(&$item);
 						  // Get fields values from the DB,
 						FlexicontentFields::getFields($items);
-
+								
 						if(isset($extrafieldlist1)) {
 						foreach ($extrafieldlist1 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
+							if(!empty ($extrafield)) {
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo JText::_($label);
 							echo '</th>';
+							}
 						}
 						}
+						}	
 					?>
 					<?php if ($displdateblock1) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_DATE' ); ?></th><?php endif; ?>
 					</tr>
@@ -1159,11 +1163,13 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						//FlexicontentFields::getFields($items);
 						if(isset($extrafieldlist1)) {
 						foreach ($extrafieldlist1 as $extrafield){
+								if(!empty ($extrafield)) {
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+								}
 						}
 						}
 					?>
@@ -1200,6 +1206,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 					<th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
 					<?php if ($displautblock2) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
 					<?php
+						if(!empty ($listCustomlist2)) {
                          $itemCustomlist2= $listCustomlist2[0];
                         //echo $listCustomlist2[0];
 						$item = $itemmodel->getItem($itemCustomlist2->id, $check_view_access=false);
@@ -1208,11 +1215,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						FlexicontentFields::getFields($items);
 						if(isset($extrafieldlist2)) {
 						foreach ($extrafieldlist2 as $extrafield){
+							if(!empty ($extrafield)) {
 							//FlexicontentFields::getFieldDisplay($item, $extrafield);
 							$label= $item->fields[$extrafield]->label;
 							echo '<th>';
 							echo JText::_($label);
 							echo '</th>';
+							}
+						}
 						}
 						}
 					?>
@@ -1245,10 +1255,12 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						if(isset($extrafieldlist2)) {
 						foreach ($extrafieldlist2 as $extrafield){
 							FlexicontentFields::getFieldDisplay($item, $extrafield);
+								if(!empty ($extrafield)) {
 							$value= $item->fields[$extrafield]->display;
 							echo '<td>';
 							echo $value;
 							echo '</td>';
+								}
 						}
 						}
 					?>
