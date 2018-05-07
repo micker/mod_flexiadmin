@@ -126,7 +126,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
               // loop your result
               foreach( $list_buttons as $list_buttons_idx => $add_button ) :?>
 
-                 <a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $add_button->button_type;?>&maincat=<?php echo $add_button->button_type; ?>&filter_lang=<?php echo $add_button->button_lang; ?>" >
+                 <a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $add_button->button_type;?>&maincat=<?php echo $add_button->catid; ?>&filter_lang=<?php echo $add_button->button_lang; ?>" >
                           <button type="button" class="btn btn-default btn-lg itemlist">
                              <i class="icon-large icon-plus"></i><br/>
                           <?php echo JText::_($add_button->button_name); ?>

@@ -27,17 +27,18 @@ class JFormFieldIconlist extends JFormField {
 
 	public function getInput() {
 		/*making sure jQuery is loaded first */
-		JHtml::_('jquery.framework');
-		JHtml::_('bootstrap.framework');
+		//JHtml::_('jquery.framework');
+		//JHtml::_('bootstrap.framework');
 
-		JHtml::_('stylesheet', 'administrator/modules/mod_flexiadmin/assets/css/bootstrap-iconpicker.min.css');
+		JHtml::_('stylesheet', '/modules/mod_flexiadmin/assets/css/bootstrap-iconpicker.min.css');
 		JHtml::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-		JHtml::_('script', 'administrator/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker-iconset-all.min.js');
-		JHtml::_('script', 'administrator/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker.min.js');
+		JHtml::_('script', '/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker-iconset-all.min.js');
+		JHtml::_('script', '/modules/mod_flexiadmin/assets/js/bootstrap-iconpicker.min.js');
 
-		$return = '<div><button id="'. $this->id .'-wrapper" class="btn btn-default" role="iconpicker"></button></div>';
-		$return .= "<script>
-			(function ($) {
+		$return = '<div><button id="'. $this->id .'-wrapper" class="btn btn-default" role="iconpicker" name="'. $this->id .'-wrapper"></button></div>';
+		$return .= "<script type='text/javascript' language='javascript'>
+		jQuery.noConflict();
+			jQuery(document).ready(function() {
 				$('#". $this->id ."-wrapper').iconpicker({
              	align: 'left',
     			arrowClass: 'btn-success',
@@ -64,7 +65,7 @@ class JFormFieldIconlist extends JFormField {
 					input.attr({'id': '" . $this->id . "', 'name': '" . $this->name . "'});
 					input.val('" . $this->value . "');
 
-			})(jQuery);
+			});
 		</script>";
 		return $return;
 	}
