@@ -617,9 +617,11 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 										<?php if ($displaycreattab) : ?>
 										<div class="tab-pane fade" id="create<?php echo $module->id;?>">
 										<?php if($hiddebuttonadditem): ?>
-											<a href="index.php?option=com_flexicontent&view=types&format=raw"
+											<a href="<?php echo version_compare(FLEXI_VERSION, '3.2.1.14', '>=')
+												? 'index.php?option=com_flexicontent&view=types&tmpl=component&layout=typeslist&action=new'
+												: 'index.php?option=com_flexicontent&view=items&format=raw'; ?>"
 														class="modal"
-														rel="{size: {x: 700, y: 300}, closable: true}">
+														rel="{size: {x: 700, y: 500}, closable: true}">
 													<button type="button" class="btn btn-default btn-lg itemlist">
 														<i class="icon-large icon-file-plus"></i><br/>
 													<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
