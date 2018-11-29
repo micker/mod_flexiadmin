@@ -23,7 +23,7 @@ abstract class modFlexiadminHelper
 	{
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
-		$queryFeatured = 'SELECT a.id, a.title, b.name , a.catid, a.created, a.created_by, a.modified, a.modified_by, a.featured FROM #__content  AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE featured = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');		
+		$queryFeatured = 'SELECT a.id, a.title, b.name , a.catid, a.created, a.created_by, a.modified, a.modified_by, a.featured FROM #__content  AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE featured = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
 		$db->setQuery( $queryFeatured );
 		$itemsFeatured = $db->loadObjectList();
 		//print_r ($itemsRevised) ;
@@ -152,4 +152,59 @@ abstract class modFlexiadminHelper
 		}
 		return $list_customblocks;
 	}
+	/**
+	 * getIconFromPlugins
+	 *
+	 * @param \JRegistry $params
+	 *
+	 * @return  array
+	 */
+	public static function getIconFromPlugins($params)
+	{
+		// Include buttons defined by published quickicon plugins
+		//$keys = array_keys($buttons);
+		JPluginHelper::importPlugin('quickicon');
+		$app    = JFactory::getApplication();
+		$arrays = (array) $app->triggerEvent('onGetIcons', array('mod_quickicon'));
+		// Extensions plugin image map
+		foreach ($arrays as $response)
+		{
+			foreach ($response as $icon)
+			{
+				$default = array(
+					'link'   => null,
+					'text'   => null,
+					'image'  => 'joomla',
+					'access' => true,
+					'class'  => 'ak-icon-item'
+				);
+				$icon = array_merge($default, $icon);
+				if (!is_null($icon['link']) && !is_null($icon['text']))
+				{
+					$icon['icon_class'] = 'icon-' . $icon['image'];
+					unset($icon['image']);
+					// Set params
+					if (isset($icon['params']))
+					{
+						$icon['params'] = ($icon['params'] instanceof JRegistry) ? $icon['params'] : new JRegistry();
+					}
+					else
+					{
+						$icon['params'] = new JRegistry;
+					}
+					if (!isset ($keys[0]))
+					{
+						$keys[0] = null;
+					}
+					if (!isset ($buttons[$keys[0]]))
+					{
+						$buttons[$keys[0]] = array();
+					}
+					$systme_buttons[$keys[0]][] = $icon;
+				}
+			}
+		}
+		return $systme_buttons;
+	}
+
 }

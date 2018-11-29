@@ -36,23 +36,24 @@ $itemmodel_name = FLEXI_J16GE ? 'FlexicontentModelItem' : 'FlexicontentModelItem
 $itemmodel = new $itemmodel_name();
 
 //module config
-$hiddefeatured   = $params->get('hiddefeatured', '1' );
-$hiddepending    = $params->get('hiddepending', '1' );
-$hidderevised    = $params->get('hidderevised', '1' );
-$hiddeinprogess  = $params->get('hiddeinprogess', '1' );
-$hiddedraft      = $params->get('hiddedraft', '1' );
-$hiddeyouritem   = $params->get('hiddeyouritem', '1' );
-$hiddetrashed    = $params->get('hiddetrashed', '1' );
-$column          = $params->get('column', '4' );
-$displaycustomtab= $params->get('displaycustomtab', '1' );
-$displaycreattab = $params->get('displaycreattab', '1' );
-$displaymanagetab= $params->get('displaymanagetab', '1' );
-$displayadmintab = $params->get('displayadmintab', '1' );
-$displayfreetab  = $params->get('displayfreetab', '1' );
-$displayconfigmodule= $params->get('displayconfigmodule', '1' );
-$forceheightblock= $params->get('forceheightblock', '' );
-$displaycustomtext = $params->get('displaycustomtext','');
-$customtext=$params->get('customtext','');
+$hiddefeatured       = $params->get('hiddefeatured', '1' );
+$hiddepending        = $params->get('hiddepending', '1' );
+$hidderevised        = $params->get('hidderevised', '1' );
+$hiddeinprogess      = $params->get('hiddeinprogess', '1' );
+$hiddedraft          = $params->get('hiddedraft', '1' );
+$hiddeyouritem       = $params->get('hiddeyouritem', '1' );
+$hiddetrashed        = $params->get('hiddetrashed', '1' );
+$column              = $params->get('column', '4' );
+$displaycustomtab    = $params->get('displaycustomtab', '1' );
+$displaycreattab     = $params->get('displaycreattab', '1' );
+$displaymanagetab    = $params->get('displaymanagetab', '1' );
+$displayadmintab     = $params->get('displayadmintab', '1' );
+$displayfreetab      = $params->get('displayfreetab', '1' );
+$displayconfigmodule = $params->get('displayconfigmodule', '1' );
+$forceheightblock    = $params->get('forceheightblock', '' );
+$displaycustomtext   = $params->get('displaycustomtext','');
+$customtext          = $params->get('customtext','');
+$displayinfosystem   = $params->get('displayinfosystem','1');
 
 //customtab
 $nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME' );
@@ -76,7 +77,7 @@ $hiddebuttonadditem          = $params->get('hiddebuttonadditem'         , '1');
 $hiddebuttonaddcategory      = $params->get('hiddebuttonaddcategory'     , '1');
 $hiddebuttonaddtag           = $params->get('hiddebuttonaddtag'          , '1');
 $hiddebuttonadduser          = $params->get('hiddebuttonadduser'         , '1');
-$hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'         , '1');
+$hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'        , '1');
 
 //freetab
 $freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME' );
@@ -92,13 +93,34 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 
 
 <div class="row-fluid">
-    <?php if ($displayconfigmodule) : ?>
-	<a href="index.php?option=com_modules&task=module.edit&id=<?php echo $module->id;?>" style="float:right;margin-top: -30px;">
-		<button type="button" class="btn btn-default">
-			<i class="icon-small icon-options"></i>
-		</button>
-	</a>
+
+	<div class="info-bar">
+	<ul class="breadcrumb">
+		<?php if ($displayinfosystem) : ?>
+	<?php foreach ($systme_buttons as $sys_buttons) :?>
+				<?php //echo '<pre>' ,print_r($sys_buttons),'</pre>';?>
+		<?php foreach ($sys_buttons as $sys_button) :?>
+			<li id="<?php echo $sys_button['id']; ?>" class="list-group-item">
+				<a href="<?php echo $sys_button['link']; ?>">
+					<span class="<?php echo $sys_button['icon_class']; ?>" aria-hidden="true"></span> <span class="j-links-link"><?php echo $sys_button['text']; ?></span>
+				</a>
+					<span class="divider">|</span>
+				</li>
+			<?php endforeach; ?>
+	<?php endforeach; ?>
 	<?php endif; ?>
+		<?php if ($displayconfigmodule) : ?>
+	<li>
+		<a href="index.php?option=com_modules&task=module.edit&id=<?php echo $module->id;?>">
+				<span class="icon-small icon-options" aria-hidden="true"></span><span class="j-links-link"><?php echo JText::_('FLEXI_ADMIN_DISPLAY_CONFIG_MODULE_TEXT'); ?></span>
+		</a>
+	</li>
+			<?php endif; ?>
+	</ul>
+
+
+	</div>
+
             <?php if ($displaycustomtext) : ?>
                 <div class="modulemessage span12">
                     <?php echo $customtext; ?>
@@ -356,7 +378,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			</div>
 			<?php endif; ?>
 
-		</div>
+ 		</div>
 		<?php endif; ?>
 		<!-- end tabs -->
 
@@ -364,7 +386,6 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	</div>
 	<!-- end tabs zone -->
 </div>
-
 </div>
 
 <!--start pending block -->

@@ -47,3 +47,8 @@ h2.nav-header {
 .youritems img.fc_field_image {
     max-height: 80px !important;
 }
+.info-bar {
+    float: right;
+    margin-top: -33px;
+    margin-right: -14px;
+}

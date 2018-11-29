@@ -25,15 +25,16 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 }
 // Inclut les méthodes du script de soutien
 require_once dirname(__FILE__).'/helper.php';
-$listFeatured      = modFlexiadminHelper::getFeatured($params);
+$listFeatured     = modFlexiadminHelper::getFeatured($params);
 $listPending      = modFlexiadminHelper::getPending($params);
 $listRevised      = modFlexiadminHelper::getRevised($params);
 $listInprogress   = modFlexiadminHelper::getInprogress($params);
 $listDraft        = modFlexiadminHelper::getDraft($params);
 $listTrashed      = modFlexiadminHelper::getTrashed($params);
 $listUseritem     = modFlexiadminHelper::getUseritem($params);
-$listCustomlist  = modFlexiadminHelper::getCustomlist($params);
+$listCustomlist   = modFlexiadminHelper::getCustomlist($params);
 $moduleclass_sfx  = htmlspecialchars($params->get('moduleclass_sfx'));
+$systme_buttons   = modFlexiadminHelper::getIconFromPlugins($params);
 
 // Get Joomla Layout
 require JModuleHelper::getLayoutPath('mod_flexiadmin', $params->get('layout', 'default'));
