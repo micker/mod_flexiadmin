@@ -1,6 +1,6 @@
 mod_flexiadmin
 ==============
-Admin module for FLEXIcontent 2.x
+Admin module for FLEXIcontent 3.x
 
 
 ## Module FLEXIadmin features
@@ -40,6 +40,8 @@ Think to publish it in **`cpanel position`** after installation.
 
 
 ## Change Log
+v0.9.3
+ + adding translation string ability
 
 v0.4.5
  + adding template sidebar for icon position
