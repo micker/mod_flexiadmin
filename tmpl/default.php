@@ -82,6 +82,8 @@ $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'        , '1');
 //freetab
 $freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME' );
 
+$user = JFactory::getUser();
+
 
 jimport( 'joomla.application.component.controller' );
 // Check if component is installed
@@ -568,7 +570,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i>
 		<?php echo JText::_( 'FLEXI_YOUR_ITEM' ); ?> : <?php echo $user->name; ?></h3>
-		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items'; ?>
+		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_author='.$user->id.''; ?>
 		<div style='text-align:right;'>
 		<a href='<?php echo $show_all_link ?>' class='adminlink'>
 		<?php
