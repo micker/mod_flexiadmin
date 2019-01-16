@@ -1,6 +1,6 @@
 <?php
 /**
-* @version 0.9.3 stable $Id: default.php yannick berges
+* @version 2.0 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
 * @copyright (C) 2016 Berges Yannick - www.com3elles.com
@@ -20,8 +20,10 @@ defined('_JEXEC') or die('Accés interdit');
 
 JHtml::_('bootstrap.tooltip');
 JHTML::_('behavior.modal');
+JHtml::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 $document = JFactory::getDocument();
 $document->addStyleSheet("./modules/mod_flexiadmin/assets/css/style.css",'text/css',"screen");
+JHtml::_('stylesheet', 'media/mod_joomadmin/css/bootstrap-iconpicker.css');
 
 //extrafield
 require_once (JPATH_ADMINISTRATOR.DS.'components'.DS.'com_flexicontent'.DS.'defineconstants.php');
@@ -43,7 +45,7 @@ $hiddeinprogess      = $params->get('hiddeinprogess', '1' );
 $hiddedraft          = $params->get('hiddedraft', '1' );
 $hiddeyouritem       = $params->get('hiddeyouritem', '1' );
 $hiddetrashed        = $params->get('hiddetrashed', '1' );
-$column              = $params->get('column', '4' );
+$actionsloglist	     = $params->get('actionsloglist', '1' );
 $displaycustomtab    = $params->get('displaycustomtab', '1' );
 $displaycreattab     = $params->get('displaycreattab', '1' );
 $displaymanagetab    = $params->get('displaymanagetab', '1' );
@@ -54,6 +56,17 @@ $forceheightblock    = $params->get('forceheightblock', '' );
 $displaycustomtext   = $params->get('displaycustomtext','');
 $customtext          = $params->get('customtext','');
 $displayinfosystem   = $params->get('displayinfosystem','1');
+$displayinfosystem   = $params->get('displayinfosystem','1');
+$featurewidth      = $params->get('featuredwidth','46');
+$pendingwidth      = $params->get('pendingwidth','46');
+$revisedwidth    = $params->get('revisedwidth','46');
+$inprogessdwidth    = $params->get('inprogessdwidth','46');
+$draftwidth    = $params->get('draftwidth','46');
+$youritemwidth       = $params->get('youritemwidth','46');
+$trashedwidth     = $params->get('trashedlogwidth','46');
+$archivedwidth       = $params->get('archivedwidth','46');
+$actionslogwidth     = $params->get('actionslogwidth','46');
+$iconsize     = $params->get('iconsize','fa-2x');
 
 //customtab
 $nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME' );
@@ -78,6 +91,8 @@ $hiddebuttonaddcategory      = $params->get('hiddebuttonaddcategory'     , '1');
 $hiddebuttonaddtag           = $params->get('hiddebuttonaddtag'          , '1');
 $hiddebuttonadduser          = $params->get('hiddebuttonadduser'         , '1');
 $hiddebuttonaddgroup         = $params->get('hiddebuttonaddgroup'        , '1');
+$hiddebuttonprivacy          = $params->get('hiddebuttonprivacy'        , '1');
+$hiddebuttonlogs             = $params->get('hiddebuttonlogs'       , '1');
 
 //freetab
 $freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME' );
@@ -95,8 +110,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 
 
 <div class="row-fluid">
-
-	<div class="info-bar">
+<?php if ($displayinfosystem || $displayconfigmodule ) : ?>
+	<div class="info-bar top">
 	<ul class="breadcrumb">
 		<?php if ($displayinfosystem) : ?>
 	<?php foreach ($systme_buttons as $sys_buttons) :?>
@@ -119,10 +134,8 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	</li>
 			<?php endif; ?>
 	</ul>
-
-
 	</div>
-
+	<?php endif; ?>
             <?php if ($displaycustomtext) : ?>
                 <div class="modulemessage span12">
                     <?php echo $customtext; ?>
@@ -139,53 +152,49 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	<?php if ($displaycreattab) : ?><li class=""><a href="#create<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_CREATE_D'); ?></a></li>  <?php endif; ?>
 	<?php if ($displaymanagetab) : ?><li class=""><a href="#manage<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_MANAGE_D'); ?></a></li>  <?php endif; ?>
 	<?php if ($displayadmintab) : ?><li class=""><a href="#admin<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_('FLEXI_ADMIN_TAB_ADMIN_D'); ?></a></li>  <?php endif; ?>
-	<?php if ($displayfreetab) : ?><li class=""><a href="#free<?php echo $module->id;?>" data-toggle="tab"><?php echo JText::_($freenametab); ?></a></li> <?php endif; ?>
-	</ul>
+	<?php if ($displayfreetab) : ?>
+      <?php $list_freebuttons = $params->get('free_button');
+      if ($list_freebuttons): ?>
+      <?php foreach( $list_freebuttons as $list_freebuttons_idx => $free_buttons ) :?>
+      <li class=""><a href="#free<?php $tabname = strtolower(preg_replace('/[^a-zA-Z0-9-_\.]/','', $free_buttons->freenametab)); echo $module->id.''.$tabname;?>" data-toggle="tab"><?php echo JText::_($free_buttons->freenametab); ?></a></li>
+      <?php endforeach; ?>
+   <?php endif; ?>
+   <?php endif; ?>
+</ul>
 
 		<div class="tab-content">
 				<?php if ($displaycustomtab) : ?>
 					<div class="tab-pane fade in active" id="custom<?php echo $module->id;?>">
                   <?php $list_buttons = $params->get('add_button');
-               //print_r ($list_buttons);
-              // loop your result
               foreach( $list_buttons as $list_buttons_idx => $add_button ) :?>
 
                  <a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $add_button->button_type;?>&maincat=<?php echo $add_button->catid; ?>&filter_lang=<?php echo $add_button->button_lang; ?>" >
                           <button type="button" class="btn btn-default btn-lg itemlist">
-                             <i class="icon-large icon-plus"></i><br/>
+                             <i class="fa <?php echo $add_button->iconbutton; ?> <?php echo $iconsize; ?> "></i><br/>
                           <?php echo JText::_($add_button->button_name); ?>
                           </button>
                     </a>
-
+                    <?php if ($add_button->displayline) : ?><hr /><?php endif; ?>
               <?php endforeach; ?>
-              <?php if ($params->get('displayline1')) : ?><hr /><?php endif; ?>
               <?php $list_catbuttons = $params->get('add_cat_button');
-              //print_r ($list_catbuttons);
-              // loop your result
               foreach( $list_catbuttons as $list_catbuttons_idx => $cat_button ) :?>
-
               <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?>" >
                     <button type="button" class="btn btn-default btn-lg itemlist">
-                       <i class="icon-large icon-list"></i><br/>
+                       <i class="fa <?php echo $cat_button->iconbutton; ?> <?php echo $iconsize; ?> "></i><br/>
                     <?php echo JText::_($cat_button->namecatfilter); ?>
                     </button>
               </a>
-
+<?php if ($cat_button->displayline) : ?><hr /><?php endif; ?>
               <?php endforeach; ?>
-
-             <?php if ($params->get('displayline2')) : ?> <hr /><?php endif; ?>
               <?php $list_edititembuttons = $params->get('edit_item_button');
-              //print_r ($list_edititembuttons);
-              // loop your result
               foreach( $list_edititembuttons as $list_edititembuttons_idx => $edit_item_button ) :?>
-
               <a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $edit_item_button->itemid; ?>" >
                     <button type="button" class="btn btn-default btn-lg itemlist">
-                       <i class="icon-large icon-pencil"></i><br/>
+                       <i class="fa <?php echo $edit_item_button->iconbutton; ?> <?php echo $iconsize; ?> "></i><br/>
                     <?php echo JText::_($edit_item_button->nameitemedit); ?>
                     </button>
               </a>
-
+<?php if ($edit_item_button->displayline) : ?><hr /><?php endif; ?>
               <?php endforeach; ?>
 					</div>
 					<?php endif; ?>
@@ -196,7 +205,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 														class="modal"
 														rel="{size: {x: 700, y: 300}, closable: true}">
 													<button type="button" class="btn btn-default btn-lg itemlist">
-														<i class="icon-large icon-file-plus"></i><br/>
+														<i class="fa fa-plus-circle <?php echo $iconsize; ?>"></i><br/>
 													<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
 													</button>
 											</a>
@@ -204,7 +213,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonaddcategory): ?>
 											<a href="index.php?option=com_flexicontent&view=category">
 												<button type="button" class="btn btn-default btn-lg itemlist">
-												<i class="icon-large icon-list"></i><br/>
+												<i class="fa fa-folder-open <?php echo $iconsize; ?> "></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDCATEGORY' ); ?>
 												</button>
 											</a>
@@ -212,7 +221,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonaddtag): ?>
 											<a href="index.php?option=com_flexicontent&view=tag">
 												<button type="button" class="btn btn-default btn-lg itemlist">
-												<i class="icon-large icon-tag"></i><br/>
+												<i class="fa fa-tags <?php echo $iconsize; ?>"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDTAG' ); ?>
 												</button>
 											</a>
@@ -220,7 +229,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonadduser): ?>
 											<a href="index.php?option=com_flexicontent&task=users.add">
 												<button type="button" class="btn btn-default btn-lg itemlist">
-												<i class="icon-large icon-user"></i><br/>
+												<i class="fa fa-user <?php echo $iconsize; ?> "></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDAUTHOR' ); ?>
 												</button>
 											</a>
@@ -228,7 +237,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonaddgroup): ?>
 											<a href="index.php?option=com_flexicontent&view=groups.add">
 												<button type="button" class="btn btn-default btn-lg itemlist">
-												<i class="icon-large icon-users"></i><br/>
+												<i class="fa fa-users <?php echo $iconsize; ?>"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_ADDGROUPS' ); ?>
 												</button>
 											</a>
@@ -241,7 +250,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonmanageitems): ?>
 												<a href="index.php?option=com_flexicontent&view=items">
 													<button type="button" class="btn btn-default btn-lg itemlist">
-														<i class="icon-large icon-file-2"></i><br/>
+														<i class="fa fa-th-list <?php echo $iconsize; ?> "></i><br/>
 														<?php echo JText::_( 'FLEXI_ADMIN_ITEMLIST' ); ?>
 													</button>
 												</a>
@@ -249,7 +258,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonmanagecategories): ?>
 												<a href="index.php?option=com_flexicontent&view=categories">
 													<button type="button" class="btn btn-default btn-lg itemlist">
-														<i class="icon-large icon-list"></i><br/>
+														<i class="fa fa-folder-open <?php echo $iconsize; ?> "></i><br/>
 														<?php echo JText::_( 'FLEXI_ADMIN_CATLIST' ); ?>
 													</button>
 												</a>
@@ -257,7 +266,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 											<?php if($hiddebuttonmanagetags): ?>
 								<a href="index.php?option=com_flexicontent&view=tags">
 									<button type="button" class="btn btn-default btn-lg itemlist">
-										<i class="icon-large icon-tag"></i><br/>
+										<i class="fa fa-tags <?php echo $iconsize; ?> "></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_TAGLIST' ); ?>
 									</button>
 								</a>
@@ -265,7 +274,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 								<?php if($hiddebuttonmanageauthors): ?>
 								<a href="index.php?option=com_flexicontent&view=users">
 									<button type="button" class="btn btn-default btn-lg itemlist">
-										<i class="icon-large icon-user"></i><br/>
+										<i class="fa fa-user <?php echo $iconsize; ?>"></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_AUTHORLIST' ); ?>
 									</button>
 								</a>
@@ -274,7 +283,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 								<?php if($hiddebuttonmanagegroups): ?>
 								<a href="index.php?option=com_flexicontent&view=groups">
 									<button type="button" class="btn btn-default btn-lg itemlist">
-										<i class="icon-large icon-users"></i><br/>
+										<i class="fa fa-users <?php echo $iconsize; ?> "></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_GROUPSLIST' ); ?>
 									</button>
 								</a>
@@ -283,7 +292,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 								<?php if($hiddebuttonmanagefiles): ?>
 								<a href="index.php?option=com_flexicontent&view=filemanager">
 									<button type="button" class="btn btn-default btn-lg itemlist">
-										<i class="icon-large icon-upload"></i><br/>
+										<i class="fa fa-upload <?php echo $iconsize; ?> "></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_FILEMANAGER' ); ?>
 									</button>
 								</a>
@@ -294,10 +303,30 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 								<?php if ($displayadmintab) : ?>
 			<!-- start admin tabs-->
 			<div class="tab-pane fade" id="admin<?php echo $module->id;?>">
+            <?php if($hiddebuttonprivacy): ?>
+            <a href="index.php?option=com_privacy">
+               <button type="button" class="btn btn-default btn-lg itemlist">
+                  <i class="fa fa-lock <?php echo $iconsize; ?> "></i><br/>
+                  <?php echo JText::_( 'FLEXI_ADMIN_PRIVACY' ); ?>
+               </button>
+            </a>
+            <?php endif; ?>
+         <?php if($hiddebuttonlogs): ?>
+         <a href="index.php?option=com_actionlogs">
+            <button type="button" class="btn btn-default btn-lg itemlist">
+            <i class="fa fa-list-alt <?php echo $iconsize; ?> "></i><br/>
+            <?php echo JText::_( 'FLEXI_ADMIN_LOGS' ); ?>
+            </button>
+         </a>
+         <?php endif; ?>
+
+<?php if($hiddebuttonprivacy || $hiddebuttonlogs): ?>
+<hr>
+<?php endif; ?>
 										<?php if($hiddebuttonmanagetypes): ?>
 										<a href="index.php?option=com_flexicontent&view=types">
 											<button type="button" class="btn btn-default btn-lg itemlist">
-												<i class="icon-large icon-book"></i><br/>
+												<i class="fa fa-book <?php echo $iconsize; ?>"></i><br/>
 												<?php echo JText::_( 'FLEXI_ADMIN_TYPELIST' ); ?>
 											</button>
 										</a>
@@ -305,7 +334,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 									<?php if($hiddebuttonaddtypes): ?>
 									<a href="index.php?option=com_flexicontent&view=type">
 										<button type="button" class="btn btn-default btn-lg itemlist">
-										<i class="icon-large icon-book"></i><br/>
+										<i class="fa fa-plus-circle <?php echo $iconsize; ?> "></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_ADDTYPE' ); ?>
 										</button>
 									</a>
@@ -313,7 +342,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 									<?php if($hiddebuttonmanagefields): ?>
 									<a href="index.php?option=com_flexicontent&view=fields">
 										<button type="button" class="btn btn-default btn-lg itemlist">
-											<i class="icon-large icon-stack"></i><br/>
+											<i class="fa fa-th-list <?php echo $iconsize; ?> "></i><br/>
 											<?php echo JText::_( 'FLEXI_ADMIN_FIELDLIST' ); ?>
 										</button>
 									</a>
@@ -321,7 +350,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 									<?php if($hiddebuttonaddfields): ?>
 									<a href="index.php?option=com_flexicontent&view=field">
 										<button type="button" class="btn btn-default btn-lg itemlist">
-										<i class="icon-large icon-stack"></i><br/>
+										<i class="fa fa-plus-circle <?php echo $iconsize; ?> "></i><br/>
 										<?php echo JText::_( 'FLEXI_ADMIN_ADDFIELD' ); ?>
 										</button>
 									</a>
@@ -329,7 +358,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<?php if($hiddebuttonimportcontent): ?>
 						<a href="index.php?option=com_flexicontent&view=import">
 							<button type="button" class="btn btn-default btn-lg itemlist">
-								<i class="icon-large icon-loop"></i> <br/>
+								<i class="fa fa-download <?php echo $iconsize; ?>"></i> <br/>
 								<?php echo JText::_( 'FLEXI_ADMIN_IMPORT' ); ?>
 							</button>
 						</a>
@@ -337,7 +366,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<?php if($hiddebuttonstats): ?>
 						<a href="index.php?option=com_flexicontent&view=stats">
 							<button type="button" class="btn btn-default btn-lg itemlist">
-								<i class="icon-large icon-pie"></i> <br/>
+								<i class="fa fa-pie-chart <?php echo $iconsize; ?>"></i> <br/>
 								<?php echo JText::_( 'FLEXI_ADMIN_STATS' ); ?>
 							</button>
 						</a>
@@ -345,7 +374,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				<?php if($hiddebuttonindex): ?>
 					<a href="index.php?option=com_flexicontent&view=search">
 						<button type="button" class="btn btn-default btn-lg itemlist">
-							<i class="icon-large icon-search"></i><br/>
+							<i class="fa fa-search <?php echo $iconsize; ?>"></i><br/>
 						<?php echo JText::_( 'FLEXI_ADMIN_SEARCH' ); ?>
 						</button>
 					</a>
@@ -353,7 +382,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 						<?php if($hiddebuttonadmin): ?>
 					<a href="index.php?option=com_flexicontent">
 						<button type="button" class="btn btn-default btn-lg itemlist">
-							<i class="icon-large icon-options"></i><br/>
+							<i class="fa fa-cogs <?php echo $iconsize; ?>"></i><br/>
 						<?php echo JText::_( 'FLEXI_ADMIN_GEN' ); ?>
 						</button>
 					</a>
@@ -361,27 +390,25 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 			</div>
 			<?php endif; ?>
 			<!-- end of admin tabs-->
-			<?php if ($displayfreetab) : ?>
-			<div class="tab-pane fade" id="free<?php echo $module->id;?>">
-
-            <?php $list_freebuttons = $params->get('free_button');
-            //print_r ($list_edititembuttons);
-            // loop your result
-            foreach( $list_freebuttons as $list_freebuttons_idx => $free_button ) :?>
-
-            <a href="<?php echo $free_button->linkbutton; ?>" >
+         <?php if ($displayfreetab) : ?>
+            <?php foreach( $list_freebuttons as $list_freebuttons_idx => $free_buttons ) :?>
+         <div class="tab-pane fade" id="free<?php $tabname = strtolower(preg_replace('/[^a-zA-Z0-9-_\.]/','', $free_buttons->freenametab)); echo $module->id.''.$tabname;?>">
+               <?php foreach( $free_buttons->free_button as $free_button_idx => $free_button ) :?>
+            <a href="<?php echo $free_button->linkbutton; ?>" target="<?php echo $free_button->targetlink; ?>" >
                   <button type="button" class="btn btn-default btn-lg itemlist">
-                     <i class="icon-large <?php echo $free_button->iconbutton; ?>"></i><br/>
+                     <i class="fa <?php echo $free_button->iconbutton; ?> <?php echo $iconsize; ?> "></i><br/>
                   <?php echo JText::_($free_button->freebutton); ?>
                   </button>
             </a>
-
+   <?php if ($free_button->displayline) : ?><hr /><?php endif; ?>
          <?php endforeach; ?>
-			</div>
-			<?php endif; ?>
+         </div>
+         <?php endforeach; ?>
+         <?php endif; ?>
 
- 		</div>
-		<?php endif; ?>
+
+      </div>
+      <?php endif; ?>
 		<!-- end tabs -->
 
 
@@ -389,12 +416,13 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	<!-- end tabs zone -->
 </div>
 </div>
+</div>
 
 <!--start pending block -->
-
+<div class="contentbloc">
 
 <?php if ($hiddefeatured) : ?>
-    <div class="block featured well well-small span<?php echo $column; ?> ">
+    <div class="block featured well well-small" style="width:<?php echo $featurewidth; ?>%">
 	<h3 class="module-title nav-header"><i class="icon-large icon-featured"></i> <?php echo JText::_( 'FLEXI_ADMIN_FEATURED' ); ?></h3>
 
 	<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_featured=1'; ?>
@@ -429,7 +457,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	</div>
 	<?php endif; ?>
 <?php if ($hiddepending) : ?>
-    <div class="block pending well well-small span<?php echo $column; ?> ">
+    <div class="block pending well well-small" style="width:<?php echo $pendingwidth; ?>%">
 	<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-down"></i> <?php echo JText::_( 'FLEXI_ADMIN_PENDING' ); ?></h3>
 
 	<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=PE'; ?>
@@ -466,7 +494,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 
 	<?php if ($hidderevised) : ?>
 
-	<div class="block revised well well-small span<?php echo $column; ?> ">
+	<div class="block revised well well-small" style="width:<?php echo $revisedwidth; ?>%">
 		<h3 class="module-title nav-header"><i class="icon-large icon-thumbs-up"></i> <?php echo JText::_( 'FLEXI_ADMIN_REVISED' ); ?></h3>
 		<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=RV'; ?>
 		<div style='text-align:right;'>
@@ -499,7 +527,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	</div>
 <?php endif; ?>
 <?php if ($hiddeinprogess) : ?>
-	<div class="block inprogress well well-small span<?php echo $column; ?> ">
+	<div class="block inprogress well well-small" style="width:<?php echo $inprogessdwidth; ?>%">
 		<h3 class="module-title nav-header"><i class="icon-large icon-checkin"></i> <?php echo JText::_( 'FLEXI_ADMIN_INPROGRESS' ); ?></h3>
 		<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=IP'; ?>
 		<div style='text-align:right;'>
@@ -531,7 +559,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	</div>
 <?php endif; ?>
 <?php if ($hiddedraft) : ?>
-	<div class="block draft well well-small span<?php echo $column; ?>">
+	<div class="block draft well well-small" style="width:<?php echo $draftwidth; ?>%">
 	<h3 class="module-title nav-header"><i class="icon-large icon-file"></i> <?php echo JText::_( 'FLEXI_ADMIN_DRAFT' ); ?></h3>
 	<?php		$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
 		<div style='text-align:right;'>
@@ -565,7 +593,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 </div>
 <?php endif; ?>
 <?php if ($hiddeyouritem) : ?>
-	<div class="block youritems well well-small span<?php echo $column; ?>">
+	<div class="block youritems well well-small" style="width:<?php echo $youritemwidth; ?>%">
 		<?php $user = JFactory::getUser();		?>
 		<h3 class="module-title nav-header">
 		<i class="icon-large icon-user"></i>
@@ -604,7 +632,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 </div>
 <?php endif; ?>
 <?php if ($hiddetrashed) : ?>
-	<div class="block trashed well well-small span<?php echo $column; ?>">
+	<div class="block trashed well well-small" style="width:<?php echo $trashedwidth; ?>%">
 	<h3 class="module-title nav-header"><i class="icon-large icon-trash"></i>
 	<?php echo JText::_( 'FLEXI_ADMIN_TRASHED' ); ?></h3>
 	<?php //TODO filtrage trashed
@@ -641,11 +669,48 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
    </div>
 	</div>
 <?php endif; ?>
+
+<?php if($actionsloglist) : ?>
+<div class="block actionlog well well-small"  style="width:<?php echo $actionslogwidth; ?>%">
+   <h3 class="module-title nav-header">
+   <i class="fa fa-list-alt"></i>
+   <?php echo JText::_('FLEXI_ADMIN_ACTIONLOGS_BLOCK_NAME'); ?> : </h3>
+   <?php		$show_all_link = 'index.php?option=com_actionlogs'; ?>
+   <div style='text-align:right;'>
+   <a href='<?php echo $show_all_link ?>' class='adminlink'>
+   <?php
+   echo JText::_( 'FLEXI_ADMIN_ALL' );
+   echo "</a></div>";	?>
+<div class="row-striped">
+	<?php if (count($actionlist)) : ?>
+		<?php foreach ($actionlist as $i => $item) : ?>
+			<div class="row-fluid">
+				<div class="span8 truncate">
+					<?php echo $item->message; ?>
+				</div>
+				<div class="span4">
+					<div class="small pull-right hasTooltip" title="<?php echo JHtml::_('tooltipText', 'JGLOBAL_FIELD_CREATED_LABEL'); ?>">
+						<span class="icon-calendar" aria-hidden="true"></span> <?php echo JHtml::_('date', $item->log_date, JText::_('DATE_FORMAT_LC5')); ?>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	<?php else : ?>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="alert"><?php echo JText::_('MOD_LATEST_ACTIONS_NO_MATCHING_RESULTS');?></div>
+			</div>
+		</div>
+	<?php endif; ?>
+</div>
+</div>
+<?php endif; ?>
+
 <?php
 // loop your result
 foreach( $listCustomlist as $listCustomlist_idx => $customblock ) :?>
 
-<div class="block youritems well well-small span<?php echo $column; ?>">
+<div class="block customblock well well-small" style="width:<?php echo $customblock->width; ?>%">
    <h3 class="module-title nav-header">
    <i class="icon-large icon-user"></i>
    <?php echo JText::_($customblock->nameblockcustom); ?> : </h3>
@@ -730,14 +795,13 @@ foreach( $listCustomlist as $listCustomlist_idx => $customblock ) :?>
 </div>
 
 <?php endforeach; ?>
+<?php //endif; ?>
+</div>
 
-</div>
-</div>
-</div>
 
 
 <script  type="text/javascript">
 jQuery(document).ready(function($){
-$('#myTab a:first').tab('show');
+$('#myTab<?php echo $module->id;?> a:first').tab('show');
 });
 </script>

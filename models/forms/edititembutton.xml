@@ -4,10 +4,18 @@
   type="text"
   label="FLEXI_ADMIN_NAME_BUTTON"
   description="FLEXI_ADMIN_NAME_BUTTON_DESC" />
-	<field name="itemid" 
+	<field name="itemid"
     type="text"
     size="5"
     label="FLEXI_ADMIN_ITEM"
     description="FLEXI_ADMIN_ITEM_DESC" />
-
+    <field name="iconbutton" type="iconpicker" default="fa-list" label="FLEXI_ADMIN_ICON" description="FLEXI_ADMIN_ICON_DESC" />
+  			<field name="targetlink" label="FLEXI_ADMIN_TARGETLINK" description="FLEXI_ADMIN_TARGETLINK_DESC" type="radio" default="_self" class="btn-group btn-group-yesno">
+  			<option value="_self">FLEXI_ADMIN_SELF</option>
+  			<option value="_blank">FLEXI_ADMIN_BLANK</option>
+  	</field>
+      <field name="displayline" label="FLEXI_ADMIN_DISPLAY_LINE" description="FLEXI_ADMIN_DISPLAY_LINE_DESC" type="radio" default="0" class="btn-group btn-group-yesno">
+  			<option value="1">JYES</option>
+  			<option value="0">JNO</option>
+  		</field>
 </form>

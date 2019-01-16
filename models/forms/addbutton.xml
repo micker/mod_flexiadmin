@@ -19,9 +19,19 @@
 				label="FLEXI_ADMIN_CAT"
 				description="FLEXI_ADMIN_CAT_DESC" />
 				<field name="button_lang"
-				type="Fclanguage"
-				multiple="false"
-				label="FLEXI_ADMIN_LANG"
-				description="FLEXI_ADMIN_LANG_DESC" />
-
+		type="contentlanguage"
+		label="FLEXI_ADMIN_LANG"
+		description="FLEXI_ADMIN_LANG_DESC"
+		class="span12 small">
+		<option value="*">JALL</option>
+</field>
+<field name="iconbutton" type="iconpicker" default="fa-plus-circle" label="FLEXI_ADMIN_ICON" description="FLEXI_ADMIN_ICON_DESC" />
+			<field name="targetlink" label="FLEXI_ADMIN_TARGETLINK" description="FLEXI_ADMIN_TARGETLINK_DESC" type="radio" default="_self" class="btn-group btn-group-yesno">
+			<option value="_self">FLEXI_ADMIN_SELF</option>
+			<option value="_blank">FLEXI_ADMIN_BLANK</option>
+	</field>
+		<field name="displayline" label="FLEXI_ADMIN_DISPLAY_LINE" description="FLEXI_ADMIN_DISPLAY_LINE_DESC" type="radio" default="0" class="btn-group btn-group-yesno">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
 </form>

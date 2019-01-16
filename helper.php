@@ -1,6 +1,6 @@
 <?php
 /**
-* @version 0.9.3 stable $Id: default.php yannick berges
+* @version 2.0 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
 * @copyright (C) 2015 Berges Yannick - www.com3elles.com
@@ -205,6 +205,32 @@ abstract class modFlexiadminHelper
 			}
 		}
 		return $systme_buttons;
+	}
+	public static function getActionlogList(&$params)
+	{
+		JLoader::register('ActionlogsModelActionlogs', JPATH_ADMINISTRATOR . '/components/com_actionlogs/models/actionlogs.php');
+		JLoader::register('ActionlogsHelper', JPATH_ADMINISTRATOR . '/components/com_actionlogs/helpers/actionlogs.php');
+
+		/* @var ActionlogsModelActionlogs $model */
+		$model = JModelLegacy::getInstance('Actionlogs', 'ActionlogsModel', array('ignore_request' => true));
+
+		// Set the Start and Limit
+		$model->setState('list.start', 0);
+		$model->setState('list.limit', $params->get('count', 5));
+		$model->setState('list.ordering', 'a.id');
+		$model->setState('list.direction', 'DESC');
+
+		$rows = $model->getItems();
+
+		// Load all actionlog plugins language files
+		ActionlogsHelper::loadActionLogPluginsLanguage();
+
+		foreach ($rows as $row)
+		{
+			$row->message = ActionlogsHelper::getHumanReadableLogMessage($row);
+		}
+
+		return $rows;
 	}
 
 }

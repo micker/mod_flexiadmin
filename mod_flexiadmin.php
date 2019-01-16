@@ -1,6 +1,6 @@
 <?php
 /**
-* @version 0.9.2 stable $Id: default.php yannick berges
+* @version 2.0 stable $Id: default.php yannick berges
 * @package Joomla
 * @subpackage FLEXIcontent
 * @copyright (C) 2017 Berges Yannick - www.com3elles.com
@@ -35,6 +35,7 @@ $listUseritem     = modFlexiadminHelper::getUseritem($params);
 $listCustomlist   = modFlexiadminHelper::getCustomlist($params);
 $moduleclass_sfx  = htmlspecialchars($params->get('moduleclass_sfx'));
 $systme_buttons   = modFlexiadminHelper::getIconFromPlugins($params);
+$actionlist       = modFlexiadminHelper::getActionlogList($params);
 
 // Get Joomla Layout
 require JModuleHelper::getLayoutPath('mod_flexiadmin', $params->get('layout', 'default'));
