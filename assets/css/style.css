@@ -62,11 +62,3 @@ h2.nav-header {
 ul.j-links-group.nav.nav-list {
     padding-top: 13px;
 }
-/** small correction for admin ***/
-body .popover.iconpicker-popover.bottom {
-    max-width: initial !important;
-    min-width: initial !important;
-}
-body .controls .btn-group.btn-group-yesno .btn, body .btn-group.btn-group-yesno .btn, body .btn-group.group-fcinfo .btn, body .btn-group.group-fcprimary .btn, body .btn-group.group-fcsuccess .btn, body .btn-group.group-fcwarning .btn, body .btn-group.group-fcmethod .btn, body .btn-group input[value=""]:first-of-type + label.btn {
-    width: initial !important;
-}

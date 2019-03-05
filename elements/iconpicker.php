@@ -15,22 +15,25 @@
 **/
 
 defined('JPATH_PLATFORM') or die;
+require_once(JPATH_ROOT.DS.'components'.DS.'com_flexicontent'.DS.'classes'.DS.'flexicontent.helper.php');
 
 jimport('joomla.filesystem.folder');  // JFolder
 jimport('joomla.filesystem.file');    // JFile
 
 jimport('cms.html.html');      // JHtml
 jimport('cms.html.select');    // JHtmlSelect
-
+jimport('joomla.form.field');  // JFormField
 jimport('joomla.form.helper'); // JFormHelper
 JFormHelper::loadFieldClass('list');   // JFormFieldList
+$document = JFactory::getDocument();
+$document->addStyleSheet("./modules/mod_flexiadmin/assets/css/admin-style.css",'text/css',"screen");
 
 class JFormFieldIconpicker extends JFormField {
                        protected $type = 'Iconpicker';
 	// getLabel() left out
 	public function getInput() {
-                       JHtml::_('jquery.framework');
-                       JHtml::_('bootstrap.framework');
+                       //JHtml::_('jquery.framework');
+                       //JHtml::_('bootstrap.framework');
                        JHtml::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
                        //JHtml::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.min.css');
