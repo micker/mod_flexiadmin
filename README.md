@@ -1,35 +1,35 @@
 mod_flexiadmin
 ==============
-Admin module for FLEXIcontent 2.x
+Admin module for FLEXIcontent 3.x
 
 
 ## Module FLEXIadmin features
 
 
-FLEXIcontent **module admin** for cpanel position.
+FLEXIcontent **module admin** for cpanel position or sidebar position.
  Compatibilty : joomla 3 and isis template
 
 Think to publish it in **`cpanel position`** after installation.
 
 - **Action button to view management** :
-  - item list done
-  - categorie list done
-  - field list done
-  - tags list done
-  - type list done
-  - file list done
-  - stats done
-  - author list done
-  - group list done
-  - index view done
-  - custom link generation done
+  - item list
+  - categorie list
+  - field list
+  - tags list
+  - type list
+  - file list
+  - stats
+  - author list
+  - group list
+  - index view
+  - custom link generation
 - **Block list of content** :
-  - pending done
-  - revised done
-  - draft done
-  - in progress done
-  - trashed in progress
-  - user item done
+  - pending
+  - revised
+  - draft 
+  - in progress
+  - trashed
+  - user item
 
 ## Crédits
   - Yannick Berges
@@ -40,6 +40,15 @@ Think to publish it in **`cpanel position`** after installation.
 
 
 ## Change Log
+V2.0
+first release of V2
+ + unlimited tabs
+ + unlimited buttons
+ + action log block
+ + quick icons for update backup and more
+ + flex display
+ + icon picker (need to save before use it)
+ + unlimited free tab and substab
 
 v0.4.5
  + adding template sidebar for icon position
