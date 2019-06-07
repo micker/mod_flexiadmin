@@ -5,7 +5,7 @@
 	<creationDate>juin 2014</creationDate>
 	<authorEmail>yannick@com3elles.com</authorEmail>
 	<authorUrl>www.com3elles.com</authorUrl>
-	<version>2</version>
+	<version>2.2</version>
 	<copyright>Copyright (C) 2005 - 2019 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<description>FLEXI_ADMIN_INTRO</description>
@@ -311,6 +311,6 @@
 </config>
 
 <updateservers>
-	<server type="extension" priority="1" name="FLEXI admin update">https://update.com3elles.com/mod_flexiadmin/mod_flexiadmin_update.xml</server>
+	<server type="extension" priority="1" name="FLEXI admin update">https://raw.githubusercontent.com/micker/mod_flexiadmin/v2/update.xml</server>
 </updateservers>
 </extension>
