@@ -10,6 +10,14 @@
   default=""
   label="FLEXI_ADMIN_CAT"
   description="FLEXI_ADMIN_CAT_DESC" />
+  <field name="button_type"
+				label="FLEXI_ADMIN_TYPES"
+				description="FLEXI_ADMIN_TYPES_DESC"
+				size="5"
+				type="types"
+				multiple="false"
+				hide_default="true"
+				hide_none="true" />
   <field name="button_lang"
       		type="contentlanguage"
       		label="FLEXI_ADMIN_LANG"

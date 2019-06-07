@@ -121,7 +121,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 	if ($list_catbuttons): ?>
 	<?php foreach( $list_catbuttons as $list_catbuttons_idx => $cat_button ) :?>
 		<li>
-	              <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?>" >
+	              <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?>&filter_type=<?php echo $cat_button->button_type;?>" >
 					 <i class="fa <?php echo $cat_button->iconbutton; ?> <?php echo $iconsize; ?> "></i>
 				<?php echo JText::_($cat_button->namecatfilter); ?>
 	</a>
