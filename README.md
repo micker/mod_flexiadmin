@@ -2,6 +2,7 @@ mod_flexiadmin
 ==============
 Admin module for FLEXIcontent 3.x
 
+![alt text](https://com3elles.com/images/flexi-admin/FDM-bandeau.jpg)
 
 ## Module FLEXIadmin features
 
