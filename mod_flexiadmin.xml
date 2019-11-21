@@ -130,6 +130,26 @@
 					<option value="1">FLEXI_YES</option>
 				</field>
 				<field name="trashedwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddetrashed:1" />
+
+				<field name="actionsloglist" type="radio" default="0" label="FLEXI_ADMIN_ADD_ACTIONSBLOCK" description="FLEXI_ADMIN_ADD_ACTIONSBLOCK_DESC" class="btn-group btn-group-yesno">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="actionslogwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="actionsloglist:1" />
+				<field
+					name="countaction" type="list"
+					default="5" label="FLEXI_ADMIN_NBITEM"
+					description="FLEXI_ADMIN_NBITEM" showon="actionsloglist:1">
+					<option	value="1">1</option>
+					<option	value="3">3</option>
+					<option	value="5">5</option>
+					<option	value="10">10</option>
+					<option	value="15">15</option>
+					<option	value="20">20</option>
+					<option	value="50">50</option>
+					<option	value="100">100</option>
+				</field>
+
 				<field name="forceheightblock" type="text" default="" size="50" label="FLEXI_ADMIN_BLOCKHEIGHT" description="FLEXI_ADMIN_BLOCKHEIGHT_DESC"/>
 				<field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM_DESC" level="level1"/>
 				<field
