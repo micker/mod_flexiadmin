@@ -681,7 +681,7 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
    <?php
    echo JText::_( 'FLEXI_ADMIN_ALL' );
    echo "</a></div>";	?>
-<div class="row-striped">
+<div class="row-striped" style="height:<?php echo $forceheightblock; ?>">
 	<?php if (count($actionlist)) : ?>
 		<?php foreach ($actionlist as $i => $item) : ?>
 			<div class="row-fluid">
@@ -727,8 +727,7 @@ foreach( $listCustomlist as $listCustomlist_idx => $customblock ) :?>
             <th><?php echo JText::_( 'FLEXI_ADMIN_TITLE' ); ?></th>
             <?php if ($customblock->displautblock) : ?><th><?php echo JText::_( 'FLEXI_ADMIN_AUTHOR' ); ?></th><?php endif; ?>
             <?php
-            if(!empty($customblock->extrafieldlist)) {
-                      //$customblock= $customblock->listitems;
+            if(!empty($customblock->extrafieldlist) || !empty($customblock->listitems->id) ) {
                $item = $itemmodel->getItem($customblock->listitems->id, $check_view_access=false);
                $items = array(&$item);
                  // Get fields values from the DB,
@@ -750,23 +749,23 @@ foreach( $listCustomlist as $listCustomlist_idx => $customblock ) :?>
          </thead>
 
          <tbody>
-         <?php /*foreach ($listCustomlist as $listCustomlist_idx => $customblock) : */?>
+         <?php foreach ($customblock->listitems as $itemcustomblock) : ?>
             <tr>
             <td>
-               <a href="<?php echo $customblock->listitems->link; ?>"><?php echo $customblock->listitems->title; ?>
+               <a href="<?php echo $itemcustomblock->link; ?>"><?php echo $itemcustomblock->title; ?>
                <i class="icon-large icon-edit"></i></a>
             </td>
             <?php if ($customblock->displautblock) : ?><td>
                <span class="small">
                   <i class="icon-user"></i>
 
-                  <small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $customblock->listitems->name; ?>"><?php echo $customblock->listitems->name;?> </small>
+                  <small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY')." ". $itemcustomblock->name; ?>"><?php echo $itemcustomblock->name;?> </small>
                </span>
             </td>
             <?php endif; ?>
             <?php
             if(!empty($customblock->extrafieldlist)) {
-               $item = $itemmodel->getItem($customblock->listitems->id, $check_view_access=false);
+               $item = $itemmodel->getItem($itemcustomblock->id, $check_view_access=false);
                $items = array(&$item);
                $arrayExtrafield = explode(',', $customblock->extrafieldlist);
                if(isset($arrayExtrafield[0])) {
@@ -783,12 +782,12 @@ foreach( $listCustomlist as $listCustomlist_idx => $customblock ) :?>
             <?php if ($customblock->displdateblock) : ?>
             <td>
             <span class="small">
-               <i class="icon-calendar"></i> <?php echo JHtml::date($customblock->listitems->modified, 'd M Y'); ?>
+               <i class="icon-calendar"></i> <?php echo JHtml::date($itemcustomblock->modified, 'd M Y'); ?>
             </span>
             </td>
             <?php endif; ?>
          </tr>
-      <?php/* endforeach; */?>
+      <?php endforeach; ?>
                   </tbody>
       </table>
 </div>

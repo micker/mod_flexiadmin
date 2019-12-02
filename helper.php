@@ -21,6 +21,8 @@ abstract class modFlexiadminHelper
 {
 	public static function getFeatured(&$params)
 	{
+		require_once (JPATH_ROOT.DS.'components'.DS.'com_flexicontent'.DS.'helpers'.DS.'permission.php');
+		$user = JFactory::getUser();
 		// recupere la connexion à la BD
 		$db = JFactory::getDbo();
 		$queryFeatured = 'SELECT a.id, a.title, b.name , a.catid, a.created, a.created_by, a.modified, a.modified_by, a.featured FROM #__content  AS a LEFT JOIN #__users AS b ON a.created_by = b.id WHERE featured = 1 ORDER BY modified DESC LIMIT '. (int) $params->get('count');
@@ -28,7 +30,14 @@ abstract class modFlexiadminHelper
 		$itemsFeatured = $db->loadObjectList();
 		//print_r ($itemsRevised) ;
 		foreach ($itemsFeatured as &$itemFeatured) {
+			if ($user->authorise('core.edit', 'com_flexicontent.' . $itemFeatured->id))
+			{
 			$itemFeatured->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemFeatured->id);
+		}
+		else
+		{
+			$itemFeatured->link = '';
+		}
 		}
 		return $itemsFeatured;
 	}
@@ -148,7 +157,7 @@ abstract class modFlexiadminHelper
 			foreach ($itemsCustomlist as &$itemCustomlist) {
 				$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]='.$itemCustomlist->id);
 			}
-			$customblock->listitems = $itemCustomlist;
+			$customblock->listitems = $itemsCustomlist;
 		}
 		return $list_customblocks;
 	}
