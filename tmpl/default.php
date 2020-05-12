@@ -201,9 +201,13 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 										<?php if ($displaycreattab) : ?>
 										<div class="tab-pane fade" id="create<?php echo $module->id;?>">
 										<?php if($hiddebuttonadditem): ?>
-											<a href="index.php?option=com_flexicontent&view=types&format=raw"
-														class="modal"
-														rel="{size: {x: 700, y: 300}, closable: true}">
+											<?php
+											$add_item_url = JUri::base(true) . '/index.php?option=com_flexicontent&view=types&tmpl=component&layout=typeslist&action=new';
+ 											$window_title = flexicontent_html::encodeHTML(JText::_('FLEXI_TYPE'), 2);
+ 											$add_button_js = 'var url = jQuery(this).attr(\'href\'); ' .
+  											' fc_showDialog(url, \'fc_modal_popup_container\', 0, 1200, 0, false, {\'title\': \'" . $window_title . "\'}); ' .
+  											' return false;';
+ 											echo '<a  href=' . $add_item_url . '  onclick="' . $add_button_js . '"> ' . JText::_('FLEXI_NEW') . '</a>'; ?>
 													<button type="button" class="btn btn-default btn-lg itemlist">
 														<i class="fa fa-plus-circle <?php echo $iconsize; ?>"></i><br/>
 													<?php echo JText::_( 'FLEXI_ADMIN_ADDITEM' ); ?>
