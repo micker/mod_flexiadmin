@@ -187,7 +187,14 @@ if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
 				$filter_byauthor='';
 				}
 				?>
-              <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?><?php echo $filter_byauthor; ?>&filter_type=<?php echo $cat_button->button_type;?>" >
+				<?php if (!empty($cat_button->button_type)){
+					$filter_by_type = '&filter_type='.$cat_button->button_type;
+				} else {
+					$filter_by_type='';
+				}
+				?>
+				
+              <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?><?php echo $filter_byauthor; ?><?php echo $filter_by_type;?>" >
                     <button type="button" class="btn btn-default btn-lg itemlist">
                        <i class="fa <?php echo $cat_button->iconbutton; ?> <?php echo $iconsize; ?> "></i><br/>
                     <?php echo JText::_($cat_button->namecatfilter); ?>
