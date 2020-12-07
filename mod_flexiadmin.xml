@@ -326,6 +326,10 @@
 		<fieldset name="advanced">
 			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
 			<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+			<field name="usecdn" type="radio" default="1" label="FLEXI_ADMIN_USECDN" description="FLEXI_ADMIN_USECDN_DESC" class="btn-group btn-group-yesno btn-small">
+				<option value="0">FLEXI_NO</option>
+				<option value="1">FLEXI_YES</option>
+			</field>
 		</fieldset>
 	</fields>
 </config>
