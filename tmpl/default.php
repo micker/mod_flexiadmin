@@ -1095,7 +1095,7 @@
 																		<th><?php echo JText::_('FLEXI_ADMIN_TITLE'); ?></th>
 																		<?php if ($customblock->displautblock) : ?><th><?php echo JText::_('FLEXI_ADMIN_AUTHOR'); ?></th><?php endif; ?>
 																		<?php
-																		if (!empty($customblock->extrafieldlist) || !empty($customblock->listitems->id)) {
+																		if (!empty($customblock->extrafieldlist) && !empty($customblock->listitems->id)) {
 																			$item = $itemmodel->getItem($customblock->listitems->id, $check_view_access = false);
 																			$items = array(&$item);
 																			// Get fields values from the DB,
@@ -1104,10 +1104,12 @@
 																			if (isset($arrayExtrafield[0])) {
 																				foreach ($arrayExtrafield as $extrafield) {
 																					FlexicontentFields::getFieldDisplay($item, $extrafield);
+																					if (isset($item->fields[$extrafield]->label)){
 																					$label = $item->fields[$extrafield]->label;
 																					echo '<th>';
 																					echo JText::_($label);
 																					echo '</th>';
+																					}
 																				}
 																			}
 																		}
@@ -1139,11 +1141,13 @@
 																				if (isset($arrayExtrafield[0])) {
 																					foreach ($arrayExtrafield as $extrafield) {
 																						FlexicontentFields::getFieldDisplay($item, $extrafield);
+																						if (isset($item->fields[$extrafield]->display)){
 																						$value = $item->fields[$extrafield]->display;
 																						echo '<td>';
 																						echo $value;
 																						echo '</td>';
 																					}
+																				}
 																				}
 																			}
 																			?>
