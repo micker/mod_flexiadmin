@@ -18,3 +18,8 @@ body .controls .btn-group.btn-group-yesno .btn, body .btn-group.btn-group-yesno 
 button.iconpicker {
     display: block !important;
 }
+.popover.iconpicker-popover.bottom.in{
+    color: #000 !important;
+    background: #fff !important;
+
+}

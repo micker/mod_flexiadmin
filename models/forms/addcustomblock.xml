@@ -23,17 +23,17 @@
     label="FLEXI_ADMIN_DISPLAY_AUTHOR"
     type="radio"
     default="1"
-    class="btn-group">
-    <option value="1">JYES</option>
+    layout="joomla.form.field.radio.switcher">
     <option value="0">JNO</option>
+    <option value="1">JYES</option>
   </field>
   <field name="displdateblock"
     label="FLEXI_ADMIN_DISPLAY_DATE"
     type="radio"
     default="1"
-    class="btn-group">
-    <option value="1">JYES</option>
+    layout="joomla.form.field.radio.switcher">
     <option value="0">JNO</option>
+    <option value="1">JYES</option>
   </field>
   <field name="width"
 	type="number"

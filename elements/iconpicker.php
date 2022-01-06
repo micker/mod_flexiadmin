@@ -25,8 +25,15 @@ jimport('cms.html.select');    // JHtmlSelect
 jimport('joomla.form.field');  // JFormField
 jimport('joomla.form.helper'); // JFormHelper
 JFormHelper::loadFieldClass('list');   // JFormFieldList
-$document = JFactory::getDocument();
-$document->addStyleSheet("./modules/mod_flexiadmin/assets/css/admin-style.css",'text/css',"screen");
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Associations;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
+use Joomla\Registry\Registry;
+JHtml::_('stylesheet', 'media/mod_flexiadmin/css/admin-style.css');
+
 
 class JFormFieldIconpicker extends JFormField {
                        protected $type = 'Iconpicker';
@@ -34,14 +41,15 @@ class JFormFieldIconpicker extends JFormField {
 	public function getInput() {
                        
                        //JHtml::_('bootstrap.framework');
-                       // JHtml::_('jquery.framework');
+                       //JHtml::_('jquery.framework');
+
 
                        $module = JModuleHelper::getModule('mod_flexiadmin');
                        $moduleParams = new JRegistry;
                        $moduleParams->loadString($module->params);
-                       $useCDN = $moduleParams->get('usecdn', '1'); 
-                       echo $useCDN;
-                       //$useCDN = 1;//$this->params->get('usecdn', '1');
+                       //$useCDN = $moduleParams->get('usecdn', '1'); 
+                       //echo $useCDN;
+                       $useCDN = 1;//$this->params->get('usecdn', '1');
                        if ($useCDN == 1){
                         JHtml::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
                         JHtml::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.9.0/css/bootstrap-iconpicker.min.css');
@@ -50,11 +58,11 @@ class JFormFieldIconpicker extends JFormField {
                         JHtml::_('script', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.9.0/js/bootstrap-iconpicker.min.js');
 
                        } else {
-                        JHtml::_('stylesheet', 'mod_flexiadmin/css/font-awesome.min.css' , array('version' => 'auto', 'relative' => true));
-                        JHtml::_('stylesheet', 'mod_flexiadmin/css/bootstrap-iconpicker.min.css' , array('version' => 'auto', 'relative' => true));
-                        JHtml::_('script', 'mod_flexiadmin/bootstrap.min.js' , array('version' => 'auto', 'relative' => true));
-                        JHtml::_('script', 'mod_flexiadmin/bootstrap-iconpicker-iconset-all.min.js' ,array('version' => 'auto', 'relative' => true));
-                        JHtml::_('script', 'mod_flexidmin/bootstrap-iconpicker.min.js' , array('version' => 'auto', 'relative' => true));
+                        //JHtml::_('stylesheet', 'media/mod_flexiadmin/css/font-awesome.min.css');
+                        JHtml::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.min.css');
+                        JHtml::_('script', 'media/mod_flexiadmin/bootstrap.min.js');
+                        JHtml::_('script', 'media/mod_flexiadmin/bootstrap-iconpicker-iconset-all.min.js');
+                        JHtml::_('script', 'media/mod_flexidmin/bootstrap-iconpicker.min.js');
                        }
                       
 
@@ -91,15 +99,6 @@ class JFormFieldIconpicker extends JFormField {
 
                        })(jQuery);
                        </script>
-                      <script>
-                      (function ($) {
-                      $(document).on('subform-row-add', function(event, row){
-                                     // $(row).prev().find('button.hasPicker').iconpicker();
-                                      //$(row).find('button.hasPicker').iconpicker();
-                                      $(row).find('button').iconpicker();
-                          })
-                      })(jQuery);
-                      </script>
                        ";
                        return $iconlist;
                        }
