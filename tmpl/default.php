@@ -179,7 +179,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 					<div class="row">
 						<div class="col-lg-12">
 							<nav class="quick-icons dashboard" aria-label="Quick custom link">
-								<ul class="nav flex-wrap">
+								<ul class="flex-wrap2">
 									<?php $list_buttons = $params->get('add_button');
 									foreach ($list_buttons as $list_buttons_idx => $add_button) : ?>
 										<li class="quickicon quickicon-single col ">
@@ -286,7 +286,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 					<div class="row">
 						<div class="col-lg-12">
 							<nav class="quick-icons dashboard" aria-label="Quick links creation">
-								<ul class="nav flex-wrap">
+								<ul class="flex-wrap">
 									<?php if ($hiddebuttonadditem) : ?>
 										<li class="quickicon quickicon-single col ">
 											<?php
@@ -366,7 +366,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 					<div class="row">
 						<div class="col-lg-12">
 							<nav class="quick-icons dashboard" aria-label="Quick links creation">
-								<ul class="nav flex-wrap">
+								<ul class="flex-wrap">
 									<?php if ($hiddebuttonmanageitems) : ?>
 										<li class="quickicon quickicon-single col ">
 											<a href="index.php?option=com_flexicontent&view=items">
@@ -454,7 +454,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 					<div class="row">
 						<div class="col-lg-12">
 							<nav class="quick-icons dashboard" aria-label="Quick links creation">
-								<ul class="nav flex-wrap">
+								<ul class="flex-wrap">
 									<?php if ($hiddebuttonprivacy) : ?>
 										<li class="quickicon quickicon-single col">
 											<a href="index.php?option=com_privacy">
@@ -596,7 +596,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 							<div class="row">
 								<div class="col-lg-12">
 									<nav class="quick-icons dashboard" aria-label="Quick links creation">
-										<ul class="nav flex-wrap">
+										<ul class="flex-wrap">
 											<?php foreach ($free_buttons->free_button as $free_button_idx => $free_button) : ?>
 												<li class="quickicon quickicon-single col">
 													<a href="<?php echo $free_button->linkbutton; ?>" target="<?php echo $free_button->targetlink; ?>">
