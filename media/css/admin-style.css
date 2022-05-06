@@ -23,3 +23,7 @@ button.iconpicker {
     background: #fff !important;
 
 }
+body .form-grid .control-group .controls > div, body .form-grid .control-group .controls {
+    flex-basis: initial !important;
+display: initial !important;
+}

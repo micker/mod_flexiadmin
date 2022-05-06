@@ -122,6 +122,16 @@
 	//freetab
 	$freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME');
 
+	//Analytics tab
+$displayanalytics      = $params->get('displayanalytics', '1');
+$analytics_url = $params->get('analytics_url', ''); 
+$analytics_siteid =  $params->get('analytics_siteid', '2');
+$analytics_period = $params->get('analytics_period', 'week');
+$analytics_date = $params->get('analytics_date', 'yesterday');
+$analytics_height = $params->get('analytics_height', '500');
+$analytics_tab_name = $params->get('analytics_tab_name', 'FLEXI_ADMIN_TAB_ANALYTICS');
+$analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANALYTICS');
+
 
 	jimport('joomla.application.component.controller');
 	// Check if component is installed
@@ -622,6 +632,23 @@
 					<?php endif; ?>
 				<?php endif; ?>
 
+				<?php if ($displayanalytics && $analytics_url) : ?>
+					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'create', Text::_($analytics_tab_name)); ?>
+					<div class="row">
+						<div class="col-lg-12">
+						<div style="float:right"><a href="<?php echo $analytics_url; ?>" target="_blank" class="btn btn-primary"><?php echo Text::_($analytics_button_name); ?></a></div>
+							<?php if($analytics_token_auth && $analytics_use_token_auth == 1 ) : ?>
+						<iframe src="<?php echo $analytics_url; ?>/index.php?module=Widgetize&action=iframe&moduleToWidgetize=Dashboard&actionToWidgetize=index&idSite=<?php echo $analytics_siteid; ?>&period=<?php echo $analytics_period; ?>&date=<?php echo $analytics_date; ?>&token_auth=<?php echo $analytics_token_auth; ?>" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="<?php echo $analytics_height;?>px"></iframe>
+						<?php elseif ($analytics_use_token_auth == 0 ) : ?>
+							<iframe src="<?php echo $analytics_url; ?>/index.php?module=Widgetize&action=iframe&moduleToWidgetize=Dashboard&actionToWidgetize=index&idSite=<?php echo $analytics_siteid; ?>&period=<?php echo $analytics_period; ?>&date=<?php echo $analytics_date; ?>" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="<?php echo $analytics_height;?>px"></iframe>
+							<?php else : ?>
+							<?php echo Text::_('MOD_DASHBOARD_TOKEN_MESSAGE'); ?>
+						<?php endif; ?>
+					</div>
+							</div>
+							<?php echo HTMLHelper::_('uitab.endTab'); ?>
+							<?php endif; ?>
+
 				<?php echo HTMLHelper::_('uitab.endTabSet'); ?>
 			<?php endif; ?>
 			</div>
@@ -932,7 +959,7 @@
 																	<span class="small">
 																		<i class="fa fa-user"></i>
 
-																		<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('MOD_DASHBOARD_CREATED_BY') . " " . $user->name; ?>"><?php echo $user->name; ?>
+																		<small class="hasTooltip" title="" data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY') . " " . $user->name; ?>"><?php echo $user->name; ?>
 																		</small>
 																	</span>
 																</td>

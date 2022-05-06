@@ -5,8 +5,8 @@
 	<creationDate>dec 2021</creationDate>
 	<authorEmail>yannick@com3elles.com</authorEmail>
 	<authorUrl>www.com3elles.com</authorUrl>
-	<version>2.4</version>
-	<copyright>Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.</copyright>
+	<version>2.5</version>
+	<copyright>Copyright (C) 2005 - 2022 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<description>FLEXI_ADMIN_INTRO</description>
 	<files>
@@ -76,6 +76,10 @@
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
+				<field name="displayanalytics" type="radio" default="0" label="FLEXI_ADMIN_ANALYTICS_TABS_ADMIN" description="FLEXI_ADMIN_ANALYTICS_TABS_ADMIN_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
 			</fieldset>
 			<fieldset name="block_config" label="FLEXI_ADMIN_BLOCK_CONFIG" description="FLEXI_ADMIN_BLOCK_CONFIG_DESC">
 				<field name="" type="separator" default="FLEXI_ADMIN_NB_ITEM_DISPLAY" level="level1"/>
@@ -94,47 +98,47 @@
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="featuredwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="JOOMLA_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddefeatured:1" parentclass="span-6 stack"/>
+				<field name="featuredwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddefeatured:1" parentclass="span-2-inline stack"/>
 				<field name="hiddepending" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_PENDING" description="FLEXI_ADMIN_DISPLAYBLOCK_PENDING_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="pendingwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="JOOMLA_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddepending:1" parentclass="span-6 stack"/>
+				<field name="pendingwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddepending:1" parentclass="span-2-inline stack"/>
 				<field name="hidderevised" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_REVISED" description="FLEXI_ADMIN_DISPLAYBLOCK_REVISED_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="revisedwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="JOOMLA_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hidderevised:1" parentclass="span-6 stack"/>
+				<field name="revisedwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hidderevised:1" parentclass="span-2-inline stack"/>
 				<field name="hiddeinprogess" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS" description="FLEXI_ADMIN_DISPLAYBLOCK_INPROGRESS_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="inprogessdwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddeinprogess:1" parentclass="span-6 stack"/>
+				<field name="inprogessdwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddeinprogess:1" parentclass="span-2-inline stack"/>
 				<field name="hiddedraft" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT" description="FLEXI_ADMIN_DISPLAYBLOCK_DRAFT_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="draftwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddedraft:1" parentclass="span-6 stack"/>
+				<field name="draftwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddedraft:1" parentclass="span-2-inline stack"/>
 				<field name="hiddeyouritem" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_YOURITEM" description="FLEXI_ADMIN_DISPLAYBLOCK_YOURITEM_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="youritemwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddeyouritem:1" parentclass="span-6 stack"/>
+				<field name="youritemwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddeyouritem:1" parentclass="span-2-inline stack"/>
 				<field name="hiddetrashed" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBLOCK_TRASHED" description="FLEXI_ADMIN_DISPLAYBLOCK_TRASHED_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="trashedwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddetrashed:1" parentclass="span-6 stack"/>
+				<field name="trashedwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="hiddetrashed:1" parentclass="span-2-inline stack"/>
 
 				<field name="actionsloglist" type="radio" default="0" label="FLEXI_ADMIN_ADD_ACTIONSBLOCK" description="FLEXI_ADMIN_ADD_ACTIONSBLOCK_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
-				<field name="actionslogwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="actionsloglist:1" parentclass="span-6 stack"/>
+				<field name="actionslogwidth" type="number" default="45" label="FLEXI_ADMIN_WIDTHCOL" description="FLEXI_ADMIN_WIDTHCOL_DESC"  min="0" max="100" step="5" showon="actionsloglist:1" parentclass="span-2-inline stack"/>
 				<field
 					name="countaction" type="list"
 					default="5" label="FLEXI_ADMIN_NBITEM"
-					description="FLEXI_ADMIN_NBITEM" showon="actionsloglist:1" parentclass="span-6 stack">
+					description="FLEXI_ADMIN_NBITEM" showon="actionsloglist:1" parentclass="span-2-inline stack">
 					<option	value="1">1</option>
 					<option	value="3">3</option>
 					<option	value="5">5</option>
@@ -269,7 +273,7 @@
 					<option value="0">FLEXI_NO</option>
 					<option value="1">FLEXI_YES</option>
 				</field>
-				<field name="hiddebuttonlogs" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS" description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOG_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
+				<field name="hiddebuttonlogs" type="radio" default="1" label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS" description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
 					<option value="0">FLEXI_NO</option>
 				<option value="1">FLEXI_YES</option>
 			</field>
@@ -306,6 +310,20 @@
 				<option value="1">FLEXI_YES</option>
 			</field>
 		</fieldset>
+		<fieldset name="analytics_config" label="FLEXI_ADMIN_ANALYTICS_CONFIG" description="FLEXI_ADMIN_ANALYTICS_CONFIG_DESC">
+			<field name="analytics_tabname" type="text" default="FLEXI_ADMIN_TAB_ANALYTICS" label="FLEXI_ADMIN_ANALYTICS_TAB_NAME" description="FLEXI_ADMIN_ANALYTICS_TAB_NAME_DESC" parentclass="span-5 stack"/>
+				<field name="analytics_siteid" type="text" default="1" label="FLEXI_ADMIN_SITEID" description="FLEXI_ADMIN_SITEID_DESC" parentclass="span-2 stack"/>
+				<field name="analytics_site_url" type="text" default="" label="FLEXI_ADMIN_SITEURL" description="FLEXI_ADMIN_SITEURL_DESC" parentclass="span-2 stack"/>
+				<field name="analytics_use_token" type="radio" default="0" label="FLEXI_ADMIN_ANALYTICS_USE_TOKEN" description="FLEXI_ADMIN_ANALYTICS_USE_TOKEN_DESC" layout="joomla.form.field.radio.switcher" parentclass="span-2 stack">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="analytics_site_token_auth" type="text" default="" label="FLEXI_ADMIN_TOKEN" description="FLEXI_ADMIN_TOKEN_DESC" parentclass="span-2 stack"/>
+				<field name="analytics_period" type="text" default="week" label="FLEXI_ADMIN_ANALYTICS_PERIOD" description="FLEXI_ADMIN_ANALYTICS_PERIOD_DESC" parentclass="span-2 stack"/>
+				<field name="analytics_date" type="text" default="yesterday" label="FLEXI_ADMIN_ANALYTICS_DATE" description="FLEXI_ADMIN_ANALYTICS_DATE_DESC" parentclass="span-2 stack"/>
+				<field name="analytics_height" type="text" default="500" label="FLEXI_ADMIN_ANALYTICS_HEIGHT" description="FLEXI_ADMIN_ANALYTICS_HEIGHT_DESC" parentclass="span-2 stack"/>
+				<field name="analytics_button" type="text" default="FLEXI_ADMIN_LINK_ANALYTICS" label="FLEXI_ADMIN_ANALYTICS_LINK" description="FLEXI_ADMIN_ANALYTICS_LINK_DESC" parentclass="span-5 stack"/>
+			</fieldset>
 		<fieldset name="free_tab" label="FLEXI_ADMIN_FREE_TAB" description="FLEXI_ADMIN_FREE_TAB_DESC" level="level1">
 			<field name="freenametab" type="text" default="FLEXI_ADMIN_FREE_TAB_NAME" label="FLEXI_ADMIN_FREE_TAB_NAME_2" description="FLEXI_ADMIN_FREE_TAB_NAME_2_DESC"/>
 			<field
@@ -321,7 +339,7 @@
 				buttons="add,remove,move"
 				layout="joomla.form.field.subform.repeatable"
 				groupByFieldset="false"
-				parentclass="span-6 stack"/>
+				parentclass="span-12 stack"/>
 		</fieldset>
 		<fieldset name="advanced">
 			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" class="custom-select"/>
