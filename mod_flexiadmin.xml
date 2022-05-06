@@ -13,7 +13,6 @@
 		<filename module="mod_flexiadmin">mod_flexiadmin.php</filename>
 		<folder>tmpl</folder>
 		<folder>language</folder>
-		<folder>assets</folder>
 		<folder>elements</folder>
 		<folder>models</folder>
 		<filename>helper.php</filename>
