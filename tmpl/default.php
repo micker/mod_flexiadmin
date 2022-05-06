@@ -123,9 +123,9 @@
 	$freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME');
 
 	//Analytics tab
-$displayanalytics      = $params->get('displayanalytics', '1');
-$analytics_url = $params->get('analytics_url', ''); 
-$analytics_siteid =  $params->get('analytics_siteid', '2');
+$displayanalytics      = $params->get('displayanalytics');
+$analytics_url = $params->get('analytics_url'); 
+$analytics_siteid =  $params->get('analytics_siteid');
 $analytics_period = $params->get('analytics_period', 'week');
 $analytics_date = $params->get('analytics_date', 'yesterday');
 $analytics_height = $params->get('analytics_height', '500');
