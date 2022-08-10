@@ -182,7 +182,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 								<ul class="flex-wrap2">
 									<?php $list_buttons = $params->get('add_button');
 									foreach ($list_buttons as $list_buttons_idx => $add_button) : ?>
-										<li class="quickicon quickicon-single col ">
+										<li class="quickicon quickicon-single col <?php echo $add_button->displayline ? 'newlinegrid' : ''; ?>">
 											<a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $add_button->button_type; ?>&maincat=<?php echo $add_button->catid; ?>&filter_lang=<?php echo $add_button->button_lang; ?>">
 												<div class="quickicon-icon d-flex align-items-end big">
 													<i class="fas 
@@ -203,9 +203,6 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 												</div>
 											</a>
 										</li>
-										<?php if ($add_button->displayline) : ?>
-										<hr class="mt-3 mb-3" />
-										<?php endif; ?>
 									<?php endforeach; ?>
 									<?php $list_catbuttons = $params->get('add_cat_button');
 									foreach ($list_catbuttons as $list_catbuttons_idx => $cat_button) : ?>
@@ -222,7 +219,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 											$filter_by_type = '';
 										}
 										?>
-										<li class="quickicon quickicon-single col">
+										<li class="quickicon quickicon-single col <?php echo $cat_button->displayline ? 'newlinegrid' : ''; ?>">
 											<a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?><?php echo $filter_byauthor; ?><?php echo $filter_by_type; ?>">
 												<div class="quickicon-icon d-flex align-items-end big">
 													<i class="fas 
@@ -244,12 +241,11 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 												</div>
 											</a>
 										</li>
-										<?php if ($cat_button->displayline) : ?>
-											<hr class="mt-3 mb-3" /><?php endif; ?>
+										
 									<?php endforeach; ?>
 									<?php $list_edititembuttons = $params->get('edit_item_button');
 									foreach ($list_edititembuttons as $list_edititembuttons_idx => $edit_item_button) : ?>
-										<li class="quickicon quickicon-single col ">
+										<li class="quickicon quickicon-single col <?php echo $edit_item_button->displayline ? 'newlinegrid' : ''; ?>">
 											<a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $edit_item_button->itemid; ?>">
 												<div class="quickicon-icon d-flex align-items-end big">
 													<i class="fas 
@@ -271,8 +267,6 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 												</div>
 											</a>
 										</li>
-										<?php if ($edit_item_button->displayline) : ?>
-											<hr class="mt-3 mb-3" /><?php endif; ?>
 									<?php endforeach; ?>
 								</ul>
 							</nav>
@@ -481,7 +475,6 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 									<?php endif; ?>
 
 									<?php if ($hiddebuttonprivacy || $hiddebuttonlogs) : ?>
-										<hr class="mt-3 mb-3" />
 									<?php endif; ?>
 									<?php if ($hiddebuttonmanagetypes) : ?>
 										<li class="quickicon quickicon-single col ">
@@ -598,7 +591,7 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 									<nav class="quick-icons dashboard" aria-label="Quick links creation">
 										<ul class="flex-wrap">
 											<?php foreach ($free_buttons->free_button as $free_button_idx => $free_button) : ?>
-												<li class="quickicon quickicon-single col">
+												<li class="quickicon quickicon-single col <?php echo $free_button->displayline ? 'newlinegrid' : ''; ?>">
 													<a href="<?php echo $free_button->linkbutton; ?>" target="<?php echo $free_button->targetlink; ?>">
 														<div class="quickicon-icon d-flex align-items-end big">
 															<i class="fas 
@@ -620,9 +613,8 @@ $analytics_button_name = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANAL
 														</div>
 													</a>
 												</li>
-												<?php if ($free_button->displayline) : ?>
-													<hr class="mt-3 mb-3" /><?php endif; ?>
 											<?php endforeach; ?>
+																				<?php echo $edit_item_button->displayline ? 'newlinegrid' : ''; ?>
 										</ul>
 									</nav>
 								</div>
