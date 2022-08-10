@@ -1,4 +1,11 @@
-  
+ul.flex-wrap2, ul.flex-wrap {
+    grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+}
+.newlinegrid + li.quickicon.quickicon-single.col{
+    grid-column-start: 1;
+}
 .breadcrumb {
     margin-bottom: 0rem;
 }
@@ -9,10 +16,8 @@
     margin-top: 20px;
     padding: .75rem 1rem;
 }
-.quick-icons .flex-wrap, .quick-icons .flex-wrap2 {
-    grid-gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+.quick-icons .nav {
+    display: flex;
 }
 .action.span12, .modulemessage.span12 {
 margin-left: 0 !important;
