@@ -16,9 +16,6 @@ ul.flex-wrap2, ul.flex-wrap {
     margin-top: 20px;
     padding: .75rem 1rem;
 }
-.quick-icons .nav {
-    display: flex;
-}
 .action.span12, .modulemessage.span12 {
 margin-left: 0 !important;
 }
