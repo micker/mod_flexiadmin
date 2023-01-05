@@ -35,6 +35,7 @@
 	//JHtml::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 	JHtml::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
 	JHtml::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.css');
+	JHtml::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 	$force_fullwidth     = $params->get('force_fullwidth', '1');
 

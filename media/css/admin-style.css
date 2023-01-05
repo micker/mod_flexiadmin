@@ -27,3 +27,9 @@ body .form-grid .control-group .controls > div, body .form-grid .control-group .
     flex-basis: initial !important;
 display: initial !important;
 }
+body .popover.iconpicker-popover.bottom.in {
+    color: #000 !important;
+    background: #fff !important;
+    z-index: 10000000000000 !important;
+    pointer-events: all;
+}
