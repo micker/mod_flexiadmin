@@ -6,8 +6,10 @@
  * @subpackage    FLEXIcontent
  * @copyright (C) 2016 Berges Yannick - www.com3elles.com
  * @license       GNU/GPL v2
+ *
  * special thanks to ggppdk and emmanuel dannan for flexicontent
  * special thanks to my master Marc Studer
+ *
  * FLEXIadmin module is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
@@ -17,18 +19,21 @@
 //blocage des accés directs sur ce script
 defined('_JEXEC') or die('Accés interdit');
 
+use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
 
-$document = JFactory::getDocument();
-$app      = JFactory::getApplication();
-$user     = JFactory::getUser();
+$document = Factory::getDocument();
+$app      = Factory::getApplication();
+$user     = Factory::getUser();
 $userId   = $user->get('id');
 
-//JHtml::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-JHtml::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
-JHtml::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.css');
-JHtml::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+//HTMLHelper::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
+HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.css');
+HTMLHelper::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $force_fullwidth = $params->get('force_fullwidth', '1');
 
@@ -39,19 +44,6 @@ if ($force_fullwidth)
 	}";
 	$document->addStyleDeclaration($style);
 }
-
-
-//extrafield
-require_once(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_flexicontent' . DS . 'defineconstants.php');
-require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'helpers' . DS . 'route.php');
-require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'classes' . DS . 'flexicontent.helper.php');
-require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'classes' . DS . 'flexicontent.fields.php');
-require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'classes' . DS . 'flexicontent.categories.php');
-JTable::addIncludePath(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_flexicontent' . DS . 'tables');
-require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'models' . DS . 'item.php');
-
-$itemmodel_name = FLEXI_J16GE ? 'FlexicontentModelItem' : 'FlexicontentModelItems';
-$itemmodel      = new $itemmodel_name();
 
 //module config
 $hiddefeatured       = $params->get('hiddefeatured', '1');
@@ -68,7 +60,6 @@ $displaymanagetab    = $params->get('displaymanagetab', '1');
 $displayadmintab     = $params->get('displayadmintab', '1');
 $displayfreetab      = $params->get('displayfreetab', '1');
 $displayconfigmodule = $params->get('displayconfigmodule', '1');
-$forceheightblock    = $params->get('forceheightblock', '');
 $displaycustomtext   = $params->get('displaycustomtext', '');
 $customtext          = $params->get('customtext', '');
 $displayinfosystem   = $params->get('displayinfosystem', '1');
@@ -112,7 +103,7 @@ $hiddebuttonlogs             = $params->get('hiddebuttonlogs', '1');
 
 $displayauthoronly = $params->get('displayauthoronly', '0');
 
-$user = JFactory::getUser();
+$user = Factory::getUser();
 
 //freetab
 $freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME');
@@ -129,10 +120,9 @@ $analytics_button_name    = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_A
 $analytics_token_auth     = $params->get('analytics_site_token_auth');
 $analytics_use_token_auth = $params->get('analytics_use_token');
 
-
 jimport('joomla.application.component.controller');
 // Check if component is installed
-if (!JComponentHelper::isEnabled('com_flexicontent', true))
+if (!ComponentHelper::isEnabled('com_flexicontent', true))
 {
 	echo 'This modules requires component FLEXIcontent!';
 
@@ -264,8 +254,8 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
 									<?php if ($hiddebuttonadditem) : ?>
                                         <li class="quickicon quickicon-single col ">
 											<?php
-											$add_item_url  = JUri::base(true) . '/index.php?option=com_flexicontent&view=types&tmpl=component&layout=typeslist&action=new';
-											$window_title  = flexicontent_html::encodeHTML(JText::_('FLEXI_TYPE'), 2);
+											$add_item_url  = Uri::base(true) . '/index.php?option=com_flexicontent&view=types&tmpl=component&layout=typeslist&action=new';
+											$window_title  = flexicontent_html::encodeHTML(Text::_('FLEXI_TYPE'), 2);
 											$add_button_js = 'var url = jQuery(this).attr(\'href\'); ' .
 												' fc_showDialog(url, \'fc_modal_popup_container\', 0, 1200, 0, false, {\'title\': \'" . $window_title . "\'}); ' .
 												' return false;';
@@ -287,7 +277,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-folder-open <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ADDCATEGORY'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDCATEGORY'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -300,7 +290,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-tags <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ADDTAG'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDTAG'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -313,7 +303,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-user <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ADDAUTHOR'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDAUTHOR'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -326,7 +316,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-users <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ADDGROUPS'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDGROUPS'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -355,7 +345,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-th-list <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ITEMLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ITEMLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -368,7 +358,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-folder-open <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_CATLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_CATLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -381,7 +371,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-tags <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_TAGLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_TAGLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -394,7 +384,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-user <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_AUTHORLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_AUTHORLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -407,7 +397,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-users <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_GROUPSLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_GROUPSLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -420,7 +410,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-upload <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_FILEMANAGER'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_FILEMANAGER'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -449,7 +439,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-lock <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_PRIVACY'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_PRIVACY'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -462,7 +452,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-list-alt <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_LOGS'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_LOGS'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -478,7 +468,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-book <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_TYPELIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_TYPELIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -491,7 +481,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-th-list <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ADDTYPE'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDTYPE'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -504,7 +494,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-th-list <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_FIELDLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_FIELDLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -517,7 +507,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-plus-circle <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_ADDFIELD'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDFIELD'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -530,7 +520,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-download <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_IMPORT'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_IMPORT'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -543,7 +533,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-pie-chart <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_STATS'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_STATS'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -556,7 +546,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-search <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_SEARCH'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_SEARCH'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -569,7 +559,7 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-cogs <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo JText::_('FLEXI_ADMIN_GEN'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_GEN'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -676,589 +666,143 @@ if (!JComponentHelper::isEnabled('com_flexicontent', true))
 
     <div class="sep"></div>
 
-    <!--start pending block -->
     <div class="contentbloc">
-		<?php if ($hiddefeatured) : ?>
-            <div class="block featured card" style="width:<?php echo $featurewidth; ?>%">
-                <div class="card-header">
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_featured=1'; ?>
-                    <h3 class="module-title">
-                        <i class="icon-large icon-featured"></i>
-						<?php echo JText::_('FLEXI_ADMIN_FEATURED'); ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-
-                        <thead>
-                        <tr>
-                            <th scope="col" class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listFeatured as $itemFeatured) :
-							$canEdit = $user->authorise('core.edit', 'com_content.article.' . $itemFeatured->id);
-							$canCheckin = $user->authorise('core.manage', 'com_checkin') || $itemFeatured->checked_out == $userId || $itemFeatured->checked_out == 0;
-							$canEditOwn = $user->authorise('core.edit.own', 'com_content.article.' . $itemFeatured->id) && $itemFeatured->created_by == $userId;
-							$canChange = $user->authorise('core.edit.state', 'com_content.article.' . $itemFeatured->id) && $canCheckin;
-							?>
-
-							<?php if ($canChange) : ?>
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemFeatured->link; ?>"><?php echo $itemFeatured->title; ?>
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                            <span class="small">
-                                                <i class="fa fa-user"></i>
-                                                <?php echo $itemFeatured->author; ?>
-                                            </span>
-                                </td>
-                                <td>
-                                            <span class="small">
-                                                <i class="fas fa-calendar"></i>
-                                                <?php echo JHtml::date($itemFeatured->modified, 'd M Y'); ?>
-                                            </span>
-                                </td>
-                            </tr>
-						<?php endif; ?>
-
-						<?php endforeach; ?>
-                        </tbody>
-
-                    </table>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php if ($hiddepending) : ?>
-            <div class="block pending card" style="width:<?php echo $pendingwidth; ?>%">
-                <div class="card-header">
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=PE'; ?>
-                    <h3 class="module-title">
-                        <i class="fa fa-spinner"></i>
-						<?php echo JText::_('FLEXI_ADMIN_PENDING'); ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href="<?php echo $show_all_link; ?>" class="adminlink">
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-                        <thead>
-                        <tr>
-                            <th scope="col" class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listPending as $itemPending) : ?>
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemPending->link; ?>"><?php echo $itemPending->title; ?>
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fa fa-user"></i>
-										<?php echo $itemPending->author; ?>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fas fa-calendar"></i>
-										<?php echo JHtml::date($itemPending->modified, 'd M Y'); ?>
-                                    </div>
-                                </td>
-                            </tr>
-						<?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-		<?php endif; ?>
-
-		<?php if ($hidderevised) : ?>
-            <div class="block revised card" style="width:<?php echo $revisedwidth; ?>%">
-                <div class="card-header">
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=RV'; ?>
-                    <h3 class="module-title">
-                        <i class="icon-large icon-thumbs-up"></i>
-						<?php echo JText::_('FLEXI_ADMIN_REVISED'); ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-                        <thead>
-                        <tr>
-                            <th scope="col" class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listRevised as $itemRevised) : ?>
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemRevised->link; ?>"><?php echo $itemRevised->title; ?>
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fa fa-user"></i>
-										<?php echo $itemRevised->author; ?>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fas fa-calendar"></i>
-										<?php echo JHtml::date($itemRevised->modified, 'd M Y'); ?>
-                                    </div>
-                                </td>
-                            </tr>
-						<?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php if ($hiddeinprogess) : ?>
-            <div class="block inprogress card" style="width:<?php echo $inprogessdwidth; ?>%">
-                <div class="card-header">
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=IP'; ?>
-                    <h3 class="module-title">
-                        <i class="icon-large icon-checkin"></i>
-						<?php echo JText::_('FLEXI_ADMIN_INPROGRESS'); ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-                        <thead>
-                        <tr>
-                            <th scope="col" class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listInprogress as $itemInprogress) : ?>
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemInprogress->link; ?>">
-										<?php echo $itemInprogress->title; ?>
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fa fa-user"></i>
-										<?php echo $itemInprogress->author; ?>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fas fa-calendar"></i>
-										<?php echo JHtml::date($itemInprogress->modified, 'd M Y'); ?>
-                                    </div>
-                                </td>
-                            </tr>
-						<?php endforeach; ?>
-                        <tbody>
-                    </table>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php if ($hiddedraft) : ?>
-            <div class="block draft card" style="width:<?php echo $draftwidth; ?>%">
-                <div class="card-header">
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=OQ'; ?>
-                    <h3 class="module-title">
-                        <i class="icon-large icon-file"></i>
-						<?php echo JText::_('FLEXI_ADMIN_DRAFT'); ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-                        <thead>
-                        <tr>
-                            <th scope="col" class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listDraft as $itemDraft) : ?>
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemDraft->link; ?>"><?php echo $itemDraft->title; ?>
-                                        <i class="fa fa-edit"></i></a>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fa fa-user"></i> <?php echo $itemDraft->author; ?>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fas fa-calendar"></i>
-										<?php echo JHtml::date($itemDraft->modified, 'd M Y'); ?>
-                                    </div>
-                                </td>
-                            </tr>
-						<?php endforeach; ?>
-                        <tbody>
-                    </table>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php if ($hiddeyouritem) : ?>
-            <div class="block youritems card" style="width:<?php echo $youritemwidth; ?>%">
-                <div class="card-header">
-					<?php $user = JFactory::getUser(); ?>
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_author=' . $user->id . ''; ?>
-                    <h3 class="module-title">
-                        <i class="fa fa-user"></i>
-						<?php echo JText::_('FLEXI_YOUR_ITEM'); ?> : <?php echo $user->name; ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-                        <thead>
-                        <tr>
-                            <th scope="col"
-                                class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JSTATES'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listUseritem as $itemUseritem) : ?>
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemUseritem->link; ?>"><?php echo $itemUseritem->title; ?>
-                                        <i class="fa fa-edit"></i></a>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fa fa-user"></i>
-
-                                        <div class="hasTooltip" title=""
-                                             data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_CREATED_BY') . " " . $user->name; ?>">
-											<?php echo $user->name; ?>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-									<?php echo $itemUseritem->state; ?>
-                                </td>
-                                <td>
-                                    <div class="small">
-                                        <i class="fas fa-calendar"></i>
-										<?php echo JHtml::date($itemUseritem->modified, 'd M Y'); ?>
-                                    </div>
-                                </td>
-                            </tr>
-						<?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php if ($hiddetrashed) : ?>
-            <div class="block trashed card" style="width:<?php echo $trashedwidth; ?>%">
-                <div class="card-header">
-					<?php
-					//TODO filtrage trashed
-					$show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;filter_state=T';
-					?>
-                    <h3 class="module-title">
-                        <i class="fa fa-trash"></i>
-						<?php echo JText::_('FLEXI_ADMIN_TRASHED'); ?>
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table" id="<?php echo str_replace(' ', '', $module->title) . $module->id; ?>">
-                        <thead>
-                        <tr>
-                            <th scope="col"
-                                class="w-40"><?php echo Text::_('JGLOBAL_TITLE'); ?></th>
-                            <th scope="col" class="w-40"><?php echo Text::_('JAUTHOR'); ?></th>
-                            <th scope="col" class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($listTrashed as $itemTrashed) : ?>
-							<?php
-							$canEdit    = $user->authorise('core.edit', 'com_content.article.' . $itemTrashed->id);
-							$canCheckin = $user->authorise('core.manage', 'com_checkin') || $itemTrashed->checked_out == $userId || $itemTrashed->checked_out == 0;
-							$canEditOwn = $user->authorise('core.edit.own', 'com_content.article.' . $itemTrashed->id) && $itemTrashed->created_by == $userId;
-							$canChange  = $user->authorise('core.edit.state', 'com_content.article.' . $itemTrashed->id) && $canCheckin;
-							?>
-							<?php if ($canChange) : ?>
-                                <tr>
-                                    <td>
-                                        <a href="<?php echo $itemTrashed->link; ?>">
-											<?php echo $itemTrashed->title; ?>
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <div class="small">
-                                            <i class="fa fa-user"></i><?php echo $user->name; ?>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="small">
-                                            <i class="fas fa-calendar"></i>
-											<?php echo JHtml::date($itemTrashed->modified, 'd M Y'); ?>
-                                        </div>
-                                    </td>
-                                </tr>
-							<?php endif; ?>
-						<?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php if ($actionsloglist) : ?>
-            <div class="block actionlog card" style="width:<?php echo $actionslogwidth; ?>%">
-                <div class="card-header">
-                    <h3 class="module-title ">
-                        <i class="fa fa-list-alt"></i>
-						<?php echo Text::_('FLEXI_ADMIN_ACTIONLOGS_BLOCK_NAME'); ?> :
-                    </h3>
-                    <div class="module-actions"> <?php $show_all_link = 'index.php?option=com_actionlogs'; ?>
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo Text::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-					<?php if (count($actionlist)) : ?>
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col"
-                                    class="w-80"><?php echo Text::_('FLEXI_LATEST_ACTIONS'); ?></th>
-                                <th scope="col"
-                                    class="w-20"><?php echo Text::_('JDATE'); ?></th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-							<?php foreach ($actionlist as $i => $item) : ?>
-                                <tr>
-                                    <td>
-										<?php echo $item->message; ?>
-                                    </td>
-                                    <td>
-                                        <div class="small">
-                                            <i class="fas fa-calendar" aria-hidden="true"></i>
-											<?php echo JHtml::_('date', $item->log_date, Text::_('DATE_FORMAT_LC5')); ?>
-                                        </div>
-                                    </td>
-                                </tr>
-							<?php endforeach; ?>
-                            </tbody>
-                        </table>
-					<?php else : ?>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <div class="alert">
-									<?php echo Text::_('MOD_LATEST_ACTIONS_NO_MATCHING_RESULTS'); ?>
-                                </div>
-                            </div>
+		<?php if (!empty($customBlocks)): ?>
+			<?php foreach ($customBlocks as $customBlock) : ?>
+                <div class="block customblock card" style="width:<?php echo $customBlock->width; ?>%">
+                    <div class="card-header">
+						<?php $style = !empty($customBlock->icon_color) ? 'color: ' . $customBlock->icon_color : ''; ?>
+                        <h3 class="module-title">
+                            <i class="fa <?php echo $customBlock->icon ?>" style="<?php echo $style; ?>"></i>
+							<?php echo Text::_($customBlock->block_title); ?> :
+                        </h3>
+                        <div class="module-actions">
+                            <a href="<?php echo $customBlock->showAllLink; ?>" class="adminlink">
+								<?php echo Text::_('FLEXI_ADMIN_ALL'); ?>
+                            </a>
                         </div>
-					<?php endif; ?>
-                </div>
-            </div>
-		<?php endif; ?>
-
-		<?php foreach ($listCustomlist as $listCustomlist_idx => $customblock) : ?>
-            <div class="block customblock card" style="width:<?php echo $customblock->width; ?>%">
-                <div class="card-header">
-					<?php $show_all_link = 'index.php?option=com_flexicontent&amp;view=items&amp;&filter_cats=' . $customblock->catidlist; ?>
-                    <h3 class="module-title">
-                        <i class="fa fa-list-alt"></i>
-						<?php echo JText::_($customblock->nameblockcustom); ?> :
-                    </h3>
-                    <div class="module-actions">
-                        <a href='<?php echo $show_all_link ?>' class='adminlink'>
-							<?php echo JText::_('FLEXI_ADMIN_ALL'); ?>
-                        </a>
                     </div>
-                </div>
 
-                <div class="card-body" style="height:<?php echo $forceheightblock; ?>">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-								<?php echo JText::_('FLEXI_ADMIN_TITLE'); ?>
-                            </th>
-
-							<?php if ($customblock->displautblock) : ?>
-                                <th>
-									<?php echo JText::_('FLEXI_ADMIN_AUTHOR'); ?>
-                                </th>
-							<?php endif; ?>
-
-							<?php if (!empty($customblock->extrafieldlist) && !empty($customblock->listitems->id)) : ?>
-								<?php
-								$item  = $itemmodel->getItem($customblock->listitems->id, $check_view_access = false);
-								$items = array(&$item);
-								// Get fields values from the DB,
-								FlexicontentFields::getFields($items);
-								$arrayExtrafield = explode(',', $customblock->extrafieldlist);
-								?>
-
-								<?php if (isset($arrayExtrafield[0])): ?>
-									<?php foreach ($arrayExtrafield as $extrafield): ?>
-
-										<?php FlexicontentFields::getFieldDisplay($item, $extrafield); ?>
-										<?php if (isset($item->fields[$extrafield]->label)): ?>
-                                            <th>
-												<?php echo JText::_($item->fields[$extrafield]->label); ?>
-                                            </th>
-										<?php endif; ?>
-
-									<?php endforeach; ?>
-								<?php endif; ?>
-
-							<?php endif; ?>
-
-							<?php if ($customblock->displdateblock) : ?>
-                                <th>
-									<?php echo JText::_('FLEXI_ADMIN_DATE'); ?>
-                                </th>
-							<?php endif; ?>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-						<?php foreach ($customblock->listitems as $itemcustomblock) : ?>
-
-                            <tr>
-                                <td>
-                                    <a href="<?php echo $itemcustomblock->link; ?>">
-										<?php echo $itemcustomblock->title; ?>
-                                        <i class="icon-large icon-edit"></i>
-                                    </a>
-                                </td>
-
-								<?php if ($customblock->displautblock) : ?>
-                                    <td>
-                                        <div class="small">
-                                            <i class="icon-user"></i>
-
-                                            <div class="hasTooltip" title=""
-                                                 data-original-title="<?php echo JHtml::tooltipText('FLEXI_ADMIN_MODIFIED_BY') . " " . $itemcustomblock->name; ?>">
-												<?php echo $itemcustomblock->name; ?>
+					<?php $height = !empty($customBlock->fixed_height) ? 'height: ' . $customBlock->fixed_height . 'px' : ''; ?>
+                    <div class="card-body" style="overflow: auto; <?php echo $height; ?>">
+						<?php if ($customBlock->type_of_block === 'action_logs'): ?>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>
+										<?php echo Text::_('FLEXI_ADMIN_ACTION'); ?>
+                                    </th>
+                                    <th>
+										<?php echo Text::_('FLEXI_ADMIN_DATE'); ?>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+								<?php foreach ($customBlock->items as $actionLog) : ?>
+                                    <tr>
+                                        <td>
+											<?php echo $actionLog->message; ?>
+                                        </td>
+                                        <td>
+                                            <div class="small">
+                                                <i class="icon-calendar"></i> <?php echo HTMLHelper::date($actionLog->log_date, 'd M Y'); ?>
                                             </div>
-                                        </div>
-                                    </td>
-								<?php endif; ?>
+                                        </td>
+                                    </tr>
+								<?php endforeach; ?>
+                                </tbody>
+                            </table>
+						<?php else: ?>
+							<?php
+							$displayExtraFields = !empty($customBlock->items[0]->extraFields);
+							$fieldsToCenter     = [
+								'state',
+								'version',
+								'form_lang'
+							];
+							?>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th style="min-width: 150px;">
+										<?php echo Text::_('FLEXI_ADMIN_TITLE'); ?>
+                                    </th>
+                                    <th>
+										<?php echo Text::_('FLEXI_ADMIN_CAT'); ?>
+                                    </th>
 
-								<?php if (!empty($customblock->extrafieldlist)) : ?>
-									<?php
-									$item            = $itemmodel->getItem($itemcustomblock->id, $check_view_access = false);
-									$items           = array(&$item);
-									$arrayExtrafield = explode(',', $customblock->extrafieldlist);
-									?>
+									<?php if ((int) $customBlock->display_author) : ?>
+                                        <th>
+											<?php echo Text::_('FLEXI_ADMIN_AUTHOR'); ?>
+                                        </th>
+									<?php endif; ?>
 
-									<?php if (isset($arrayExtrafield[0])): ?>
-										<?php foreach ($arrayExtrafield as $extrafield) : ?>
-
-											<?php FlexicontentFields::getFieldDisplay($item, $extrafield); ?>
-											<?php if (isset($item->fields[$extrafield]->display)): ?>
-                                                <td>
-													<?php echo $item->fields[$extrafield]->display; ?>
-                                                </td>
-											<?php endif; ?>
-
+									<?php if ($displayExtraFields): ?>
+										<?php foreach ($customBlock->items[0]->extraFields as $extraField): ?>
+                                            <th class="<?php echo in_array($extraField->name, $fieldsToCenter) ? 'text-center' : '' ?>">
+												<?php echo Text::_($extraField->label); ?>
+                                            </th>
 										<?php endforeach; ?>
 									<?php endif; ?>
 
-								<?php endif; ?>
+									<?php if ((int) $customBlock->display_date) : ?>
+                                        <th>
+											<?php echo Text::_('FLEXI_ADMIN_DATE'); ?>
+                                        </th>
+									<?php endif; ?>
+                                </tr>
+                                </thead>
 
+                                <tbody>
+								<?php foreach ($customBlock->items as $item) : ?>
+                                    <tr>
+                                        <td>
+                                            <a href="<?php echo $item->link; ?>">
+												<?php echo $item->title; ?>
+                                                <i class="icon-large icon-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+											<?php echo $item->category; ?>
+                                        </td>
 
-								<?php if ($customblock->displdateblock) : ?>
-                                    <td>
-                                        <div class="small">
-                                            <i class="icon-calendar"></i> <?php echo JHtml::date($itemcustomblock->modified, 'd M Y'); ?>
-                                        </div>
-                                    </td>
-								<?php endif; ?>
-                            </tr>
+										<?php if ($customBlock->display_author) : ?>
+                                            <td>
+                                                <div class="small d-flex align-items-center">
+                                                    <i class="icon-user me-2"></i>
 
-						<?php endforeach; ?>
-                        </tbody>
-                    </table>
+                                                    <div class="hasTooltip" title=""
+                                                         data-original-title="<?php echo HTMLHelper::tooltipText('FLEXI_ADMIN_MODIFIED_BY') . " " . $item->author; ?>">
+														<?php echo $item->author; ?>
+                                                    </div>
+                                                </div>
+                                            </td>
+										<?php endif; ?>
+
+										<?php if ($displayExtraFields): ?>
+											<?php foreach ($item->extraFields as $extraField): ?>
+                                                <td class="<?php echo in_array($extraField->name, $fieldsToCenter) ? 'text-center' : '' ?>">
+													<?php echo !empty($extraField->display) ? Text::_($extraField->display) : 'N/A'; ?>
+                                                </td>
+											<?php endforeach; ?>
+										<?php endif; ?>
+
+										<?php if ($customBlock->display_date) : ?>
+                                            <td>
+                                                <div class="small">
+                                                    <i class="icon-calendar"></i> <?php echo HTMLHelper::date($item->modified, 'd M Y'); ?>
+                                                </div>
+                                            </td>
+										<?php endif; ?>
+                                    </tr>
+								<?php endforeach; ?>
+                                </tbody>
+                            </table>
+						<?php endif; ?>
+                    </div>
                 </div>
-            </div>
-		<?php endforeach; ?>
+			<?php endforeach; ?>
+		<?php endif; ?>
     </div>
 
 

@@ -21,6 +21,7 @@ defined('_JEXEC') or die('Accés interdit');
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Router\Route;
 use Joomla\Component\Actionlogs\Administrator\Helper\ActionlogsHelper;
 use Joomla\Component\Actionlogs\Administrator\Model\ActionlogsModel;
 use Joomla\Database\ParameterType;
@@ -29,215 +30,172 @@ use Joomla\Registry\Registry;
 
 class modFlexiadminHelper
 {
-	public static function getItems(&$params, $featured = false, $userOnly = false, $state = null)
+	// todo clear FLEXIcontent items list state, otherwise "ALL" link doesn't make much sense
+
+	private static $stateAliases = [
+		'U'  => 0,
+		'P'  => 1,
+		'A'  => 2,
+		'T'  => -2,
+		'PE' => -3,
+		'OQ' => -4,
+		'IP' => -5,
+	];
+
+	public static function getItems($customBlocks)
 	{
-		// récupère la connexion à la BD
+		$items = [];
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true);
 		$user  = Factory::getUser();
-		$limit = (int) $params->get('count', 5);
 
-		// create query
-		$query
-			->select(
-				$db->qn([
-					'a.id',
-					'a.title',
-					'a.catid',
-					'a.created',
-					'a.created_by',
-					'a.modified',
-					'a.modified_by',
-					'a.featured',
-					'a.state'
-				])
-			)
-			->select($db->qn('b.name', 'author'))
-			->from($db->qn('#__content', 'a'))
-			->join(
-				'LEFT',
-				$db->qn('#__users', 'b') . 'ON' . $db->qn('a.created_by') . '=' . $db->qn('b.id')
-			);
-
-		// get featured
-		if ($featured)
+		if (empty($customBlocks) || !is_array($customBlocks))
 		{
-			$featured = 1;
-			$query
-				->where($db->qn('a.featured') . '= :featured')
-				->bind(':featured', $featured, ParameterType::INTEGER);
+			throw new Exception('No data or wrong data provided');
 		}
 
-		// get by state
-		if (is_numeric($state))
+		foreach ($customBlocks as $key => $customBlock)
 		{
-			if (!in_array((int) $state, [0, 1, 2, -2, -3, -4, -5]))
+			$extraFields = explode(',', $customBlock->extra_field_list) ?: [];
+
+			// get action logs
+			if ($customBlock->type_of_block === 'action_logs')
 			{
-				throw new Exception('Invalid State');
+				$customBlock->showAllLink = Route::_('index.php?option=com_actionlogs');
+				$customBlock->items       = self::getActionlogList((int) $customBlock->count_action);
+				$items[$key]              = $customBlock;
+
+				continue;
 			}
 
+			$showAllLink = 'index.php?option=com_flexicontent&view=items';
+
+			// get custom block records
+			$limit = (int) $customBlock->count ?: 5; // default = 5
+
+			// create query
 			$query
-				->where($db->qn('a.state') . ' = :state')
-				->bind(':state', $state, ParameterType::INTEGER);
-		}
+				->clear()
+				->select(
+					$db->qn([
+						'a.id',
+						'a.title',
+						'a.catid',
+						'a.created',
+						'a.created_by',
+						'a.modified',
+						'a.modified_by',
+						'a.featured',
+						'a.state'
+					])
+				)
+				->select($db->qn('b.name', 'author'))
+				->select($db->qn('c.title', 'category'))
+				->from($db->qn('#__content', 'a'))
+				->join(
+					'LEFT',
+					$db->qn('#__users', 'b') . 'ON' . $db->qn('a.created_by') . '=' . $db->qn('b.id')
+				)
+				->join(
+					'LEFT',
+					$db->qn('#__categories', 'c') . 'ON' . $db->qn('a.catid') . '=' . $db->qn('c.id')
+				);
 
-		// only get items created by user
-		if ($userOnly)
-		{
-			$query
-				->where($db->qn('a.created_by') . ' = :userId')
-				->bind(':userId', $user->id, ParameterType::INTEGER);
-		}
-
-		// order & limit
-		$query
-			->order($db->qn('a.modified') . ' DESC')
-			->setLimit($limit);
-
-		$db->setQuery($query);
-		$items = $db->loadObjectList();
-
-		if (!empty($items))
-		{
-			foreach ($items as $item)
+			// Filter by category
+			if (!empty($customBlock->cat_id_list) && is_array($customBlock->cat_id_list))
 			{
-				$item->link = '';
+//				$showAllLink .= '&filter_cats[]=' . implode('&filter_cats[]=', $customBlock->cat_id_list); // Unable to filter by multiple categories
 
-				if ($user->authorise('core.edit', 'com_flexicontent.' . $item->id))
+				if (count($customBlock->cat_id_list) === 1)
 				{
-					$item->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]=' . $item->id);
+					$showAllLink .= '&filter_cats=' . $customBlock->cat_id_list[0];
 				}
 
-				if ($userOnly)
+				$query
+					->whereIn($db->qn('a.catid'), $customBlock->cat_id_list);
+			}
+
+			// Filter by featured
+			if ((int) $customBlock->featured_only)
+			{
+				$showAllLink .= '&filter_featured=1';
+				$featured    = 1;
+				$query
+					->where($db->qn('a.featured') . '= :featured')
+					->bind(':featured', $featured, ParameterType::INTEGER);
+			}
+
+			// Filter by state
+			if (is_numeric($customBlock->state))
+			{
+				if (!in_array((int) $customBlock->state, array_values(self::$stateAliases)))
 				{
-					switch ($item->state)
+					throw new Exception('Invalid State');
+				}
+
+				// add state to fields to show
+				if (empty($customBlock->extra_field_list) || !in_array('state', $extraFields))
+				{
+					$extraFields[] = 'state';
+				}
+
+				// get state alias
+				foreach (self::$stateAliases as $alias => $state)
+				{
+					if ((int) $customBlock->state === $state)
 					{
-						case 0:
-							$item->state = JText::_('FLEXI_UNPUBLISHED');
-							break;
-						case 1:
-							$item->state = JText::_('FLEXI_PUBLISHED');
-							break;
-						case 2:
-							$item->state = JText::_('FLEXI_ARCHIVED');
-							break;
-						case -2:
-							$item->state = JText::_('FLEXI_TRASHED');
-							break;
-						case -3:
-							$item->state = JText::_('FLEXI_PENDING');
-							break;
-						case -4:
-							$item->state = JText::_('FLEXI_DRAFT');
-							break;
-						case -5:
-							$item->state = JText::_('FLEXI_IN_PROGRESS');
-							break;
+						$showAllLink .= '&filter_state=' . $alias;
+					}
+				}
+
+				$query
+					->where($db->qn('a.state') . ' = :state')
+					->bind(':state', $customBlock->state, ParameterType::INTEGER);
+			}
+
+			// only get items created by user
+			if ((int) $customBlock->author_only)
+			{
+				$showAllLink .= '&filter_author=' . $user->id;
+				$query
+					->where($db->qn('a.created_by') . ' = :userId')
+					->bind(':userId', $user->id, ParameterType::INTEGER);
+			}
+
+			// order & limit
+			$query
+				->order($db->qn('a.modified') . ' DESC')
+				->setLimit($limit);
+
+			$db->setQuery($query);
+			$customBlock->items = $db->loadObjectList();
+
+			if (!empty($customBlock->items))
+			{
+				foreach ($customBlock->items as $record)
+				{
+					// create edit link for each record
+					$record->link = '';
+
+					if ($user->authorise('core.edit', 'com_flexicontent.' . $record->id))
+					{
+						$record->link = Route::_('index.php?option=com_flexicontent&task=items.edit&cid[]=' . $record->id);
+					}
+
+					// get extra field data
+					if (!empty($extraFields))
+					{
+						$record->extraFields = self::getExtraFields($record->id, $extraFields);
 					}
 				}
 			}
+
+			// clear filter by state
+			$customBlock->showAllLink = Route::_($showAllLink);
+			$items[$key]              = $customBlock;
 		}
 
 		return $items;
-	}
-
-	public static function getRevised(&$params)
-	{
-		// récupère la connexion à la BD
-		$db = JFactory::getDbo();
-//		$query = $db->getQuery(true);
-//
-//		$published = 1;
-//		$inProgress   = -5;
-//		$limit     = $params->get('count', 5);
-//
-//		$query
-//			->select(
-//				$db->qn([
-//					'c.id',
-//					'c.version',
-//					'c.title',
-//					'c.catid',
-//					'c.created',
-//					'c.created_by',
-//					'c.modified',
-//					'c.modified_by',
-//					'cr.name'
-//				])
-//			)
-//			->select('MAX(' . $db->qn('fv.version_id') . ') as max_version')
-//			->from($db->qn('#__flexicontent_items_tmp', ' c'))
-//			->join(
-//				'LEFT',
-//				$db->qn('#__flexicontent_versions', 'fv') . 'ON' . $db->qn('c.id') . '=' . $db->qn('fv.item_id')
-//			)
-//			->join(
-//				'LEFT',
-//				$db->qn('#__users', 'cr') . 'ON' . $db->qn('c.created_by') . '=' . $db->qn('cr.id')
-//			)
-//			->join(
-//				'LEFT',
-//				$db->qn('#__users', 'mr') . 'ON' . $db->qn('c.modfied_by') . '=' . $db->qn('mr.id')
-//			)
-//			->where([
-//				$db->qn('c.state') . ' = :published',
-//				$db->qn('c.state') . ' = :pending'
-//			], 'OR')
-//			->bind(':published', $published, ParameterType::INTEGER)
-//			->bind(':pending', $inProgress, ParameterType::INTEGER)
-//			->group($db->qn('fv.item_id'))
-//			->having($db->qn(c . version) . ' <> ' . $db->qn('max_version'))
-//			->order($db->qn('c.modified') . ' DESC')
-//			->limit($limit);
-//
-//		$db->setQuery($query);
-
-		$queryRevised = "SELECT c.id, c.version, c.title, c.catid, c.created, c.created_by, c.modified, c.modified_by,cr.name, MAX(fv.version_id) 
-							FROM #__flexicontent_items_tmp as c 
-							    LEFT JOIN #__flexicontent_versions AS fv ON c.id=fv.item_id 
-							    LEFT JOIN #__users AS cr ON cr.id = c.created_by 
-							    LEFT JOIN #__users AS mr ON mr.id = c.modified_by 
-							WHERE c.state = -5 OR c.state = 1 
-							GROUP BY fv.item_id 
-							HAVING c.version<>MAX(fv.version_id) 
-							ORDER BY c.modified DESC LIMIT " . (int) $params->get('count');
-
-		$db->setQuery($queryRevised);
-		$items = $db->loadObjectList();
-
-		foreach ($items as $item)
-		{
-			$item->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]=' . $item->id);
-		}
-
-		return $items;
-	}
-
-	public static function getCustomlist(&$params)
-	{
-		$list_customblocks = $params->get('add_customblock');
-		//print_r ($list_customblocks);
-		$db = JFactory::getDbo();
-		global $globalcats;
-		// loop your result
-		foreach ($list_customblocks as $list_customblocks_idx => $customblock)
-		{
-			$_catid          = $customblock->catidlist;
-			$catlist         = !empty($globalcats[$_catid]->descendants) ? $globalcats[$_catid]->descendants : $_catid;
-			$catids_join     = ' JOIN #__flexicontent_cats_item_relations AS rel ON rel.itemid = a.id ';
-			$catids_where    = ' rel.catid IN (' . $catlist . ') ';
-			$queryCustomlist = 'SELECT DISTINCT  a.id,b.name, a.title, a.catid, a.created, a.created_by, a.modified, a.modified_by FROM #__content AS a LEFT JOIN #__users AS b ON a.created_by = b.id ' . $catids_join . 'WHERE ' . $catids_where . ' AND state = 1 ORDER BY modified DESC LIMIT ' . (int) $params->get('count');
-			$db->setQuery($queryCustomlist);
-			$itemsCustomlist = $db->loadObjectList();
-			//print_r ($itemsCustomlist) ;
-			foreach ($itemsCustomlist as &$itemCustomlist)
-			{
-				$itemCustomlist->link = JRoute::_('index.php?option=com_flexicontent&task=items.edit&cid[]=' . $itemCustomlist->id);
-			}
-			$customblock->listitems = $itemsCustomlist;
-		}
-
-		return $list_customblocks;
 	}
 
 	public static function getIconFromPlugins(Registry $params, CMSApplication $application = null)
@@ -284,13 +242,13 @@ class modFlexiadminHelper
 		return $buttons[$key];
 	}
 
-	public static function getActionlogList(&$params)
+	private static function getActionlogList($limit = 5)
 	{
 		$model = new ActionlogsModel(['ignore_request' => true]);
 
 		// Set the Start and Limit
 		$model->setState('list.start', 0);
-		$model->setState('list.limit', $params->get('count', 5));
+		$model->setState('list.limit', $limit);
 		$model->setState('list.ordering', 'a.id');
 		$model->setState('list.direction', 'DESC');
 
@@ -305,5 +263,48 @@ class modFlexiadminHelper
 		}
 
 		return $rows;
+	}
+
+	private static function getExtraFields($recordId, $fieldsToRetrieve = [])
+	{
+		$extraFields = [];
+
+		if (empty($recordId) || empty($fieldsToRetrieve))
+		{
+			return [];
+		}
+
+		// get necessary helpers and classes
+		require_once(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_flexicontent' . DS . 'defineconstants.php');
+		require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'helpers' . DS . 'route.php');
+		require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'classes' . DS . 'flexicontent.helper.php');
+		require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'classes' . DS . 'flexicontent.fields.php');
+		require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'classes' . DS . 'flexicontent.categories.php');
+		JTable::addIncludePath(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_flexicontent' . DS . 'tables');
+		require_once(JPATH_SITE . DS . 'components' . DS . 'com_flexicontent' . DS . 'models' . DS . 'item.php');
+
+		$flexiItemModelName = FLEXI_J16GE ? 'FlexicontentModelItem' : 'FlexicontentModelItems';
+		$flexiItemModel     = new $flexiItemModelName();
+
+		$item = $flexiItemModel->getItem($recordId, false);
+
+		if (!empty($item))
+		{
+			foreach ($fieldsToRetrieve as $field)
+			{
+				if (empty($field)) continue;
+
+				FlexicontentFields::getFieldDisplay($item, $field);
+
+				$extraField = $item->fields[$field];
+
+				if (!empty((array) $extraField))
+				{
+					$extraFields[$field] = $extraField;
+				}
+			}
+		}
+
+		return $extraFields;
 	}
 }

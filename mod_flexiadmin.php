@@ -16,6 +16,8 @@
  **/
 
 //blocage des accès directs sur ce script
+use Joomla\CMS\Factory;
+
 defined('_JEXEC') or die('Accès interdit');
 jimport('joomla.application.component.controller');
 
@@ -26,20 +28,27 @@ if (!JComponentHelper::isEnabled('com_flexicontent'))
 
 	return;
 }
+
 // Inclut les méthodes du script de soutien
 require_once dirname(__FILE__) . '/helper.php';
 
-$listFeatured   = modFlexiadminHelper::getItems($params, true);
-$listUseritem   = modFlexiadminHelper::getItems($params, false, true);
-$listTrashed    = modFlexiadminHelper::getItems($params, false, false, -2);
-$listPending    = modFlexiadminHelper::getItems($params, false, false, -3);
-$listDraft      = modFlexiadminHelper::getItems($params, false, false, -4);
-$listInprogress = modFlexiadminHelper::getItems($params, false, false, -5);
-$listRevised     = modFlexiadminHelper::getRevised($params);
-$listCustomlist  = modFlexiadminHelper::getCustomlist($params);
+// Charger les fichiers de langue de FLEXIcontent
+$lang = Factory::getApplication()->getLanguage();
+$lang->load('com_flexicontent', JPATH_ADMINISTRATOR, $lang->getTag());
+
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $system_buttons  = modFlexiadminHelper::getIconFromPlugins($params);
-$actionlist      = modFlexiadminHelper::getActionlogList($params);
+$customBlocks    = [];
+
+if (!empty($params->get('add_customblock', [])))
+{
+	$customBlocks = modFlexiadminHelper::getItems((array) $params->get('add_customblock'));
+}
+
+//echo '<pre>';
+//var_dump($customBlocks);
+//echo '</pre>';
+//die;
 
 // Get Joomla Layout
 require JModuleHelper::getLayoutPath('mod_flexiadmin', $params->get('layout', 'default'));
