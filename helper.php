@@ -32,8 +32,6 @@ use Joomla\Registry\Registry;
 
 class modFlexiadminHelper
 {
-	// todo clear FLEXIcontent items list state, otherwise "ALL" link doesn't make much sense
-
 	private static $stateAliases = [
 		'U'  => 0,
 		'P'  => 1,
