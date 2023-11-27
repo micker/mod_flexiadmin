@@ -16,13 +16,15 @@
  **/
 
 //blocage des accès directs sur ce script
-use Joomla\CMS\Factory;
-
 defined('_JEXEC') or die('Accès interdit');
 jimport('joomla.application.component.controller');
 
+use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Helper\ModuleHelper;
+
 // Check if component is installed
-if (!JComponentHelper::isEnabled('com_flexicontent'))
+if (!ComponentHelper::isEnabled('com_flexicontent'))
 {
 	echo 'This modules requires component FLEXIcontent!';
 
@@ -49,4 +51,4 @@ if (!empty($params->get('add_customblock', [])))
 }
 
 // Get Joomla Layout
-require JModuleHelper::getLayoutPath('mod_flexiadmin', $params->get('layout', 'default'));
+require ModuleHelper::getLayoutPath('mod_flexiadmin', $params->get('layout', 'default'));

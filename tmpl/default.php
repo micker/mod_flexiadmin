@@ -25,10 +25,10 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
-$document = Factory::getDocument();
 $app      = Factory::getApplication();
-$user     = Factory::getUser();
-$userId   = $user->get('id');
+$document = $app->getDocument();
+$user     = $app->getIdentity();
+$userId   = $user->id;
 
 //HTMLHelper::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
@@ -102,8 +102,6 @@ $hiddebuttonprivacy          = $params->get('hiddebuttonprivacy', '1');
 $hiddebuttonlogs             = $params->get('hiddebuttonlogs', '1');
 
 $displayauthoronly = $params->get('displayauthoronly', '0');
-
-$user = Factory::getUser();
 
 //freetab
 $freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME');
