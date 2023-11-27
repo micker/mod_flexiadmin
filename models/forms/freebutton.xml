@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-  <field name="freenametab" type="text"  default="FLEXI_ADMIN_FREE_TAB_NAME" label="FLEXI_ADMIN_FREE_TAB_NAME_2" description="FLEXI_ADMIN_FREE_TAB_NAME_2_DESC" />
-  <field name="free_button"
-			 description= "FLEXI_ADMIN_FREE_BUTTON_DESC"
-			 type= "subform"
-			 label= "FLEXI_ADMIN_FREE_BUTTON"
-			 min= "0"
-			 max= "1000"
-			 required= "false"
-			 formsource= "administrator/modules/mod_flexiadmin/models/forms/freebuttonchild.xml"
-			 multiple= "true"
-			 buttons= "add,remove,move"
-			layout="joomla.form.field.subform.repeatable"
-			 groupByFieldset="false"/>
+    <field
+            name="freenametab"
+            type="text"
+            default="FLEXI_ADMIN_FREE_TAB_NAME"
+            label="FLEXI_ADMIN_FREE_TAB_NAME_2"
+            description="FLEXI_ADMIN_FREE_TAB_NAME_2_DESC"
+    />
+
+    <field
+            name="free_button"
+            description="FLEXI_ADMIN_FREE_BUTTON_DESC"
+            type="subform"
+            label="FLEXI_ADMIN_FREE_BUTTON"
+            min="0"
+            max="1000"
+            required="false"
+            formsource="administrator/modules/mod_flexiadmin/models/forms/freebuttonchild.xml"
+            multiple="true"
+            buttons="add,remove,move"
+            layout="joomla.form.field.subform.repeatable"
+            groupByFieldset="false"
+    />
 </form>
