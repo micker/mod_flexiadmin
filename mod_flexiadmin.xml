@@ -10,6 +10,8 @@
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <description>FLEXI_ADMIN_INTRO</description>
 
+    <scriptfile>script.php</scriptfile>
+
     <files>
         <filename module="mod_flexiadmin">mod_flexiadmin.php</filename>
         <folder>tmpl</folder>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version       2.0 stable $Id: default.php yannick berges
+ * @version       3.0 stable $Id: default.php yannick berges
  * @package       Joomla
  * @subpackage    FLEXIcontent
  * @copyright (C) 2015 Berges Yannick - www.com3elles.com
