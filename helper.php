@@ -24,6 +24,7 @@ use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\Component\Actionlogs\Administrator\Helper\ActionlogsHelper;
 use Joomla\Component\Actionlogs\Administrator\Model\ActionlogsModel;
+use Joomla\Database\DatabaseInterface;
 use Joomla\Database\ParameterType;
 use Joomla\Module\Quickicon\Administrator\Event\QuickIconsEvent;
 use Joomla\Registry\Registry;
@@ -45,9 +46,11 @@ class modFlexiadminHelper
 	public static function getItems($customBlocks)
 	{
 		$items = [];
-		$db    = JFactory::getDbo();
+
+		/** @var DatabaseInterface $db */
+		$db    = Factory::getContainer()->get(DatabaseInterface::class);
 		$query = $db->getQuery(true);
-		$user  = Factory::getUser();
+		$user  = Factory::getApplication()->getIdentity();
 
 		if (empty($customBlocks) || !is_array($customBlocks))
 		{
@@ -198,14 +201,41 @@ class modFlexiadminHelper
 		return $items;
 	}
 
+	public static function clearState()
+	{
+		$app = Factory::getApplication();
+
+		$filters = [
+			'author',
+			'tag',
+			'type',
+			'lang',
+			'state',
+			'access',
+			'meta',
+			'cats',
+			'subcats',
+			'featured',
+			'catsinstate',
+			'id'
+		];
+
+		foreach ($filters as $filter)
+		{
+			$app->setUserState('com_flexicontent.items_default.filter_' . $filter, '');
+		}
+	}
+
 	public static function getIconFromPlugins(Registry $params, CMSApplication $application = null)
 	{
 		$key         = (string) $params;
 		$context     = (string) $params->get('context', 'update_quickicon');
 		$application = Factory::getApplication();
+
 		PluginHelper::importPlugin('quickicon');
 		$buttons[$key] = [];
-		$arrays        = (array) $application->triggerEvent(
+
+		$arrays = (array) $application->triggerEvent(
 			'onGetIcons',
 			new QuickIconsEvent('onGetIcons', ['context' => $context])
 		);

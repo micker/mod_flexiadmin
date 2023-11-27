@@ -36,6 +36,9 @@ require_once dirname(__FILE__) . '/helper.php';
 $lang = Factory::getApplication()->getLanguage();
 $lang->load('com_flexicontent', JPATH_ADMINISTRATOR, $lang->getTag());
 
+// Clear FLEXIcontent state variables
+modFlexiadminHelper::clearState();
+
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $system_buttons  = modFlexiadminHelper::getIconFromPlugins($params);
 $customBlocks    = [];
@@ -44,11 +47,6 @@ if (!empty($params->get('add_customblock', [])))
 {
 	$customBlocks = modFlexiadminHelper::getItems((array) $params->get('add_customblock'));
 }
-
-//echo '<pre>';
-//var_dump($customBlocks);
-//echo '</pre>';
-//die;
 
 // Get Joomla Layout
 require JModuleHelper::getLayoutPath('mod_flexiadmin', $params->get('layout', 'default'));
