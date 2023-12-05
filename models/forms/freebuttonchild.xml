@@ -1,64 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-    <field
-            name="freebutton"
-            type="text"
-            label="FLEXI_ADMIN_FREE_NAME_BUTTON"
-            description="FLEXI_ADMIN_FREE_NAME_BUTTON_DESC"
-    />
+	<field name="displayButtonTypeOption" label="MOD_FLEXI_ADMIN_TYPE_BUTTON"
+		description="MOD_FLEXI_ADMIN_TYPE_BUTTON_DESC" type="list" default="0" class="">
+		<option value="1">MOD_FLEXI_ADMIN_ADD_ITEM</option>
+		<option value="2">MOD_FLEXI_ADMIN_EDIT_ITEM</option>
+		<option value="3">MOD_FLEXI_ADMIN_LINK_CAT</option>
+		<option value="4">MOD_FLEXI_ADMIN_CUSTOM_BTN</option>
 
-    <field
-            name="linkbutton"
-            type="text"
-            label="FLEXI_ADMIN_FREE_LINK"
-            description="FLEXI_ADMIN_FREE_LINK_DESC"
-    />
+	</field>
+	<!--Add
+	item -->
+        <field name="button_type"
+				label="MOD_FLEXI_ADMIN_TYPES"
+				description="MOD_FLEXI_ADMIN_TYPES_DESC"
+				size="5"
+				type="types"
+				multiple="false"
+				hide_default="true"
+				hide_none="true" 
+				class="custom-select"
+                                showon="displayButtonTypeOption:1"/>
+        <field name="catid"
+				type="flexicategories"
+				multiple="false"
+				label="MOD_FLEXI_ADMIN_CAT"
+				description="MOD_FLEXI_ADMIN_CAT_DESC" 
+				showon="displayButtonTypeOption:1"/>
 
-    <field
-            name="iconbutton"
-            type="iconlist"
-            label="FLEXI_ADMIN_ICON"
-            description="FLEXI_ADMIN_ICON_DESC"
-    />
+	<!--Edit
+	item -->
+	<field name="itemid" type="text" size="5" label="MOD_FLEXI_ADMIN_ITEM"
+		description="MOD_FLEXI_ADMIN_ITEM_DESC" showon="displayButtonTypeOption:2" />
 
-    <field
-            name="iconbutton"
-            type="iconpicker"
-            default=""
-            label="FLEXI_ADMIN_ICON"
-            description="FLEXI_ADMIN_ICON_DESC"
-    />
-
-    <field
-            name="coloricon"
-            type="color"
-            default=""
-            format="rgba"
-            label="FLEXI_ADMIN_ICON_COLOR"
-            description="FLEXI_ADMIN_ICON_COLOR_DESC"
-    />
-
-    <field
-            name="targetlink"
-            label="FLEXI_ADMIN_TARGETLINK"
-            description="FLEXI_ADMIN_TARGETLINK_DESC"
-            type="radio"
-            default="_self"
-            class="btn-group btn-group-yesno"
-    >
-        <option value="_self">FLEXI_ADMIN_SELF</option>
-        <option value="_blank">FLEXI_ADMIN_BLANK</option>
-    </field>
-
-    <field
-            name="displayline"
-            label="FLEXI_ADMIN_DISPLAY_LINE"
-            description="FLEXI_ADMIN_DISPLAY_LINE_DESC"
-            type="radio"
-            default="0"
-            layout="joomla.form.field.radio.switcher"
-    >
-        <option value="0">JNO</option>
-        <option value="1">JYES</option>
-    </field>
+	<!--Link
+	to categorie-->
+	<field name="catidlist" type="category" extension="com_content" multiple="false"
+		label="MOD_FLEXI_ADMIN_CAT" description="MOD_FLEXI_ADMIN_CAT_DESC"
+		showon="displayButtonTypeOption:3" />
+	<field name="displayauthoronly" label="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY"
+		description="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY_DESC" type="radio" default="0"
+		layout="joomla.form.field.radio.switcher" showon="displayButtonTypeOption:3">
+		<option value="0">JNO</option>
+		<option value="1">JYES</option>
+	</field>
+	<!--Free
+	button-->
+	<field name="linkbutton" type="text" label="MOD_FLEXI_ADMIN_FREE_LINK"
+		description="MOD_FLEXI_ADMIN_FREE_LINK_DESC" showon="displayButtonTypeOption:4" />
+	<!--common
+	option-->
+	<field name="button_name" label="MOD_FLEXI_ADMIN_NAME_BUTTON"
+		description="MOD_FLEXI_ADMIN_NAME_BUTTON_DESC" size="30" type="text" />
+	<field name="iconbutton" type="iconpicker" default="" label="MOD_FLEXI_ADMIN_ICON"
+		description="MOD_FLEXI_ADMIN_ICON_DESC" />
+	<field name="coloricon" type="color" default="" format="rgba" label="MOD_FLEXI_ADMIN_ICON_COLOR"
+		description="MOD_FLEXI_ADMIN_ICON_COLOR_DESC" />
+	<field name="button_lang" type="contentlanguage" label="MOD_FLEXI_ADMIN_LANG"
+		description="MOD_FLEXI_ADMIN_LANG_DESC" class="span12 small">
+		<option value="*">JALL</option>
+	</field>
+	<field name="targetlink" label="MOD_FLEXI_ADMIN_TARGETLINK"
+		description="MOD_FLEXI_ADMIN_TARGETLINK_DESC" type="radio" default="_self"
+		layout="joomla.form.field.radio.switcher">
+		<option value="_self">MOD_FLEXI_ADMIN_SELF</option>
+		<option value="_blank">MOD_FLEXI_ADMIN_BLANK</option>
+	</field>
+	<field name="displayline" label="MOD_FLEXI_ADMIN_DISPLAY_LINE"
+		description="MOD_FLEXI_ADMIN_DISPLAY_LINE_DESC" type="radio" default="0"
+		layout="joomla.form.field.radio.switcher">
+		<option value="0">JNO</option>
+		<option value="1">JYES</option>
+	</field>
 </form>

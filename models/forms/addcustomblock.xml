@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-    <field name="" type="separator" default="FLEXI_ADMIN_CUSTOM_BLOCK_SETTINGS" level="level2"/>
+    <field name="" type="separator" default="MOD_FLEXI_ADMIN_CUSTOM_BLOCK_SETTINGS" level="level2"/>
     <field type="spacer" name="" hr=""/>
 
     <field
             name="block_title"
             type="text"
-            label="FLEXI_ADMIN_BLOCKCUSTOM"
-            description="FLEXI_ADMIN_BLOCKCUSTOM_DESC"
+            label="MOD_FLEXI_ADMIN_BLOCKCUSTOM"
+            description="MOD_FLEXI_ADMIN_BLOCKCUSTOM_DESC"
     />
 
     <field
             name="type_of_block"
             type="list"
-            label="FLEXI_ADMIN_TYPEOFBLOCK"
-            description="FLEXI_ADMIN_TYPEOFBLOCK_DESC"
+            label="MOD_FLEXI_ADMIN_TYPEOFBLOCK"
+            description="MOD_FLEXI_ADMIN_TYPEOFBLOCK_DESC"
             default="standard"
     >
-        <option value="standard">FLEXI_ADMIN_TYPEOFBLOCK_STANDARD</option>
-        <option value="action_logs">FLEXI_ADMIN_TYPEOFBLOCK_ACTIONLOGS</option>
+        <option value="standard">MOD_FLEXI_ADMIN_TYPEOFBLOCK_STANDARD</option>
+        <option value="action_logs">MOD_FLEXI_ADMIN_TYPEOFBLOCK_ACTIONLOGS</option>
     </field>
 
     <field
@@ -27,8 +27,8 @@
             default="5"
             min="1"
             max="100"
-            label="FLEXI_ADMIN_NBITEM"
-            description="FLEXI_ADMIN_NBITEM_DESC"
+            label="MOD_FLEXI_ADMIN_NBITEM"
+            description="MOD_FLEXI_ADMIN_NBITEM_DESC"
             showon="type_of_block:standard"
     />
 
@@ -36,8 +36,8 @@
             name="count_action"
             type="list"
             default="5"
-            label="FLEXI_ADMIN_NBACTIONS"
-            description="FLEXI_ADMIN_NBACTIONS_DESC"
+            label="MOD_FLEXI_ADMIN_NBACTIONS"
+            description="MOD_FLEXI_ADMIN_NBACTIONS_DESC"
             showon="type_of_block:action_logs"
             parentclass="span-2-inline stack"
     >
@@ -55,20 +55,20 @@
             name="cat_id_list"
             type="flexicategories"
             multiple="true"
-            label="FLEXI_ADMIN_CAT"
-            description="FLEXI_ADMIN_CATLIST_DESC"
+            label="MOD_FLEXI_ADMIN_CAT"
+            description="MOD_FLEXI_ADMIN_CATLIST_DESC"
             showon="type_of_block:standard"
     />
 
     <field
             name="state"
             type="list"
-            label="FLEXI_ADMIN_CUSTOM_BLOCK_STATE"
-            description="FLEXI_ADMIN_CUSTOM_BLOCK_STATE_DESC"
+            label="MOD_FLEXI_ADMIN_CUSTOM_BLOCK_STATE"
+            description="MOD_FLEXI_ADMIN_CUSTOM_BLOCK_STATE_DESC"
             default="all"
             showon="type_of_block:standard"
     >
-        <option value="all">FLEXI_ADMIN_CUSTOM_BLOCK_STATE_ALL</option>
+        <option value="all">MOD_FLEXI_ADMIN_CUSTOM_BLOCK_STATE_ALL</option>
         <option value="0">FLEXI_UNPUBLISHED</option>
         <option value="1">FLEXI_PUBLISHED</option>
         <option value="2">FLEXI_ARCHIVED</option>
@@ -81,8 +81,8 @@
     <field
             name="author_only"
             type="radio"
-            label="FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY"
-            description="FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY_DESC"
+            label="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY"
+            description="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY_DESC"
             default="0"
             layout="joomla.form.field.radio.switcher"
             showon="type_of_block:standard"
@@ -94,8 +94,8 @@
     <field
             name="featured_only"
             type="radio"
-            label="FLEXI_ADMIN_DISPLAY_FEATURED_ONLY"
-            description="FLEXI_ADMIN_DISPLAY_FEATURED_ONLY_DESC"
+            label="MOD_FLEXI_ADMIN_DISPLAY_FEATURED_ONLY"
+            description="MOD_FLEXI_ADMIN_DISPLAY_FEATURED_ONLY_DESC"
             default="0"
             layout="joomla.form.field.radio.switcher"
             showon="type_of_block:standard"
@@ -104,15 +104,15 @@
         <option value="1">JYES</option>
     </field>
 
-    <field name="" type="separator" default="FLEXI_ADMIN_CUSTOM_BLOCK_DISPLAY_SETTINGS" level="level2"/>
+    <field name="" type="separator" default="MOD_FLEXI_ADMIN_CUSTOM_BLOCK_DISPLAY_SETTINGS" level="level2"/>
     <field type="spacer" name="" hr=""/>
 
     <field
             name="icon"
             type="iconpicker"
             default=""
-            label="FLEXI_ADMIN_ICON"
-            description="FLEXI_ADMIN_ICON_DESC"
+            label="MOD_FLEXI_ADMIN_ICON"
+            description="MOD_FLEXI_ADMIN_ICON_DESC"
     />
 
     <field type="spacer" name="" hr=""/>
@@ -122,8 +122,8 @@
             type="color"
             default=""
             format="rgba"
-            label="FLEXI_ADMIN_ICON_COLOR"
-            description="FLEXI_ADMIN_ICON_COLOR_DESC"
+            label="MOD_FLEXI_ADMIN_ICON_COLOR"
+            description="MOD_FLEXI_ADMIN_ICON_COLOR_DESC"
     />
 
     <field type="spacer" name="" hr=""/>
@@ -135,8 +135,8 @@
             groupables="0"
             issortable="1"
             fieldnameasvalue="1"
-            label="FLEXI_ADMIN_EXTRAFIELD"
-            description="FLEXI_ADMIN_EXTRAFIELD_DESC"
+            label="MOD_FLEXI_ADMIN_EXTRAFIELD"
+            description="MOD_FLEXI_ADMIN_EXTRAFIELD_DESC"
             default=""
             size="50"
             showon="type_of_block:standard"
@@ -144,7 +144,7 @@
 
     <field
             name="display_author"
-            label="FLEXI_ADMIN_DISPLAY_AUTHOR"
+            label="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR"
             type="radio"
             default="1"
             layout="joomla.form.field.radio.switcher"
@@ -156,7 +156,7 @@
 
     <field
             name="display_date"
-            label="FLEXI_ADMIN_DISPLAY_DATE"
+            label="MOD_FLEXI_ADMIN_DISPLAY_DATE"
             type="radio"
             default="1"
             layout="joomla.form.field.radio.switcher"
@@ -170,8 +170,8 @@
             name="width"
             type="number"
             default="45"
-            label="FLEXI_ADMIN_WIDTHCOL"
-            description="FLEXI_ADMIN_WIDTHCOL_DESC"
+            label="MOD_FLEXI_ADMIN_WIDTHCOL"
+            description="MOD_FLEXI_ADMIN_WIDTHCOL_DESC"
             min="0" max="100"
             step="5"
     />
@@ -180,7 +180,7 @@
             name="fixed_height"
             type="number"
             default=""
-            label="FLEXI_ADMIN_BLOCKHEIGHT"
-            description="FLEXI_ADMIN_BLOCKHEIGHT_DESC"
+            label="MOD_FLEXI_ADMIN_BLOCKHEIGHT"
+            description="MOD_FLEXI_ADMIN_BLOCKHEIGHT_DESC"
     />
 </form>

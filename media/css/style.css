@@ -48,6 +48,7 @@ max-height: 80px !important;
 .info-bar.top.list-group-item {
 border-left: 0;
 border-right: 0;
+padding: 10px;
 }
 .contentbloc{
 align-content:space-between;
@@ -84,6 +85,7 @@ padding-top: 13px;
 .hasPopover {
 display: inline-block !important;
 }
+
 /** correction for advanced module manager and popover***/
 .control-label .hasPopover, .control-label .hasTooltip {
 display: block !important;
@@ -148,4 +150,12 @@ background:var(--template-bg-dark-5);
     .contentbloc > .card {
         width: 100% !important;
     }
+}
+@media (prefers-color-scheme: dark) {
+    .headerblock .breadcrumb {
+        background: none;
     }
+    .sep, .contentbloc {
+    background-color: var(--template-bg-dark-90);
+    }
+}

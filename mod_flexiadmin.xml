@@ -8,7 +8,7 @@
     <version>3.0</version>
     <copyright>Copyright (C) 2005 - 2022 Open Source Matters. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <description>FLEXI_ADMIN_INTRO</description>
+    <description>MOD_FLEXI_ADMIN_INTRO</description>
 
     <scriptfile>script.php</scriptfile>
 
@@ -17,6 +17,7 @@
         <folder>tmpl</folder>
         <folder>language</folder>
         <folder>elements</folder>
+        <folder>media</folder>
         <folder>models</folder>
         <filename>helper.php</filename>
         <filename>index.html</filename>
@@ -24,8 +25,13 @@
     </files>
 
     <media destination="mod_flexiadmin" folder="media">
-        <folder>css</folder>
-        <folder>js</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>fonts</folder>
+		<folder>icons-libraries</folder>
+		<folder>images</folder>
+		<folder>stylesheets</folder>
+		<folder>webfonts</folder>
     </media>
 
     <languages folder="language">
@@ -41,8 +47,8 @@
                         name="displayconfigmodule"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAY_CONFIG_MODULE"
-                        description="FLEXI_ADMIN_DISPLAY_CONFIG_MODULE_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAY_CONFIG_MODULE"
+                        description="MOD_FLEXI_ADMIN_DISPLAY_CONFIG_MODULE_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -54,8 +60,8 @@
                         name="displayinfosystem"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAY_SYSTEM_INFO"
-                        description="FLEXI_ADMIN_DISPLAY_SYSTEM_INFO_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAY_SYSTEM_INFO"
+                        description="MOD_FLEXI_ADMIN_DISPLAY_SYSTEM_INFO_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -67,8 +73,8 @@
                         name="displaycustomtext"
                         type="radio"
                         default="0"
-                        label="FLEXI_ADMIN_DISPLAY_CUSTOMTEXT"
-                        description="FLEXI_ADMIN_DISPLAY_CUSTOMTEXT_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAY_CUSTOMTEXT"
+                        description="MOD_FLEXI_ADMIN_DISPLAY_CUSTOMTEXT_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -78,8 +84,8 @@
 
                 <field
                         name="customtext"
-                        label="FLEXI_ADMIN_CUSTOMTEXT"
-                        description="FLEXI_ADMIN_CUSTOMTEXT_DESC"
+                        label="MOD_FLEXI_ADMIN_CUSTOMTEXT"
+                        description="MOD_FLEXI_ADMIN_CUSTOMTEXT_DESC"
                         type="editor"
                         width="200px"
                         height="100px"
@@ -105,15 +111,15 @@
                 </field>
             </fieldset>
 
-            <fieldset name="tab_config" label="FLEXI_ADMIN_TAB_CONFIG" description="FLEXI_ADMIN_TAB_CONFIG_DESC">
-                <field name="" type="separator" default="FLEXI_ADMIN_TABS" level="level1"/>
+            <fieldset name="tab_config" label="MOD_FLEXI_ADMIN_TAB_CONFIG" description="MOD_FLEXI_ADMIN_TAB_CONFIG_DESC">
+                <field name="" type="separator" default="MOD_FLEXI_ADMIN_TABS" level="level1"/>
 
                 <field
                         name="displaycustomtab"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_TABS_CUSTOM"
-                        description="FLEXI_ADMIN_TABS_CUSTOM_DESC"
+                        label="MOD_FLEXI_ADMIN_TABS_CUSTOM"
+                        description="MOD_FLEXI_ADMIN_TABS_CUSTOM_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -125,8 +131,8 @@
                         name="displaycreattab"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_TABS_CREATE"
-                        description="FLEXI_ADMIN_TABS_CREATE_DESC"
+                        label="MOD_FLEXI_ADMIN_TABS_CREATE"
+                        description="MOD_FLEXI_ADMIN_TABS_CREATE_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -138,8 +144,8 @@
                         name="displaymanagetab"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_TABS_MANAGE"
-                        description="FLEXI_ADMIN_TABS_MANAGE_DESC"
+                        label="MOD_FLEXI_ADMIN_TABS_MANAGE"
+                        description="MOD_FLEXI_ADMIN_TABS_MANAGE_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -151,21 +157,8 @@
                         name="displayadmintab"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_TABS_ADMIN"
-                        description="FLEXI_ADMIN_TABS_ADMIN_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="displayfreetab"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_FREE_TABS_ADMIN"
-                        description="FLEXI_FREE_TABS_ADMIN_DESC"
+                        label="MOD_FLEXI_ADMIN_TABS_ADMIN"
+                        description="MOD_FLEXI_ADMIN_TABS_ADMIN_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -177,8 +170,8 @@
                         name="displayanalytics"
                         type="radio"
                         default="0"
-                        label="FLEXI_ADMIN_ANALYTICS_TABS_ADMIN"
-                        description="FLEXI_ADMIN_ANALYTICS_TABS_ADMIN_DESC"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_TABS_ADMIN"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_TABS_ADMIN_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -187,9 +180,9 @@
                 </field>
             </fieldset>
 
-            <fieldset name="block_config" label="FLEXI_ADMIN_BLOCK_CONFIG" description="FLEXI_ADMIN_BLOCK_CONFIG_DESC">
+            <fieldset name="block_config" label="MOD_FLEXI_ADMIN_BLOCK_CONFIG" description="MOD_FLEXI_ADMIN_BLOCK_CONFIG_DESC">
 
-                <field name="" type="separator" default="FLEXI_ADMIN_BLOCKCUSTOM_DESC" level="level1"/>
+                <field name="" type="separator" default="MOD_FLEXI_ADMIN_BLOCKCUSTOM_DESC" level="level1"/>
 
                 <field
                         name="add_customblock"
@@ -208,224 +201,22 @@
                 />
             </fieldset>
 
-            <fieldset name="custom_tab" label="FLEXI_ADMIN_CUSTOM_TAB" description="FLEXI_ADMIN_CUSTOM_TAB_DESC">
-                <field
-                        name="nametab"
-                        type="text"
-                        default="FLEXI_ADMIN_CUSTOM_TAB_NAME"
-                        label="FLEXI_ADMIN_NAME_TAB"
-                        description="FLEXI_ADMIN_NAME_TAB_DESC"
-                />
+            <fieldset name="custom_tab" label="MOD_FLEXI_ADMIN_CUSTOM_TAB" description="MOD_FLEXI_ADMIN_CUSTOM_TAB_DESC">
+				<field name="free_tab" description="Add tab" type="subform" label="Add tab" min="0"
+					max="1000" required="false"
+					formsource="administrator/modules/mod_flexiadmin/models/forms/freebutton.xml"
+					multiple="true" buttons="add,remove,move"
+					layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
+					parentclass="span-6 stack" />
+			</fieldset>
 
-                <field name="" type="separator" default="FLEXI_ADMIN_BUTTON_ITEM_ADD" level="level1"/>
-
-                <field
-                        name="add_button"
-                        description=""
-                        type="subform"
-                        label=""
-                        min="0"
-                        max="1000"
-                        required="false"
-                        formsource="administrator/modules/mod_flexiadmin/models/forms/addbutton.xml"
-                        multiple="true"
-                        buttons="add,remove,move"
-                        layout="joomla.form.field.subform.repeatable"
-                        groupByFieldset="false"
-                        parentclass="span-6 stack"
-                />
-
-                <field name="" type="separator" default="FLEXI_ADMIN_CAT_FILTERING" level="level1"/>
-
-                <field
-                        name="add_cat_button"
-                        description=""
-                        type="subform"
-                        label=""
-                        min="0"
-                        max="1000"
-                        required="false"
-                        formsource="administrator/modules/mod_flexiadmin/models/forms/addcatbutton.xml"
-                        multiple="true"
-                        buttons="add,remove,move"
-                        layout="joomla.form.field.subform.repeatable"
-                        groupByFieldset="false"
-                        parentclass="span-6 stack"
-                />
-
-                <field name="" type="separator" default="FLEXI_ADMIN_ITEM_EDIT" level="level1"/>
-
-                <field
-                        name="edit_item_button"
-                        description=""
-                        type="subform"
-                        label=""
-                        min="0"
-                        max="1000"
-                        required="false"
-                        formsource="administrator/modules/mod_flexiadmin/models/forms/edititembutton.xml"
-                        multiple="true"
-                        buttons="add,remove,move"
-                        layout="joomla.form.field.subform.repeatable"
-                        groupByFieldset="false"
-                        parentclass="span-6 stack"
-                />
-            </fieldset>
-
-            <fieldset name="creation_tab" label="FLEXI_ADMIN_CREATION_TAB" description="FLEXI_ADMIN_CREATION_TAB_DESC">
-                <field
-                        name="hiddebuttonadditem"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_ADDITEM"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_ADDITEM_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonaddcategory"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_ADDCATEGORY"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_ADDCATEGORY_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonaddtag"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_ADDTAG"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_ADDTAG_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonadduser"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_ADDUSER"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_ADDUSER_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonaddgroup"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_ADDGROUP"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_ADDGROUP_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-            </fieldset>
-
-            <fieldset name="gestion_tab" label="FLEXI_ADMIN_GESTION_TAB" description="FLEXI_ADMIN_GESTION_TAB_DESC">
-                <field
-                        name="hiddebuttonmanageitems"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_MANAGEITEMS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_MANAGEITEMS_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonmanagecategories"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_BUTTONMANAGECATEGORIES"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_BUTTONMANAGECATEGORIES_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonmanagetags"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETAGS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETAGS_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonmanageauthors"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEAUTHORS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEAUTHORS_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonmanagegroups"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEGROUPS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEGROUPS_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack
-">
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-
-                <field
-                        name="hiddebuttonmanagefiles"
-                        type="radio"
-                        default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFILES"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFILES_DESC"
-                        layout="joomla.form.field.radio.switcher"
-                        parentclass="span-2 stack"
-                >
-                    <option value="0">FLEXI_NO</option>
-                    <option value="1">FLEXI_YES</option>
-                </field>
-            </fieldset>
-
-            <fieldset name="administration_tab" label="FLEXI_ADMIN_ADMIN_TAB" description="FLEXI_ADMIN_ADMIN_TAB_DESC">
+            <fieldset name="administration_tab" label="MOD_FLEXI_ADMIN_ADMIN_TAB" description="MOD_FLEXI_ADMIN_ADMIN_TAB_DESC">
                 <field
                         name="hiddebuttonprivacy"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_PRIVACY"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_PRIVACY_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_PRIVACY"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_PRIVACY_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -437,8 +228,8 @@
                         name="hiddebuttonlogs"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTON_LOGS_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -450,8 +241,8 @@
                         name="hiddebuttonimportcontent"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONIMPORTCONTENT_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -463,8 +254,8 @@
                         name="hiddebuttonstats"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONSTATS_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -476,8 +267,8 @@
                         name="hiddebuttonindex"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONINDEX_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -489,8 +280,8 @@
                         name="hiddebuttonaddfields"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDFIELDS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDFIELDS_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDFIELDS"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDFIELDS_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -502,8 +293,8 @@
                         name="hiddebuttonmanagefields"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGEFIELDS_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -515,8 +306,8 @@
                         name="hiddebuttonmanagetypes"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONMANAGETYPES_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -528,8 +319,8 @@
                         name="hiddebuttonaddtypes"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDTYPES"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDTYPES_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDTYPES"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADDTYPES_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -541,8 +332,8 @@
                         name="hiddebuttonadmin"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADMIN"
-                        description="FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADMIN_DESC"
+                        label="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADMIN"
+                        description="MOD_FLEXI_ADMIN_DISPLAYBUTTON_HIDDEBUTTONADMIN_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -551,15 +342,15 @@
                 </field>
             </fieldset>
 
-            <fieldset name="analytics_config" label="FLEXI_ADMIN_ANALYTICS_CONFIG"
-                      description="FLEXI_ADMIN_ANALYTICS_CONFIG_DESC">
+            <fieldset name="analytics_config" label="MOD_FLEXI_ADMIN_ANALYTICS_CONFIG"
+                      description="MOD_FLEXI_ADMIN_ANALYTICS_CONFIG_DESC">
 
                 <field
                         name="analytics_tabname"
                         type="text"
-                        default="FLEXI_ADMIN_TAB_ANALYTICS"
-                        label="FLEXI_ADMIN_ANALYTICS_TAB_NAME"
-                        description="FLEXI_ADMIN_ANALYTICS_TAB_NAME_DESC"
+                        default="MOD_FLEXI_ADMIN_TAB_ANALYTICS"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_TAB_NAME"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_TAB_NAME_DESC"
                         parentclass="span-5 stack"
                 />
 
@@ -567,8 +358,8 @@
                         name="analytics_siteid"
                         type="text"
                         default="1"
-                        label="FLEXI_ADMIN_SITEID"
-                        description="FLEXI_ADMIN_SITEID_DESC"
+                        label="MOD_FLEXI_ADMIN_SITEID"
+                        description="MOD_FLEXI_ADMIN_SITEID_DESC"
                         parentclass="span-2 stack"
                 />
 
@@ -576,8 +367,8 @@
                         name="analytics_site_url"
                         type="text"
                         default=""
-                        label="FLEXI_ADMIN_SITEURL"
-                        description="FLEXI_ADMIN_SITEURL_DESC"
+                        label="MOD_FLEXI_ADMIN_SITEURL"
+                        description="MOD_FLEXI_ADMIN_SITEURL_DESC"
                         parentclass="span-2 stack"
                 />
 
@@ -585,8 +376,8 @@
                         name="analytics_use_token"
                         type="radio"
                         default="0"
-                        label="FLEXI_ADMIN_ANALYTICS_USE_TOKEN"
-                        description="FLEXI_ADMIN_ANALYTICS_USE_TOKEN_DESC"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_USE_TOKEN"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_USE_TOKEN_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >
@@ -598,8 +389,8 @@
                         name="analytics_site_token_auth"
                         type="text"
                         default=""
-                        label="FLEXI_ADMIN_TOKEN"
-                        description="FLEXI_ADMIN_TOKEN_DESC"
+                        label="MOD_FLEXI_ADMIN_TOKEN"
+                        description="MOD_FLEXI_ADMIN_TOKEN_DESC"
                         parentclass="span-2 stack"
                 />
 
@@ -607,8 +398,8 @@
                         name="analytics_period"
                         type="text"
                         default="week"
-                        label="FLEXI_ADMIN_ANALYTICS_PERIOD"
-                        description="FLEXI_ADMIN_ANALYTICS_PERIOD_DESC"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_PERIOD"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_PERIOD_DESC"
                         parentclass="span-2 stack"
                 />
 
@@ -616,8 +407,8 @@
                         name="analytics_date"
                         type="text"
                         default="yesterday"
-                        label="FLEXI_ADMIN_ANALYTICS_DATE"
-                        description="FLEXI_ADMIN_ANALYTICS_DATE_DESC"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_DATE"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_DATE_DESC"
                         parentclass="span-2 stack"
                 />
 
@@ -625,17 +416,17 @@
                         name="analytics_height"
                         type="text"
                         default="500"
-                        label="FLEXI_ADMIN_ANALYTICS_HEIGHT"
-                        description="FLEXI_ADMIN_ANALYTICS_HEIGHT_DESC"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_HEIGHT"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_HEIGHT_DESC"
                         parentclass="span-2 stack"
                 />
 
                 <field
                         name="analytics_button"
                         type="text"
-                        default="FLEXI_ADMIN_LINK_ANALYTICS"
-                        label="FLEXI_ADMIN_ANALYTICS_LINK"
-                        description="FLEXI_ADMIN_ANALYTICS_LINK_DESC"
+                        default="MOD_FLEXI_ADMIN_LINK_ANALYTICS"
+                        label="MOD_FLEXI_ADMIN_ANALYTICS_LINK"
+                        description="MOD_FLEXI_ADMIN_ANALYTICS_LINK_DESC"
                         parentclass="span-5 stack"
                 />
             </fieldset>
@@ -661,8 +452,8 @@
                         name="usecdn"
                         type="radio"
                         default="1"
-                        label="FLEXI_ADMIN_USECDN"
-                        description="FLEXI_ADMIN_USECDN_DESC"
+                        label="MOD_FLEXI_ADMIN_USECDN"
+                        description="MOD_FLEXI_ADMIN_USECDN_DESC"
                         layout="joomla.form.field.radio.switcher"
                         parentclass="span-2 stack"
                 >

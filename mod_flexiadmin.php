@@ -41,7 +41,7 @@ $lang->load('com_flexicontent', JPATH_ADMINISTRATOR, $lang->getTag());
 // Clear FLEXIcontent state variables
 modFlexiadminHelper::clearState();
 
-$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx') ?? '');
 $system_buttons  = modFlexiadminHelper::getIconFromPlugins($params);
 $customBlocks    = [];
 

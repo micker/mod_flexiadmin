@@ -3,8 +3,8 @@
     <field
             name="namecatfilter"
             type="text"
-            label="FLEXI_ADMIN_NAME_BUTTON"
-            description="FLEXI_ADMIN_NAME_BUTTON_DESC"
+            label="MOD_FLEXI_ADMIN_NAME_BUTTON"
+            description="MOD_FLEXI_ADMIN_NAME_BUTTON_DESC"
     />
 
     <field
@@ -12,14 +12,14 @@
             type="flexicategories"
             multiple="false"
             default=""
-            label="FLEXI_ADMIN_CAT"
-            description="FLEXI_ADMIN_CAT_DESC"
+            label="MOD_FLEXI_ADMIN_CAT"
+            description="MOD_FLEXI_ADMIN_CAT_DESC"
     />
 
     <field
             name="button_type"
-            label="FLEXI_ADMIN_TYPES"
-            description="FLEXI_ADMIN_TYPES_DESC"
+            label="MOD_FLEXI_ADMIN_TYPES"
+            description="MOD_FLEXI_ADMIN_TYPES_DESC"
             size="5"
             type="types"
             multiple="false"
@@ -30,8 +30,8 @@
 
     <field
             name="displayauthoronly"
-            label="FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY"
-            description="FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY_DESC"
+            label="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY"
+            description="MOD_FLEXI_ADMIN_DISPLAY_AUTHOR_ONLY_DESC"
             type="radio"
             default="0"
             layout="joomla.form.field.radio.switcher"
@@ -43,8 +43,8 @@
     <field
             name="button_lang"
             type="contentlanguage"
-            label="FLEXI_ADMIN_LANG"
-            description="FLEXI_ADMIN_LANG_DESC"
+            label="MOD_FLEXI_ADMIN_LANG"
+            description="MOD_FLEXI_ADMIN_LANG_DESC"
             class="span12 small"
     >
         <option value="*">JALL</option>
@@ -54,8 +54,8 @@
             name="iconbutton"
             type="iconpicker"
             default="fa-list"
-            label="FLEXI_ADMIN_ICON"
-            description="FLEXI_ADMIN_ICON_DESC"
+            label="MOD_FLEXI_ADMIN_ICON"
+            description="MOD_FLEXI_ADMIN_ICON_DESC"
     />
 
     <field
@@ -63,26 +63,26 @@
             type="color"
             default=""
             format="rgba"
-            label="FLEXI_ADMIN_ICON_COLOR"
-            description="FLEXI_ADMIN_ICON_COLOR_DESC"
+            label="MOD_FLEXI_ADMIN_ICON_COLOR"
+            description="MOD_FLEXI_ADMIN_ICON_COLOR_DESC"
     />
 
     <field
             name="targetlink"
-            label="FLEXI_ADMIN_TARGETLINK"
-            description="FLEXI_ADMIN_TARGETLINK_DESC"
+            label="MOD_FLEXI_ADMIN_TARGETLINK"
+            description="MOD_FLEXI_ADMIN_TARGETLINK_DESC"
             type="radio"
             default="_self"
             class="btn-group btn-group-yesno"
     >
-        <option value="_self">FLEXI_ADMIN_SELF</option>
-        <option value="_blank">FLEXI_ADMIN_BLANK</option>
+        <option value="_self">MOD_FLEXI_ADMIN_SELF</option>
+        <option value="_blank">MOD_FLEXI_ADMIN_BLANK</option>
     </field>
 
     <field
             name="displayline"
-            label="FLEXI_ADMIN_DISPLAY_LINE"
-            description="FLEXI_ADMIN_DISPLAY_LINE_DESC"
+            label="MOD_FLEXI_ADMIN_DISPLAY_LINE"
+            description="MOD_FLEXI_ADMIN_DISPLAY_LINE_DESC"
             type="radio"
             default="0"
             layout="joomla.form.field.radio.switcher"

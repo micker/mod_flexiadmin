@@ -3,16 +3,16 @@
     <field
             name="freenametab"
             type="text"
-            default="FLEXI_ADMIN_FREE_TAB_NAME"
-            label="FLEXI_ADMIN_FREE_TAB_NAME_2"
-            description="FLEXI_ADMIN_FREE_TAB_NAME_2_DESC"
+            default="MOD_FLEXI_ADMIN_FREE_TAB_NAME"
+            label="MOD_FLEXI_ADMIN_FREE_TAB_NAME_2"
+            description="MOD_FLEXI_ADMIN_FREE_TAB_NAME_2_DESC"
     />
 
     <field
             name="free_button"
-            description="FLEXI_ADMIN_FREE_BUTTON_DESC"
+            description="MOD_FLEXI_ADMIN_FREE_BUTTON_DESC"
             type="subform"
-            label="FLEXI_ADMIN_FREE_BUTTON"
+            label="MOD_FLEXI_ADMIN_BUTTON"
             min="0"
             max="1000"
             required="false"

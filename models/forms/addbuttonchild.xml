@@ -41,8 +41,8 @@
             type="color"
             default=""
             format="rgba"
-            label="FLEXI_ADMIN_ICON_COLOR"
-            description="FLEXI_ADMIN_ICON_COLOR_DESC"
+            label="MOD_FLEXI_ADMIN_ICON_COLOR"
+            description="MOD_FLEXI_ADMIN_ICON_COLOR_DESC"
     />
 
     <field
