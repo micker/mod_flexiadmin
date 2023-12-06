@@ -27,12 +27,11 @@ HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
 HTMLHelper::_('script', 'media/mod_flexiadmin/js/universal-icon-picker.min.js');
 
 
-class FormFieldIconpicker extends FormField
+class JFormFieldIconpicker extends FormField
 {
   protected $type = 'Iconpicker';
   // getLabel() left out
   public function getInput()
-
   {
 
     $iconlist = ' <div class="input-group mb-3">
