@@ -30,10 +30,14 @@ $document = $app->getDocument();
 $user     = $app->getIdentity();
 $userId   = $user->id;
 
-//HTMLHelper::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
-HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.css');
-HTMLHelper::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+//HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
+//HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/font-awesome.min.css');
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->registerStyle('mod_dashboard.style', 'media/mod_flexiadmin/css/style.css');
+$wa->registerStyle('mod_dashboard.style2', 'media/mod_flexiadmin/css/font-awesome.min.css');
+$wa->useStyle('mod_dashboard.style');
+$wa->useStyle('mod_dashboard.style2');
 
 $force_fullwidth = $params->get('force_fullwidth', '1');
 
@@ -202,7 +206,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                             $icon  = !empty($free_button->iconbutton) ? $free_button->iconbutton : 'fa-edit';
                                             $style = !empty($free_button->coloricon) ? 'style="color: ' . $free_button->coloricon . '"' : '';
                                             ?>
-                                            <i class="fa <?php echo $icon . ' ' . $iconsize; ?>" <?php echo $style; ?>></i>
+                                            <i class="<?php echo $icon . ' ' . $iconsize; ?>" <?php echo $style; ?>></i>
                                         </div>
                                         <div class="quickicon-name d-flex align-items-center">
                                             <?php echo Text::_($free_button->button_name); ?>
@@ -551,51 +555,6 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
 					<?php echo HTMLHelper::_('uitab.endTab'); ?>
 				<?php endif; ?>
 
-				<?php if ($displayfreetab) : ?>
-
-					<?php $list_freebuttons = $params->get('free_button'); ?>
-					<?php if ($list_freebuttons) : ?>
-
-						<?php foreach ($list_freebuttons as $list_freebuttons_idx => $free_buttons) : ?>
-							<?php $tabname = strtolower(preg_replace('/[^a-zA-Z0-9-_\.]/', '', $free_buttons->freenametab)); ?>
-							<?php echo HTMLHelper::_('uitab.addTab', 'myTab', $tabname, Text::_($free_buttons->freenametab)); ?>
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <nav class="quick-icons dashboard" aria-label="Quick links creation">
-                                        <ul class="flex-wrap">
-
-											<?php foreach ($free_buttons->free_button as $free_button_idx => $free_button) : ?>
-                                                <li class="quickicon quickicon-single col <?php echo $free_button->displayline ? 'newlinegrid' : ''; ?>">
-                                                    <a href="<?php echo $free_button->linkbutton; ?>"
-                                                       target="<?php echo $free_button->targetlink; ?>">
-                                                        <div class="quickicon-icon d-flex align-items-end big">
-															<?php
-															$icon  = !empty($free_button->iconbutton) ? $free_button->iconbutton : 'fa-edit';
-															$style = !empty($free_button->coloricon) ? 'color: ' . $free_button->coloricon . ';' : '';
-															?>
-                                                            <i class="fas <?php echo $icon . ' ' . $iconsize; ?>"
-                                                               style="<?php echo $style; ?>"
-                                                            ></i>
-                                                        </div>
-                                                        <div class="quickicon-name d-flex align-items-center">
-															<?php echo Text::_($free_button->freebutton); ?>
-                                                        </div>
-                                                    </a>
-                                                </li>
-											<?php endforeach; ?>
-
-											<?php echo !empty($edit_item_button->displayline) ? 'newlinegrid' : ''; ?>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-
-							<?php echo HTMLHelper::_('uitab.endTab'); ?>
-						<?php endforeach; ?>
-
-					<?php endif; ?>
-				<?php endif; ?>
 
 				<?php if ($displayanalytics && $analytics_url) : ?>
 					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'create', Text::_($analytics_tab_name)); ?>
@@ -651,7 +610,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                     <div class="card-header">
 						<?php $style = !empty($customBlock->icon_color) ? 'color: ' . $customBlock->icon_color : ''; ?>
                         <h3 class="module-title">
-                            <i class="fa <?php echo $customBlock->icon ?>" style="<?php echo $style; ?>"></i>
+                            <i class="<?php echo $customBlock->icon ?>" style="<?php echo $style; ?>"></i>
 							<?php echo Text::_($customBlock->block_title); ?> :
                         </h3>
                         <div class="module-actions">

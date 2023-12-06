@@ -23,9 +23,15 @@ button.iconpicker {
     background: #fff !important;
 
 }
-body .form-grid .control-group .controls > div, body .form-grid .control-group .controls {
-    flex-basis: initial !important;
-display: initial !important;
+body .form-grid .control-group .controls > div {
+    display: initial;
+    flex-basis: 100%;
+}
+body .form-grid .control-group .controls {
+    display: initial;
+}
+body .form-grid .control-group .control-label {
+    width: 100% !important;
 }
 body .popover.iconpicker-popover.bottom.in {
     color: #000 !important;
