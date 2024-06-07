@@ -142,20 +142,19 @@ padding: 10px;
 justify-content: center;
     align-items: center;
 }
-.sep{
-height: 2rem;
-background:var(--template-bg-dark-5);
-}
+
 @media (max-width: 952px){
     .contentbloc > .card {
         width: 100% !important;
     }
 }
-@media (prefers-color-scheme: dark) {
-    .headerblock .breadcrumb {
+[data-bs-theme="dark"] .headerblock .breadcrumb {
         background: none;
     }
-    .sep, .contentbloc {
+[data-bs-theme="dark"] .sep, [data-bs-theme="dark"] .contentbloc {
     background-color: var(--template-bg-dark-90);
     }
-}
+.sep{
+        height: 2rem;
+        background:var(--template-bg-dark-5);
+        }
