@@ -181,7 +181,10 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                             <?php foreach ($free_tab->free_button as $free_button_idx => $free_button) : ?>
                                 <li class="quickicon quickicon-single col <?php echo $free_button->displayline ? 'newlinegrid' : ''; ?>">
                                     <!-- ici boucle de calcul des liens -->
-                                    <?php $filter_byauthor = ($free_button->displayauthoronly == 1) ? '&amp;filter[author_id]=' . $user->id : ''; ?>
+                                   <?php 
+                                        $filter_byauthor = ($free_button->displayauthoronly == 1) ? '&amp;filter[author_id]=' . $user->id : ''; 
+                                        $filter_lang = ($free_button->button_lang != '*') ? '&amp;filter_lang=' .$free_button->button_lang : '';
+                                    ?>
                                     <?php
                                     switch ($free_button->displayButtonTypeOption)
                                     {
@@ -192,7 +195,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                             $url_button = "index.php?option=com_flexicontent&task=items.edit&cid[]=$free_button->itemid";
                                             break;
                                         case 3: //cat link
-                                            $url_button = "index.php?option=com_flexicontent&view=items&filter_cats=$free_button->catidlist&filter_lang=$free_button->button_lang $filter_byauthor";
+                                           $url_button = "index.php?option=com_flexicontent&view=items&filter_cats=$free_button->catidlist $filter_lang $filter_byauthor";
                                             break;
                                         case 4: //custom link
                                             $url_button = $free_button->linkbutton;
