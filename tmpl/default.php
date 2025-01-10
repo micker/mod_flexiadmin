@@ -184,6 +184,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                    <?php 
                                         $filter_byauthor = ($free_button->displayauthoronly == 1) ? '&amp;filter[author_id]=' . $user->id : ''; 
                                         $filter_lang = ($free_button->button_lang != '*') ? '&amp;filter_lang=' .$free_button->button_lang : '';
+                                        $filter_type_cat = ($free_button->button_type_cat != '') ? '&amp;filter_type=' .$free_button->button_type_cat : '';
                                     ?>
                                     <?php
                                     switch ($free_button->displayButtonTypeOption)
@@ -195,7 +196,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                             $url_button = "index.php?option=com_flexicontent&task=items.edit&cid[]=$free_button->itemid";
                                             break;
                                         case 3: //cat link
-                                           $url_button = "index.php?option=com_flexicontent&view=items&filter_cats=$free_button->catidlist $filter_lang $filter_byauthor";
+                                           $url_button = "index.php?option=com_flexicontent&view=items&filter_cats=$free_button->catidlist $filter_type_cat $filter_lang $filter_byauthor";
                                             break;
                                         case 4: //custom link
                                             $url_button = $free_button->linkbutton;
