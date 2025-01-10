@@ -184,7 +184,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                    <?php 
                                         $filter_byauthor = ($free_button->displayauthoronly == 1) ? '&amp;filter[author_id]=' . $user->id : ''; 
                                         $filter_lang = ($free_button->button_lang != '*') ? '&amp;filter_lang=' .$free_button->button_lang : '';
-                                        $filter_type_cat = ($free_button->button_type_cat != '') ? '&amp;filter_type=' .$free_button->button_type_cat : '';
+                                        $filter_type_cat = !empty($free_button->button_type_cat) ? '&amp;filter_type=' . implode(',', $free_button->button_type_cat) : '';
                                     ?>
                                     <?php
                                     switch ($free_button->displayButtonTypeOption)
