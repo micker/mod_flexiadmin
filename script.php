@@ -29,7 +29,7 @@ class mod_flexiadminInstallerScript
 	 *
 	 * @var    string
 	 */
-	private $minimumJoomlaVersion = '4.0';
+	private $minimumJoomlaVersion = '6.0.0';
 
 	/**
 	 * Minimum PHP version to check

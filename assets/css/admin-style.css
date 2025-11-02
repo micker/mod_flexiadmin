@@ -1,4 +1,4 @@
-/** small correction for admin j4 ***/
+/** small correction for admin ***/
 body .popover.iconpicker-popover.bottom {
     max-width: initial !important;
     min-width: initial !important;
@@ -17,19 +17,4 @@ body .controls .btn-group.btn-group-yesno .btn, body .btn-group.btn-group-yesno 
 }
 button.iconpicker {
     display: block !important;
-}
-.popover.iconpicker-popover.bottom.in{
-    color: #000 !important;
-    background: #fff !important;
-
-}
-body .form-grid .control-group .controls > div, body .form-grid .control-group .controls {
-    flex-basis: initial !important;
-display: initial !important;
-}
-body .popover.iconpicker-popover.bottom.in {
-    color: #000 !important;
-    background: #fff !important;
-    z-index: 10000000000000 !important;
-    pointer-events: all;
 }

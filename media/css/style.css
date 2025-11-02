@@ -48,7 +48,6 @@ max-height: 80px !important;
 .info-bar.top.list-group-item {
 border-left: 0;
 border-right: 0;
-padding: 10px;
 }
 .contentbloc{
 align-content:space-between;
@@ -85,7 +84,6 @@ padding-top: 13px;
 .hasPopover {
 display: inline-block !important;
 }
-
 /** correction for advanced module manager and popover***/
 .control-label .hasPopover, .control-label .hasTooltip {
 display: block !important;
@@ -142,19 +140,12 @@ padding: 10px;
 justify-content: center;
     align-items: center;
 }
-
+.sep{
+height: 2rem;
+background:var(--template-bg-dark-5);
+}
 @media (max-width: 952px){
     .contentbloc > .card {
         width: 100% !important;
     }
-}
-[data-bs-theme="dark"] .headerblock .breadcrumb {
-        background: none;
     }
-[data-bs-theme="dark"] .sep, [data-bs-theme="dark"] .contentbloc {
-    background-color: var(--template-bg-dark-90);
-    }
-.sep{
-        height: 2rem;
-        background:var(--template-bg-dark-5);
-        }

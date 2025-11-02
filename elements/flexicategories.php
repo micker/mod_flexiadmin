@@ -16,11 +16,10 @@
  * GNU General Public License for more details.
  */
 defined('_JEXEC') or die('Restricted access');
-use \Joomla\CMS\Component\ComponentHelper;
 
 jimport( 'joomla.application.component.controller' );
 // Check if component is installed
-if ( !ComponentHelper::isEnabled( 'com_flexicontent', true) ) {
+if ( !JComponentHelper::isEnabled( 'com_flexicontent', true) ) {
    echo 'This modules requires component FLEXIcontent!';
    return;
 }

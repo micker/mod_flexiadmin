@@ -24,21 +24,16 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
-require_once(JPATH_SITE.DS.'components'.DS.'com_flexicontent'.DS.'classes'.DS.'flexicontent.helper.php');
 
 $app      = Factory::getApplication();
 $document = $app->getDocument();
 $user     = $app->getIdentity();
 $userId   = $user->id;
 
-
-//HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
-//HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/font-awesome.min.css');
-$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
-$wa->registerStyle('mod_dashboard.style', 'media/mod_flexiadmin/css/style.css');
-$wa->registerStyle('mod_dashboard.style2', 'media/mod_flexiadmin/css/font-awesome.min.css');
-$wa->useStyle('mod_dashboard.style');
-$wa->useStyle('mod_dashboard.style2');
+//HTMLHelper::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
+HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/bootstrap-iconpicker.css');
+HTMLHelper::_('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $force_fullwidth = $params->get('force_fullwidth', '1');
 
@@ -81,7 +76,7 @@ $actionslogwidth     = $params->get('actionslogwidth', '46');
 $iconsize            = $params->get('iconsize', 'fa-2x');
 
 //customtab
-$nametab = $params->get('nametab', 'MOD_FLEXI_ADMIN_CUSTOM_TAB_NAME');
+$nametab = $params->get('nametab', 'FLEXI_ADMIN_CUSTOM_TAB_NAME');
 
 //Get Buttom Sections
 $hiddebuttonmanageitems      = $params->get('hiddebuttonmanageitems', '1');
@@ -109,7 +104,7 @@ $hiddebuttonlogs             = $params->get('hiddebuttonlogs', '1');
 $displayauthoronly = $params->get('displayauthoronly', '0');
 
 //freetab
-$freenametab = $params->get('freenametab', 'MOD_FLEXI_ADMIN_FREE_TAB_NAME');
+$freenametab = $params->get('freenametab', 'FLEXI_ADMIN_FREE_TAB_NAME');
 
 //Analytics tab
 $displayanalytics         = $params->get('displayanalytics');
@@ -118,8 +113,8 @@ $analytics_siteid         = $params->get('analytics_siteid');
 $analytics_period         = $params->get('analytics_period', 'week');
 $analytics_date           = $params->get('analytics_date', 'yesterday');
 $analytics_height         = $params->get('analytics_height', '500');
-$analytics_tab_name       = $params->get('analytics_tabname', 'MOD_FLEXI_ADMIN_TAB_ANALYTICS');
-$analytics_button_name    = $params->get('analytics_button', 'MOD_FLEXI_ADMIN_LINK_ANALYTICS');
+$analytics_tab_name       = $params->get('analytics_tabname', 'FLEXI_ADMIN_TAB_ANALYTICS');
+$analytics_button_name    = $params->get('analytics_button', 'FLEXI_ADMIN_LINK_ANALYTICS');
 $analytics_token_auth     = $params->get('analytics_site_token_auth');
 $analytics_use_token_auth = $params->get('analytics_use_token');
 
@@ -166,72 +161,88 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
 		<?php if ($displaycustomtab || $displaycreattab || $displaymanagetab || $displayadmintab || $displayfreetab) : ?>
             <div class="action">
 
-<?php echo HTMLHelper::_('uitab.startTabSet', 'myTab', array('active' => 'general')); ?>
-<?php if ($displaycustomtab) : ?>
-    <?php //echo HTMLHelper::_('uitab.addTab', 'myTab', 'custom', Text::_($nametab));?>
-    <?php $list_freebuttons = $params->get('free_tab'); ?>
-    <?php if ($list_freebuttons) : ?>
-        <?php foreach ($list_freebuttons as $list_freebuttons_idx => $free_tab) : ?>
-            <?php $tabname = strtolower(preg_replace('/[^a-zA-Z0-9-_\.]/', '', $free_tab->freenametab)); ?>
-            <?php echo HTMLHelper::_('uitab.addTab', 'myTab', $tabname, Text::_($free_tab->freenametab)); ?>
-            <div class="row">
-                <div class="col-lg-12">
-                    <nav class="quick-icons dashboard" aria-label="Quick links creation">
-                        <ul class="nav flex-wrap">
-                            <?php foreach ($free_tab->free_button as $free_button_idx => $free_button) : ?>
-                                <li class="quickicon quickicon-single col <?php echo $free_button->displayline ? 'newlinegrid' : ''; ?>">
-                                    <!-- ici boucle de calcul des liens -->
-                                   <?php 
-                                        $filter_byauthor = ($free_button->displayauthoronly == 1) ? '&amp;filter[author_id]=' . $user->id : ''; 
-                                        $filter_lang = ($free_button->button_lang != '*') ? '&amp;filter_lang=' .$free_button->button_lang : '';
-                                        $filter_type_cat = !empty($free_button->button_type_cat) ? '&amp;filter_type=' . implode(',', $free_button->button_type_cat) : '';
-                                    ?>
-                                    <?php
-                                    switch ($free_button->displayButtonTypeOption)
-                                    {
-                                        case 1: //add item
-                                            $url_button = "index.php?option=com_flexicontent&controller=items&task=items.add&typeid=$free_button->button_type&maincat=$free_button->catid&language=$free_button->button_lang";
-                                            break;
-                                        case 2: //edit item
-                                            $url_button = "index.php?option=com_flexicontent&task=items.edit&cid[]=$free_button->itemid";
-                                            break;
-                                        case 3: //cat link
-                                           $url_button = "index.php?option=com_flexicontent&view=items&filter_cats=$free_button->catidlist $filter_type_cat $filter_lang $filter_byauthor";
-                                            break;
-                                        case 4: //custom link
-                                            $url_button = $free_button->linkbutton;
-                                            break;
-                                    }
-                                    ?>
-                                    <a href="<?php echo $url_button; ?>"
-                                       target="<?php echo $free_button->targetlink; ?>"
-                                       class="align-items-center">
-                                        <div class="quickicon-icon d-flex align-items-center big">
-                                            <?php
-                                            $icon  = !empty($free_button->iconbutton) ? $free_button->iconbutton : 'fa-edit';
-                                            $style = !empty($free_button->coloricon) ? 'style="color: ' . $free_button->coloricon . '"' : '';
-                                            ?>
-                                            <i class="<?php echo $icon . ' ' . $iconsize; ?>" <?php echo $style; ?>></i>
-                                        </div>
-                                        <div class="quickicon-name d-flex align-items-center">
-                                            <?php echo Text::_($free_button->button_name); ?>
-                                        </div>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <?php echo HTMLHelper::_('uitab.endTab'); ?>
-        <?php endforeach; ?>
-    <?php endif; ?>
-    <?php //echo HTMLHelper::_('uitab.endTab');
-    ?>
-<?php endif; ?>
+				<?php echo HTMLHelper::_('uitab.startTabSet', 'myTab', array('active' => 'general')); ?>
+
+				<?php if ($displaycustomtab) : ?>
+					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'custom', Text::_($nametab)); ?>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="quick-icons dashboard" aria-label="Quick custom link">
+                                <ul class="flex-wrap2">
+
+									<?php $list_buttons = $params->get('add_button');
+									foreach ($list_buttons as $list_buttons_idx => $add_button) : ?>
+                                        <li class="quickicon quickicon-single col <?php echo $add_button->displayline ? 'newlinegrid' : ''; ?>">
+                                            <a href="index.php?option=com_flexicontent&controller=items&task=items.add&typeid=<?php echo $add_button->button_type; ?>&maincat=<?php echo $add_button->catid; ?>&filter_lang=<?php echo $add_button->button_lang; ?>">
+                                                <div class="quickicon-icon d-flex align-items-end big">
+													<?php
+													$icon  = !empty($add_button->iconbutton) ? $add_button->iconbutton : 'fa-plus-circle';
+													$style = !empty($add_button->coloricon) ? 'color: ' . $add_button->coloricon . ';' : '';
+													?>
+                                                    <i class="fas <?php echo $icon . ' ' . $iconsize; ?>"
+                                                       style="<?php echo $style; ?>"
+                                                    ></i>
+                                                </div>
+                                                <div class="quickicon-name d-flex align-items-center">
+													<?php echo Text::_($add_button->button_name); ?>
+                                                </div>
+                                            </a>
+                                        </li>
+									<?php endforeach; ?>
+
+									<?php $list_catbuttons = $params->get('add_cat_button'); ?>
+									<?php foreach ($list_catbuttons as $list_catbuttons_idx => $cat_button) : ?>
+										<?php
+										$filter_byauthor = $cat_button->displayauthoronly == 1 ? '&amp;filter_author=' . $user->id : '';
+										$filter_by_type  = !empty($cat_button->button_type) ? '&amp;filter_type=' . $cat_button->button_type : '';
+										?>
+                                        <li class="quickicon quickicon-single col <?php echo $cat_button->displayline ? 'newlinegrid' : ''; ?>">
+                                            <a href="index.php?option=com_flexicontent&view=items&filter_cats=<?php echo $cat_button->filtercatids; ?>&filter_lang=<?php echo $cat_button->button_lang; ?><?php echo $filter_byauthor; ?><?php echo $filter_by_type; ?>">
+                                                <div class="quickicon-icon d-flex align-items-end big">
+													<?php
+													$icon  = !empty($cat_button->iconbutton) ? $cat_button->iconbutton : 'fa-th-list';
+													$style = !empty($cat_button->coloricon) ? 'color: ' . $cat_button->coloricon . ';' : '';
+													?>
+                                                    <i class="fas <?php echo $icon . ' ' . $iconsize; ?>"
+                                                       style="<?php echo $style; ?>"></i>
+                                                </div>
+                                                <div class="quickicon-name d-flex align-items-center">
+													<?php echo Text::_($cat_button->namecatfilter); ?>
+                                                </div>
+                                            </a>
+                                        </li>
+									<?php endforeach; ?>
+
+									<?php $list_edititembuttons = $params->get('edit_item_button'); ?>
+									<?php foreach ($list_edititembuttons as $list_edititembuttons_idx => $edit_item_button) : ?>
+                                        <li class="quickicon quickicon-single col <?php echo $edit_item_button->displayline ? 'newlinegrid' : ''; ?>">
+                                            <a href="index.php?option=com_flexicontent&task=items.edit&cid[]=<?php echo $edit_item_button->itemid; ?>">
+                                                <div class="quickicon-icon d-flex align-items-end big">
+													<?php
+													$icon  = !empty($edit_item_button->iconbutton) ? $edit_item_button->iconbutton : 'fa-th-list';
+													$style = !empty($edit_item_button->coloricon) ? 'color: ' . $edit_item_button->coloricon . ';' : '';
+													?>
+                                                    <i class="fas <?php echo $icon . ' ' . $iconsize; ?>"
+                                                       style="<?php echo $style; ?>"></i>
+                                                </div>
+                                                <div class="quickicon-name d-flex align-items-center">
+													<?php echo Text::_($edit_item_button->nameitemedit); ?>
+                                                </div>
+                                            </a>
+                                        </li>
+									<?php endforeach; ?>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+					<?php echo HTMLHelper::_('uitab.endTab'); ?>
+				<?php endif; ?>
 
 				<?php if ($displaycreattab) : ?>
-					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'create', Text::_('MOD_FLEXI_ADMIN_TAB_CREATE_D')); ?>
+					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'create', Text::_('FLEXI_ADMIN_TAB_CREATE_D')); ?>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -251,7 +262,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                 <i class="fas fa-plus-circle <?php echo $iconsize; ?> "></i>
                                             </div>
                                             <div class="quickicon-name d-flex align-items-center">
-												<?php echo Text::_('MOD_FLEXI_ADMIN_ADDITEM'); ?>
+												<?php echo Text::_('FLEXI_ADMIN_ADDITEM'); ?>
                                             </div>
                                             </a>
                                         </li>
@@ -264,7 +275,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-folder-open <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ADDCATEGORY'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDCATEGORY'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -277,7 +288,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-tags <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ADDTAG'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDTAG'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -290,7 +301,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-user <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ADDAUTHOR'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDAUTHOR'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -303,7 +314,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-users <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ADDGROUPS'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDGROUPS'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -318,7 +329,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
 				<?php endif; ?>
 
 				<?php if ($displaymanagetab) : ?>
-					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'manage', Text::_('MOD_FLEXI_ADMIN_TAB_MANAGE_D')); ?>
+					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'manage', Text::_('FLEXI_ADMIN_TAB_MANAGE_D')); ?>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -332,7 +343,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-th-list <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ITEMLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ITEMLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -345,7 +356,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-folder-open <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_CATLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_CATLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -358,7 +369,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-tags <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_TAGLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_TAGLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -371,7 +382,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-user <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_AUTHORLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_AUTHORLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -384,7 +395,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-users <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_GROUPSLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_GROUPSLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -397,7 +408,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-upload <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_FILEMANAGER'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_FILEMANAGER'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -412,7 +423,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
 				<?php endif; ?>
 
 				<?php if ($displayadmintab) : ?>
-					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'admin', Text::_('MOD_FLEXI_ADMIN_TAB_ADMIN_D')); ?>
+					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'admin', Text::_('FLEXI_ADMIN_TAB_ADMIN_D')); ?>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -426,7 +437,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-lock <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_PRIVACY'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_PRIVACY'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -439,7 +450,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-list-alt <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_LOGS'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_LOGS'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -455,7 +466,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-book <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_TYPELIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_TYPELIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -468,7 +479,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-th-list <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ADDTYPE'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDTYPE'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -481,7 +492,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fas fa-th-list <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_FIELDLIST'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_FIELDLIST'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -494,7 +505,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-plus-circle <?php echo $iconsize; ?> "></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_ADDFIELD'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_ADDFIELD'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -507,7 +518,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-download <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_IMPORT'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_IMPORT'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -520,7 +531,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-pie-chart <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_STATS'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_STATS'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -533,7 +544,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-search <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_SEARCH'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_SEARCH'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -546,7 +557,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="fa fa-cogs <?php echo $iconsize; ?>"></i>
                                                 </div>
                                                 <div class="quickicon-name d-flex align-items-center">
-													<?php echo Text::_('MOD_FLEXI_ADMIN_GEN'); ?>
+													<?php echo Text::_('FLEXI_ADMIN_GEN'); ?>
                                                 </div>
                                             </a>
                                         </li>
@@ -560,6 +571,51 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
 					<?php echo HTMLHelper::_('uitab.endTab'); ?>
 				<?php endif; ?>
 
+				<?php if ($displayfreetab) : ?>
+
+					<?php $list_freebuttons = $params->get('free_button'); ?>
+					<?php if ($list_freebuttons) : ?>
+
+						<?php foreach ($list_freebuttons as $list_freebuttons_idx => $free_buttons) : ?>
+							<?php $tabname = strtolower(preg_replace('/[^a-zA-Z0-9-_\.]/', '', $free_buttons->freenametab)); ?>
+							<?php echo HTMLHelper::_('uitab.addTab', 'myTab', $tabname, Text::_($free_buttons->freenametab)); ?>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <nav class="quick-icons dashboard" aria-label="Quick links creation">
+                                        <ul class="flex-wrap">
+
+											<?php foreach ($free_buttons->free_button as $free_button_idx => $free_button) : ?>
+                                                <li class="quickicon quickicon-single col <?php echo $free_button->displayline ? 'newlinegrid' : ''; ?>">
+                                                    <a href="<?php echo $free_button->linkbutton; ?>"
+                                                       target="<?php echo $free_button->targetlink; ?>">
+                                                        <div class="quickicon-icon d-flex align-items-end big">
+															<?php
+															$icon  = !empty($free_button->iconbutton) ? $free_button->iconbutton : 'fa-edit';
+															$style = !empty($free_button->coloricon) ? 'color: ' . $free_button->coloricon . ';' : '';
+															?>
+                                                            <i class="fas <?php echo $icon . ' ' . $iconsize; ?>"
+                                                               style="<?php echo $style; ?>"
+                                                            ></i>
+                                                        </div>
+                                                        <div class="quickicon-name d-flex align-items-center">
+															<?php echo Text::_($free_button->freebutton); ?>
+                                                        </div>
+                                                    </a>
+                                                </li>
+											<?php endforeach; ?>
+
+											<?php echo !empty($edit_item_button->displayline) ? 'newlinegrid' : ''; ?>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+							<?php echo HTMLHelper::_('uitab.endTab'); ?>
+						<?php endforeach; ?>
+
+					<?php endif; ?>
+				<?php endif; ?>
 
 				<?php if ($displayanalytics && $analytics_url) : ?>
 					<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'create', Text::_($analytics_tab_name)); ?>
@@ -615,12 +671,12 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                     <div class="card-header">
 						<?php $style = !empty($customBlock->icon_color) ? 'color: ' . $customBlock->icon_color : ''; ?>
                         <h3 class="module-title">
-                            <i class="<?php echo $customBlock->icon ?>" style="<?php echo $style; ?>"></i>
+                            <i class="fa <?php echo $customBlock->icon ?>" style="<?php echo $style; ?>"></i>
 							<?php echo Text::_($customBlock->block_title); ?> :
                         </h3>
                         <div class="module-actions">
                             <a href="<?php echo $customBlock->showAllLink; ?>" class="adminlink">
-								<?php echo Text::_('MOD_FLEXI_ADMIN_ALL'); ?>
+								<?php echo Text::_('FLEXI_ADMIN_ALL'); ?>
                             </a>
                         </div>
                     </div>
@@ -632,10 +688,10 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                 <thead>
                                 <tr>
                                     <th>
-										<?php echo Text::_('MOD_FLEXI_ADMIN_ACTION'); ?>
+										<?php echo Text::_('FLEXI_ADMIN_ACTION'); ?>
                                     </th>
                                     <th>
-										<?php echo Text::_('MOD_FLEXI_ADMIN_DATE'); ?>
+										<?php echo Text::_('FLEXI_ADMIN_DATE'); ?>
                                     </th>
                                 </tr>
                                 </thead>
@@ -667,15 +723,15 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                 <thead>
                                 <tr>
                                     <th style="min-width: 150px;">
-										<?php echo Text::_('MOD_FLEXI_ADMIN_TITLE'); ?>
+										<?php echo Text::_('FLEXI_ADMIN_TITLE'); ?>
                                     </th>
                                     <th>
-										<?php echo Text::_('MOD_FLEXI_ADMIN_CAT'); ?>
+										<?php echo Text::_('FLEXI_ADMIN_CAT'); ?>
                                     </th>
 
 									<?php if ((int) $customBlock->display_author) : ?>
                                         <th>
-											<?php echo Text::_('MOD_FLEXI_ADMIN_AUTHOR'); ?>
+											<?php echo Text::_('FLEXI_ADMIN_AUTHOR'); ?>
                                         </th>
 									<?php endif; ?>
 
@@ -689,7 +745,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
 
 									<?php if ((int) $customBlock->display_date) : ?>
                                         <th>
-											<?php echo Text::_('MOD_FLEXI_ADMIN_DATE'); ?>
+											<?php echo Text::_('FLEXI_ADMIN_DATE'); ?>
                                         </th>
 									<?php endif; ?>
                                 </tr>
@@ -714,7 +770,7 @@ if (!ComponentHelper::isEnabled('com_flexicontent', true))
                                                     <i class="icon-user me-2"></i>
 
                                                     <div class="hasTooltip" title=""
-                                                         data-original-title="<?php echo HTMLHelper::tooltipText('MOD_FLEXI_ADMIN_MODIFIED_BY') . " " . $item->author; ?>">
+                                                         data-original-title="<?php echo HTMLHelper::tooltipText('FLEXI_ADMIN_MODIFIED_BY') . " " . $item->author; ?>">
 														<?php echo $item->author; ?>
                                                     </div>
                                                 </div>
