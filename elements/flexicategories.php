@@ -16,6 +16,9 @@
  * GNU General Public License for more details.
  */
 defined('_JEXEC') or die('Restricted access');
+// DS is not a Joomla core constant (it is defined by FLEXIcontent), make sure it exists
+if (!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
+
 use \Joomla\CMS\Component\ComponentHelper;
 
 jimport( 'joomla.application.component.controller' );
