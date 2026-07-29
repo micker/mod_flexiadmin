@@ -19,6 +19,9 @@
 //blocage des accés directs sur ce script
 defined('_JEXEC') or die('Accés interdit');
 
+// DS is not a Joomla core constant (it is defined by FLEXIcontent), make sure it exists
+if (!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
+
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;

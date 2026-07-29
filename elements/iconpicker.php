@@ -14,18 +14,11 @@
 * GNU General Public License for more details.
 **/
 
-defined('JPATH_PLATFORM') or die;
-require_once(JPATH_ROOT.DS.'components'.DS.'com_flexicontent'.DS.'classes'.DS.'flexicontent.helper.php');
+// JPATH_PLATFORM has been removed in Joomla 6, use the regular entry point guard
+defined('_JEXEC') or die;
 
-
+use Joomla\CMS\Form\FormField;
 use Joomla\CMS\HTML\HTMLHelper;
-use \Joomla\CMS\Form\FormHelper;
-use \Joomla\CMS\Form\FormField;
-FormHelper::loadFieldClass('list');   // JFormFieldList
-HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/admin-style.css');
-HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
-HTMLHelper::_('script', 'media/mod_flexiadmin/js/universal-icon-picker.min.js');
-
 
 class JFormFieldIconpicker extends FormField
 {
@@ -33,31 +26,38 @@ class JFormFieldIconpicker extends FormField
   // getLabel() left out
   public function getInput()
   {
+    HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/admin-style.css');
+    HTMLHelper::_('stylesheet', 'media/mod_flexiadmin/css/style.css');
+    HTMLHelper::_('script', 'media/mod_flexiadmin/js/universal-icon-picker.min.js');
+
+    $id    = htmlspecialchars($this->id, ENT_QUOTES, 'UTF-8');
+    $name  = htmlspecialchars($this->name, ENT_QUOTES, 'UTF-8');
+    $value = htmlspecialchars((string) $this->value, ENT_QUOTES, 'UTF-8');
 
     $iconlist = ' <div class="input-group mb-3">
-    <span class="input-group-text" id="' . $this->id . '-icon">
-    <i class="fa '.$this->value.'"></i>
+    <span class="input-group-text" id="' . $id . '-icon">
+    <i class="fa '.$value.'"></i>
     </span>
-    <input id="' . $this->id . '-wrapper" value="'.$this->value.'" name="' . $this->name . '-wrapper"  class="form-control"/><button id="' . $this->id . '-clear" class="btn btn-outline-secondary">
+    <input id="' . $id . '-wrapper" value="'.$value.'" name="' . $name . '-wrapper"  class="form-control"/><button type="button" id="' . $id . '-clear" class="btn btn-outline-secondary">
     Reset
     </button></div>';
     $iconlist .= "
     <script>
         document.addEventListener('DOMContentLoaded', function(event) {
-        var uip = new UniversalIconPicker('#" . $this->id . "-wrapper', {
+        var uip = new UniversalIconPicker('#" . $id . "-wrapper', {
             iconLibraries: [
               'font-awesome.min.json'
             ],
             iconLibrariesCss: [
             '../../../media/mod_flexiadmin/css/font-awesome.min.css'
             ],
-            resetSelector: '#" . $this->id . "-clear',  // must be an ID or '' if no reset button
+            resetSelector: '#" . $id . "-clear',  // must be an ID or '' if no reset button
             onSelect: function(jsonIconData) {
-            document.getElementById('" . $this->id . "-wrapper').value = jsonIconData.iconClass;
-            document.getElementById('" . $this->id . "-icon').innerHTML = jsonIconData.iconHtml;
+            document.getElementById('" . $id . "-wrapper').value = jsonIconData.iconClass;
+            document.getElementById('" . $id . "-icon').innerHTML = jsonIconData.iconHtml;
             },
             onReset: function() {
-              document.getElementById('" . $this->id . "-wrapper').value = '';
+              document.getElementById('" . $id . "-wrapper').value = '';
             }
             });
         });
